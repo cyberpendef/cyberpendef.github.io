@@ -137,12 +137,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "_posts/2025-09-09-first-blog.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of 2025-09-09-first-blog"
             }
           }
         ],
@@ -164,8 +165,9 @@
       "bases:Create new base": false
     }
   },
-  "active": "9c0187367da9b3fc",
+  "active": "62681fd2816f4d64",
   "lastOpenFiles": [
+    "_posts/2025-10-09-first-blog.md",
     "_posts/2010-01-07-post-standard.md",
     "_posts/2010-01-08-post-chat.md",
     "_posts/2010-02-05-post-notice.md",

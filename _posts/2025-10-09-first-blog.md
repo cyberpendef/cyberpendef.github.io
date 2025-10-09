@@ -1,6 +1,6 @@
 ---
 title: Basics of Python for Hacking
-date: 2025-09-09
+date: 2025-10-09
 categories:
   - Pentesting
   - Intro
