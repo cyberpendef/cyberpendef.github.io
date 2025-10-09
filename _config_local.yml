@@ -1,3 +1,5 @@
+# Local-only overrides for development
+# Use the Minimal Mistakes theme gem locally; keep remote_theme for GitHub Pages in _config.yml
 # Welcome to Jekyll!
 #
 # This config file is meant for settings that affect your whole blog, values
@@ -20,13 +22,14 @@ description: >- # this means to ignore newlines until "baseurl:"
   line in _config.yml. It will appear in your document head meta (for
   Google search results) and in your feed.xml site description.
 twitter_username: hidayat_username
-github_username: hidayat_usernames
+github_username: hidayat_username
 minimal_mistakes_skin: neon
-search: true
+search: trues
 
 # Build settings
 markdown: kramdown
-remote_theme: mmistakes/minimal-mistakes
+remote_theme: null
+theme: minimal-mistakes-jekyll
 # Outputting
 permalink: /:categories/:title/
 paginate: 5 # amount of posts to show
@@ -113,3 +116,14 @@ category_archive:
 tag_archive:
   type: liquid
   path: /tags/
+
+
+
+
+
+
+# Local server settings
+#url: http://127.0.0.1:4000
+#baseurl:
+
+
