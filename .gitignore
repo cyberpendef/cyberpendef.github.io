@@ -1,6 +1,5 @@
 # Hugo site specific
 resources/_gen/
-public/
 
 # OS
 .DS_Store
