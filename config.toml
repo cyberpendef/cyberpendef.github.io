@@ -1,0 +1,39 @@
+baseURL = "https://cyberpendef.github.io/"
+languageCode = "en-us"
+title = "CyberPenDef - IT & Cybersecurity Services"
+theme = "cyberpendef"
+paginate = 10
+
+[outputs]
+  [[outputs.html]]
+    baseName = "index"
+
+[params]
+author = "Shaik Hidayatullah"
+email = "your-email@example.com"
+phone = "+1-XXX-XXX-XXXX"
+linkedin = "https://www.linkedin.com/in/shaik-hidayatullah-b6116b24a"
+fiverr = "https://www.fiverr.com/your-profile"
+github = "https://github.com/cyberpendef"
+description = "Professional IT and Cybersecurity services for individuals, freelancers, and small businesses. AI-powered solutions for security audits, compliance, and technical support."
+
+[[menu.main]]
+name = "Home"
+url = "/"
+weight = 1
+
+[[menu.main]]
+name = "Services"
+url = "/services/"
+weight = 2
+
+[[menu.main]]
+name = "About"
+url = "/about/"
+weight = 3
+
+[[menu.main]]
+name = "Contact"
+url = "/contact/"
+weight = 4
+

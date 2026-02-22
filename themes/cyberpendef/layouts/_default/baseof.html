@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ .Site.Params.description }}">
+    <title>{{ .Title }} | {{ .Site.Title }}</title>
+    <link rel="stylesheet" href="https://cdn.tailwindcss.com">
+    <style>
+        :root {
+            --primary-dark: #0f172a;
+            --primary-blue: #1e40af;
+            --primary-cyan: #0891b2;
+            --neon-green: #00ff00;
+            --neon-purple: #d946ef;
+            --accent-orange: #f97316;
+        }
+        
+        body {
+            background: #0f172a;
+            color: #e5e7eb;
+        }
+
+        .gradient-cyber {
+            background: linear-gradient(135deg, #1e40af 0%, #0891b2 50%, #d946ef 100%);
+        }
+
+        .neon-text {
+            color: #00ff00;
+            text-shadow: 0 0 10px #00ff00, 0 0 20px #0891b2;
+        }
+
+        .glow-border {
+            border: 2px solid #0891b2;
+            box-shadow: 0 0 20px rgba(6, 182, 212, 0.5);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(217, 70, 239, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .btn-cyber {
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: all 0.3s;
+            background: linear-gradient(135deg, #1e40af, #0891b2);
+            color: white;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-cyber:hover {
+            background: linear-gradient(135deg, #0891b2, #d946ef);
+            box-shadow: 0 0 20px rgba(6, 182, 212, 0.6);
+        }
+
+        .btn-secondary {
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: bold;
+            border: 2px solid #06b6d4;
+            color: #22d3ee;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-secondary:hover {
+            background: #06b6d4;
+            color: #0f172a;
+            box-shadow: 0 0 20px rgba(6, 182, 212, 0.6);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav style="position: fixed; top: 0; width: 100%; background: rgba(15, 23, 42, 0.95); border-bottom: 1px solid rgba(6, 182, 212, 0.3); z-index: 50;">
+        <div style="max-width: 80rem; margin: 0 auto; padding: 1rem; display: flex; justify-content: space-between; align-items: center;">
+            <a href="/" style="font-size: 1.5rem; font-weight: bold; color: #00ff00; text-shadow: 0 0 10px #00ff00, 0 0 20px #0891b2; text-decoration: none;">CyberPenDef</a>
+            <div style="display: flex; gap: 2rem;">
+                {{ range .Site.Menus.main }}
+                <a href="{{ .URL }}" style="color: #d1d5db; text-decoration: none; transition: color 0.3s;">{{ .Name }}</a>
+                {{ end }}
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main style="padding-top: 5rem;">
+        {{ block "main" . }}{{ end }}
+    </main>
+
+    <!-- Footer -->
+    <footer style="background: #1e293b; border-top: 1px solid rgba(6, 182, 212, 0.3); padding: 3rem; margin-top: 5rem;">
+        <div style="max-width: 80rem; margin: 0 auto;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
+                <div>
+                    <h4 style="font-size: 1.25rem; font-weight: bold; color: #00ff00; margin-bottom: 1rem;">CyberPenDef</h4>
+                    <p style="color: #9ca3af;">Professional IT & Cybersecurity Services</p>
+                </div>
+                <div>
+                    <h4 style="font-weight: bold; color: #06b6d4; margin-bottom: 1rem;">Services</h4>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li><a href="/services" style="color: #9ca3af; text-decoration: none;">All Services</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="font-weight: bold; color: #06b6d4; margin-bottom: 1rem;">Connect</h4>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li><a href="{{ .Site.Params.linkedin }}" style="color: #9ca3af; text-decoration: none;">LinkedIn</a></li>
+                        <li><a href="{{ .Site.Params.fiverr }}" style="color: #9ca3af; text-decoration: none;">Fiverr</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="font-weight: bold; color: #06b6d4; margin-bottom: 1rem;">Contact</h4>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li><a href="mailto:{{ .Site.Params.email }}" style="color: #9ca3af; text-decoration: none;">Email</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div style="border-top: 1px solid rgba(6, 182, 212, 0.3); padding-top: 2rem; text-align: center; color: #6b7280;">
+                <p>&copy; {{ now.Year }} CyberPenDef. All rights reserved. | CEHv13 Certified</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

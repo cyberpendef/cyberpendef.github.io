@@ -1,0 +1,18 @@
+{{ define "main" }}
+<div style="padding-top: 2.5rem; padding-bottom: 5rem;">
+    <div style="max-width: 80rem; margin: 0 auto; padding: 0 1rem;">
+        <!-- Page Header -->
+        <div style="margin-bottom: 4rem; text-align: center;">
+            <h1 style="font-size: 3rem; font-weight: bold; margin-bottom: 1rem;">
+                {{ .Title }}
+            </h1>
+            <div style="width: 5rem; height: 0.25rem; background: linear-gradient(135deg, #1e40af 0%, #0891b2 50%, #d946ef 100%); margin: 0 auto;"></div>
+        </div>
+
+        <!-- Main Content -->
+        <div style="max-width: 56rem; margin: 0 auto; color: #d1d5db; line-height: 1.75;">
+            {{ .Content }}
+        </div>
+    </div>
+</div>
+{{ end }}
