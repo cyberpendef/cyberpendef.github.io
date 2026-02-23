@@ -5,10 +5,6 @@ theme = "cyberpendef"
 paginate = 10
 publishDir = "public"
 
-[outputs]
-  [[outputs.html]]
-    baseName = "index"
-
 [markup.goldmark.renderer]
 unsafe = true
 
