@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional IT and Cybersecurity services for individuals, freelancers, and small businesses. AI-powered solutions for security audits, compliance, and technical support.">
+    <title>Services | CyberPenDef - IT &amp; Cybersecurity Services</title>
+    <link rel="stylesheet" href="https://cdn.tailwindcss.com">
+    <style>
+        body { background: #0f172a; color: #e5e7eb; }
+        .gradient-cyber { background: linear-gradient(135deg, #1e40af 0%, #0891b2 50%, #d946ef 100%); }
+        .neon-text { color: #00ff00; text-shadow: 0 0 10px #00ff00, 0 0 20px #0891b2; }
+        .glow-border { border: 2px solid #0891b2; box-shadow: 0 0 20px rgba(6, 182, 212, 0.5); }
+        .btn-cyber { padding: 12px 24px; border-radius: 8px; font-weight: bold; background: linear-gradient(135deg, #1e40af, #0891b2); color: white; text-decoration: none; display: inline-block; transition: all 0.3s; }
+        .btn-cyber:hover { background: linear-gradient(135deg, #0891b2, #d946ef); box-shadow: 0 0 20px rgba(6, 182, 212, 0.6); }
+        .btn-secondary { padding: 12px 24px; border-radius: 8px; font-weight: bold; border: 2px solid #06b6d4; color: #22d3ee; transition: all 0.3s; text-decoration: none; display: inline-block; }
+        .btn-secondary:hover { background: #06b6d4; color: #0f172a; box-shadow: 0 0 20px rgba(6, 182, 212, 0.6); }
+        .service-card { background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(6, 182, 212, 0.3); border-radius: 0.75rem; overflow: hidden; }
+        .service-card.active { border-color: rgba(6, 182, 212, 0.8); background: rgba(30, 41, 59, 0.8); }
+        .service-header { padding: 1.5rem; display: flex; justify-content: space-between; align-items: center; cursor: pointer; transition: background 0.3s; }
+        .service-header:hover { background: rgba(6, 182, 212, 0.1); }
+        .service-title { font-weight: bold; color: #06b6d4; }
+        .service-brief { font-size: 0.875rem; color: #9ca3af; margin-top: 0.25rem; }
+        .service-header-content { flex: 1; text-align: left; }
+        .toggle-icon { color: #06b6d4; transition: transform 0.3s; transform: rotate(0deg); }
+        .service-card.active .toggle-icon { transform: rotate(180deg); }
+        .service-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+        .service-card.active .service-content { max-height: 2000px; }
+        .service-details { padding: 0 1.5rem 1.5rem; color: #d1d5db; }
+        .detail-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+        @media (max-width: 768px) { .detail-layout { grid-template-columns: 1fr; } }
+        .detail-section { margin-bottom: 1.5rem; }
+        .detail-section h4 { font-weight: bold; color: #06b6d4; margin-bottom: 0.75rem; }
+        .detail-section ul { list-style: none; padding: 0; margin: 0; }
+        .detail-section li { display: flex; gap: 0.75rem; margin-bottom: 0.5rem; }
+        .detail-section li span:first-child { color: #00ff00; font-weight: bold; flex-shrink: 0; }
+        .infographic-space { border: 2px dashed rgba(6, 182, 212, 0.5); border-radius: 0.5rem; padding: 2rem; text-align: center; color: #9ca3af; display: flex; align-items: center; justify-content: center; min-height: 300px; }
+        .category-section { margin-bottom: 4rem; }
+        .category-title { font-size: 2rem; font-weight: bold; display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+        .category-title span:first-child { font-size: 2.5rem; }
+        .category-divider { height: 2px; background: linear-gradient(90deg, transparent, #06b6d4, transparent); margin-bottom: 2rem; }
+    </style>
+    
+</head>
+<body>
+    <nav style="position: fixed; top: 0; width: 100%; background: rgba(15, 23, 42, 0.95); border-bottom: 1px solid rgba(6, 182, 212, 0.3); z-index: 50;">
+        <div style="max-width: 80rem; margin: 0 auto; padding: 1rem; display: flex; justify-content: space-between; align-items: center;">
+            <a href="/" style="font-size: 1.5rem; font-weight: bold; color: #00ff00; text-shadow: 0 0 10px #00ff00, 0 0 20px #0891b2; text-decoration: none;">CyberPenDef</a>
+            <div style="display: flex; gap: 2rem;">
+                <a href="/" style="color: #d1d5db; text-decoration: none;">Home</a>
+                <a href="/services/" style="color: #d1d5db; text-decoration: none;">Services</a>
+                <a href="/about/" style="color: #d1d5db; text-decoration: none;">About</a>
+                <a href="/contact/" style="color: #d1d5db; text-decoration: none;">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        
+<div style="padding-top: 5rem; padding-bottom: 5rem;">
+    <div style="max-width: 80rem; margin: 0 auto; padding: 0 2rem;">
+        
+        <div style="margin-bottom: 4rem; text-align: center;">
+            <h1 style="font-size: 2.5rem; font-weight: bold; margin-bottom: 1rem; color: white;">Services</h1>
+            <div style="width: 5rem; height: 3px; background: linear-gradient(135deg, #1e40af 0%, #0891b2 50%, #d946ef 100%); margin: 0 auto;"></div>
+        </div>
+        
+
+        <h2 id="our-service-categories">Our Service Categories</h2>
+<p>CyberPenDef offers comprehensive IT and cybersecurity solutions powered by AI technology to accelerate processes and reduce costs for our clients. All services are designed with affordability and effectiveness in mind.</p>
+<hr>
+<h2 id="services-for-end-users">Services for End Users</h2>
+<p>These services are perfect for individuals, non-technical freelancers, and solo entrepreneurs.</p>
+<h3 id="-remote-help-desk--troubleshooting">👤 Remote Help Desk &amp; Troubleshooting</h3>
+<ul>
+<li>Quick resolution of software and hardware issues</li>
+<li>Remote system access and support</li>
+<li>Email, antivirus, and security software setup</li>
+<li>General computer maintenance</li>
+</ul>
+<h3 id="-device-security-setup--maintenance-subscription">🔒 Device Security Setup &amp; Maintenance Subscription</h3>
+<ul>
+<li><strong>Initial Setup:</strong> Secure Wi-Fi configuration, antivirus setup, VPN installation</li>
+<li><strong>Ongoing Support:</strong> Monthly security check-ins, system updates, vulnerability assessments</li>
+<li><strong>Monitoring:</strong> Basic threat alerts via email/SMS</li>
+<li><strong>Perfect for:</strong> Individuals wanting peace of mind about their digital security</li>
+</ul>
+<h3 id="-parental-control-solutions">👨‍👩‍👧 Parental Control Solutions</h3>
+<ul>
+<li>Setup and configuration of parental control software</li>
+<li>Installation on children&rsquo;s devices</li>
+<li>Regular monitoring and maintenance</li>
+<li>Training for parents on usage and management</li>
+</ul>
+<h3 id="-server-setup--maintenance">🖥️ Server Setup &amp; Maintenance</h3>
+<ul>
+<li>Custom server installation and deployment for web applications</li>
+<li>Initial server hardening and security configuration</li>
+<li>Ongoing maintenance and updates</li>
+<li>Perfect for solo entrepreneurs launching online businesses</li>
+</ul>
+<h3 id="-personal-security-audit">🛡️ Personal Security Audit</h3>
+<ul>
+<li>Security health checkups for personal devices</li>
+<li>Data backup verification and testing</li>
+<li>Personal information security compliance review</li>
+<li>Affordable security audit specifically for freelancers</li>
+</ul>
+<h3 id="-cybersecurity-awareness-training">📚 Cybersecurity Awareness Training</h3>
+<ul>
+<li>Practical training on common cyber threats</li>
+<li>Password security best practices</li>
+<li>Social engineering awareness</li>
+<li>Data protection and privacy tips</li>
+</ul>
+<h3 id="-cyber-fraud--crime-support">🆘 Cyber Fraud &amp; Crime Support</h3>
+<ul>
+<li>Guidance for individuals with no digital literacy</li>
+<li>Recovery support after cyber incidents</li>
+<li>Identity theft protection measures</li>
+<li>Incident reporting assistance</li>
+</ul>
+<h3 id="-personal-data-management">💾 Personal Data Management</h3>
+<ul>
+<li>Secure backup setup and verification</li>
+<li>Data testing and restoration procedures</li>
+<li>Secure cloud storage configuration</li>
+<li>Document organization and security</li>
+</ul>
+<hr>
+<h2 id="services-for-small-micro-businesses--startups">Services for Small, Micro Businesses &amp; Startups</h2>
+<p>Designed to help growing businesses implement IT and security without expensive enterprise solutions.</p>
+<h3 id="-security-auditing--assessment">🏆 Security Auditing &amp; Assessment</h3>
+<ul>
+<li>Website security auditing</li>
+<li>Infrastructure vulnerability assessment</li>
+<li>Vendor security assessment (checking supplier security)</li>
+<li>Compliance assessment for data protection regulations</li>
+<li>Actionable recommendations with timelines</li>
+</ul>
+<h3 id="-cloud-migration--strategy">☁️ Cloud Migration &amp; Strategy</h3>
+<ul>
+<li>Planning transition from on-premise to cloud solutions</li>
+<li>Cost optimization analysis</li>
+<li>Infrastructure recommendations for efficiency</li>
+<li>Secure migration execution</li>
+<li>Post-migration support and optimization</li>
+</ul>
+<h3 id="-security-awareness-training-for-teams">🔐 Security Awareness Training for Teams</h3>
+<ul>
+<li>Comprehensive employee training programs</li>
+<li>Phishing simulation and awareness</li>
+<li>Incident response drills</li>
+<li>Custom training based on industry needs</li>
+<li>Documentation and certification</li>
+</ul>
+<h3 id="-incident-response--planning">🛡️ Incident Response &amp; Planning</h3>
+<ul>
+<li>Incident response plan development</li>
+<li>Disaster recovery planning</li>
+<li>Business continuity consulting</li>
+<li>Regular drills and simulations</li>
+<li>24/7 incident support (optional)</li>
+</ul>
+<h3 id="-automated-backup--disaster-recovery">💾 Automated Backup &amp; Disaster Recovery</h3>
+<ul>
+<li><strong>Setup:</strong> Configure automated backups (cloud/local based on needs)</li>
+<li><strong>Testing:</strong> Quarterly backup restore testing</li>
+<li><strong>Monitoring:</strong> Continuous monitoring of backup status</li>
+<li><strong>Ransomware Protection:</strong> Simple, reliable solutions against ransomware</li>
+<li><strong>Recovery Support:</strong> Quick recovery guidance during emergencies</li>
+</ul>
+<h3 id="-system-administration--automation">🔧 System Administration &amp; Automation</h3>
+<ul>
+<li>Custom automation scripts development (Python, Bash, PowerShell)</li>
+<li>System administration task automation</li>
+<li>Scheduled maintenance automation</li>
+<li>Reporting and monitoring setup</li>
+<li>Remote system administration support</li>
+</ul>
+<h3 id="-digital-asset-management">🚀 Digital Asset Management</h3>
+<ul>
+<li>Digital asset inventory and documentation</li>
+<li>Secure digital vault setup for important documents</li>
+<li>Access control and permission management</li>
+<li>Asset lifecycle management</li>
+<li>Regular audits and updates</li>
+</ul>
+<h3 id="-password--access-management">🔐 Password &amp; Access Management</h3>
+<ul>
+<li>Implement password management solutions</li>
+<li>Multi-factor authentication setup</li>
+<li>Access control optimization</li>
+<li>Regular access reviews and audits</li>
+<li>Employee password policy training</li>
+</ul>
+<h3 id="-legacy-system-security-hardening">🖥️ Legacy System Security Hardening</h3>
+<ul>
+<li>Specialized security solutions for outdated systems</li>
+<li>Bridging solutions between legacy and modern tools</li>
+<li>Compatibility assessments</li>
+<li>Custom security implementations</li>
+<li>Ongoing support for legacy infrastructure</li>
+</ul>
+<h3 id="-website-security-hardening">🏭 Website Security Hardening</h3>
+<ul>
+<li>CMS security configuration</li>
+<li>SSL/TLS implementation and management</li>
+<li>Web application firewall setup</li>
+<li>Regular security patching</li>
+<li>Performance optimization with security in mind</li>
+</ul>
+<h3 id="-security-monitoring--threat-detection-247">📊 Security Monitoring &amp; Threat Detection (24/7)</h3>
+<ul>
+<li><strong>24/7 Monitoring:</strong> Continuous security event monitoring</li>
+<li><strong>Threat Detection:</strong> Early threat identification and alerts</li>
+<li><strong>Incident Response:</strong> Professional incident handling support</li>
+<li><strong>Reporting:</strong> Regular security reports and compliance documentation</li>
+<li><strong>Alert Tuning:</strong> Configured to minimize false positives</li>
+</ul>
+<h3 id="-custom-security-tools-development">💻 Custom Security Tools Development</h3>
+<ul>
+<li>Custom security tools and scripts development</li>
+<li>Programming languages: Python, C/C++, C#, Java, and more</li>
+<li>Tailored solutions for specific needs</li>
+<li>Integration with existing systems</li>
+<li>Documentation and training</li>
+</ul>
+<h3 id="-software--hardware-migration">🔄 Software &amp; Hardware Migration</h3>
+<ul>
+<li>Transition planning for outdated systems</li>
+<li>Data migration services</li>
+<li>Compatibility assessments</li>
+<li>Minimal downtime migration strategies</li>
+<li>Post-migration optimization and support</li>
+</ul>
+<h3 id="-compliance--audit-services">📋 Compliance &amp; Audit Services</h3>
+<ul>
+<li>GDPR, HIPAA, PCI-DSS compliance assessment</li>
+<li>Regular compliance audits</li>
+<li>Documentation and policy development</li>
+<li>Remediation support</li>
+<li>Ongoing compliance consulting</li>
+</ul>
+<hr>
+<h2 id="why-choose-cyberpendef">Why Choose CyberPenDef?</h2>
+<p>✅ <strong>CEHv13 Certified</strong> - Professional expertise in ethical hacking and security<br>
+✅ <strong>AI-Powered Solutions</strong> - Faster, more efficient service delivery<br>
+✅ <strong>Affordable Pricing</strong> - No expensive enterprise contracts<br>
+✅ <strong>Responsive Support</strong> - Quick communication and resolution<br>
+✅ <strong>Customized Approach</strong> - Solutions tailored to your needs<br>
+✅ <strong>24/7 Availability</strong> - Support when you need it</p>
+<hr>
+<h2 id="ready-to-get-started">Ready to Get Started?</h2>
+<p>Contact us today for a consultation. We&rsquo;ll assess your current situation and recommend the best solutions for your needs.</p>
+
+    </div>
+</div>
+
+    </main>
+
+    <footer style="background: #1a1f2e; border-top: 1px solid rgba(6, 182, 212, 0.3); padding: 4rem 2rem; margin-top: 5rem;">
+        <div style="max-width: 80rem; margin: 0 auto;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
+                <div>
+                    <h4 style="font-weight: bold; color: #06b6d4; margin-bottom: 1rem;">Quick Links</h4>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li><a href="/" style="color: #d1d5db; text-decoration: none;">Home</a></li>
+                        <li><a href="/services/" style="color: #d1d5db; text-decoration: none;">Services</a></li>
+                        <li><a href="/about/" style="color: #d1d5db; text-decoration: none;">About</a></li>
+                        <li><a href="/contact/" style="color: #d1d5db; text-decoration: none;">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="font-weight: bold; color: #06b6d4; margin-bottom: 1rem;">Contact</h4>
+                    <p>Email: <a href="mailto:cyberpendef@gmail.com" style="color: #06b6d4; text-decoration: none;">cyberpendef@gmail.com</a></p>
+                    <p>Phone: <a href="tel:&#43;91-7672017241" style="color: #06b6d4; text-decoration: none;">&#43;91-7672017241</a></p>
+                </div>
+                <div>
+                    <h4 style="font-weight: bold; color: #06b6d4; margin-bottom: 1rem;">Social</h4>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li><a href="https://www.linkedin.com/in/shaik-hidayatullah-b6116b24a" style="color: #d1d5db; text-decoration: none;">LinkedIn</a></li>
+                        <li><a href="https://github.com/cyberpendef" style="color: #d1d5db; text-decoration: none;">GitHub</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div style="border-top: 1px solid rgba(6, 182, 212, 0.2); padding-top: 2rem; text-align: center; color: #9ca3af;">
+                <p>&copy; 2024 CyberPenDef. All rights reserved. | Designed with <span class="neon-text">🔐</span> for security</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.service-header').forEach(header => {
+            header.addEventListener('click', function() {
+                const card = this.closest('.service-card');
+                document.querySelectorAll('.service-card.active').forEach(activeCard => {
+                    if (activeCard !== card) activeCard.classList.remove('active');
+                });
+                card.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
