@@ -15,7 +15,7 @@ Comprehensive IT & Cybersecurity Solutions Powered by AI
 <!-- IT SERVICES FOR END USERS -->
 <div class="category-section">
 <div class="category-title">
-<span>ðŸ‘¤</span>
+<span>👤</span>
 <span>IT Services for End Users</span>
 </div>
 <div class="category-divider"></div>
@@ -24,10 +24,10 @@ Comprehensive IT & Cybersecurity Solutions Powered by AI
 <div class="service-card">
 <div class="service-header">
 <div class="service-header-content">
-<div class="service-title">ðŸŽ§ Remote Help Desk & Troubleshooting Subscription</div>
+<div class="service-title">🎧 Remote Help Desk & Troubleshooting Subscription</div>
 <div class="service-brief">Quick resolution of software and hardware issues with remote system access and complete setup assistance</div>
 </div>
-<div class="toggle-icon">â–¼</div>
+<div class="toggle-icon">▼</div>
 </div>
 <div class="service-content">
 <div class="service-details">
@@ -55,7 +55,7 @@ Comprehensive IT & Cybersecurity Solutions Powered by AI
 </div>
 </div>
 <div class="infographic-space">
-ðŸ“Š Infographic Space<br><br>
+📊 Infographic Space<br><br>
 (e.g., Response time chart, Support availability timeline, Quick fix illustrations)
 </div>
 </div>
@@ -67,10 +67,10 @@ Comprehensive IT & Cybersecurity Solutions Powered by AI
 <div class="service-card">
 <div class="service-header">
 <div class="service-header-content">
-<div class="service-title">ðŸ”’ Device Security Setup & Maintenance Subscription</div>
+<div class="service-title">🔒 Device Security Setup & Maintenance Subscription</div>
 <div class="service-brief">Complete device security with initial setup and ongoing monthly monitoring, updates, and threat alerts</div>
 </div>
-<div class="toggle-icon">â–¼</div>
+<div class="toggle-icon">▼</div>
 </div>
 <div class="service-content">
 <div class="service-details">
@@ -102,7 +102,7 @@ Comprehensive IT & Cybersecurity Solutions Powered by AI
 </div>
 </div>
 <div class="infographic-space">
-ðŸ“Š Infographic Space<br><br>
+📊 Infographic Space<br><br>
 (e.g., Security layers diagram, Monthly service timeline, Protection coverage illustration)
 </div>
 </div>
@@ -114,10 +114,10 @@ Comprehensive IT & Cybersecurity Solutions Powered by AI
 <div class="service-card">
 <div class="service-header">
 <div class="service-header-content">
-<div class="service-title">ðŸ‘¨â€ðŸ‘©â€ðŸ‘§ Parental Control Solutions</div>
+<div class="service-title">👨‍👩‍👧 Parental Control Solutions</div>
 <div class="service-brief">Complete parental control setup, configuration, and monitoring for children's devices with regular maintenance</div>
 </div>
-<div class="toggle-icon">â–¼</div>
+<div class="toggle-icon">▼</div>
 </div>
 <div class="service-content">
 <div class="service-details">
@@ -150,7 +150,7 @@ Comprehensive IT & Cybersecurity Solutions Powered by AI
 </div>
 </div>
 <div class="infographic-space">
-ðŸ“Š Infographic Space<br><br>
+📊 Infographic Space<br><br>
 (e.g., Content filtering workflow, Device coverage diagram, Safety layers illustration)
 </div>
 </div>
@@ -162,10 +162,10 @@ Comprehensive IT & Cybersecurity Solutions Powered by AI
 <div class="service-card">
 <div class="service-header">
 <div class="service-header-content">
-<div class="service-title">ðŸ–¥ï¸ Server Setup & Maintenance for Solo Entrepreneurs</div>
+<div class="service-title">🖥️ Server Setup & Maintenance for Solo Entrepreneurs</div>
 <div class="service-brief">Professional server installation, configuration, security hardening, and ongoing maintenance for your web applications</div>
 </div>
-<div class="toggle-icon">â–¼</div>
+<div class="toggle-icon">▼</div>
 </div>
 <div class="service-content">
 <div class="service-details">
@@ -200,7 +200,7 @@ Comprehensive IT & Cybersecurity Solutions Powered by AI
 </div>
 </div>
 <div class="infographic-space">
-ðŸ“Š Infographic Space<br><br>
+📊 Infographic Space<br><br>
 (e.g., Server architecture diagram, Security layers, Maintenance schedule)
 </div>
 </div>
@@ -212,10 +212,10 @@ Comprehensive IT & Cybersecurity Solutions Powered by AI
 <div class="service-card">
 <div class="service-header">
 <div class="service-header-content">
-<div class="service-title">ðŸ›¡ï¸ Personal Security Health Checkup</div>
+<div class="service-title">🛡️ Personal Security Health Checkup</div>
 <div class="service-brief">Comprehensive security assessment of your devices and personal information with detailed recommendations</div>
 </div>
-<div class="toggle-icon">â–¼</div>
+<div class="toggle-icon">▼</div>
 </div>
 <div class="service-content">
 <div class="service-details">
@@ -249,7 +249,7 @@ Comprehensive IT & Cybersecurity Solutions Powered by AI
 </div>
 </div>
 <div class="infographic-space">
-ðŸ“Š Infographic Space<br><br>
+📊 Infographic Space<br><br>
 (e.g., Risk score dashboard, Security assessment breakdown, Improvement roadmap)
 </div>
 </div>
@@ -261,10 +261,10 @@ Comprehensive IT & Cybersecurity Solutions Powered by AI
 <div class="service-card">
 <div class="service-header">
 <div class="service-header-content">
-<div class="service-title">ðŸ“² Cyber Fraud & Crime Support</div>
+<div class="service-title">📲 Cyber Fraud & Crime Support</div>
 <div class="service-brief">Expert guidance and support for individuals who have been victims of cyber fraud or online crime</div>
 </div>
-<div class="toggle-icon">â–¼</div>
+<div class="toggle-icon">▼</div>
 </div>
 <div class="service-content">
 <div class="service-details">
@@ -297,7 +297,7 @@ Comprehensive IT & Cybersecurity Solutions Powered by AI
 </div>
 </div>
 <div class="infographic-space">
-ðŸ“Š Infographic Space<br><br>
+📊 Infographic Space<br><br>
 (e.g., Recovery steps timeline, Protection measures, Fraud prevention checklist)
 </div>
 </div>
@@ -309,10 +309,10 @@ Comprehensive IT & Cybersecurity Solutions Powered by AI
 <div class="service-card">
 <div class="service-header">
 <div class="service-header-content">
-<div class="service-title">ðŸ“š Cybersecurity Awareness Training</div>
+<div class="service-title">📚 Cybersecurity Awareness Training</div>
 <div class="service-brief">Personalized training to help you understand and defend against common cyber threats</div>
 </div>
-<div class="toggle-icon">â–¼</div>
+<div class="toggle-icon">▼</div>
 </div>
 <div class="service-content">
 <div class="service-details">
@@ -347,7 +347,7 @@ Comprehensive IT & Cybersecurity Solutions Powered by AI
 </div>
 </div>
 <div class="infographic-space">
-ðŸ“Š Infographic Space<br><br>
+📊 Infographic Space<br><br>
 (e.g., Threat types guide, Common attack patterns, Defense strategies)
 </div>
 </div>
@@ -356,29 +356,25 @@ Comprehensive IT & Cybersecurity Solutions Powered by AI
 </div>
 </div>
 
-<!-- LARGE SERVICES SECTION - More services for Businesses, etc. -->
-<!-- Note: Due to length, I'm showing the structure. Full version would include all 26 services -->
-<!-- The remaining services (8-26) follow the same pattern with detailed content and infographic spaces -->
-
 <!-- IT SERVICES FOR BUSINESSES -->
 <div class="category-section">
 <div class="category-title">
-<span>ðŸ¢</span>
+<span>🏢</span>
 <span>IT Services for Small Businesses & Startups</span>
 </div>
 <div class="category-divider"></div>
 <p style="color: #9ca3af; padding: 2rem; background: rgba(6, 182, 212, 0.05); border-radius: 0.5rem; margin-bottom: 2rem;">
-âœ¨ All IT services powered by AI to expedite processes and reduce time for your business while maintaining quality and security standards.
+✨ All IT services powered by AI to expedite processes and reduce time for your business while maintaining quality and security standards.
 </p>
 
 <!-- Service 8: Process Automation -->
 <div class="service-card">
 <div class="service-header">
 <div class="service-header-content">
-<div class="service-title">âš™ï¸ Process Automation & Workflow Optimization</div>
+<div class="service-title">⚙️ Process Automation & Workflow Optimization</div>
 <div class="service-brief">Automate repetitive business processes without expensive custom development using AI and low-code tools</div>
 </div>
-<div class="toggle-icon">â–¼</div>
+<div class="toggle-icon">▼</div>
 </div>
 <div class="service-content">
 <div class="service-details">
@@ -413,7 +409,7 @@ Comprehensive IT & Cybersecurity Solutions Powered by AI
 </div>
 </div>
 <div class="infographic-space">
-ðŸ“Š Infographic Space<br><br>
+📊 Infographic Space<br><br>
 (e.g., Process comparison before/after, Automation workflow diagram, ROI metrics)
 </div>
 </div>
@@ -421,17 +417,14 @@ Comprehensive IT & Cybersecurity Solutions Powered by AI
 </div>
 </div>
 
-<!-- Additional 18 services follow similar structure -->
-<!-- For brevity, showing one more service as example -->
-
 <!-- Service 9: Cloud Migration -->
 <div class="service-card">
 <div class="service-header">
 <div class="service-header-content">
-<div class="service-title">â˜ï¸ Cloud Migration Services</div>
+<div class="service-title">☁️ Cloud Migration Services</div>
 <div class="service-brief">Seamlessly transition from on-premise systems to modern cloud solutions with minimal disruption and maximum security</div>
 </div>
-<div class="toggle-icon">â–¼</div>
+<div class="toggle-icon">▼</div>
 </div>
 <div class="service-content">
 <div class="service-details">
@@ -466,37 +459,34 @@ Comprehensive IT & Cybersecurity Solutions Powered by AI
 </div>
 </div>
 <div class="infographic-space">
-ðŸ“Š Infographic Space<br><br>
+📊 Infographic Space<br><br>
 (e.g., Migration timeline, Data flow diagram, Cloud architecture before/after)
 </div>
 </div>
 </div>
 </div>
 </div>
-
-<!-- Note: Services 10-26 would follow the same expandable pattern -->
-<!-- Each service includes: Overview, detailed features, infographic space for images -->
 </div>
 
 <!-- CYBERSECURITY SERVICES - END USERS -->
 <div class="category-section">
 <div class="category-title">
-<span>ðŸ”</span>
+<span>🔐</span>
 <span>Cybersecurity Services for End Users (AI-Powered)</span>
 </div>
 <div class="category-divider"></div>
 <p style="color: #9ca3af; padding: 2rem; background: rgba(6, 182, 212, 0.05); border-radius: 0.5rem; margin-bottom: 2rem;">
-âœ¨ All cybersecurity services utilize advanced AI tools for automated scanning, threat detection, and faster remediation while maintaining human expertise oversight.
+✨ All cybersecurity services utilize advanced AI tools for automated scanning, threat detection, and faster remediation while maintaining human expertise oversight.
 </p>
 
 <!-- Service: Personal Device Security Health Checkup -->
 <div class="service-card">
 <div class="service-header">
 <div class="service-header-content">
-<div class="service-title">ðŸ©º Personal Device Security Health Checkup</div>
+<div class="service-title">🩺 Personal Device Security Health Checkup</div>
 <div class="service-brief">One-time comprehensive security assessment of your devices, identifying vulnerabilities and providing remediation guidance</div>
 </div>
-<div class="toggle-icon">â–¼</div>
+<div class="toggle-icon">▼</div>
 </div>
 <div class="service-content">
 <div class="service-details">
@@ -530,7 +520,7 @@ Comprehensive IT & Cybersecurity Solutions Powered by AI
 </div>
 </div>
 <div class="infographic-space">
-ðŸ“Š Infographic Space<br><br>
+📊 Infographic Space<br><br>
 (e.g., Security score breakdown, Risk heatmap, Before/after comparison)
 </div>
 </div>
@@ -542,10 +532,10 @@ Comprehensive IT & Cybersecurity Solutions Powered by AI
 <div class="service-card">
 <div class="service-header">
 <div class="service-header-content">
-<div class="service-title">ðŸš¨ Affordable Threat Monitoring & Alert Tools</div>
+<div class="service-title">🚨 Affordable Threat Monitoring & Alert Tools</div>
 <div class="service-brief">Setup and configuration of open-source, low-cost threat monitoring solutions for continuous device protection</div>
 </div>
-<div class="toggle-icon">â–¼</div>
+<div class="toggle-icon">▼</div>
 </div>
 <div class="service-content">
 <div class="service-details">
@@ -578,7 +568,7 @@ Comprehensive IT & Cybersecurity Solutions Powered by AI
 </div>
 </div>
 <div class="infographic-space">
-ðŸ“Š Infographic Space<br><br>
+📊 Infographic Space<br><br>
 (e.g., Tool comparison chart, Alert workflow, Monitoring dashboard)
 </div>
 </div>
@@ -590,10 +580,10 @@ Comprehensive IT & Cybersecurity Solutions Powered by AI
 <div class="service-card">
 <div class="service-header">
 <div class="service-header-content">
-<div class="service-title">ðŸ’¾ Personal Data Backup, Verification & Testing</div>
+<div class="service-title">💾 Personal Data Backup, Verification & Testing</div>
 <div class="service-brief">Secure backup setup for important personal files with regular testing to ensure recovery capability</div>
 </div>
-<div class="toggle-icon">â–¼</div>
+<div class="toggle-icon">▼</div>
 </div>
 <div class="service-content">
 <div class="service-details">
@@ -627,7 +617,7 @@ Comprehensive IT & Cybersecurity Solutions Powered by AI
 </div>
 </div>
 <div class="infographic-space">
-ðŸ“Š Infographic Space<br><br>
+📊 Infographic Space<br><br>
 (e.g., Backup locations map, Recovery process flowchart, Data timeline)
 </div>
 </div>
@@ -639,10 +629,10 @@ Comprehensive IT & Cybersecurity Solutions Powered by AI
 <div class="service-card">
 <div class="service-header">
 <div class="service-header-content">
-<div class="service-title">ðŸ“‹ Personal Information Security Audit & Compliance</div>
+<div class="service-title">📋 Personal Information Security Audit & Compliance</div>
 <div class="service-brief">Compliance audit for freelancers handling client data with GDPR and privacy regulation guidance</div>
 </div>
-<div class="toggle-icon">â–¼</div>
+<div class="toggle-icon">▼</div>
 </div>
 <div class="service-content">
 <div class="service-details">
@@ -677,7 +667,7 @@ Comprehensive IT & Cybersecurity Solutions Powered by AI
 </div>
 </div>
 <div class="infographic-space">
-ðŸ“Š Infographic Space<br><br>
+📊 Infographic Space<br><br>
 (e.g., Compliance checklist, Data flow diagram, Regulation coverage)
 </div>
 </div>
@@ -689,22 +679,22 @@ Comprehensive IT & Cybersecurity Solutions Powered by AI
 <!-- CYBERSECURITY SERVICES - SMALL BUSINESSES -->
 <div class="category-section">
 <div class="category-title">
-<span>ðŸ”</span>
+<span>🔐</span>
 <span>Cybersecurity Services for Small Businesses & Startups (AI-Powered)</span>
 </div>
 <div class="category-divider"></div>
 <p style="color: #9ca3af; padding: 2rem; background: rgba(6, 182, 212, 0.05); border-radius: 0.5rem; margin-bottom: 2rem;">
-âœ¨ All services use AI-powered tools for automated threat detection, vulnerability scanning, and compliance checking with expert human review and recommendations.
+✨ All services use AI-powered tools for automated threat detection, vulnerability scanning, and compliance checking with expert human review and recommendations.
 </p>
 
 <!-- Service: Secure Coding & Code Audit -->
 <div class="service-card">
 <div class="service-header">
 <div class="service-header-content">
-<div class="service-title">ðŸ” Secure Coding Audit & Code Review</div>
+<div class="service-title">🔍 Secure Coding Audit & Code Review</div>
 <div class="service-brief">Review your custom code for security vulnerabilities (C, Python, Java, C++, C# and more) with AI-assisted analysis</div>
 </div>
-<div class="toggle-icon">â–¼</div>
+<div class="toggle-icon">▼</div>
 </div>
 <div class="service-content">
 <div class="service-details">
@@ -739,7 +729,7 @@ Comprehensive IT & Cybersecurity Solutions Powered by AI
 </div>
 </div>
 <div class="infographic-space">
-ðŸ“Š Infographic Space<br><br>
+📊 Infographic Space<br><br>
 (e.g., Vulnerability severity chart, Code review process, Common issues guide)
 </div>
 </div>
@@ -751,10 +741,10 @@ Comprehensive IT & Cybersecurity Solutions Powered by AI
 <div class="service-card">
 <div class="service-header">
 <div class="service-header-content">
-<div class="service-title">âš™ï¸ Custom Security Automation Scripts & Tools</div>
+<div class="service-title">⚙️ Custom Security Automation Scripts & Tools</div>
 <div class="service-brief">Develop custom security tools and automation scripts using Python, C++, C#, Java tailored to your specific needs</div>
 </div>
-<div class="toggle-icon">â–¼</div>
+<div class="toggle-icon">▼</div>
 </div>
 <div class="service-content">
 <div class="service-details">
@@ -791,7 +781,7 @@ Comprehensive IT & Cybersecurity Solutions Powered by AI
 </div>
 </div>
 <div class="infographic-space">
-ðŸ“Š Infographic Space<br><br>
+📊 Infographic Space<br><br>
 (e.g., Tool architecture diagram, Integration points, Use case examples)
 </div>
 </div>
@@ -803,10 +793,10 @@ Comprehensive IT & Cybersecurity Solutions Powered by AI
 <div class="service-card">
 <div class="service-header">
 <div class="service-header-content">
-<div class="service-title">ðŸ•µï¸ Website Security Auditing</div>
+<div class="service-title">🕵️ Website Security Auditing</div>
 <div class="service-brief">Comprehensive security assessment of your website identifying vulnerabilities and providing remediation guidance</div>
 </div>
-<div class="toggle-icon">â–¼</div>
+<div class="toggle-icon">▼</div>
 </div>
 <div class="service-content">
 <div class="service-details">
@@ -842,7 +832,7 @@ Comprehensive IT & Cybersecurity Solutions Powered by AI
 </div>
 </div>
 <div class="infographic-space">
-ðŸ“Š Infographic Space<br><br>
+📊 Infographic Space<br><br>
 (e.g., Vulnerability severity chart, Attack vectors diagram, Risk heatmap)
 </div>
 </div>
@@ -854,10 +844,10 @@ Comprehensive IT & Cybersecurity Solutions Powered by AI
 <div class="service-card">
 <div class="service-header">
 <div class="service-header-content">
-<div class="service-title">ðŸ¤ Vendor Security Assessment</div>
+<div class="service-title">🤝 Vendor Security Assessment</div>
 <div class="service-brief">Evaluate your suppliers' security practices to manage supply chain and third-party risks</div>
 </div>
-<div class="toggle-icon">â–¼</div>
+<div class="toggle-icon">▼</div>
 </div>
 <div class="service-content">
 <div class="service-details">
@@ -892,7 +882,7 @@ Comprehensive IT & Cybersecurity Solutions Powered by AI
 </div>
 </div>
 <div class="infographic-space">
-ðŸ“Š Infographic Space<br><br>
+📊 Infographic Space<br><br>
 (e.g., Risk scoring matrix, Due diligence checklist, Vendor comparison chart)
 </div>
 </div>
@@ -904,10 +894,10 @@ Comprehensive IT & Cybersecurity Solutions Powered by AI
 <div class="service-card">
 <div class="service-header">
 <div class="service-header-content">
-<div class="service-title">ðŸš¨ Incident Response Planning & Drills</div>
+<div class="service-title">🚨 Incident Response Planning & Drills</div>
 <div class="service-brief">Develop incident response plans and conduct drills to prepare your team for cyber emergencies</div>
 </div>
-<div class="toggle-icon">â–¼</div>
+<div class="toggle-icon">▼</div>
 </div>
 <div class="service-content">
 <div class="service-details">
@@ -943,7 +933,7 @@ Comprehensive IT & Cybersecurity Solutions Powered by AI
 </div>
 </div>
 <div class="infographic-space">
-ðŸ“Š Infographic Space<br><br>
+📊 Infographic Space<br><br>
 (e.g., Response timeline diagram, Team roles org chart, Escalation flowchart)
 </div>
 </div>
@@ -955,10 +945,10 @@ Comprehensive IT & Cybersecurity Solutions Powered by AI
 <div class="service-card">
 <div class="service-header">
 <div class="service-header-content">
-<div class="service-title">ðŸ’¾ Backup System Monitoring & Testing</div>
+<div class="service-title">💾 Backup System Monitoring & Testing</div>
 <div class="service-brief">Continuous monitoring of your backup systems with quarterly recovery testing and documentation</div>
 </div>
-<div class="toggle-icon">â–¼</div>
+<div class="toggle-icon">▼</div>
 </div>
 <div class="service-content">
 <div class="service-details">
@@ -993,7 +983,7 @@ Comprehensive IT & Cybersecurity Solutions Powered by AI
 </div>
 </div>
 <div class="infographic-space">
-ðŸ“Š Infographic Space<br><br>
+📊 Infographic Space<br><br>
 (e.g., Backup workflow diagram, Recovery timeline, Data protection layers)
 </div>
 </div>
@@ -1005,10 +995,10 @@ Comprehensive IT & Cybersecurity Solutions Powered by AI
 <div class="service-card">
 <div class="service-header">
 <div class="service-header-content">
-<div class="service-title">ðŸ“ Digital Asset Management & Secure Vault</div>
+<div class="service-title">📁 Digital Asset Management & Secure Vault</div>
 <div class="service-brief">Organize, secure, and centrally manage your company's important documents and digital assets</div>
 </div>
-<div class="toggle-icon">â–¼</div>
+<div class="toggle-icon">▼</div>
 </div>
 <div class="service-content">
 <div class="service-details">
@@ -1045,7 +1035,7 @@ Comprehensive IT & Cybersecurity Solutions Powered by AI
 </div>
 </div>
 <div class="infographic-space">
-ðŸ“Š Infographic Space<br><br>
+📊 Infographic Space<br><br>
 (e.g., Asset classification hierarchy, Access control matrix, Storage architecture)
 </div>
 </div>
@@ -1057,10 +1047,10 @@ Comprehensive IT & Cybersecurity Solutions Powered by AI
 <div class="service-card">
 <div class="service-header">
 <div class="service-header-content">
-<div class="service-title">ðŸ”‘ Password & Access Management Optimization</div>
+<div class="service-title">🔑 Password & Access Management Optimization</div>
 <div class="service-brief">Implement enterprise password management and access control solutions for enhanced security</div>
 </div>
-<div class="toggle-icon">â–¼</div>
+<div class="toggle-icon">▼</div>
 </div>
 <div class="service-content">
 <div class="service-details">
@@ -1095,7 +1085,7 @@ Comprehensive IT & Cybersecurity Solutions Powered by AI
 </div>
 </div>
 <div class="infographic-space">
-ðŸ“Š Infographic Space<br><br>
+📊 Infographic Space<br><br>
 (e.g., Access control matrix, Password strength guide, Authentication flow)
 </div>
 </div>
@@ -1107,10 +1097,10 @@ Comprehensive IT & Cybersecurity Solutions Powered by AI
 <div class="service-card">
 <div class="service-header">
 <div class="service-header-content">
-<div class="service-title">ðŸ“Š Security-as-a-Service (24/7 Monitoring)</div>
+<div class="service-title">📊 Security-as-a-Service (24/7 Monitoring)</div>
 <div class="service-brief">Continuous 24/7 security monitoring, threat detection, and incident response for comprehensive protection</div>
 </div>
-<div class="toggle-icon">â–¼</div>
+<div class="toggle-icon">▼</div>
 </div>
 <div class="service-content">
 <div class="service-details">
@@ -1146,7 +1136,7 @@ Comprehensive IT & Cybersecurity Solutions Powered by AI
 </div>
 </div>
 <div class="infographic-space">
-ðŸ“Š Infographic Space<br><br>
+📊 Infographic Space<br><br>
 (e.g., Monitoring dashboard, Alert response flowchart, Incident metrics)
 </div>
 </div>
@@ -1158,10 +1148,10 @@ Comprehensive IT & Cybersecurity Solutions Powered by AI
 <div class="service-card">
 <div class="service-header">
 <div class="service-header-content">
-<div class="service-title">ðŸ›¡ï¸ Legacy System Security Hardening</div>
+<div class="service-title">🛡️ Legacy System Security Hardening</div>
 <div class="service-brief">Strengthen security for outdated systems through specialized hardening and compensating controls</div>
 </div>
-<div class="toggle-icon">â–¼</div>
+<div class="toggle-icon">▼</div>
 </div>
 <div class="service-content">
 <div class="service-details">
@@ -1196,7 +1186,7 @@ Comprehensive IT & Cybersecurity Solutions Powered by AI
 </div>
 </div>
 <div class="infographic-space">
-ðŸ“Š Infographic Space<br><br>
+📊 Infographic Space<br><br>
 (e.g., Security layers architecture, Risk reduction comparison, Hardening roadmap)
 </div>
 </div>
