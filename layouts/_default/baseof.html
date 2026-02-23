@@ -39,13 +39,19 @@
         .category-title { font-size: 2rem; font-weight: bold; display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
         .category-title span:first-child { font-size: 2.5rem; }
         .category-divider { height: 2px; background: linear-gradient(90deg, transparent, #06b6d4, transparent); margin-bottom: 2rem; }
+        /* Logo word colors */
+        .cyber { color: #0891B2; text-shadow: 0 0 6px rgba(8,145,178,0.6); }
+        .pen   { color: #FF4400; text-shadow: 0 0 6px rgba(255,68,0,0.6); }
+        .def   { color: #A78BFA; text-shadow: 0 0 6px rgba(167,139,250,0.6); }
     </style>
     {{ block "extra-css" . }}{{ end }}
 </head>
 <body>
     <nav style="position: fixed; top: 0; width: 100%; background: rgba(15, 23, 42, 0.95); border-bottom: 1px solid rgba(6, 182, 212, 0.3); z-index: 50;">
         <div style="max-width: 80rem; margin: 0 auto; padding: 1rem; display: flex; justify-content: space-between; align-items: center;">
-            <a href="/" style="font-size: 1.5rem; font-weight: bold; color: #00ff00; text-shadow: 0 0 10px #00ff00, 0 0 20px #0891b2; text-decoration: none;">CyberPenDef</a>
+            <a href="/" style="font-size: 1.5rem; font-weight: bold; text-decoration: none;">
+                <span class="cyber">Cyber</span><span class="pen">Pen</span><span class="def">Def</span>
+            </a>
             <div style="display: flex; gap: 2rem;">
                 <a href="/" style="color: #d1d5db; text-decoration: none;">Home</a>
                 <a href="/services/" style="color: #d1d5db; text-decoration: none;">Services</a>
