@@ -1,0 +1,221 @@
+{{ define "main" }}
+<style>
+    /* Main Content */
+    main { 
+        padding-top: 5rem; 
+        padding-bottom: 5rem;
+    }
+    .container { 
+        max-width: 80rem; 
+        margin: 0 auto; 
+        padding: 0 2rem;
+    }
+    .page-header { 
+        margin-bottom: 4rem; 
+        text-align: center;
+    }
+    h1 { 
+        font-size: 2.5rem; 
+        font-weight: bold; 
+        margin-bottom: 1rem; 
+        color: white;
+    }
+    .header-line { 
+        width: 5rem; 
+        height: 3px; 
+        background: linear-gradient(135deg, #1e40af 0%, #0891b2 50%, #d946ef 100%); 
+        margin: 0 auto;
+    }
+
+    /* Category Sections */
+    .category-section { 
+        margin-bottom: 4rem;
+    }
+    .category-title { 
+        font-size: 2rem; 
+        font-weight: bold; 
+        margin: 3rem 0 1.5rem 0;
+        color: #06b6d4;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+    .category-divider { 
+        height: 2px; 
+        background: linear-gradient(90deg, #1e40af, transparent); 
+        margin: 2rem 0;
+    }
+
+    /* Accordion/Expandable Service Cards */
+    .service-card { 
+        background: rgba(30, 41, 59, 0.6); 
+        border: 1px solid rgba(6, 182, 212, 0.2);
+        border-radius: 0.75rem;
+        margin-bottom: 1.5rem;
+        overflow: hidden;
+        transition: all 0.3s ease;
+    }
+    .service-card:hover { 
+        border-color: rgba(6, 182, 212, 0.5);
+        background: rgba(30, 41, 59, 0.8);
+    }
+
+    /* Service Header (Clickable) */
+    .service-header { 
+        padding: 1.5rem;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: all 0.3s ease;
+    }
+    .service-header:hover { 
+        background: rgba(6, 182, 212, 0.1);
+    }
+    .service-header-content { 
+        flex: 1;
+    }
+    .service-title { 
+        font-size: 1.25rem; 
+        font-weight: bold; 
+        color: #22d3ee;
+        margin-bottom: 0.25rem;
+    }
+    .service-brief { 
+        color: #9ca3af; 
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+    .toggle-icon { 
+        font-size: 1.5rem; 
+        color: #06b6d4;
+        transition: transform 0.3s ease;
+        min-width: 30px;
+        text-align: center;
+    }
+    .service-card.active .toggle-icon { 
+        transform: rotate(180deg);
+    }
+
+    /* Expanded Content */
+    .service-content { 
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease;
+    }
+    .service-card.active .service-content { 
+        max-height: 2000px;
+    }
+    .service-details { 
+        padding: 0 1.5rem 1.5rem 1.5rem;
+        border-top: 1px solid rgba(6, 182, 212, 0.2);
+    }
+
+    /* Content Layout */
+    .detail-layout { 
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        margin-top: 1rem;
+    }
+    .detail-text { 
+        color: #d1d5db;
+        line-height: 1.8;
+    }
+    .infographic-space { 
+        background: linear-gradient(135deg, rgba(30, 58, 138, 0.3), rgba(6, 182, 212, 0.1));
+        border: 2px dashed rgba(6, 182, 212, 0.3);
+        border-radius: 0.5rem;
+        padding: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #6b7280;
+        font-size: 0.9rem;
+        text-align: center;
+        min-height: 300px;
+    }
+
+    /* Detail Sections */
+    .detail-section { 
+        margin-bottom: 1.5rem;
+    }
+    .detail-section h4 { 
+        color: #06b6d4; 
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+        margin-top: 1rem;
+        font-size: 1rem;
+    }
+    .detail-section p { 
+        color: #d1d5db;
+        margin-bottom: 0.75rem;
+    }
+    .detail-section ul { 
+        margin-left: 1.5rem;
+        color: #d1d5db;
+    }
+    .detail-section li { 
+        margin-bottom: 0.5rem;
+    }
+    .highlight { 
+        color: #22d3ee;
+        font-weight: 500;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        h1 { font-size: 2rem; }
+        .detail-layout { grid-template-columns: 1fr; }
+        .service-header { flex-direction: column; align-items: flex-start; }
+        .toggle-icon { margin-top: 0.5rem; }
+    }
+
+    .btn-cta { 
+        padding: 12px 24px; 
+        border-radius: 8px; 
+        font-weight: bold; 
+        background: linear-gradient(135deg, #1e40af, #0891b2); 
+        color: white; 
+        text-decoration: none; 
+        display: inline-block;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    .btn-cta:hover { 
+        background: linear-gradient(135deg, #0891b2, #d946ef);
+        transform: translateY(-2px);
+    }
+</style>
+
+<div style="padding-top: 5rem; padding-bottom: 5rem;">
+    <div style="max-width: 80rem; margin: 0 auto; padding: 0 2rem;">
+        {{ .Content }}
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const serviceCards = document.querySelectorAll('.service-card');
+        
+        serviceCards.forEach(card => {
+            const header = card.querySelector('.service-header');
+            
+            if (header) {
+                header.addEventListener('click', () => {
+                    // Close other cards
+                    serviceCards.forEach(otherCard => {
+                        if (otherCard !== card) {
+                            otherCard.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle this card
+                    card.classList.toggle('active');
+                });
+            }
+        });
+    });
+</script>
+{{ end }}
