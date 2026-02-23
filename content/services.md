@@ -1,6 +1,8 @@
 ---
 title: Services
 description: "Comprehensive IT and Cybersecurity services for individuals and businesses"
+show_page_header: true
+draft: false
 ---
 
 ## Our Service Categories
