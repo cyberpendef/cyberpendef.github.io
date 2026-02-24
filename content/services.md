@@ -5,7 +5,7 @@ description: "Comprehensive IT and Cybersecurity services for individuals and bu
 
 <!-- Page Header -->
 <div class="page-header">
-<h1>Our Services</h1>
+<h1 style="text-align: center;">Our Services</h1>
 <div class="header-line"></div>
 <p style="margin-top: 1.5rem; color: #9ca3af; font-size: 1.1rem;">
 Comprehensive IT & Cybersecurity Solutions Powered by AI
