@@ -2,7 +2,7 @@
 
 A modern, fast, and stunning static website for CyberPenDef - Professional IT & Cybersecurity Services.
 
-**Live Site:** https://cyberpendef.github.io
+**Live Updated Site:** https://cyberpendef.github.io
 
 ---
 
