@@ -1,0 +1,22 @@
+<div class="service-card">
+    <div class="service-header">
+        <div class="service-header-content">
+            <div class="service-title">{{ .Get "title" }}</div>
+            <div class="service-brief">{{ .Get "brief" }}</div>
+        </div>
+        <div class="toggle-icon">▼</div>
+    </div>
+    <div class="service-content">
+        <div class="service-details">
+            <div class="detail-layout">
+                <div class="detail-text">
+                    {{ .Inner }}
+                </div>
+                <div class="infographic-space">
+                    📊 {{ .Get "infographic" | default "Infographic Space" }}<br><br>
+                    (Visualization coming soon)
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

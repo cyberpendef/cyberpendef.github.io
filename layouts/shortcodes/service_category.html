@@ -1,0 +1,13 @@
+<div class="category-section">
+    <div class="category-title">
+        <span>{{ .Get "icon" }}</span>
+        <span>{{ .Get "title" }}</span>
+    </div>
+    <div class="category-divider"></div>
+    {{ if .Get "badge" }}
+    <p style="color: #9ca3af; padding: 2rem; background: rgba(6, 182, 212, 0.05); border-radius: 0.5rem; margin-bottom: 2rem;">
+        ✨ {{ .Get "badge" }}
+    </p>
+    {{ end }}
+    {{ .Inner }}
+</div>
