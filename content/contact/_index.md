@@ -1,5 +1,6 @@
 ---
 title: Get In Touch
+<<<<<<< HEAD
 description: "Get in touch with CyberPenDef for your IT and cybersecurity needs"
 type: contact
 layout: contact
@@ -99,3 +100,8 @@ draft: false
 </div>
 </div>
 </div>
+=======
+type: contact
+layout: contact
+---
+>>>>>>> d4dcdff (Restore to the old html based website instead of markdown based website)

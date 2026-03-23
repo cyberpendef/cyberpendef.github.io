@@ -3,10 +3,17 @@ languageCode = "en-us"
 title = "CyberPenDef - IT & Cybersecurity Services"
 theme = "cyberpendef"
 paginate = 10
+<<<<<<< HEAD
 publishDir = "public"
 
 [markup.goldmark.renderer]
 unsafe = true
+=======
+
+[outputs]
+  [[outputs.html]]
+    baseName = "index"
+>>>>>>> d4dcdff (Restore to the old html based website instead of markdown based website)
 
 [params]
 author = "Shaik Hidayatullah"
