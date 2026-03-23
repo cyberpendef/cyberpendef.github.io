@@ -3,6 +3,7 @@ title: "About CyberPenDef"
 description: "Learn about Shaik Hidayatullah and CyberPenDef's mission"
 show_page_header: true
 draft: false
+background_image: "/aboutme1.png"
 ---
 ## About Me
 Hello! I'm **Shaik Hidayatullah**, the founder of **CyberPenDef**. With a passion for cybersecurity and IT infrastructure, I've dedicated my career to helping individuals, freelancers, and small businesses protect their digital assets and optimize their IT operations.

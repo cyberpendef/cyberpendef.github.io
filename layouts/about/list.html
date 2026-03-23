@@ -1,12 +1,18 @@
 {{ define "main" }}
-<div style="max-width: 80rem; margin: 0 auto; padding: 0 2rem;">
-	<div style="margin-bottom: 4rem; text-align: center;">
-		<h1 style="font-size: 3rem; font-weight: bold; margin-bottom: 1rem; color: white;">{{ .Title }}</h1>
-		<div style="width: 5rem; height: 0.25rem; background: linear-gradient(135deg, #1e40af 0%, #0891b2 50%, #d946ef 100%); margin: 0 auto;"></div>
-	</div>
+{{ $css := resources.Get "css/about.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $css.Permalink }}">
+<div class="about-container" style="background-image: url('{{ .Params.background_image }}');">
+  <div class="about-header">
+    <h1 class="about-title">{{ .Title }}</h1>
+    <div class="about-divider"></div>
+  </div>
 
-	<div style="max-width: 56rem; margin: 0 auto; color: #d1d5db; line-height: 1.75;">
-		{{ .Content }}
-	</div>
+  <div class="about-content">
+    {{ .Content }}
+  </div>
+
+  <div class="about-bottom-design">
+    <img src="/actual_about_page2.png" alt="About me 2" />
+  </div>
 </div>
 {{ end }}
