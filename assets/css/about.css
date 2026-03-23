@@ -35,12 +35,40 @@
   padding-bottom: 4rem;
 }
 
-.about-bottom-design {
-  max-width: 80rem;
-  margin: 0 auto;
+.connect-wrapper h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  text-align: center;
 }
 
-.about-bottom-design img {
-  width: 100%;
-  height: auto;
+.connect-wrapper ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem 0;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.connect-wrapper a {
+  background-color: #1e40af;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.connect-wrapper a:hover {
+  background-color: #0891b2;
+}
+
+.connect-wrapper .btn {
+  display: block;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  background: linear-gradient(135deg, #1e40af 0%, #0891b2 50%, #d946ef 100%);
 }
