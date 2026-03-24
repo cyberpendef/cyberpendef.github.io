@@ -1,92 +1,163 @@
 {{ define "main" }}
-{{ $css := resources.Get "css/about.css" | minify | fingerprint }}
-<link rel="stylesheet" href="{{ $css.Permalink }}">
 
-<div class="about-hero">
-    <h1 class="about-title">{{ .Title }}</h1>
-    <div class="about-divider"></div>
-    <p style="color: #94a3b8; font-size: 1.25rem; max-width: 40rem; margin: 0 auto;">{{ .Params.description }}</p>
+<div class="page-hero stagger-in">
+    <div class="hero-badge"><span class="dot" style="background: var(--violet);"></span> Trust &amp; Transparency</div>
+    <h1 class="hero-title">About <span>CyberPenDef</span></h1>
 </div>
 
-<div class="about-section">
-    <div class="about-grid">
-        <div class="about-photo-wrapper">
-            <div class="photo-placeholder">
-                <span style="font-size: 4rem; margin-bottom: 1rem;">👤</span>
-                <p>Shaik Hidayatullah</p>
-                <p style="font-size: 0.875rem; color: #64748b; margin-top: 1rem;">(Upload your photo here)</p>
-                <!-- When you have your photo, replace this div with:
-                <img src="/path/to/your/photo.jpg" alt="Shaik Hidayatullah" class="about-photo">
-                -->
+<!-- INTRO -->
+<div class="stagger-in">
+    <div class="section-header" style="margin-bottom: 20px;">
+        <div class="section-label">
+            <div class="section-icon violet">👤</div>
+            <div>
+                <div class="section-title" style="color: var(--violet);">Personal Introduction</div>
+                <div class="section-subtitle">Hi, I'm Hidayatullah — and I genuinely enjoy solving tech problems.</div>
             </div>
         </div>
-        <div class="about-text">
-            {{ .Content }}
+        <div class="section-line"></div>
+    </div>
+    
+    <div class="grid-2" style="margin-top: 40px;">
+        <div>
+            <div style="background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; aspect-ratio: 4/5; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+                <span style="font-size: 4rem; opacity: 0.2;">👤</span>
+                <span class="label" style="margin-top: 10px;">[ Upload Photo Here ]</span>
+            </div>
+        </div>
+        <div style="font-size: 1.1rem;">
+            <p>I've been the person friends and family call when something goes wrong with their computer since I was a teenager. What started as a natural curiosity for how systems work grew into a professional career in IT and cybersecurity — and eventually into <strong>CyberPenDef</strong>, my own practice for delivering affordable, expert-level digital services to people who deserve better than confusing, overpriced tech support.</p>
+            <p>I hold a <strong>CEH (Certified Ethical Hacker)</strong> certification from EC-Council and bring <strong>3 years of professional IT and cybersecurity experience</strong> alongside <strong>8+ years of hands-on personal computing experience</strong>. I've worked on real-world system administration, participated in cybersecurity labs and Capture the Flag (CTF) challenges, and built automation tools using Python, C, and other programming languages. I stay sharp by continuously learning and practicing in environments that mirror real attacker techniques.</p>
+            <p>I started CyberPenDef because I believe cybersecurity and reliable IT support shouldn't be the exclusive privilege of large enterprises with big budgets. Individuals, freelancers, and small business owners deserve the same protection and quality of service — delivered in plain language, at a fair price, with complete transparency.</p>
         </div>
     </div>
 </div>
 
-<div class="about-section">
-    <h2 class="section-heading">Technical Expertise</h2>
-    <div class="expertise-grid">
-        <div class="expertise-card">
-            <div class="expertise-icon">🔐</div>
-            <h3>Cybersecurity</h3>
-            <ul>
-                <li>CEHv13 Certified Ethical Hacker</li>
-                <li>Security Auditing & VAPT</li>
-                <li>Incident Response & Recovery</li>
-                <li>Custom Security Tools</li>
-            </ul>
+<!-- MY APPROACH -->
+<div style="margin-top: 100px;" class="stagger-in delay-1">
+    <div class="section-header" style="margin-bottom: 20px;">
+        <div class="section-label">
+            <div class="section-icon cyan">🎯</div>
+            <div>
+                <div class="section-title">My Approach</div>
+                <div class="section-subtitle">How I Work With Clients</div>
+            </div>
         </div>
-        <div class="expertise-card">
-            <div class="expertise-icon">💻</div>
-            <h3>IT Infrastructure</h3>
-            <ul>
-                <li>Cloud Migration (AWS/Azure)</li>
-                <li>System Administration</li>
-                <li>Server Hardening</li>
-                <li>Network Architecture</li>
-            </ul>
+        <div class="section-line"></div>
+    </div>
+    
+    <div class="spec-box">
+        <div class="spec-row">
+            <span class="spec-key">Step 1 — Listen First</span>
+            <span class="spec-val">Every engagement starts with a free discovery conversation. I take time to understand your specific situation, goals, and budget before recommending anything.</span>
         </div>
-        <div class="expertise-card">
-            <div class="expertise-icon">⚙️</div>
-            <h3>Automation</h3>
-            <ul>
-                <li>AI-Powered Workflows</li>
-                <li>Python & Bash Scripting</li>
-                <li>Custom DevSecOps Tools</li>
-                <li>Process Optimization</li>
-            </ul>
+        <div class="spec-row">
+            <span class="spec-key">Step 2 — Clear Proposal</span>
+            <span class="spec-val">You receive a plain-language proposal with a fixed price and defined scope. No hidden fees, no scope creep surprises.</span>
+        </div>
+        <div class="spec-row">
+            <span class="spec-key">Step 3 — AI-Assisted</span>
+            <span class="spec-val">I use the latest AI tools to accelerate diagnostics, report generation, and routine tasks — so you get faster results without cutting corners on quality.</span>
+        </div>
+        <div class="spec-row">
+            <span class="spec-key">Step 4 — Transparency</span>
+            <span class="spec-val">At project completion you receive a detailed, jargon-free report of exactly what was done, what was found, and what you should do next.</span>
+        </div>
+        <div class="spec-row">
+            <span class="spec-key">Step 5 — Continued Support</span>
+            <span class="spec-val">I'm reachable after delivery for follow-up questions. For ongoing clients, I offer maintenance subscriptions that keep your systems healthy month after month.</span>
         </div>
     </div>
 </div>
 
-<div class="about-section">
-    <div class="connect-section">
-        <h2 style="font-size: 2rem; margin-bottom: 1rem;">Let's Connect</h2>
-        <p style="color: #94a3b8;">Ready to discuss your next project or security needs?</p>
-        <div class="connect-grid">
-            <a href="mailto:{{ .Site.Params.email }}" class="connect-link">
-                <span class="icon">📧</span>
-                <span>Email</span>
-            </a>
-            <a href="tel:{{ .Site.Params.phone }}" class="connect-link">
-                <span class="icon">📱</span>
-                <span>Phone</span>
-            </a>
-            <a href="{{ .Site.Params.linkedin }}" target="_blank" class="connect-link">
-                <span class="icon">🔗</span>
-                <span>LinkedIn</span>
-            </a>
-            <a href="{{ .Site.Params.fiverr }}" target="_blank" class="connect-link">
-                <span class="icon">💼</span>
-                <span>Fiverr</span>
-            </a>
+<!-- CREDENTIALS -->
+<div style="margin-top: 100px;" class="stagger-in delay-2">
+    <div class="section-header" style="margin-bottom: 20px;">
+        <div class="section-label">
+            <div class="section-icon" style="background: rgba(255,184,0,0.1); border-color: rgba(255,184,0,0.3); color: var(--amber);">🎖️</div>
+            <div>
+                <div class="section-title" style="color: var(--amber);">Credentials</div>
+                <div class="section-subtitle">Certifications &amp; Technical Background</div>
+            </div>
         </div>
-        <div style="margin-top: 3rem;">
-            <a href="/contact/" class="btn-cyber">Get In Touch Now</a>
+        <div class="section-line"></div>
+    </div>
+    
+    <div class="spec-box">
+        <div class="spec-row">
+            <span class="spec-key" style="color: var(--amber);">Certification</span>
+            <span class="spec-val"><strong>CEH — Certified Ethical Hacker</strong> · EC-Council<br><span style="font-size: 0.9rem; color: var(--muted);">One of the world's most recognized cybersecurity certifications, validating knowledge of ethical hacking methodologies, penetration testing, and network security.</span></span>
+        </div>
+        <div class="spec-row">
+            <span class="spec-key" style="color: var(--amber);">Experience</span>
+            <span class="spec-val"><strong>3 Years</strong> professional IT &amp; cybersecurity practice · <strong>8+ Years</strong> personal computing, troubleshooting &amp; systems experience.</span>
+        </div>
+        <div class="spec-row">
+            <span class="spec-key" style="color: var(--amber);">Cybersecurity Skills</span>
+            <span class="spec-val">Ethical hacking, penetration testing concepts, vulnerability assessment, network security, incident response, security auditing, OSINT, CTF challenges.</span>
+        </div>
+        <div class="spec-row">
+            <span class="spec-key" style="color: var(--amber);">IT Skills</span>
+            <span class="spec-val">Remote system administration, cloud platforms (AWS, DigitalOcean), Linux &amp; Windows server management, network configuration, backup &amp; DR planning.</span>
+        </div>
+        <div class="spec-row">
+            <span class="spec-key" style="color: var(--amber);">Development</span>
+            <span class="spec-val">Python, C, C++, C#, Java — scripting, automation, and custom security tool development.</span>
+        </div>
+        <div class="spec-row">
+            <span class="spec-key" style="color: var(--amber);">AI &amp; Tooling</span>
+            <span class="spec-val">AI-augmented workflows for diagnostics, reporting, automation scripting, and service delivery acceleration.</span>
         </div>
     </div>
 </div>
+
+<!-- VALUES -->
+<div style="margin-top: 100px;" class="stagger-in delay-3">
+    <div class="section-header" style="margin-bottom: 20px;">
+        <div class="section-label">
+            <div class="section-icon green">🌱</div>
+            <div>
+                <div class="section-title" style="color: var(--green);">Brand Values</div>
+                <div class="section-subtitle">What CyberPenDef Stands For</div>
+            </div>
+        </div>
+        <div class="section-line"></div>
+    </div>
+
+    <div class="value-grid">
+        <div class="value-card">
+            <div class="v-icon">⚡</div>
+            <div class="v-title">Speed Without Compromise</div>
+            <div class="v-desc">AI tools accelerate every stage of delivery — from diagnosis to reporting — so clients get results faster, without sacrificing depth or accuracy.</div>
+        </div>
+        <div class="value-card">
+            <div class="v-icon">💸</div>
+            <div class="v-title">Accessible Pricing</div>
+            <div class="v-desc">Professional cybersecurity and IT services shouldn't be out of reach for individuals and small businesses. Fair, transparent pricing is a core commitment.</div>
+        </div>
+        <div class="value-card">
+            <div class="v-icon">🔏</div>
+            <div class="v-title">Your Data, Your Privacy</div>
+            <div class="v-desc">Client data is handled with strict confidentiality. It is never shared with third parties, never retained beyond the engagement, and always treated with the utmost respect.</div>
+        </div>
+        <div class="value-card">
+            <div class="v-icon">📊</div>
+            <div class="v-title">Radical Transparency</div>
+            <div class="v-desc">No black boxes. Every project concludes with a clear, written report — what was done, what was discovered, and exactly what steps to take next.</div>
+        </div>
+    </div>
+</div>
+
+<!-- ABOUT CTA -->
+<div class="cta-strip stagger-in delay-4">
+    <p style="font-size: 1.25rem; font-weight: 700; color: var(--white); margin-bottom: 24px; max-width: 800px; margin-left: auto; margin-right: auto;">
+        "If you're looking for a cybersecurity and IT professional who communicates clearly, delivers honestly, and genuinely cares about your outcome — I'd love to work with you."
+    </p>
+    <div class="cta-buttons">
+        <a href="/services/" class="btn btn-primary">View My Services</a>
+        <a href="/contact/" class="btn btn-outline">Get In Touch</a>
+        <a href="{{ .Site.Params.linkedin }}" target="_blank" class="btn btn-outline">Connect on LinkedIn</a>
+    </div>
+</div>
+
 {{ end }}

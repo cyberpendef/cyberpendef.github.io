@@ -1,0 +1,845 @@
+{{ define "main" }}
+
+<!-- SERVICES HERO (From Content Guide) -->
+<div class="page-hero stagger-in">
+    <div class="hero-badge"><span class="dot"></span> CEH Certified · AI-Augmented Services</div>
+    <h1 class="hero-title">Our <span>Services</span></h1>
+    <p class="lead">
+        Services That Protect, Support, and Scale Your Digital World. Whether you need a quick device checkup, an ongoing cybersecurity subscription, or a full business IT infrastructure built from scratch — you'll find a service here that fits.
+    </p>
+    <p style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--cyan); letter-spacing: 0.05em; text-transform: uppercase;">
+        Click any service card to expand it and read a full description
+    </p>
+</div>
+
+<!-- PRICING MODEL NOTE (From Content Guide) -->
+<div class="callout amber stagger-in delay-1" style="max-width: 900px;">
+    <span class="callout-icon">💡</span>
+    <div>
+        <h4 style="margin-bottom: 8px; font-size: 1.1rem; color: var(--amber);">How Pricing Works at CyberPenDef</h4>
+        <p class="callout-text">All services are offered at a <strong>fixed price per project</strong> — agreed upfront before any work begins. There are no hidden hourly charges. For ongoing services, the recurring fee is fixed and remains predictable.</p>
+    </div>
+</div>
+<div class="callout green stagger-in delay-2" style="max-width: 900px; margin-bottom: 80px;">
+    <span class="callout-icon">🎁</span>
+    <p class="callout-text"><strong>Special Offer for New Clients:</strong> I am currently accepting my first 5 to 7 clients and am offering a <strong>free initial consultation</strong> — no commitment required. Contact me to discuss your needs.</p>
+</div>
+
+<!-- ════════════════════════════════════════════
+     SECTION 1 — END USER SERVICES
+═══════════════════════════════════════════════ -->
+
+<div class="section-header stagger-in">
+    <div class="section-label">
+        <div class="section-icon blue">🖥️</div>
+        <div>
+            <div class="section-title">For Individuals &amp; Freelancers — IT Services</div>
+            <div class="section-subtitle">Personal &amp; Individual Technology Support</div>
+        </div>
+    </div>
+    <div class="section-line"></div>
+</div>
+
+<div class="services-grid stagger-in delay-1">
+
+    <!-- CARD 1 -->
+    <div class="card" onclick="toggle(this)">
+        <div class="card-header">
+            <div class="card-icon-box" style="border-color: var(--cyan); color: var(--cyan);">🛠️</div>
+            <div class="card-header-text">
+                <div class="card-tag">IT Support · End Users</div>
+                <h3 class="card-title">Remote Help Desk &amp; Troubleshooting</h3>
+                <p class="card-summary">On-demand remote technical support to resolve software errors, system slowdowns, and everyday tech headaches — fast.</p>
+            </div>
+            <div class="card-chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></div>
+        </div>
+        <div class="card-body"><div class="card-body-inner"><div class="card-content">
+            <div class="content-block">
+                <div class="block-label">What We Deliver</div>
+                <p class="block-text">You don't need to be tech-savvy to get help. Via a secure remote session, we connect to your device and fix the issue while you watch. Our AI-assisted diagnostics cut resolution times dramatically.</p>
+                <ul class="feature-list">
+                    <li>Remote desktop sessions (Windows, macOS, Linux)</li>
+                    <li>Software installation, configuration, and updates</li>
+                    <li>Email account setup (Gmail, Outlook, custom domains)</li>
+                    <li>Performance tuning — slow computer fixes</li>
+                    <li>Data recovery and file system repairs</li>
+                </ul>
+            </div>
+            <div class="content-block">
+                <div class="infographic-placeholder">
+                    <div class="ph-icon">📐</div>
+                    <div class="ph-text">Infographic space reserved<br/>Remote session flow diagram</div>
+                </div>
+                <div class="tag-row">
+                    <span class="tag cyan">Windows</span>
+                    <span class="tag cyan">macOS</span>
+                    <span class="tag cyan">Linux</span>
+                    <span class="tag green">Remote Access</span>
+                </div>
+            </div>
+        </div></div></div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="card" onclick="toggle(this)">
+        <div class="card-header">
+            <div class="card-icon-box" style="border-color: var(--cyan); color: var(--cyan);">💼</div>
+            <div class="card-header-text">
+                <div class="card-tag">IT Support · Freelancers</div>
+                <h3 class="card-title">Tech Support for Non-Technical Freelancers</h3>
+                <p class="card-summary">Dedicated IT backbone for freelancers who need their tools to just work — no tech degree required.</p>
+            </div>
+            <div class="card-chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></div>
+        </div>
+        <div class="card-body"><div class="card-body-inner"><div class="card-content">
+            <div class="content-block">
+                <div class="block-label">Who This Is For</div>
+                <p class="block-text">If you're a professional whose business runs on a laptop, we keep your tech stack healthy so you never lose a client deadline to a tech failure. From setting up workflow apps to securing client data, we've got the backend covered.</p>
+                <ul class="feature-list">
+                    <li>Freelance tool stack setup (Notion, Trello, Slack, Zoom)</li>
+                    <li>Cloud storage organization (Google Drive, OneDrive)</li>
+                    <li>Automated file backup and version control</li>
+                    <li>Professional email setup with custom domain</li>
+                    <li>Monthly system health checks via subscription</li>
+                </ul>
+            </div>
+            <div class="content-block">
+                <div class="infographic-placeholder">
+                    <div class="ph-icon">📐</div>
+                    <div class="ph-text">Infographic space reserved<br/>Freelancer tool-stack overview</div>
+                </div>
+                <div class="tag-row">
+                    <span class="tag cyan">Workflow Automation</span>
+                    <span class="tag green">Cloud Tools</span>
+                    <span class="tag amber">Monthly Plans</span>
+                </div>
+            </div>
+        </div></div></div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="card" onclick="toggle(this)">
+        <div class="card-header">
+            <div class="card-icon-box" style="border-color: var(--amber); color: var(--amber);">👨‍👩‍👧</div>
+            <div class="card-header-text">
+                <div class="card-tag">IT Support · Families</div>
+                <h3 class="card-title">Parental Control Solutions</h3>
+                <p class="card-summary">Setup, configuration, and monitoring of parental control software for children's devices — keeping kids safe online.</p>
+            </div>
+            <div class="card-chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></div>
+        </div>
+        <div class="card-body"><div class="card-body-inner"><div class="card-content">
+            <div class="content-block">
+                <div class="block-label">What We Deliver</div>
+                <p class="block-text">The internet is essential — but not all of it is appropriate for children. We remotely install and configure industry-leading parental control solutions across smartphones, tablets, and PCs. We set boundaries that make sense for your family.</p>
+                <ul class="feature-list">
+                    <li>Age-appropriate content filtering on all devices</li>
+                    <li>Screen time scheduling and daily usage limits</li>
+                    <li>App and game approval workflows</li>
+                    <li>Safe search enforcement on major browsers</li>
+                    <li>Social media monitoring alerts</li>
+                </ul>
+            </div>
+            <div class="content-block">
+                <div class="infographic-placeholder">
+                    <div class="ph-icon">📐</div>
+                    <div class="ph-text">Infographic space reserved<br/>Parental control coverage map</div>
+                </div>
+                <div class="tag-row">
+                    <span class="tag amber">Child Safety</span>
+                    <span class="tag cyan">Multi-Device</span>
+                    <span class="tag green">Remote Setup</span>
+                </div>
+            </div>
+        </div></div></div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="card" onclick="toggle(this)">
+        <div class="card-header">
+            <div class="card-icon-box" style="border-color: var(--cyan); color: var(--cyan);">🖧</div>
+            <div class="card-header-text">
+                <div class="card-tag">IT Support · Solo Entrepreneurs</div>
+                <h3 class="card-title">Server Setup &amp; Web App Deployment</h3>
+                <p class="card-summary">End-to-end server installation, configuration, and ongoing maintenance for solo entrepreneurs launching their first web application.</p>
+            </div>
+            <div class="card-chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></div>
+        </div>
+        <div class="card-body"><div class="card-body-inner"><div class="card-content">
+            <div class="content-block">
+                <div class="block-label">What We Deliver</div>
+                <p class="block-text">Launching your web app shouldn't require a DevOps team. We select the right cloud provider, provision the server, configure your environment, deploy your application, and set up automated maintenance routines.</p>
+                <ul class="feature-list">
+                    <li>Cloud provider selection (AWS, DigitalOcean, Linode)</li>
+                    <li>Linux server provisioning and hardening</li>
+                    <li>Web server configuration (Nginx / Apache)</li>
+                    <li>SSL certificate setup and auto-renewal</li>
+                    <li>Server monitoring, alerting, and log management</li>
+                </ul>
+            </div>
+            <div class="content-block">
+                <div class="infographic-placeholder">
+                    <div class="ph-icon">📐</div>
+                    <div class="ph-text">Infographic space reserved<br/>Server deployment workflow</div>
+                </div>
+                <div class="tag-row">
+                    <span class="tag cyan">Linux</span>
+                    <span class="tag cyan">Cloud</span>
+                    <span class="tag green">Nginx</span>
+                    <span class="tag amber">DevOps</span>
+                </div>
+            </div>
+        </div></div></div>
+    </div>
+
+</div>
+
+<!-- ── Cybersecurity — End Users ── -->
+<div class="section-header stagger-in">
+    <div class="section-label">
+        <div class="section-icon green">🔒</div>
+        <div>
+            <div class="section-title">For Individuals &amp; Freelancers — Cybersecurity</div>
+            <div class="section-subtitle">Personal Digital Security &amp; Privacy</div>
+        </div>
+    </div>
+    <div class="section-line"></div>
+</div>
+
+<div class="services-grid stagger-in delay-1">
+
+    <!-- CARD 5 -->
+    <div class="card" onclick="toggle(this)">
+        <div class="card-header">
+            <div class="card-icon-box" style="border-color: var(--green); color: var(--green);">🩺</div>
+            <div class="card-header-text">
+                <div class="card-tag">Cybersecurity · Individuals</div>
+                <h3 class="card-title">Personal Device Security Health Checkup</h3>
+                <p class="card-summary">A comprehensive security audit of your personal devices to identify vulnerabilities, malware, and misconfigurations.</p>
+            </div>
+            <div class="card-chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></div>
+        </div>
+        <div class="card-body"><div class="card-body-inner"><div class="card-content">
+            <div class="content-block">
+                <div class="block-label">What We Deliver</div>
+                <p class="block-text">Our AI-augmented diagnostic scan identifies security gaps, checks for known malware, reviews your privacy settings, and delivers a plain-English report with a prioritized action plan.</p>
+                <ul class="feature-list">
+                    <li>Malware, spyware, and adware scan across all devices</li>
+                    <li>Browser security review (extensions, saved passwords)</li>
+                    <li>Home Wi-Fi network vulnerability assessment</li>
+                    <li>Privacy settings audit (camera, mic, location permissions)</li>
+                    <li>Dark web check — has your email been leaked?</li>
+                </ul>
+            </div>
+            <div class="content-block">
+                <div class="infographic-placeholder">
+                    <div class="ph-icon">📐</div>
+                    <div class="ph-text">Infographic space reserved<br/>Security health score dashboard</div>
+                </div>
+                <div class="tag-row">
+                    <span class="tag green">Device Audit</span>
+                    <span class="tag green">Dark Web Check</span>
+                    <span class="tag cyan">AI-Powered Scan</span>
+                </div>
+            </div>
+        </div></div></div>
+    </div>
+
+    <!-- CARD 6 -->
+    <div class="card" onclick="toggle(this)">
+        <div class="card-header">
+            <div class="card-icon-box" style="border-color: var(--green); color: var(--green);">🔐</div>
+            <div class="card-header-text">
+                <div class="card-tag">Cybersecurity · Individuals</div>
+                <h3 class="card-title">Device &amp; Network Security Setup</h3>
+                <p class="card-summary">One-time secure configuration of your home network and devices — followed by monthly monitoring and threat alerts.</p>
+            </div>
+            <div class="card-chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></div>
+        </div>
+        <div class="card-body"><div class="card-body-inner"><div class="card-content">
+            <div class="content-block">
+                <div class="block-label">Setup + Ongoing Protection</div>
+                <p class="block-text">Security isn't a one-time fix — it's a continuous practice. We begin with a thorough setup of your digital security layer, then provide ongoing monitoring so you're alerted the moment something looks suspicious.</p>
+                <ul class="feature-list">
+                    <li>Secure Wi-Fi configuration (WPA3, guest network isolation)</li>
+                    <li>Antivirus / EDR software installation and tuning</li>
+                    <li>VPN setup and configuration for safe browsing</li>
+                    <li>DNS-level ad and tracker blocking (Pi-hole / NextDNS)</li>
+                    <li>Monthly security check-ins via remote session</li>
+                </ul>
+            </div>
+            <div class="content-block">
+                <div class="infographic-placeholder">
+                    <div class="ph-icon">📐</div>
+                    <div class="ph-text">Infographic space reserved<br/>Home network security layers</div>
+                </div>
+                <div class="tag-row">
+                    <span class="tag green">VPN</span>
+                    <span class="tag green">Antivirus</span>
+                    <span class="tag cyan">Monitoring</span>
+                </div>
+            </div>
+        </div></div></div>
+    </div>
+
+    <!-- CARD 7 -->
+    <div class="card" onclick="toggle(this)">
+        <div class="card-header">
+            <div class="card-icon-box" style="border-color: var(--amber); color: var(--amber);">🚨</div>
+            <div class="card-header-text">
+                <div class="card-tag">Cybersecurity · Support</div>
+                <h3 class="card-title">Cyber Fraud &amp; Crime Support</h3>
+                <p class="card-summary">Guiding victims of online fraud, identity theft, or account compromise through recovery steps.</p>
+            </div>
+            <div class="card-chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></div>
+        </div>
+        <div class="card-body"><div class="card-body-inner"><div class="card-content">
+            <div class="content-block">
+                <div class="block-label">Emergency &amp; Recovery Support</div>
+                <p class="block-text">Falling victim to a cyber scam is disorienting. We walk you through every recovery step, secure your accounts against further damage, and help you file reports with the appropriate authorities. No jargon, no judgment.</p>
+                <ul class="feature-list">
+                    <li>Immediate account compromise assessment and lockdown</li>
+                    <li>Password reset and MFA (multi-factor auth) setup</li>
+                    <li>Identity theft reporting guidance (CERT, cybercrime portals)</li>
+                    <li>Social engineering attack identification and education</li>
+                    <li>Post-incident hardening to prevent recurrence</li>
+                </ul>
+            </div>
+            <div class="content-block">
+                <div class="infographic-placeholder">
+                    <div class="ph-icon">📐</div>
+                    <div class="ph-text">Infographic space reserved<br/>Cyber fraud recovery timeline</div>
+                </div>
+                <div class="tag-row">
+                    <span class="tag amber">Incident Response</span>
+                    <span class="tag green">Account Recovery</span>
+                    <span class="tag cyan">Identity Theft</span>
+                </div>
+            </div>
+        </div></div></div>
+    </div>
+
+    <!-- CARD 8 -->
+    <div class="card" onclick="toggle(this)">
+        <div class="card-header">
+            <div class="card-icon-box" style="border-color: var(--green); color: var(--green);">🎓</div>
+            <div class="card-header-text">
+                <div class="card-tag">Cybersecurity · Awareness</div>
+                <h3 class="card-title">Cybersecurity Awareness Training</h3>
+                <p class="card-summary">Practical, jargon-free training that teaches individuals how to recognize threats and build secure habits.</p>
+            </div>
+            <div class="card-chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></div>
+        </div>
+        <div class="card-body"><div class="card-body-inner"><div class="card-content">
+            <div class="content-block">
+                <div class="block-label">Training Modules</div>
+                <p class="block-text">Most cyberattacks succeed because of human error. Our awareness training is designed for non-technical users, covering the threats you're most likely to actually encounter.</p>
+                <ul class="feature-list">
+                    <li>Phishing and smishing recognition (email, SMS, WhatsApp)</li>
+                    <li>Safe password creation and management</li>
+                    <li>Social media privacy and oversharing risks</li>
+                    <li>Safe online shopping and banking practices</li>
+                    <li>Public Wi-Fi risks and how to mitigate them</li>
+                </ul>
+            </div>
+            <div class="content-block">
+                <div class="infographic-placeholder">
+                    <div class="ph-icon">📐</div>
+                    <div class="ph-text">Infographic space reserved<br/>Training module breakdown</div>
+                </div>
+                <div class="tag-row">
+                    <span class="tag green">Live Sessions</span>
+                    <span class="tag cyan">1-on-1</span>
+                    <span class="tag amber">Certificate</span>
+                </div>
+            </div>
+        </div></div></div>
+    </div>
+
+    <!-- CARD 9 -->
+    <div class="card" onclick="toggle(this)">
+        <div class="card-header">
+            <div class="card-icon-box" style="border-color: var(--cyan); color: var(--cyan);">📋</div>
+            <div class="card-header-text">
+                <div class="card-tag">Cybersecurity · Freelancers</div>
+                <h3 class="card-title">Personal Information Security Compliance Audit</h3>
+                <p class="card-summary">A tailored security and data-handling audit for freelancers who manage sensitive client data.</p>
+            </div>
+            <div class="card-chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></div>
+        </div>
+        <div class="card-body"><div class="card-body-inner"><div class="card-content">
+            <div class="content-block">
+                <div class="block-label">What We Deliver</div>
+                <p class="block-text">If you handle client records, your data practices matter. We audit your current practices, identify risks, and provide a compliance-ready checklist you can share with clients to build trust.</p>
+                <ul class="feature-list">
+                    <li>Data inventory — what client data do you hold and where?</li>
+                    <li>Secure data storage and transfer assessment</li>
+                    <li>GDPR / data protection basics for freelancers</li>
+                    <li>Secure file sharing and deletion practices</li>
+                    <li>Written audit report with compliance checklist</li>
+                </ul>
+            </div>
+            <div class="content-block">
+                <div class="infographic-placeholder">
+                    <div class="ph-icon">📐</div>
+                    <div class="ph-text">Infographic space reserved<br/>Data lifecycle audit map</div>
+                </div>
+                <div class="tag-row">
+                    <span class="tag cyan">GDPR Basics</span>
+                    <span class="tag green">Data Audit</span>
+                    <span class="tag amber">Compliance Report</span>
+                </div>
+            </div>
+        </div></div></div>
+    </div>
+
+</div>
+
+<!-- ════════════════════════════════════════════
+     SECTION 2 — SMALL BUSINESS SERVICES
+═══════════════════════════════════════════════ -->
+
+<div class="section-header stagger-in">
+    <div class="section-label">
+        <div class="section-icon blue">🏢</div>
+        <div>
+            <div class="section-title">For Small Businesses &amp; Startups — IT Services</div>
+            <div class="section-subtitle">Infrastructure, Migration &amp; Administration</div>
+        </div>
+    </div>
+    <div class="section-line"></div>
+</div>
+
+<div class="services-grid stagger-in delay-1">
+
+    <!-- CARD 10 -->
+    <div class="card" onclick="toggle(this)">
+        <div class="card-header">
+            <div class="card-icon-box" style="border-color: var(--cyan); color: var(--cyan);">☁️</div>
+            <div class="card-header-text">
+                <div class="card-tag">IT Services · Cloud Migration</div>
+                <h3 class="card-title">On-Premise to Cloud Migration</h3>
+                <p class="card-summary">Seamlessly transition your business from aging on-premise infrastructure to scalable cloud solutions.</p>
+            </div>
+            <div class="card-chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></div>
+        </div>
+        <div class="card-body"><div class="card-body-inner"><div class="card-content">
+            <div class="content-block">
+                <div class="block-label">Migration Strategy</div>
+                <p class="block-text">Moving to the cloud doesn't have to be risky. We assess your current infrastructure, design a phased migration plan, and execute the transition while keeping your team operational.</p>
+                <ul class="feature-list">
+                    <li>Current infrastructure audit and readiness assessment</li>
+                    <li>Cloud platform selection (AWS, GCP, Azure)</li>
+                    <li>Data migration with integrity verification</li>
+                    <li>Email migration (to Microsoft 365 or Google Workspace)</li>
+                    <li>Staff onboarding and post-migration optimization</li>
+                </ul>
+            </div>
+            <div class="content-block">
+                <div class="infographic-placeholder">
+                    <div class="ph-icon">📐</div>
+                    <div class="ph-text">Infographic space reserved<br/>Cloud migration phases diagram</div>
+                </div>
+                <div class="tag-row">
+                    <span class="tag cyan">AWS / GCP</span>
+                    <span class="tag green">Zero Downtime</span>
+                    <span class="tag amber">Cost Optimized</span>
+                </div>
+            </div>
+        </div></div></div>
+    </div>
+
+    <!-- CARD 11 -->
+    <div class="card" onclick="toggle(this)">
+        <div class="card-header">
+            <div class="card-icon-box" style="border-color: var(--amber); color: var(--amber);">💾</div>
+            <div class="card-header-text">
+                <div class="card-tag">IT Services · Business Continuity</div>
+                <h3 class="card-title">Backup, Disaster Recovery &amp; Continuity</h3>
+                <p class="card-summary">Automated backup systems and disaster recovery planning designed to protect your business data and minimize downtime.</p>
+            </div>
+            <div class="card-chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></div>
+        </div>
+        <div class="card-body"><div class="card-body-inner"><div class="card-content">
+            <div class="content-block">
+                <div class="block-label">What We Build For You</div>
+                <p class="block-text">Data loss can shut a small business down. We design a layered backup strategy — cloud and local — that runs automatically. Quarterly restore drills verify your backups actually work.</p>
+                <ul class="feature-list">
+                    <li>Automated cloud backup configuration (3-2-1 rule)</li>
+                    <li>Quarterly restore testing and verification reports</li>
+                    <li>Ransomware-resilient backup architecture</li>
+                    <li>Recovery Time Objective (RTO) planning</li>
+                    <li>Business continuity runbook documentation</li>
+                </ul>
+            </div>
+            <div class="content-block">
+                <div class="infographic-placeholder">
+                    <div class="ph-icon">📐</div>
+                    <div class="ph-text">Infographic space reserved<br/>3-2-1 backup strategy visual</div>
+                </div>
+                <div class="tag-row">
+                    <span class="tag amber">Disaster Recovery</span>
+                    <span class="tag green">Ransomware-Proof</span>
+                </div>
+            </div>
+        </div></div></div>
+    </div>
+
+    <!-- CARD 12 -->
+    <div class="card" onclick="toggle(this)">
+        <div class="card-header">
+            <div class="card-icon-box" style="border-color: var(--cyan); color: var(--cyan);">⚙️</div>
+            <div class="card-header-text">
+                <div class="card-tag">IT Services · Process Automation</div>
+                <h3 class="card-title">Business Process Automation (No-Code)</h3>
+                <p class="card-summary">Eliminate repetitive manual tasks by automating your business workflows using AI and no-code tools.</p>
+            </div>
+            <div class="card-chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></div>
+        </div>
+        <div class="card-body"><div class="card-body-inner"><div class="card-content">
+            <div class="content-block">
+                <div class="block-label">What We Automate</div>
+                <p class="block-text">We identify your highest-impact automation opportunities and build them using proven no-code platforms — so the solution is maintainable without a developer on call.</p>
+                <ul class="feature-list">
+                    <li>Workflow automation (Zapier, Make / Integromat, n8n)</li>
+                    <li>Automated reporting and scheduled data exports</li>
+                    <li>Customer onboarding and notification sequences</li>
+                    <li>Invoice generation and payment reminder automation</li>
+                    <li>AI-powered document processing and extraction</li>
+                </ul>
+            </div>
+            <div class="content-block">
+                <div class="infographic-placeholder">
+                    <div class="ph-icon">📐</div>
+                    <div class="ph-text">Infographic space reserved<br/>Automation ROI comparison</div>
+                </div>
+                <div class="tag-row">
+                    <span class="tag cyan">Zapier / n8n</span>
+                    <span class="tag green">No-Code</span>
+                    <span class="tag amber">AI-Powered</span>
+                </div>
+            </div>
+        </div></div></div>
+    </div>
+
+    <!-- CARD 13 -->
+    <div class="card" onclick="toggle(this)">
+        <div class="card-header">
+            <div class="card-icon-box" style="border-color: var(--cyan); color: var(--cyan);">🔄</div>
+            <div class="card-header-text">
+                <div class="card-tag">IT Services · System Upgrades</div>
+                <h3 class="card-title">Legacy Software &amp; Hardware Modernization</h3>
+                <p class="card-summary">Safely migrate your business from outdated systems to modern alternatives without losing data or operational continuity.</p>
+            </div>
+            <div class="card-chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></div>
+        </div>
+        <div class="card-body"><div class="card-body-inner"><div class="card-content">
+            <div class="content-block">
+                <div class="block-label">Modernization Roadmap</div>
+                <p class="block-text">Running end-of-life software? We plan and execute a safe, staged upgrade path that keeps your business running during the transition, advising on the lowest-cost infrastructure.</p>
+                <ul class="feature-list">
+                    <li>Current system inventory and end-of-life risk assessment</li>
+                    <li>Phased upgrade planning with minimal disruption</li>
+                    <li>OS migration (Windows 10/11, Linux alternatives)</li>
+                    <li>Application compatibility bridging during transition</li>
+                    <li>Data migration with full integrity verification</li>
+                </ul>
+            </div>
+            <div class="content-block">
+                <div class="infographic-placeholder">
+                    <div class="ph-icon">📐</div>
+                    <div class="ph-text">Infographic space reserved<br/>Legacy to modern migration</div>
+                </div>
+                <div class="tag-row">
+                    <span class="tag cyan">OS Migration</span>
+                    <span class="tag green">Zero Data Loss</span>
+                </div>
+            </div>
+        </div></div></div>
+    </div>
+
+</div>
+
+<!-- ── Cybersecurity for Businesses ── -->
+<div class="section-header stagger-in">
+    <div class="section-label">
+        <div class="section-icon green">🛡️</div>
+        <div>
+            <div class="section-title">For Small Businesses &amp; Startups — Cybersecurity</div>
+            <div class="section-subtitle">Business Security, Compliance &amp; Threat Management</div>
+        </div>
+    </div>
+    <div class="section-line"></div>
+</div>
+
+<div class="services-grid stagger-in delay-1">
+
+    <!-- CARD 14 -->
+    <div class="card" onclick="toggle(this)">
+        <div class="card-header">
+            <div class="card-icon-box" style="border-color: var(--green); color: var(--green);">🌐</div>
+            <div class="card-header-text">
+                <div class="card-tag">Cybersecurity · Web</div>
+                <h3 class="card-title">Website Security Auditing</h3>
+                <p class="card-summary">Comprehensive security assessment of your business website to uncover vulnerabilities before attackers exploit them.</p>
+            </div>
+            <div class="card-chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></div>
+        </div>
+        <div class="card-body"><div class="card-body-inner"><div class="card-content">
+            <div class="content-block">
+                <div class="block-label">What We Test</div>
+                <p class="block-text">Your website is often the most exposed surface. We conduct a structured security audit covering OWASP Top 10 vulnerabilities, server configuration, and third-party dependency risks.</p>
+                <ul class="feature-list">
+                    <li>OWASP Top 10 vulnerability scanning (SQLi, XSS)</li>
+                    <li>SSL/TLS certificate and configuration audit</li>
+                    <li>CMS security review (WordPress, Shopify, custom)</li>
+                    <li>Third-party plugin and dependency risk assessment</li>
+                    <li>Full written report with CVSS severity ratings</li>
+                </ul>
+            </div>
+            <div class="content-block">
+                <div class="infographic-placeholder">
+                    <div class="ph-icon">📐</div>
+                    <div class="ph-text">Infographic space reserved<br/>OWASP Top 10 vulnerability map</div>
+                </div>
+                <div class="tag-row">
+                    <span class="tag green">OWASP</span>
+                    <span class="tag cyan">Audit Report</span>
+                </div>
+            </div>
+        </div></div></div>
+    </div>
+
+    <!-- CARD 15 -->
+    <div class="card" onclick="toggle(this)">
+        <div class="card-header">
+            <div class="card-icon-box" style="border-color: var(--green); color: var(--green);">🛡️</div>
+            <div class="card-header-text">
+                <div class="card-tag">Cybersecurity · Managed Services</div>
+                <h3 class="card-title">Security-as-a-Service (SECaaS)</h3>
+                <p class="card-summary">Ongoing threat detection, incident response, and security awareness — your outsourced security team.</p>
+            </div>
+            <div class="card-chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></div>
+        </div>
+        <div class="card-body"><div class="card-body-inner"><div class="card-content">
+            <div class="content-block">
+                <div class="block-label">What's Included</div>
+                <p class="block-text">Our SECaaS subscription gives you professional-grade protection: continuous monitoring, fast incident response, and regular employee training, all managed remotely.</p>
+                <ul class="feature-list">
+                    <li>Continuous network and endpoint threat monitoring</li>
+                    <li>SIEM alert triage and incident classification</li>
+                    <li>Quarterly employee security awareness training</li>
+                    <li>Incident response retainer (guaranteed response time)</li>
+                    <li>Monthly security posture report with KPIs</li>
+                </ul>
+            </div>
+            <div class="content-block">
+                <div class="infographic-placeholder">
+                    <div class="ph-icon">📐</div>
+                    <div class="ph-text">Infographic space reserved<br/>SECaaS coverage overview</div>
+                </div>
+                <div class="tag-row">
+                    <span class="tag green">24/7 Monitoring</span>
+                    <span class="tag amber">Monthly Retainer</span>
+                </div>
+            </div>
+        </div></div></div>
+    </div>
+
+    <!-- CARD 16 -->
+    <div class="card" onclick="toggle(this)">
+        <div class="card-header">
+            <div class="card-icon-box" style="border-color: var(--amber); color: var(--amber);">🔑</div>
+            <div class="card-header-text">
+                <div class="card-tag">Cybersecurity · Access Management</div>
+                <h3 class="card-title">Password &amp; Access Management</h3>
+                <p class="card-summary">Implement enterprise-grade access control, password management, and zero-trust principles.</p>
+            </div>
+            <div class="card-chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></div>
+        </div>
+        <div class="card-body"><div class="card-body-inner"><div class="card-content">
+            <div class="content-block">
+                <div class="block-label">What We Deliver</div>
+                <p class="block-text">We audit your current access practices, deploy a business-grade password manager, enforce MFA across critical systems, and establish a least-privilege access policy.</p>
+                <ul class="feature-list">
+                    <li>Business password manager deployment (Bitwarden, 1Password)</li>
+                    <li>MFA enforcement for email, cloud, and admin accounts</li>
+                    <li>Role-based access control (RBAC) policy design</li>
+                    <li>Off-boarding procedure design (when staff leave)</li>
+                </ul>
+            </div>
+            <div class="content-block">
+                <div class="infographic-placeholder">
+                    <div class="ph-icon">📐</div>
+                    <div class="ph-text">Infographic space reserved<br/>Zero-trust access control model</div>
+                </div>
+                <div class="tag-row">
+                    <span class="tag amber">MFA</span>
+                    <span class="tag green">RBAC</span>
+                    <span class="tag cyan">Password Manager</span>
+                </div>
+            </div>
+        </div></div></div>
+    </div>
+
+    <!-- CARD 17 -->
+    <div class="card" onclick="toggle(this)">
+        <div class="card-header">
+            <div class="card-icon-box" style="border-color: var(--green); color: var(--green);">🧪</div>
+            <div class="card-header-text">
+                <div class="card-tag">Cybersecurity · Development</div>
+                <h3 class="card-title">Secure Code Audit — Embedded C / Systems</h3>
+                <p class="card-summary">Manual and automated security review of C/C++ source code for embedded systems.</p>
+            </div>
+            <div class="card-chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></div>
+        </div>
+        <div class="card-body"><div class="card-body-inner"><div class="card-content">
+            <div class="content-block">
+                <div class="block-label">Audit Scope</div>
+                <p class="block-text">Our secure code audit combines automated static analysis with manual review, targeting the vulnerability classes most prevalent in C/C++ systems code.</p>
+                <ul class="feature-list">
+                    <li>Buffer overflow and stack corruption detection</li>
+                    <li>Use-after-free and memory leak identification</li>
+                    <li>Unsafe standard library function usage</li>
+                    <li>Hardcoded credentials and secrets detection</li>
+                    <li>Annotated source code report with CWE references</li>
+                </ul>
+            </div>
+            <div class="content-block">
+                <div class="infographic-placeholder">
+                    <div class="ph-icon">📐</div>
+                    <div class="ph-text">Infographic space reserved<br/>Common C/C++ vulnerability types</div>
+                </div>
+                <div class="tag-row">
+                    <span class="tag green">C / C++</span>
+                    <span class="tag cyan">CWE Mapped</span>
+                </div>
+            </div>
+        </div></div></div>
+    </div>
+
+    <!-- CARD 18 -->
+    <div class="card" onclick="toggle(this)">
+        <div class="card-header">
+            <div class="card-icon-box" style="border-color: var(--green); color: var(--green);">🔧</div>
+            <div class="card-header-text">
+                <div class="card-tag">Cybersecurity · Custom Development</div>
+                <h3 class="card-title">Custom Security Tools &amp; Scripts</h3>
+                <p class="card-summary">Bespoke security automation scripts and tools tailored to your specific operational environment.</p>
+            </div>
+            <div class="card-chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></div>
+        </div>
+        <div class="card-body"><div class="card-body-inner"><div class="card-content">
+            <div class="content-block">
+                <div class="block-label">What We Build</div>
+                <p class="block-text">We develop tailored scripts and lightweight tools that slot directly into your workflow, saving your team hours of manual security operations work each week.</p>
+                <ul class="feature-list">
+                    <li>Automated log analysis and anomaly detection scripts</li>
+                    <li>File integrity monitoring (FIM) utilities</li>
+                    <li>System administration and hardening automation scripts</li>
+                    <li>Vulnerability scan automation and report generation</li>
+                </ul>
+            </div>
+            <div class="content-block">
+                <div class="infographic-placeholder">
+                    <div class="ph-icon">📐</div>
+                    <div class="ph-text">Infographic space reserved<br/>Custom tool development pipeline</div>
+                </div>
+                <div class="tag-row">
+                    <span class="tag green">Python / C / Java</span>
+                    <span class="tag amber">Automation</span>
+                </div>
+            </div>
+        </div></div></div>
+    </div>
+
+    <!-- CARD 19 -->
+    <div class="card" onclick="toggle(this)">
+        <div class="card-header">
+            <div class="card-icon-box" style="border-color: var(--amber); color: var(--amber);">📦</div>
+            <div class="card-header-text">
+                <div class="card-tag">Cybersecurity · Supply Chain</div>
+                <h3 class="card-title">Vendor &amp; Third-Party Security Assessment</h3>
+                <p class="card-summary">Evaluate the security posture of your suppliers, SaaS tools, and third-party partners.</p>
+            </div>
+            <div class="card-chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></div>
+        </div>
+        <div class="card-body"><div class="card-body-inner"><div class="card-content">
+            <div class="content-block">
+                <div class="block-label">What We Assess</div>
+                <p class="block-text">We assess each vendor or SaaS tool your business relies on against a structured security checklist, evaluating their data handling, breach history, and access controls.</p>
+                <ul class="feature-list">
+                    <li>Vendor data handling and privacy policy review</li>
+                    <li>Known breach and CVE history check for vendor software</li>
+                    <li>Security certification verification (ISO 27001, SOC 2, etc.)</li>
+                    <li>Risk-ranked vendor register document</li>
+                </ul>
+            </div>
+            <div class="content-block">
+                <div class="infographic-placeholder">
+                    <div class="ph-icon">📐</div>
+                    <div class="ph-text">Infographic space reserved<br/>Vendor risk assessment matrix</div>
+                </div>
+                <div class="tag-row">
+                    <span class="tag amber">Supply Chain</span>
+                    <span class="tag cyan">ISO / SOC2</span>
+                </div>
+            </div>
+        </div></div></div>
+    </div>
+
+    <!-- CARD 20 -->
+    <div class="card" onclick="toggle(this)">
+        <div class="card-header">
+            <div class="card-icon-box" style="border-color: var(--green); color: var(--green);">🏚️</div>
+            <div class="card-header-text">
+                <div class="card-tag">Cybersecurity · Legacy Systems</div>
+                <h3 class="card-title">Security Hardening for Legacy Systems</h3>
+                <p class="card-summary">Specialized security hardening for older systems that mainstream vendors no longer support.</p>
+            </div>
+            <div class="card-chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></div>
+        </div>
+        <div class="card-body"><div class="card-body-inner"><div class="card-content">
+            <div class="content-block">
+                <div class="block-label">Why This Matters</div>
+                <p class="block-text">Rather than forcing an expensive and risky full replacement, we harden your existing environment with compensating controls and build bridges to modern monitoring solutions.</p>
+                <ul class="feature-list">
+                    <li>Legacy OS hardening (Windows XP/7, older Linux distros)</li>
+                    <li>Network segmentation to isolate legacy systems</li>
+                    <li>Application whitelisting on older endpoints</li>
+                    <li>Bridging solutions to modern SIEM and alerting tools</li>
+                </ul>
+            </div>
+            <div class="content-block">
+                <div class="infographic-placeholder">
+                    <div class="ph-icon">📐</div>
+                    <div class="ph-text">Infographic space reserved<br/>Legacy system isolation architecture</div>
+                </div>
+                <div class="tag-row">
+                    <span class="tag amber">Compensating Controls</span>
+                </div>
+            </div>
+        </div></div></div>
+    </div>
+
+</div>
+
+<!-- BOTTOM CTA -->
+<div class="cta-strip stagger-in delay-2" style="margin-top: 100px;">
+    <h2>Not sure which service fits your situation? Let's figure it out together.</h2>
+    <p>Send me a message describing your challenge and I'll recommend the right service — or build a custom scope that fits your exact needs. The initial consultation is free for new clients.</p>
+    <div class="cta-buttons">
+        <a href="/contact/" class="btn btn-primary">Contact Me for a Free Consultation</a>
+        <a href="{{ .Site.Params.fiverr }}" target="_blank" class="btn btn-outline">Fiverr Profile</a>
+    </div>
+</div>
+
+<script>
+  function toggle(card) {
+    const isOpen = card.classList.contains('open');
+    document.querySelectorAll('.card.open').forEach(c => c.classList.remove('open'));
+    if (!isOpen) card.classList.add('open');
+  }
+</script>
+
+{{ end }}

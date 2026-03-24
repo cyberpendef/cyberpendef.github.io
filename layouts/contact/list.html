@@ -1,0 +1,122 @@
+{{ define "main" }}
+
+<div class="page-hero stagger-in">
+    <div class="hero-badge"><span class="dot" style="background: var(--amber);"></span> Open for Business</div>
+    <h1 class="hero-title">Let's <span>Talk</span></h1>
+    <p class="lead">
+        Whether you have a specific project in mind, a problem you're not sure how to solve, or just want to ask whether I can help — my inbox is always open.
+    </p>
+    
+    <div class="callout green" style="max-width: 600px; margin: 30px auto 0;">
+        <span class="callout-icon">🎁</span>
+        <p class="callout-text"><strong>Free Consultation Offer:</strong> I'm currently offering free initial consultations to my first 5–7 clients. If you're reading this, there's a good chance you can still claim one — just reach out and mention the offer.</p>
+    </div>
+</div>
+
+<div class="stagger-in delay-1" style="margin-top: 60px;">
+    <div class="section-header" style="margin-bottom: 20px;">
+        <div class="section-label">
+            <div class="section-icon cyan">📬</div>
+            <div>
+                <div class="section-title">Contact Channels</div>
+                <div class="section-subtitle">How To Reach Me</div>
+            </div>
+        </div>
+        <div class="section-line"></div>
+    </div>
+    
+    <div class="contact-grid">
+        <div class="contact-card">
+            <div class="cc-icon">📧</div>
+            <div class="cc-label">Email</div>
+            <div class="cc-val">{{ .Site.Params.email }}</div>
+            <div class="cc-note">Best for detailed project inquiries. Response within 1 business day.</div>
+        </div>
+        <div class="contact-card">
+            <div class="cc-icon">💬</div>
+            <div class="cc-label">WhatsApp / Phone</div>
+            <div class="cc-val">{{ .Site.Params.phone }}</div>
+            <div class="cc-note">Fastest response channel. Available during business hours.</div>
+        </div>
+        <div class="contact-card">
+            <div class="cc-icon">🔗</div>
+            <div class="cc-label">LinkedIn</div>
+            <div class="cc-val">Shaik Hidayatullah</div>
+            <div class="cc-note">
+                <a href="{{ .Site.Params.linkedin }}" target="_blank" style="color: var(--cyan); text-decoration: none;">View Profile &rarr;</a>
+            </div>
+        </div>
+        <div class="contact-card">
+            <div class="cc-icon">💼</div>
+            <div class="cc-label">Fiverr</div>
+            <div class="cc-val">CyberPenDef</div>
+            <div class="cc-note">
+                <a href="{{ .Site.Params.fiverr }}" target="_blank" style="color: var(--cyan); text-decoration: none;">Browse Packages &rarr;</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="grid-2 stagger-in delay-2" style="margin-top: 60px;">
+    <div>
+        <div class="section-header" style="margin: 0 0 20px 0;">
+            <div class="section-label">
+                <div class="section-icon" style="background: rgba(255,184,0,0.1); border-color: rgba(255,184,0,0.3); color: var(--amber);">⏱️</div>
+                <div>
+                    <div class="section-title" style="color: var(--amber);">Business Hours</div>
+                    <div class="section-subtitle">When I'm Available</div>
+                </div>
+            </div>
+        </div>
+        
+        <table class="hours-table">
+            <thead>
+                <tr>
+                    <th>Day</th>
+                    <th>Hours (IST)</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Monday</td><td>8:00 AM – 5:00 PM</td><td><span class="badge-open">Open</span></td></tr>
+                <tr><td>Tuesday</td><td>8:00 AM – 5:00 PM</td><td><span class="badge-open">Open</span></td></tr>
+                <tr><td>Wednesday</td><td>8:00 AM – 5:00 PM</td><td><span class="badge-open">Open</span></td></tr>
+                <tr><td>Thursday</td><td>8:00 AM – 5:00 PM</td><td><span class="badge-open">Open</span></td></tr>
+                <tr><td>Friday</td><td>9:00 AM – 5:00 PM</td><td><span class="badge-open">Limited</span></td></tr>
+                <tr><td>Saturday</td><td>8:00 AM – 5:00 PM</td><td><span class="badge-open">Open</span></td></tr>
+                <tr><td>Sunday</td><td>—</td><td><span class="badge-closed">Closed</span></td></tr>
+            </tbody>
+        </table>
+        
+        <div class="callout cyan" style="margin: 20px 0 0 0;">
+            <span class="callout-icon">🌍</span>
+            <p class="callout-text" style="font-size: 0.9rem;">All times are in <strong>IST (UTC+5:30)</strong>. If you're contacting me from the <strong>Gulf region</strong>, that is IST minus 1.5 to 2 hours.</p>
+        </div>
+    </div>
+    
+    <div>
+        <div class="section-header" style="margin: 0 0 20px 0;">
+            <div class="section-label">
+                <div class="section-icon" style="background: rgba(0,255,136,0.1); border-color: rgba(0,255,136,0.3); color: var(--green);">📍</div>
+                <div>
+                    <div class="section-title" style="color: var(--green);">Location &amp; Delivery</div>
+                    <div class="section-subtitle">Remote First</div>
+                </div>
+            </div>
+        </div>
+        
+        <div style="background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 40px; height: calc(100% - 70px);">
+            <p style="font-size: 1.1rem; color: var(--white); margin-bottom: 20px;">
+                <strong>CyberPenDef is a fully remote practice</strong> based in India, serving clients across India and the Middle East &amp; Gulf region (UAE, Saudi Arabia, Qatar, Kuwait, Bahrain, and Oman). 
+            </p>
+            <p>
+                All services are delivered remotely via secure screen-sharing, email, and cloud collaboration tools — no on-site visit required.
+            </p>
+            <p style="margin-top: 20px;">
+                Remote delivery means faster response times, lower costs passed on to you, and the ability to work with clients regardless of location — without ever compromising on the quality or depth of service.
+            </p>
+        </div>
+    </div>
+</div>
+
+{{ end }}

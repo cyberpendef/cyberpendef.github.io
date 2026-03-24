@@ -1,150 +1,142 @@
 {{ define "main" }}
-<section style="min-height: 100vh; background: linear-gradient(135deg, #1e40af 0%, #0891b2 50%, #d946ef 100%); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; padding-top: 5rem;">
-    <div style="position: absolute; inset: 0; opacity: 0.3;">
-        <svg style="width: 100%; height: 100%;" viewBox="0 0 1000 1000">
-            <defs>
-                <linearGradient id="gridGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" style="stop-color:#0891b2;stop-opacity:0.2" />
-                    <stop offset="100%" style="stop-color:#d946ef;stop-opacity:0.2" />
-                </linearGradient>
-            </defs>
-            <g stroke="url(#gridGradient)" stroke-width="2" fill="none">
-                <line x1="0" y1="0" x2="0" y2="1000" /><line x1="100" y1="0" x2="100" y2="1000" /><line x1="200" y1="0" x2="200" y2="1000" /><line x1="300" y1="0" x2="300" y2="1000" /><line x1="400" y1="0" x2="400" y2="1000" /><line x1="500" y1="0" x2="500" y2="1000" /><line x1="600" y1="0" x2="600" y2="1000" /><line x1="700" y1="0" x2="700" y2="1000" /><line x1="800" y1="0" x2="800" y2="1000" /><line x1="900" y1="0" x2="900" y2="1000" /><line x1="0" y1="0" x2="1000" y2="0" /><line x1="0" y1="100" x2="1000" y2="100" /><line x1="0" y1="200" x2="1000" y2="200" /><line x1="0" y1="300" x2="1000" y2="300" /><line x1="0" y1="400" x2="1000" y2="400" /><line x1="0" y1="500" x2="1000" y2="500" /><line x1="0" y1="600" x2="1000" y2="600" /><line x1="0" y1="700" x2="1000" y2="700" /><line x1="0" y1="800" x2="1000" y2="800" /><line x1="0" y1="900" x2="1000" y2="900" />
-            </g>
-        </svg>
-    </div>
 
-    <div style="position: relative; z-index: 10; max-width: 80rem; margin: 0 auto; padding: 2rem; text-align: center;">
-        <h1 style="font-size: 3.75rem; font-weight: bold; margin-bottom: 1.5rem; color: white;">
-            Secure Your <span class="neon-text">Digital Assets</span>
-        </h1>
-        <p style="font-size: 1.5rem; color: #e5e7eb; margin-bottom: 2rem; max-width: 48rem; margin-left: auto; margin-right: auto;">
-            Professional IT & Cybersecurity Services powered by AI technology. From personal device security to enterprise-grade solutions.
-        </p>
-        <div style="display: flex; gap: 1rem; justify-content: center; margin-bottom: 3rem; flex-wrap: wrap;">
-            <a href="/services/" class="btn-cyber">Explore Services</a>
-            <a href="/contact/" class="btn-secondary">Get Started</a>
-        </div>
-        <div style="margin-top: 3rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; font-size: 0.875rem;">
-            <div class="glow-border" style="padding: 0.75rem 1.5rem; border-radius: 0.5rem;">
-                <p style="font-weight: bold; color: #06b6d4;">🔒 CEHv13 Certified</p>
-            </div>
-            <div class="glow-border" style="padding: 0.75rem 1.5rem; border-radius: 0.5rem;">
-                <p style="font-weight: bold; color: #06b6d4;">⚡ AI-Powered Solutions</p>
-            </div>
-            <div class="glow-border" style="padding: 0.75rem 1.5rem; border-radius: 0.5rem;">
-                <p style="font-weight: bold; color: #06b6d4;">🛡️ 24/7 Support</p>
+<!-- HERO SECTION -->
+<div class="hero stagger-in">
+    <div class="hero-badge"><span class="dot"></span> CEH Certified · AI-Augmented</div>
+    <h1>Your Trusted IT &amp;<br><em>Cybersecurity Partner</em></h1>
+    <p class="lead">
+        Hi, I'm <strong>Shaik Hidayatullah</strong> — a CEH-certified cybersecurity professional and IT specialist with over <strong>3 years of professional experience</strong> and 8+ years of hands-on computing expertise. Through <strong>CyberPenDef</strong>, I provide affordable, AI-accelerated IT support and cybersecurity services to individuals, freelancers, and small businesses across India and the Gulf region — helping you stay secure, productive, and worry-free online.
+    </p>
+    <div class="btn-group">
+        <a href="/contact/" class="btn btn-primary">Get a Free Consultation</a>
+        <a href="/services/" class="btn btn-outline">Explore My Services</a>
+    </div>
+    
+    <div class="callout amber stagger-in delay-2">
+        <span class="callout-icon">🎁</span>
+        <p class="callout-text"><strong>Limited Offer — First 5 to 7 Clients:</strong> "I'm currently accepting my first clients and offering a completely free initial consultation — no strings attached. Let's talk about your IT or security challenge and figure out the best path forward together."</p>
+    </div>
+</div>
+
+<!-- WHY CHOOSE CYBERPENDEF -->
+<div style="margin-top: 60px;" class="stagger-in">
+    <div class="section-header" style="margin-bottom: 20px;">
+        <div class="section-label">
+            <div class="section-icon green">⚡</div>
+            <div>
+                <div class="section-title">The CyberPenDef Edge</div>
+                <div class="section-subtitle">What Sets Us Apart</div>
             </div>
         </div>
+        <div class="section-line"></div>
     </div>
-</section>
 
-<!-- Services Preview Section -->
-<section style="background: #1e293b; padding: 5rem 2rem;">
-    <div style="max-width: 80rem; margin: 0 auto;">
-        <h2 style="font-size: 2.25rem; font-weight: bold; text-align: center; margin-bottom: 1rem;">
-            What We <span class="neon-text">Offer</span>
-        </h2>
-        <p style="text-align: center; color: #9ca3af; margin-bottom: 3rem; max-width: 42rem; margin-left: auto; margin-right: auto;">
-            Comprehensive IT and Cybersecurity services tailored for individuals, freelancers, and businesses of all sizes.
-        </p>
-
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
-            <div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(6, 182, 212, 0.3); border-radius: 0.75rem; padding: 2rem; transition: all 0.3s;">
-                <div style="font-size: 2.25rem; margin-bottom: 1rem;">👤</div>
-                <h3 style="font-size: 1.5rem; font-weight: bold; color: #06b6d4; margin-bottom: 1.5rem;">For End Users</h3>
-                <ul style="list-style: none; padding: 0; margin: 0; color: #d1d5db;">
-                    <li style="display: flex; gap: 0.75rem; margin-bottom: 0.75rem;"><span style="color: #00ff00; font-weight: bold;">▸</span><span>Remote Help Desk & Troubleshooting</span></li>
-                    <li style="display: flex; gap: 0.75rem; margin-bottom: 0.75rem;"><span style="color: #00ff00; font-weight: bold;">▸</span><span>Device Security Setup & Maintenance</span></li>
-                    <li style="display: flex; gap: 0.75rem; margin-bottom: 0.75rem;"><span style="color: #00ff00; font-weight: bold;">▸</span><span>Parental Control Solutions</span></li>
-                    <li style="display: flex; gap: 0.75rem; margin-bottom: 0.75rem;"><span style="color: #00ff00; font-weight: bold;">▸</span><span>Data Backup & Verification</span></li>
-                    <li style="display: flex; gap: 0.75rem;"><span style="color: #00ff00; font-weight: bold;">▸</span><span>Cyber Fraud Support</span></li>
-                </ul>
-                <a href="/services/" class="btn-cyber" style="display: block; margin-top: 2rem; text-align: center;">Learn More</a>
-            </div>
-
-            <div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(168, 85, 247, 0.3); border-radius: 0.75rem; padding: 2rem; transition: all 0.3s;">
-                <div style="font-size: 2.25rem; margin-bottom: 1rem;">🏢</div>
-                <h3 style="font-size: 1.5rem; font-weight: bold; color: #c084fc; margin-bottom: 1.5rem;">For Small Businesses</h3>
-                <ul style="list-style: none; padding: 0; margin: 0; color: #d1d5db;">
-                    <li style="display: flex; gap: 0.75rem; margin-bottom: 0.75rem;"><span style="color: #c084fc; font-weight: bold;">▸</span><span>Security Auditing & Assessment</span></li>
-                    <li style="display: flex; gap: 0.75rem; margin-bottom: 0.75rem;"><span style="color: #c084fc; font-weight: bold;">▸</span><span>Cloud Migration Planning</span></li>
-                    <li style="display: flex; gap: 0.75rem; margin-bottom: 0.75rem;"><span style="color: #c084fc; font-weight: bold;">▸</span><span>Incident Response Planning</span></li>
-                    <li style="display: flex; gap: 0.75rem; margin-bottom: 0.75rem;"><span style="color: #c084fc; font-weight: bold;">▸</span><span>Security-as-a-Service (24/7 Monitoring)</span></li>
-                    <li style="display: flex; gap: 0.75rem;"><span style="color: #c084fc; font-weight: bold;">▸</span><span>Custom Security Tools Development</span></li>
-                </ul>
-                <a href="/services/" class="btn-cyber" style="display: block; margin-top: 2rem; text-align: center;">Learn More</a>
-            </div>
+    <div class="value-grid">
+        <div class="value-card">
+            <div class="v-icon">⚡</div>
+            <div class="v-title">AI-Powered Speed</div>
+            <div class="v-desc">Every service I deliver is augmented with AI tooling — cutting turnaround times dramatically so you get results faster without paying enterprise rates.</div>
+        </div>
+        <div class="value-card">
+            <div class="v-icon">💸</div>
+            <div class="v-title">Affordable Fixed Pricing</div>
+            <div class="v-desc">No hourly surprises. Every project comes with a transparent, agreed-upon price upfront — so you always know exactly what you're paying before work begins.</div>
+        </div>
+        <div class="value-card">
+            <div class="v-icon">🔏</div>
+            <div class="v-title">Privacy-First Approach</div>
+            <div class="v-desc">Your data stays yours. I never share, sell, or retain client data beyond what's strictly required to deliver your service. Full stop.</div>
+        </div>
+        <div class="value-card">
+            <div class="v-icon">📊</div>
+            <div class="v-title">Transparent Reporting</div>
+            <div class="v-desc">Every engagement ends with a clear, plain-language report — no jargon, no confusion. You'll always know exactly what was done, what was found, and what to do next.</div>
         </div>
     </div>
-</section>
+</div>
 
-<!-- Testimonials Section -->
-<section id="testimonials" style="background: linear-gradient(to bottom, #1e293b, #0f172a); padding: 5rem 2rem;">
-    <div style="max-width: 80rem; margin: 0 auto;">
-        <h2 style="font-size: 2.25rem; font-weight: bold; text-align: center; margin-bottom: 1rem;">
-            Client <span class="neon-text">Testimonials</span>
-        </h2>
-        <p style="text-align: center; color: #9ca3af; margin-bottom: 3rem;">
-            Real feedback from satisfied clients across different industries.
-        </p>
-
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
-            <div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(6, 182, 212, 0.3); border-radius: 0.75rem; padding: 2rem;">
-                <div style="display: flex; gap: 0.25rem; margin-bottom: 1rem;">
-                    <span style="color: #fcd34d; font-size: 1.5rem;">★★★★★</span>
-                </div>
-                <p style="color: #d1d5db; margin-bottom: 1.5rem; font-style: italic;">
-                    "Shaik's expertise helped us identify and fix critical vulnerabilities. Professional, responsive, and extremely knowledgeable."
-                </p>
-                <div style="border-top: 1px solid rgba(6, 182, 212, 0.3); padding-top: 1rem;">
-                    <p style="font-weight: bold; color: #06b6d4;">Rajesh Kumar</p>
-                    <p style="font-size: 0.875rem; color: #9ca3af;">Web Development Startup</p>
-                </div>
-            </div>
-
-            <div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(168, 85, 247, 0.3); border-radius: 0.75rem; padding: 2rem;">
-                <div style="display: flex; gap: 0.25rem; margin-bottom: 1rem;">
-                    <span style="color: #fcd34d; font-size: 1.5rem;">★★★★★</span>
-                </div>
-                <p style="color: #d1d5db; margin-bottom: 1.5rem; font-style: italic;">
-                    "As a freelancer, I was worried about security. Shaik set up a secure system and trained me well. Highly recommended!"
-                </p>
-                <div style="border-top: 1px solid rgba(168, 85, 247, 0.3); padding-top: 1rem;">
-                    <p style="font-weight: bold; color: #c084fc;">Priya Deshpande</p>
-                    <p style="font-size: 0.875rem; color: #9ca3af;">Freelance Consultant</p>
-                </div>
-            </div>
-
-            <div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(249, 115, 22, 0.3); border-radius: 0.75rem; padding: 2rem;">
-                <div style="display: flex; gap: 0.25rem; margin-bottom: 1rem;">
-                    <span style="color: #fcd34d; font-size: 1.5rem;">★★★★★</span>
-                </div>
-                <p style="color: #d1d5db; margin-bottom: 1.5rem; font-style: italic;">
-                    "Cloud migration was smooth. Our team feels confident about our new infrastructure with Shaik's security guidance."
-                </p>
-                <div style="border-top: 1px solid rgba(249, 115, 22, 0.3); padding-top: 1rem;">
-                    <p style="font-weight: bold; color: #fb923c;">Aditya Menon</p>
-                    <p style="font-size: 0.875rem; color: #9ca3af;">E-Commerce Small Business</p>
-                </div>
+<!-- SERVICES TEASER -->
+<div style="margin-top: 100px;" class="stagger-in delay-1">
+    <div class="section-header" style="margin-bottom: 20px;">
+        <div class="section-label">
+            <div class="section-icon blue">🛡️</div>
+            <div>
+                <div class="section-title">Overview</div>
+                <div class="section-subtitle">What I Can Do For You</div>
             </div>
         </div>
+        <div class="section-line"></div>
     </div>
-</section>
+    <div style="background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 40px; margin-bottom: 40px;">
+        <p style="font-size: 1.1rem; margin-bottom: 20px;">Whether you're an individual who needs their computer sorted, a non-technical freelancer managing sensitive client data, or a small business that wants to stop worrying about cyberattacks — I have a service built for your exact situation. All services are delivered remotely and completed with clear timelines and pricing agreed in advance.</p>
+        <p style="font-size: 1.1rem; margin-bottom: 30px;">I work across <strong>four core areas:</strong> personal IT support, personal cybersecurity, business IT infrastructure, and business cybersecurity — covering everything from parental controls and device health checks to secure code audits and full Security-as-a-Service packages.</p>
+        <a href="/services/" class="btn btn-outline" style="font-size: 0.85rem; padding: 12px 24px;">View All Services &rarr;</a>
+    </div>
+</div>
 
-<!-- CTA Section -->
-<section style="background: #0f172a; padding: 5rem 2rem; border-top: 1px solid rgba(6, 182, 212, 0.3);">
-    <div style="max-width: 56rem; margin: 0 auto; text-align: center;">
-        <h2 style="font-size: 2.25rem; font-weight: bold; margin-bottom: 1.5rem;">
-            Ready to Secure Your <span class="neon-text">Digital Future</span>?
-        </h2>
-        <p style="font-size: 1.25rem; color: #d1d5db; margin-bottom: 2rem;">
-            Get in touch today for a consultation. Whether you're an individual or a business, we have a solution for you.
-        </p>
-        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-            <a href="/contact/" class="btn-cyber">Contact Us Now</a>
-            <a href="https://www.fiverr.com/your-profile" class="btn-secondary" target="_blank">Visit Fiverr Profile</a>
+<!-- WHO I SERVE -->
+<div style="margin-top: 100px;" class="stagger-in delay-2">
+    <div class="section-header" style="margin-bottom: 20px;">
+        <div class="section-label">
+            <div class="section-icon" style="background: rgba(255,184,0,0.1); border-color: rgba(255,184,0,0.3); color: var(--amber);">👥</div>
+            <div>
+                <div class="section-title" style="color: var(--amber);">Audience</div>
+                <div class="section-subtitle">Who CyberPenDef Is Built For</div>
+            </div>
+        </div>
+        <div class="section-line"></div>
+    </div>
+    
+    <div class="spec-box">
+        <div class="spec-row">
+            <span class="spec-key">Individuals</span>
+            <span class="spec-val"><strong>"You use the internet every day — but is it safe?"</strong><br><br>From setting up your home Wi-Fi securely to recovering a hacked account, I help everyday users protect their digital life without needing a tech background. If something feels off with your device or online accounts, I'm one message away.</span>
+        </div>
+        <div class="spec-row">
+            <span class="spec-key">Freelancers</span>
+            <span class="spec-val"><strong>"Your business runs on your laptop — let's protect it."</strong><br><br>As a non-technical freelancer, your income depends on your tools working and your client data staying private. I handle your IT backbone — backups, secure communications, system maintenance — so you never lose a client deadline to a tech failure.</span>
+        </div>
+        <div class="spec-row">
+            <span class="spec-key">Small Businesses</span>
+            <span class="spec-val"><strong>"Enterprise-grade security. Small business budget."</strong><br><br>You don't need a full-time IT team to stay secure and operational. I provide ongoing remote support, cloud migration assistance, automated backups, and cybersecurity management — customized to the size and budget of your business.</span>
         </div>
     </div>
-</section>
+</div>
+
+<!-- TRUST STRIP -->
+<div style="margin-top: 100px;" class="stagger-in delay-3">
+    <div class="section-header" style="margin-bottom: 20px;">
+        <div class="section-label">
+            <div class="section-icon" style="background: rgba(160,120,255,0.1); border-color: rgba(160,120,255,0.3); color: var(--violet);">🎖️</div>
+            <div>
+                <div class="section-title" style="color: var(--violet);">Credentials</div>
+                <div class="section-subtitle">Trust & Social Proof</div>
+            </div>
+        </div>
+        <div class="section-line"></div>
+    </div>
+    
+    <div class="spec-box">
+        <ul class="item-list" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+            <li><div>🎓 <strong>CEH Certified</strong><br><span style="font-size: 0.9rem; color: var(--muted);">EC-Council — Certified Ethical Hacker</span></div></li>
+            <li><div>🕐 <strong>3+ Years Professional</strong><br><span style="font-size: 0.9rem; color: var(--muted);">IT &amp; Cybersecurity Experience</span></div></li>
+            <li><div>💻 <strong>8+ Years Practical</strong><br><span style="font-size: 0.9rem; color: var(--muted);">Computing &amp; Troubleshooting</span></div></li>
+            <li><div>🤖 <strong>AI-Augmented</strong><br><span style="font-size: 0.9rem; color: var(--muted);">Service Delivery — Faster, Smarter Results</span></div></li>
+            <li><div>📍 <strong>Global Reach</strong><br><span style="font-size: 0.9rem; color: var(--muted);">Serving India &amp; the Gulf Region</span></div></li>
+            <li><div>🔒 <strong>Privacy-First</strong><br><span style="font-size: 0.9rem; color: var(--muted);">Your data is never shared or retained</span></div></li>
+        </ul>
+    </div>
+</div>
+
+<!-- FINAL HOME CTA -->
+<div class="cta-strip stagger-in delay-4">
+    <h2>Ready to take your digital security seriously? Let's talk.</h2>
+    <p>I offer a free initial consultation to my first clients — no obligations, no pressure. Tell me about your situation and I'll give you an honest assessment of what you need and what it will cost. Reach out via WhatsApp, email, or through my Fiverr profile.</p>
+    <div class="cta-buttons">
+        <a href="/contact/" class="btn btn-primary">Contact Me</a>
+        <a href="{{ .Site.Params.fiverr }}" target="_blank" class="btn btn-outline">View on Fiverr</a>
+        <a href="{{ .Site.Params.linkedin }}" target="_blank" class="btn btn-outline">LinkedIn Profile</a>
+    </div>
+</div>
+
 {{ end }}
