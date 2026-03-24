@@ -560,7 +560,7 @@ Comprehensive IT & Cybersecurity Solutions Powered by AI
 <li>Tool selection based on your needs</li>
 <li>Installation and configuration</li>
 <li>Alert setup and customization</li>
-<li>Email/SMS notification configuration</li>
+<li>Email or SMS notification configuration</li>
 <li>Initial training on tool usage</li>
 <li>3-month follow-up support</li>
 </ul>
