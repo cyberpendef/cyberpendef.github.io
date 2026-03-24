@@ -57,7 +57,135 @@
     </div>
 </div>
 
-<div class="grid-2 stagger-in delay-2" style="margin-top: 60px;">
+<!-- INQUIRY FORM SECTION -->
+<div class="stagger-in delay-2" style="margin-top: 100px;">
+    <div class="section-header" style="margin-bottom: 40px;">
+        <div class="section-label">
+            <div class="section-icon green">📝</div>
+            <div>
+                <div class="section-title" style="color: var(--green);">Inquiry Form</div>
+                <div class="section-subtitle">Send Me a Message</div>
+            </div>
+        </div>
+        <div class="section-line"></div>
+    </div>
+
+    <style>
+        .contact-form {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .form-group { margin-bottom: 24px; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+        .form-label {
+            display: block;
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--cyan);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        .form-input, .form-select, .form-textarea {
+            width: 100%;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 14px 18px;
+            color: var(--white);
+            font-family: var(--font-body);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        .form-input:focus, .form-select:focus, .form-textarea:focus {
+            outline: none;
+            border-color: var(--cyan);
+            background: rgba(0, 212, 255, 0.05);
+            box-shadow: 0 0 15px rgba(0, 212, 255, 0.1);
+        }
+        .form-checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 15px;
+            background: rgba(0, 255, 136, 0.03);
+            border: 1px solid rgba(0, 255, 136, 0.1);
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .form-checkbox-group input { accent-color: var(--green); width: 18px; height: 18px; }
+        .form-checkbox-group label { color: var(--text); font-size: 0.95rem; cursor: pointer; margin-bottom: 0; }
+        
+        @media(max-width: 600px) { .form-row { grid-template-columns: 1fr; } }
+    </style>
+
+    <form class="contact-form" action="https://formspree.io/f/xgolnrar" method="POST">
+        <div class="form-row">
+            <div class="form-group">
+                <label class="form-label">Your Name *</label>
+                <input type="text" name="name" class="form-input" placeholder="Full Name" required>
+            </div>
+            <div class="form-group">
+                <label class="form-label">Email Address *</label>
+                <input type="email" name="email" class="form-input" placeholder="email@example.com" required>
+            </div>
+        </div>
+        
+        <div class="form-row">
+            <div class="form-group">
+                <label class="form-label">WhatsApp / Phone (Optional)</label>
+                <input type="tel" name="phone" class="form-input" placeholder="+91-0000000000">
+            </div>
+            <div class="form-group">
+                <label class="form-label">I Am A... *</label>
+                <select name="audience_category" class="form-select" required>
+                    <option value="" disabled selected>Select Category</option>
+                    <option value="Individual">Individual</option>
+                    <option value="Freelancer">Freelancer</option>
+                    <option value="Small Business">Small Business</option>
+                    <option value="Startup">Startup</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">Service I'm Interested In (Optional)</label>
+            <select name="service_category" class="form-select">
+                <option value="" disabled selected>Select Service Category</option>
+                <option value="Individuals: IT Support">Individuals: IT Support Services</option>
+                <option value="Individuals: Cybersecurity">Individuals: Cybersecurity Services</option>
+                <option value="Business: Infrastructure">Business: Infrastructure & IT Services</option>
+                <option value="Business: Managed Cybersecurity">Business: Managed Cybersecurity</option>
+                <option value="Other">Other / Custom Inquiry</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">Tell Me About Your Situation *</label>
+            <textarea name="message" class="form-textarea" rows="5" placeholder="Describe your challenge or what you'd like help with. Don't worry about technical language — just tell me what's going on." required></textarea>
+        </div>
+
+        <div class="form-group">
+            <div class="form-checkbox-group">
+                <input type="checkbox" name="claim_free_consultation" id="consultation" value="Yes">
+                <label for="consultation">I'd like to claim the <strong>free initial consultation</strong> offer</label>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px;">
+            <button type="submit" class="btn btn-primary" style="padding: 18px 60px;">Send Message</button>
+            <p style="font-size: 0.85rem; color: var(--muted); margin-top: 20px; font-style: italic;">
+                "Thank you for reaching out! I've received your message and will get back to you within one business day."
+            </p>
+        </div>
+    </form>
+</div>
+
+<div class="grid-2 stagger-in delay-3" style="margin-top: 100px;">
     <div>
         <div class="section-header" style="margin: 0 0 20px 0;">
             <div class="section-label">
@@ -99,7 +227,7 @@
             <div class="section-label">
                 <div class="section-icon" style="background: rgba(0,255,136,0.1); border-color: rgba(0,255,136,0.3); color: var(--green);">📍</div>
                 <div>
-                    <div class="section-title" style="color: var(--green);">Location &amp; Delivery</div>
+                    <div class="section-title" style="color: var(--green);">Location & Delivery</div>
                     <div class="section-subtitle">Remote First</div>
                 </div>
             </div>
