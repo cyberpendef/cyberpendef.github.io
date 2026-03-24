@@ -1,74 +1,195 @@
-.about-container {
-  max-width: 80rem;
-  margin: 0 auto;
-  padding: 0 2rem;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.about-header {
-  margin-bottom: 4rem;
-  text-align: center;
-  padding-top: 4rem;
+/* About Page Specific Styles */
+.about-hero {
+    padding: 8rem 2rem 4rem;
+    text-align: center;
+    background: radial-gradient(circle at center, rgba(30, 64, 175, 0.1) 0%, transparent 70%);
 }
 
 .about-title {
-  font-size: 3rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-  color: white;
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #fff 0%, #94a3b8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .about-divider {
-  width: 5rem;
-  height: 0.25rem;
-  background: linear-gradient(135deg, #1e40af 0%, #0891b2 50%, #d946ef 100%);
-  margin: 0 auto;
+    width: 6rem;
+    height: 4px;
+    background: linear-gradient(90deg, #1e40af, #0891b2, #d946ef);
+    margin: 1.5rem auto;
+    border-radius: 2px;
 }
 
-.about-content {
-  max-width: 56rem;
-  margin: 0 auto;
-  color: #d1d5db;
-  line-height: 1.75;
-  padding-bottom: 4rem;
+.about-section {
+    max-width: 80rem;
+    margin: 4rem auto;
+    padding: 0 2rem;
 }
 
-.connect-wrapper h2 {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 1.5rem;
-  text-align: center;
+/* About Me Section - Two Columns */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 4rem;
+    align-items: center;
 }
 
-.connect-wrapper ul {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 2rem 0;
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
+@media (max-width: 968px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
 }
 
-.connect-wrapper a {
-  background-color: #1e40af;
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.5rem;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.3s;
+.about-photo-wrapper {
+    position: relative;
 }
 
-.connect-wrapper a:hover {
-  background-color: #0891b2;
+.photo-placeholder {
+    width: 100%;
+    aspect-ratio: 4/5;
+    background: #1e293b;
+    border: 1px solid rgba(6, 182, 212, 0.3);
+    border-radius: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #475569;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
 }
 
-.connect-wrapper .btn {
-  display: block;
-  width: -moz-fit-content;
-  width: fit-content;
-  margin: 0 auto;
-  background: linear-gradient(135deg, #1e40af 0%, #0891b2 50%, #d946ef 100%);
+.photo-placeholder::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 2px solid transparent;
+    border-radius: 1.5rem;
+    background: linear-gradient(135deg, #06b6d4, #d946ef) border-box;
+    -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    opacity: 0.5;
+}
+
+.about-text {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #cbd5e1;
+}
+
+.about-text p {
+    margin-bottom: 1.5rem;
+}
+
+/* Expertise Grid */
+.expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.expertise-card {
+    background: rgba(30, 41, 59, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 2.5rem;
+    border-radius: 1.25rem;
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.expertise-card:hover {
+    transform: translateY(-5px);
+    background: rgba(30, 41, 59, 0.6);
+    border-color: rgba(6, 182, 212, 0.3);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.expertise-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.expertise-card h3 {
+    font-size: 1.5rem;
+    color: #06b6d4;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.expertise-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.expertise-card li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: #94a3b8;
+}
+
+.expertise-card li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: #06b6d4;
+    font-weight: bold;
+}
+
+/* Connect Section */
+.connect-section {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(to bottom, transparent, rgba(15, 23, 42, 0.8));
+    border-radius: 2rem;
+    border: 1px solid rgba(6, 182, 212, 0.1);
+}
+
+.connect-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.connect-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 2rem;
+    background: rgba(30, 41, 59, 0.5);
+    border: 1px solid rgba(6, 182, 212, 0.2);
+    border-radius: 1rem;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.connect-link:hover {
+    background: rgba(6, 182, 212, 0.1);
+    border-color: #06b6d4;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(6, 182, 212, 0.2);
+}
+
+.connect-link span.icon {
+    font-size: 1.25rem;
+}
+
+/* Section Headings */
+.section-heading {
+    text-align: center;
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    color: #f1f5f9;
 }

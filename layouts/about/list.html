@@ -1,16 +1,92 @@
 {{ define "main" }}
 {{ $css := resources.Get "css/about.css" | minify | fingerprint }}
 <link rel="stylesheet" href="{{ $css.Permalink }}">
-<div class="about-container" style="background-image: url('{{ .Params.background_image }}');">
-  <div class="about-header">
+
+<div class="about-hero">
     <h1 class="about-title">{{ .Title }}</h1>
     <div class="about-divider"></div>
-  </div>
+    <p style="color: #94a3b8; font-size: 1.25rem; max-width: 40rem; margin: 0 auto;">{{ .Params.description }}</p>
+</div>
 
-  <div class="about-content">
-    <div class="connect-wrapper">
-      {{ .Content }}
+<div class="about-section">
+    <div class="about-grid">
+        <div class="about-photo-wrapper">
+            <div class="photo-placeholder">
+                <span style="font-size: 4rem; margin-bottom: 1rem;">👤</span>
+                <p>Shaik Hidayatullah</p>
+                <p style="font-size: 0.875rem; color: #64748b; margin-top: 1rem;">(Upload your photo here)</p>
+                <!-- When you have your photo, replace this div with:
+                <img src="/path/to/your/photo.jpg" alt="Shaik Hidayatullah" class="about-photo">
+                -->
+            </div>
+        </div>
+        <div class="about-text">
+            {{ .Content }}
+        </div>
     </div>
-  </div>
+</div>
+
+<div class="about-section">
+    <h2 class="section-heading">Technical Expertise</h2>
+    <div class="expertise-grid">
+        <div class="expertise-card">
+            <div class="expertise-icon">🔐</div>
+            <h3>Cybersecurity</h3>
+            <ul>
+                <li>CEHv13 Certified Ethical Hacker</li>
+                <li>Security Auditing & VAPT</li>
+                <li>Incident Response & Recovery</li>
+                <li>Custom Security Tools</li>
+            </ul>
+        </div>
+        <div class="expertise-card">
+            <div class="expertise-icon">💻</div>
+            <h3>IT Infrastructure</h3>
+            <ul>
+                <li>Cloud Migration (AWS/Azure)</li>
+                <li>System Administration</li>
+                <li>Server Hardening</li>
+                <li>Network Architecture</li>
+            </ul>
+        </div>
+        <div class="expertise-card">
+            <div class="expertise-icon">⚙️</div>
+            <h3>Automation</h3>
+            <ul>
+                <li>AI-Powered Workflows</li>
+                <li>Python & Bash Scripting</li>
+                <li>Custom DevSecOps Tools</li>
+                <li>Process Optimization</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="about-section">
+    <div class="connect-section">
+        <h2 style="font-size: 2rem; margin-bottom: 1rem;">Let's Connect</h2>
+        <p style="color: #94a3b8;">Ready to discuss your next project or security needs?</p>
+        <div class="connect-grid">
+            <a href="mailto:{{ .Site.Params.email }}" class="connect-link">
+                <span class="icon">📧</span>
+                <span>Email</span>
+            </a>
+            <a href="tel:{{ .Site.Params.phone }}" class="connect-link">
+                <span class="icon">📱</span>
+                <span>Phone</span>
+            </a>
+            <a href="{{ .Site.Params.linkedin }}" target="_blank" class="connect-link">
+                <span class="icon">🔗</span>
+                <span>LinkedIn</span>
+            </a>
+            <a href="{{ .Site.Params.fiverr }}" target="_blank" class="connect-link">
+                <span class="icon">💼</span>
+                <span>Fiverr</span>
+            </a>
+        </div>
+        <div style="margin-top: 3rem;">
+            <a href="/contact/" class="btn-cyber">Get In Touch Now</a>
+        </div>
+    </div>
 </div>
 {{ end }}
