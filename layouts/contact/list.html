@@ -13,50 +13,6 @@
     </div>
 </div>
 
-<div class="stagger-in delay-1" style="margin-top: 60px;">
-    <div class="section-header" style="margin-bottom: 20px;">
-        <div class="section-label">
-            <div class="section-icon cyan">📬</div>
-            <div>
-                <div class="section-title">Contact Channels</div>
-                <div class="section-subtitle">How To Reach Me</div>
-            </div>
-        </div>
-        <div class="section-line"></div>
-    </div>
-    
-    <div class="contact-grid">
-        <div class="contact-card">
-            <div class="cc-icon">📧</div>
-            <div class="cc-label">Email</div>
-            <div class="cc-val">{{ .Site.Params.email }}</div>
-            <div class="cc-note">Best for detailed project inquiries. Response within 1 business day.</div>
-        </div>
-        <div class="contact-card">
-            <div class="cc-icon">💬</div>
-            <div class="cc-label">WhatsApp / Phone</div>
-            <div class="cc-val">{{ .Site.Params.phone }}</div>
-            <div class="cc-note">Fastest response channel. Available during business hours.</div>
-        </div>
-        <div class="contact-card">
-            <div class="cc-icon">🔗</div>
-            <div class="cc-label">LinkedIn</div>
-            <div class="cc-val">Shaik Hidayatullah</div>
-            <div class="cc-note">
-                <a href="{{ .Site.Params.linkedin }}" target="_blank" style="color: var(--cyan); text-decoration: none;">View Profile &rarr;</a>
-            </div>
-        </div>
-        <div class="contact-card">
-            <div class="cc-icon">💼</div>
-            <div class="cc-label">Fiverr</div>
-            <div class="cc-val">CyberPenDef</div>
-            <div class="cc-note">
-                <a href="{{ .Site.Params.fiverr }}" target="_blank" style="color: var(--cyan); text-decoration: none;">Browse Packages &rarr;</a>
-            </div>
-        </div>
-    </div>
-</div>
-
 <!-- INQUIRY FORM SECTION -->
 <div class="stagger-in delay-2" style="margin-top: 100px;">
     <div class="section-header" style="margin-bottom: 40px;">
@@ -100,6 +56,11 @@
             font-family: var(--font-body);
             font-size: 1rem;
             transition: var(--transition);
+        }
+        /* Fix for dropdown options visibility */
+        .form-select option {
+            background-color: var(--card);
+            color: var(--white);
         }
         .form-input:focus, .form-select:focus, .form-textarea:focus {
             outline: none;
@@ -184,6 +145,53 @@
         </div>
     </form>
 </div>
+
+<!-- CONTACT SECTION -->
+
+<div class="stagger-in delay-1" style="margin-top: 60px;">
+    <div class="section-header" style="margin-bottom: 20px;">
+        <div class="section-label">
+            <div class="section-icon cyan">📬</div>
+            <div>
+                <div class="section-title">Contact Channels</div>
+                <div class="section-subtitle">How To Reach Me</div>
+            </div>
+        </div>
+        <div class="section-line"></div>
+    </div>
+    
+    <div class="contact-grid">
+        <div class="contact-card">
+            <div class="cc-icon">📧</div>
+            <div class="cc-label">Email</div>
+            <div class="cc-val">{{ .Site.Params.email }}</div>
+            <div class="cc-note">Best for detailed project inquiries. Response within 1 business day.</div>
+        </div>
+        <div class="contact-card">
+            <div class="cc-icon">💬</div>
+            <div class="cc-label">WhatsApp / Phone</div>
+            <div class="cc-val">{{ .Site.Params.phone }}</div>
+            <div class="cc-note">Fastest response channel. Available during business hours.</div>
+        </div>
+        <div class="contact-card">
+            <div class="cc-icon">🔗</div>
+            <div class="cc-label">LinkedIn</div>
+            <div class="cc-val">Shaik Hidayatullah</div>
+            <div class="cc-note">
+                <a href="{{ .Site.Params.linkedin }}" target="_blank" style="color: var(--cyan); text-decoration: none;">View Profile &rarr;</a>
+            </div>
+        </div>
+        <div class="contact-card">
+            <div class="cc-icon">💼</div>
+            <div class="cc-label">Fiverr</div>
+            <div class="cc-val">CyberPenDef</div>
+            <div class="cc-note">
+                <a href="{{ .Site.Params.fiverr }}" target="_blank" style="color: var(--cyan); text-decoration: none;">Browse Packages &rarr;</a>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <div class="grid-2 stagger-in delay-3" style="margin-top: 100px;">
     <div>
