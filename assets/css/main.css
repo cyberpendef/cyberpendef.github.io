@@ -94,8 +94,13 @@ nav .nav-inner {
 .brand-row { 
   display: flex; 
   align-items: center; 
-  gap: 0px; /* Reduced gap from 12px to 8px */
+  gap: 12px;
   text-decoration: none; 
+}
+.brand-logo {
+  height: 50px;
+  width: auto;
+  flex-shrink: 0;
 }
 .brand-icon {
   width: 40px; height: 40px; background: linear-gradient(135deg, rgba(0,212,255,0.15), rgba(0,255,136,0.1));
@@ -316,7 +321,30 @@ nav .nav-inner {
   .hero h1 { font-size: 2.2rem; }
   .card-content { grid-template-columns: 1fr; gap: 24px; }
   .spec-row { grid-template-columns: 1fr; gap: 8px; }
-  .nav-links { display: none; }
+  
+  /* Mobile Nav Fix */
+  nav .nav-inner { 
+    height: auto; 
+    flex-direction: column;
+    padding: 12px 0;
+    gap: 16px;
+  }
+  .nav-links { 
+    display: flex; 
+    gap: 20px;
+    justify-content: center;
+    width: 100%;
+    border-top: 1px solid var(--border);
+    padding-top: 12px;
+  }
+  .nav-links a {
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+  }
+  .brand-logo { height: 40px; }
+  .brand-name { font-size: 1.2rem; }
+  .brand-tagline { font-size: 0.6rem; }
+  
   .card-header { padding: 20px; gap: 12px; }
   .card-icon { width: 40px; height: 40px; font-size: 18px; }
   .card-summary { display: none; }
