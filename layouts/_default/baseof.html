@@ -9,6 +9,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/logo.png">
+    <link rel="apple-touch-icon" href="/logo.png">
     
     {{ $style := resources.Get "css/main.css" | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $style.Permalink }}">
@@ -19,9 +21,12 @@
     <nav>
         <div class="container nav-inner">
             <a href="/" class="brand-row">
-                <div class="brand-icon">🛡️</div>
+                <img src="/logo.png" alt="CyberPenDef Logo" style="height: 100px; width: auto; max-height: 100px;">
                 <div>
-                    <div class="brand-name">CyberPenDef</div>
+                    <div class="brand-name">
+                        <span class="part-1">CYBER</span><span class="part-2">PEN</span><span class="part-3">DEF</span>
+                    </div>
+                    <div class="brand-tagline">IT & Cybersecurity Solutions</div>
                 </div>
             </a>
             <div class="nav-links">
