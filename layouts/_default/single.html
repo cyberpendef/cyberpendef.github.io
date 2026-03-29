@@ -3,12 +3,14 @@
     <div style="max-width: 80rem; margin: 0 auto; padding: 0 2rem;">
         {{ if .Params.show_page_header }}
         <div style="margin-bottom: 4rem; text-align: center;">
-            <h1 style="font-size: 2.5rem; font-weight: bold; margin-bottom: 1rem; color: white;">{{ .Title }}</h1>
+            <h1 data-cms-bind="#title" style="font-size: 2.5rem; font-weight: bold; margin-bottom: 1rem; color: white;">{{ .Title }}</h1>
             <div style="width: 5rem; height: 3px; background: linear-gradient(135deg, #1e40af 0%, #0891b2 50%, #d946ef 100%); margin: 0 auto;"></div>
         </div>
         {{ end }}
 
-        {{ .Content | safeHTML }}
+        <div data-cms-bind="#content">
+            {{ .Content | safeHTML }}
+        </div>
     </div>
 </div>
 {{ end }}
