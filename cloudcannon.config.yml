@@ -1,7 +1,29 @@
+# CloudCannon Configuration for Hugo
 paths:
   static: static
   uploads: static/uploads
+  data: data
+  layouts: layouts
+
+ssg_name: hugo
 timezone: Asia/Calcutta
+
+# Automatic URL Matching for Hugo
+collections_config:
+  pages:
+    name: Website Pages
+    path: content
+    output: true
+    # This pattern matches Hugo's default URL structure:
+    # content/about/_index.md -> /about/
+    # content/_index.md -> /
+    url: "/[relative_base_path]/"
+    icon: wysiwyg
+    _enabled_editors:
+      - visual
+      - content
+
+# Markdown Parser Settings
 markdown:
   engine: commonmark
   options:
@@ -17,23 +39,3 @@ markdown:
     attributes: false
     typographer: false
     treat_indentation_as_code: true
-_snippets_imports:
-  hugo:
-    exclude:
-      - hugo_instagram
-collections_config:
-  pages:
-    path: ''
-    icon: wysiwyg
-  about:
-    path: about
-    icon: bolt
-  contact:
-    path: contact
-    icon: contacts
-  content:
-    path: content
-    icon: wysiwyg
-  services:
-    path: services
-    icon: devices
