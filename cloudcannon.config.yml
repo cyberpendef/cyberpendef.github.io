@@ -1,0 +1,39 @@
+paths:
+  static: static
+  uploads: static/uploads
+timezone: Asia/Calcutta
+markdown:
+  engine: commonmark
+  options:
+    gfm: true
+    linkify: false
+    table: false
+    strikethrough: false
+    subscript: false
+    superscript: false
+    heading_ids: false
+    breaks: false
+    xhtml: false
+    attributes: false
+    typographer: false
+    treat_indentation_as_code: true
+_snippets_imports:
+  hugo:
+    exclude:
+      - hugo_instagram
+collections_config:
+  pages:
+    path: ''
+    icon: wysiwyg
+  about:
+    path: about
+    icon: bolt
+  contact:
+    path: contact
+    icon: contacts
+  content:
+    path: content
+    icon: wysiwyg
+  services:
+    path: services
+    icon: devices
