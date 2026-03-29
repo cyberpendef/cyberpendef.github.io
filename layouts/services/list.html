@@ -70,75 +70,53 @@
             <div class="content-block">
                 <div class="infographic-placeholder" style="min-height: 320px;">
                     <!-- Enhanced Story-Driven Infographic: Active Remote Support -->
-                    <svg width="100%" height="100%" viewBox="0 0 600 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <filter id="hyperGlow" x="-30%" y="-30%" width="160%" height="160%">
-                                <feGaussianBlur stdDeviation="5" result="blur" />
-                                <feComposite in="SourceGraphic" in2="blur" operator="over" />
-                            </filter>
-                            <linearGradient id="packetGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                                <stop offset="0%" stop-color="var(--cyan)" stop-opacity="0" />
-                                <stop offset="50%" stop-color="var(--cyan)" stop-opacity="1" />
-                                <stop offset="100%" stop-color="var(--cyan)" stop-opacity="0" />
-                            </linearGradient>
-                        </defs>
-
-                        <!-- Background Tech Grid Details -->
-                        <path d="M50 250 H550" stroke="var(--border)" stroke-width="1" opacity="0.2" />
-                        <path d="M50 50 V250" stroke="var(--border)" stroke-width="1" opacity="0.2" />
-
-                        <!-- Step 1: The Issue (Left) -->
-                        <g transform="translate(50, 80)">
-                            <!-- Red Warning Pulse -->
-                            <rect x="0" y="0" width="100" height="80" rx="8" fill="rgba(255, 68, 0, 0.05)" stroke="#ff4400" stroke-width="2">
-                                <animate attributeName="stroke-opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite" />
-                            </rect>
-                            <text x="50" y="45" fill="#ff4400" font-family="var(--font-head)" font-size="16" text-anchor="middle" font-weight="900" filter="url(#hyperGlow)">ERROR</text>
-                            <text x="50" y="110" fill="var(--muted)" font-family="var(--font-mono)" font-size="11" text-anchor="middle">YOUR SYSTEM</text>
-                            <!-- Glitch Effect -->
-                            <path d="M20 20 L80 60 M20 60 L80 20" stroke="#ff4400" stroke-width="1" opacity="0.3" stroke-dasharray="2 2" />
-                        </g>
-
-                        <!-- The Connection & Data Flow (Middle) -->
-                        <path d="M150 120 H450" stroke="var(--border)" stroke-width="2" stroke-dasharray="8 8" />
-                        
-                        <!-- Moving Data Packets -->
-                        <rect x="0" y="118" width="40" height="4" fill="url(#packetGrad)">
-                            <animateMotion path="M150 0 H450" dur="1.5s" repeatCount="indefinite" />
-                        </rect>
-                        <rect x="0" y="118" width="40" height="4" fill="url(#packetGrad)">
-                            <animateMotion path="M150 0 H450" dur="1.5s" begin="0.75s" repeatCount="indefinite" />
-                        </rect>
-
-                        <!-- Central Fix Hub -->
-                        <g transform="translate(300, 120)">
-                            <circle cx="0" cy="0" r="45" fill="var(--bg)" stroke="var(--cyan)" stroke-width="3" filter="url(#hyperGlow)" />
-                            <text x="0" y="-5" fill="var(--cyan)" font-family="var(--font-mono)" font-size="24" text-anchor="middle">⚡</text>
-                            <text x="0" y="20" fill="var(--cyan)" font-family="var(--font-mono)" font-size="9" text-anchor="middle" font-weight="bold">REMOTE REPAIR</text>
-                            
-                            <!-- Radar Scan Animation -->
-                            <circle cx="0" cy="0" r="45" stroke="var(--cyan)" stroke-width="1" opacity="0.6">
-                                <animate attributeName="r" from="45" to="70" dur="2s" repeatCount="indefinite" />
-                                <animate attributeName="opacity" from="0.6" to="0" dur="2s" repeatCount="indefinite" />
-                            </circle>
-                        </g>
-
-                        <!-- Step 2: The Solution (Right) -->
-                        <g transform="translate(450, 80)">
-                            <rect x="0" y="0" width="100" height="80" rx="8" fill="rgba(0, 255, 136, 0.05)" stroke="var(--green)" stroke-width="2" />
-                            <!-- Success Checkmark with Draw Animation -->
-                            <path d="M30 40 L45 55 L75 25" stroke="var(--green)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" filter="url(#hyperGlow)">
-                                <animate attributeName="stroke-dasharray" from="0 100" to="100 0" dur="1s" repeatCount="1" />
-                            </path>
-                            <text x="50" y="110" fill="var(--green)" font-family="var(--font-mono)" font-size="11" text-anchor="middle" font-weight="bold">OPTIMIZED</text>
-                        </g>
-
-                        <!-- Descriptive Summary -->
-                        <g transform="translate(300, 240)">
-                            <text x="0" y="0" fill="var(--white)" font-family="var(--font-body)" font-size="14" text-anchor="middle" font-weight="600">Active Troubleshooting & Diagnostics</text>
-                            <text x="0" y="25" fill="var(--muted)" font-family="var(--font-mono)" font-size="11" text-anchor="middle">Real-time resolution via encrypted secure bridge</text>
-                        </g>
-                    </svg>
+                   <svg viewBox="0 0 500 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- BG grid -->
+  <rect width="500" height="260" fill="var(--surface)"/>
+  <line x1="0" y1="130" x2="500" y2="130" stroke="var(--border)" stroke-width="0.5" opacity=".4"/>
+  <!-- Client monitor -->
+  <rect x="20" y="50" width="120" height="85" rx="5" fill="var(--card)" stroke="var(--red)" stroke-width="1.5"/>
+  <rect x="30" y="60" width="100" height="62" rx="3" fill="var(--bg)"/>
+  <line x1="50" y1="72" x2="90" y2="108" stroke="var(--red)" stroke-width="2" stroke-linecap="round"/>
+  <line x1="90" y1="72" x2="50" y2="108" stroke="var(--red)" stroke-width="2" stroke-linecap="round"/>
+  <rect x="70" y="135" width="20" height="7" rx="2" fill="var(--border)"/>
+  <rect x="60" y="142" width="40" height="4" rx="2" fill="var(--border)"/>
+  <text x="80" y="162" text-anchor="middle" font-family="var(--font-mono)" font-size="8" fill="var(--red)" letter-spacing="1">YOUR DEVICE</text>
+  <!-- Encrypted tunnel -->
+  <line x1="145" y1="92" x2="190" y2="92" stroke="var(--border)" stroke-dasharray="4 3" stroke-width="1"/>
+  <line x1="310" y1="92" x2="355" y2="92" stroke="var(--border)" stroke-dasharray="4 3" stroke-width="1"/>
+  <!-- Lock badge -->
+  <rect x="200" y="74" width="100" height="40" rx="5" fill="var(--card)" stroke="var(--cyan)" stroke-width="1.5"/>
+  <rect x="230" y="78" width="40" height="24" rx="3" fill="var(--bg)" stroke="var(--cyan)" stroke-width="1"/>
+  <path d="M237 78 Q237 71 250 71 Q263 71 263 78" fill="none" stroke="var(--cyan)" stroke-width="1.5"/>
+  <circle cx="250" cy="90" r="3.5" fill="var(--cyan)"/>
+  <line x1="250" y1="93" x2="250" y2="97" stroke="var(--cyan)" stroke-width="1.5"/>
+  <text x="250" y="126" text-anchor="middle" font-family="var(--font-mono)" font-size="8" fill="var(--cyan)" letter-spacing="1">ENCRYPTED SESSION</text>
+  <!-- Tech monitor -->
+  <rect x="360" y="50" width="120" height="85" rx="5" fill="var(--card)" stroke="var(--green)" stroke-width="1.5"/>
+  <rect x="370" y="60" width="100" height="62" rx="3" fill="var(--bg)"/>
+  <path d="M386 93 L401 108 L431 73" stroke="var(--green)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="410" y="135" width="20" height="7" rx="2" fill="var(--border)"/>
+  <rect x="400" y="142" width="40" height="4" rx="2" fill="var(--border)"/>
+  <text x="420" y="162" text-anchor="middle" font-family="var(--font-mono)" font-size="8" fill="var(--green)" letter-spacing="1">ISSUE FIXED</text>
+  <!-- Step labels -->
+  <rect x="18" y="175" width="78" height="22" rx="4" fill="var(--bg)" stroke="var(--border)"/>
+  <text x="57" y="190" text-anchor="middle" font-family="var(--font-mono)" font-size="8" fill="var(--muted)">① CONNECT</text>
+  <rect x="211" y="175" width="78" height="22" rx="4" fill="var(--bg)" stroke="var(--border)"/>
+  <text x="250" y="190" text-anchor="middle" font-family="var(--font-mono)" font-size="8" fill="var(--muted)">② DIAGNOSE</text>
+  <rect x="404" y="175" width="78" height="22" rx="4" fill="var(--bg)" stroke="var(--border)"/>
+  <text x="443" y="190" text-anchor="middle" font-family="var(--font-mono)" font-size="8" fill="var(--muted)">③ RESOLVE</text>
+  <!-- OS tags -->
+  <rect x="18" y="210" width="60" height="16" rx="3" fill="var(--bg)" stroke="var(--cyan)" stroke-width="0.8"/>
+  <text x="48" y="221" text-anchor="middle" font-family="var(--font-mono)" font-size="7" fill="var(--cyan)">Windows</text>
+  <rect x="84" y="210" width="50" height="16" rx="3" fill="var(--bg)" stroke="var(--cyan)" stroke-width="0.8"/>
+  <text x="109" y="221" text-anchor="middle" font-family="var(--font-mono)" font-size="7" fill="var(--cyan)">macOS</text>
+  <rect x="140" y="210" width="44" height="16" rx="3" fill="var(--bg)" stroke="var(--cyan)" stroke-width="0.8"/>
+  <text x="162" y="221" text-anchor="middle" font-family="var(--font-mono)" font-size="7" fill="var(--cyan)">Linux</text>
+  <text x="380" y="219" font-family="var(--font-mono)" font-size="9" fill="var(--white)" font-weight="500">AI-Assisted · Remote · Fast</text>
+  <!-- Title -->
+  <text x="250" y="246" text-anchor="middle" font-family="var(--font-mono)" font-size="10" fill="var(--dimmed)" letter-spacing="2">REMOTE TECHNICAL SUPPORT</text>
+</svg>
                 </div>
                 <div class="tag-row">
                     <span class="tag cyan">Windows</span>
@@ -176,59 +154,49 @@
             <div class="content-block">
                 <div class="infographic-placeholder" style="min-height: 320px;">
                     <!-- Story-Driven Infographic: Freelancer Workflow Optimization -->
-                    <svg width="100%" height="100%" viewBox="0 0 600 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <filter id="hyperGlow2" x="-30%" y="-30%" width="160%" height="160%">
-                                <feGaussianBlur stdDeviation="5" result="blur" />
-                                <feComposite in="SourceGraphic" in2="blur" operator="over" />
-                            </filter>
-                        </defs>
-
-                        <!-- Background Tech Grid -->
-                        <path d="M50 250 H550" stroke="var(--border)" stroke-width="1" opacity="0.2" />
-                        <path d="M50 50 V250" stroke="var(--border)" stroke-width="1" opacity="0.2" />
-
-                        <!-- Step 1: Tech Friction (Left) -->
-                        <g transform="translate(50, 80)">
-                            <rect x="0" y="0" width="100" height="80" rx="8" fill="rgba(255, 68, 0, 0.05)" stroke="#ff4400" stroke-width="2" />
-                            <!-- Disorganized icons -->
-                            <path d="M30 30 L40 50 M60 25 L70 45" stroke="#ff4400" stroke-width="2" opacity="0.4" />
-                            <text x="50" y="45" fill="#ff4400" font-family="var(--font-head)" font-size="14" text-anchor="middle" font-weight="900" filter="url(#hyperGlow2)">FRICTION</text>
-                            <text x="50" y="110" fill="var(--muted)" font-family="var(--font-mono)" font-size="10" text-anchor="middle">DISORGANIZED</text>
-                        </g>
-
-                        <!-- The Transformation (Middle) -->
-                        <path d="M150 120 H450" stroke="var(--border)" stroke-width="2" stroke-dasharray="8 8" />
-                        
-                        <!-- Floating Tech Stack Icons -->
-                        <circle cx="220" cy="120" r="15" fill="var(--bg)" stroke="var(--cyan)" stroke-width="1">
-                            <animate attributeName="cy" values="120;105;120" dur="3s" repeatCount="indefinite" />
-                        </circle>
-                        <circle cx="300" cy="120" r="20" fill="var(--bg)" stroke="var(--cyan)" stroke-width="2" filter="url(#hyperGlow2)">
-                            <animate attributeName="cy" values="120;135;120" dur="4s" repeatCount="indefinite" />
-                        </circle>
-                        <circle cx="380" cy="120" r="15" fill="var(--bg)" stroke="var(--cyan)" stroke-width="1">
-                            <animate attributeName="cy" values="120;110;120" dur="2.5s" repeatCount="indefinite" />
-                        </circle>
-
-                        <text x="300" y="125" fill="var(--cyan)" font-family="var(--font-mono)" font-size="12" text-anchor="middle">⚙️</text>
-                        <text x="300" y="165" fill="var(--cyan)" font-family="var(--font-mono)" font-size="9" text-anchor="middle" font-weight="bold">MY OPTIMIZATION</text>
-
-                        <!-- Step 2: Continuity (Right) -->
-                        <g transform="translate(450, 80)">
-                            <rect x="0" y="0" width="100" height="80" rx="8" fill="rgba(0, 255, 136, 0.05)" stroke="var(--green)" stroke-width="2" filter="url(#hyperGlow2)" />
-                            <!-- Sync icon -->
-                            <path d="M35 40 A15 15 0 1 1 65 40" stroke="var(--green)" stroke-width="3" stroke-linecap="round" fill="none" />
-                            <path d="M65 35 L65 45 L55 45" stroke="var(--green)" stroke-width="3" stroke-linecap="round" />
-                            <text x="50" y="110" fill="var(--green)" font-family="var(--font-mono)" font-size="10" text-anchor="middle" font-weight="bold">SYNCED & READY</text>
-                        </g>
-
-                        <!-- Descriptive Summary -->
-                        <g transform="translate(300, 240)">
-                            <text x="0" y="0" fill="var(--white)" font-family="var(--font-body)" font-size="14" text-anchor="middle" font-weight="600">Building Your Professional IT Backbone</text>
-                            <text x="0" y="25" fill="var(--muted)" font-family="var(--font-mono)" font-size="11" text-anchor="middle">App-stack setup • Auto-backups • 100% Uptime focus</text>
-                        </g>
-                    </svg>
+                    <svg viewBox="0 0 500 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="500" height="260" fill="var(--surface)"/>
+  <!-- Center laptop -->
+  <rect x="185" y="95" width="130" height="85" rx="5" fill="var(--card)" stroke="var(--cyan)" stroke-width="1.5"/>
+  <rect x="195" y="103" width="110" height="65" rx="3" fill="var(--bg)"/>
+  <rect x="195" y="103" width="110" height="10" rx="3" fill="var(--surface)"/>
+  <!-- Screen content: productivity bars -->
+  <rect x="200" y="117" width="55" height="4" rx="2" fill="var(--cyan)" opacity=".6"/>
+  <rect x="200" y="124" width="40" height="4" rx="2" fill="var(--green)" opacity=".5"/>
+  <rect x="200" y="131" width="65" height="4" rx="2" fill="var(--cyan)" opacity=".4"/>
+  <rect x="260" y="117" width="35" height="22" rx="2" fill="var(--card)" stroke="var(--cyan)" stroke-width=".5"/>
+  <text x="278" y="131" text-anchor="middle" font-family="var(--font-mono)" font-size="7" fill="var(--green)">✓ SYNC</text>
+  <!-- Laptop base -->
+  <rect x="175" y="180" width="150" height="6" rx="3" fill="var(--border)"/>
+  <!-- Tool nodes -->
+  <!-- Cloud Storage (top left) -->
+  <circle cx="80" cy="70" r="24" fill="var(--card)" stroke="var(--cyan)" stroke-width="1"/>
+  <text x="80" y="66" text-anchor="middle" font-family="var(--font-mono)" font-size="14">☁️</text>
+  <text x="80" y="82" text-anchor="middle" font-family="var(--font-mono)" font-size="7" fill="var(--muted)">CLOUD</text>
+  <line x1="104" y1="82" x2="186" y2="115" stroke="var(--border)" stroke-width="1" stroke-dasharray="3 3"/>
+  <!-- Email (top right) -->
+  <circle cx="420" cy="70" r="24" fill="var(--card)" stroke="var(--cyan)" stroke-width="1"/>
+  <text x="420" y="66" text-anchor="middle" font-family="var(--font-mono)" font-size="14">📧</text>
+  <text x="420" y="82" text-anchor="middle" font-family="var(--font-mono)" font-size="7" fill="var(--muted)">EMAIL</text>
+  <line x1="396" y1="82" x2="314" y2="115" stroke="var(--border)" stroke-width="1" stroke-dasharray="3 3"/>
+  <!-- Backup (left) -->
+  <circle cx="50" cy="140" r="24" fill="var(--card)" stroke="var(--green)" stroke-width="1"/>
+  <text x="50" y="136" text-anchor="middle" font-family="var(--font-mono)" font-size="14">💾</text>
+  <text x="50" y="152" text-anchor="middle" font-family="var(--font-mono)" font-size="7" fill="var(--muted)">BACKUP</text>
+  <line x1="74" y1="140" x2="186" y2="145" stroke="var(--border)" stroke-width="1" stroke-dasharray="3 3"/>
+  <!-- VPN (right) -->
+  <circle cx="450" cy="140" r="24" fill="var(--card)" stroke="var(--green)" stroke-width="1"/>
+  <text x="450" y="136" text-anchor="middle" font-family="var(--font-mono)" font-size="14">🔒</text>
+  <text x="450" y="152" text-anchor="middle" font-family="var(--font-mono)" font-size="7" fill="var(--muted)">VPN</text>
+  <line x1="426" y1="140" x2="314" y2="145" stroke="var(--border)" stroke-width="1" stroke-dasharray="3 3"/>
+  <!-- Video (bottom) -->
+  <circle cx="250" cy="215" r="24" fill="var(--card)" stroke="var(--amber)" stroke-width="1"/>
+  <text x="250" y="211" text-anchor="middle" font-family="var(--font-mono)" font-size="14">🎥</text>
+  <text x="250" y="228" text-anchor="middle" font-family="var(--font-mono)" font-size="7" fill="var(--muted)">COMMS</text>
+  <line x1="250" y1="191" x2="250" y2="186" stroke="var(--border)" stroke-width="1" stroke-dasharray="3 3"/>
+  <!-- Center label -->
+  <text x="250" y="247" text-anchor="middle" font-family="var(--font-mono)" font-size="9" fill="var(--dimmed)" letter-spacing="2">YOUR COMPLETE TECH STACK — MANAGED</text>
+</svg>
                 </div>
                 <div class="tag-row">
                     <span class="tag cyan">Workflow Automation</span>
@@ -268,54 +236,56 @@
             <div class="content-block">
                 <div class="infographic-placeholder" style="min-height: 320px;">
                     <!-- Story-Driven Infographic: Parental Control & Digital Safety -->
-                    <svg width="100%" height="100%" viewBox="0 0 600 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <filter id="hyperGlow3" x="-30%" y="-30%" width="160%" height="160%">
-                                <feGaussianBlur stdDeviation="5" result="blur" />
-                                <feComposite in="SourceGraphic" in2="blur" operator="over" />
-                            </filter>
-                        </defs>
-
-                        <!-- Background Tech Grid -->
-                        <path d="M50 250 H550" stroke="var(--border)" stroke-width="1" opacity="0.2" />
-                        <path d="M50 50 V250" stroke="var(--border)" stroke-width="1" opacity="0.2" />
-
-                        <!-- Step 1: Unfiltered Access (Left) -->
-                        <g transform="translate(50, 80)">
-                            <rect x="0" y="0" width="100" height="80" rx="8" fill="rgba(255, 184, 0, 0.05)" stroke="var(--amber)" stroke-width="2" />
-                            <!-- Warning Icon -->
-                            <path d="M50 25 V45 M50 55 H50.01" stroke="var(--amber)" stroke-width="4" stroke-linecap="round" filter="url(#hyperGlow3)" />
-                            <text x="50" y="110" fill="var(--muted)" font-family="var(--font-mono)" font-size="10" text-anchor="middle">UNFILTERED</text>
-                        </g>
-
-                        <!-- The Filter Bridge (Middle) -->
-                        <path d="M150 120 H450" stroke="var(--border)" stroke-width="2" stroke-dasharray="8 8" />
-                        
-                        <!-- Central Filtering Shield -->
-                        <g transform="translate(300, 120)">
-                            <path d="M0 -40 L35 -20 V15 Q0 40 -35 15 V-20 Z" fill="var(--bg)" stroke="var(--cyan)" stroke-width="2" filter="url(#hyperGlow3)" />
-                            <!-- Moving Scan Beam -->
-                            <rect x="-30" y="-30" width="60" height="2" fill="var(--cyan)" opacity="0.8">
-                                <animate attributeName="y" values="-30;20;-30" dur="3s" repeatCount="indefinite" />
-                            </rect>
-                            <text x="0" y="55" fill="var(--cyan)" font-family="var(--font-mono)" font-size="9" text-anchor="middle" font-weight="bold">ACTIVE FILTERING</text>
-                        </g>
-
-                        <!-- Step 2: Safe Environment (Right) -->
-                        <g transform="translate(450, 80)">
-                            <rect x="0" y="0" width="100" height="80" rx="8" fill="rgba(0, 255, 136, 0.05)" stroke="var(--green)" stroke-width="2" filter="url(#hyperGlow3)" />
-                            <!-- House Icon -->
-                            <path d="M30 45 V30 L50 15 L70 30 V45 H30 Z" stroke="var(--green)" stroke-width="3" stroke-linejoin="round" fill="none" />
-                            <path d="M45 35 L50 40 L60 30" stroke="var(--green)" stroke-width="2" stroke-linecap="round" />
-                            <text x="50" y="110" fill="var(--green)" font-family="var(--font-mono)" font-size="10" text-anchor="middle" font-weight="bold">SAFE ZONE</text>
-                        </g>
-
-                        <!-- Descriptive Summary -->
-                        <g transform="translate(300, 240)">
-                            <text x="0" y="0" fill="var(--white)" font-family="var(--font-body)" font-size="14" text-anchor="middle" font-weight="600">Smart Boundaries for Your Children</text>
-                            <text x="0" y="25" fill="var(--muted)" font-family="var(--font-mono)" font-size="11" text-anchor="middle">Content Filtering • App Limits • Safe Search • Alerts</text>
-                        </g>
-                    </svg>
+<svg viewBox="0 0 500 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="500" height="260" fill="var(--surface)"/>
+  <!-- Shield arc over all devices -->
+  <path d="M60 130 Q250 30 440 130" stroke="var(--green)" stroke-width="2" fill="none"/>
+  <path d="M60 130 Q250 45 440 130" stroke="var(--green)" stroke-width="0.5" fill="none" opacity=".3"/>
+  <!-- Shield end dots -->
+  <circle cx="60" cy="130" r="4" fill="var(--green)"/>
+  <circle cx="440" cy="130" r="4" fill="var(--green)"/>
+  <!-- Phone device -->
+  <rect x="58" y="130" width="52" height="80" rx="7" fill="var(--card)" stroke="var(--amber)" stroke-width="1.5"/>
+  <rect x="65" y="140" width="38" height="56" rx="2" fill="var(--bg)"/>
+  <circle cx="84" cy="147" r="2" fill="var(--border)"/>
+  <rect x="68" y="152" width="32" height="3" rx="1" fill="var(--cyan)" opacity=".5"/>
+  <rect x="68" y="158" width="24" height="3" rx="1" fill="var(--border)"/>
+  <rect x="68" y="164" width="28" height="3" rx="1" fill="var(--border)"/>
+  <text x="84" y="224" text-anchor="middle" font-family="var(--font-mono)" font-size="7" fill="var(--muted)">PHONE</text>
+  <!-- Tablet device -->
+  <rect x="174" y="120" width="70" height="100" rx="5" fill="var(--card)" stroke="var(--amber)" stroke-width="1.5"/>
+  <rect x="181" y="130" width="56" height="76" rx="2" fill="var(--bg)"/>
+  <circle cx="209" cy="136" r="2" fill="var(--border)"/>
+  <rect x="184" y="143" width="50" height="4" rx="1" fill="var(--cyan)" opacity=".5"/>
+  <rect x="184" y="150" width="35" height="4" rx="1" fill="var(--border)"/>
+  <rect x="184" y="157" width="42" height="4" rx="1" fill="var(--border)"/>
+  <text x="209" y="234" text-anchor="middle" font-family="var(--font-mono)" font-size="7" fill="var(--muted)">TABLET</text>
+  <!-- Laptop device -->
+  <rect x="300" y="125" width="115" height="75" rx="4" fill="var(--card)" stroke="var(--amber)" stroke-width="1.5"/>
+  <rect x="308" y="132" width="99" height="55" rx="2" fill="var(--bg)"/>
+  <rect x="298" y="200" width="135" height="7" rx="3" fill="var(--border)"/>
+  <rect x="308" y="138" width="60" height="4" rx="1" fill="var(--cyan)" opacity=".5"/>
+  <rect x="308" y="145" width="44" height="4" rx="1" fill="var(--border)"/>
+  <rect x="308" y="152" width="52" height="4" rx="1" fill="var(--border)"/>
+  <text x="358" y="220" text-anchor="middle" font-family="var(--font-mono)" font-size="7" fill="var(--muted)">LAPTOP</text>
+  <!-- Lock badges on devices -->
+  <circle cx="108" cy="133" r="10" fill="var(--card)" stroke="var(--green)" stroke-width="1.2"/>
+  <text x="108" y="137" text-anchor="middle" font-family="var(--font-mono)" font-size="10">🔒</text>
+  <circle cx="242" cy="123" r="10" fill="var(--card)" stroke="var(--green)" stroke-width="1.2"/>
+  <text x="242" y="127" text-anchor="middle" font-family="var(--font-mono)" font-size="10">🔒</text>
+  <circle cx="413" cy="128" r="10" fill="var(--card)" stroke="var(--green)" stroke-width="1.2"/>
+  <text x="413" y="132" text-anchor="middle" font-family="var(--font-mono)" font-size="10">🔒</text>
+  <!-- Filter bar -->
+  <text x="14" y="12" font-family="var(--font-mono)" font-size="8" fill="var(--muted)" letter-spacing="1">CONTENT FILTER</text>
+  <rect x="12" y="16" width="50" height="12" rx="3" fill="#ff4455" opacity=".15" stroke="var(--red)" stroke-width=".5"/>
+  <text x="37" y="26" text-anchor="middle" font-family="var(--font-mono)" font-size="7" fill="var(--red)">BLOCKED</text>
+  <rect x="68" y="16" width="55" height="12" rx="3" fill="var(--green)" opacity=".1" stroke="var(--green)" stroke-width=".5"/>
+  <text x="95" y="26" text-anchor="middle" font-family="var(--font-mono)" font-size="7" fill="var(--green)">ALLOWED</text>
+  <!-- "PROTECTED" badge -->
+  <rect x="190" y="12" width="120" height="18" rx="5" fill="var(--green)" opacity=".12" stroke="var(--green)" stroke-width="1"/>
+  <text x="250" y="25" text-anchor="middle" font-family="var(--font-mono)" font-size="9" fill="var(--green)" letter-spacing="2">● PROTECTED</text>
+  <text x="250" y="247" text-anchor="middle" font-family="var(--font-mono)" font-size="9" fill="var(--dimmed)" letter-spacing="2">MULTI-DEVICE CHILD SAFETY CONTROLS</text>
+</svg>
                 </div>
                 <div class="tag-row">
                     <span class="tag amber">Child Safety</span>
@@ -353,66 +323,52 @@
             <div class="content-block">
                 <div class="infographic-placeholder" style="min-height: 320px;">
                     <!-- Story-Driven Infographic: Server Deployment & Hardening -->
-                    <svg width="100%" height="100%" viewBox="0 0 600 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <filter id="hyperGlow4" x="-30%" y="-30%" width="160%" height="160%">
-                                <feGaussianBlur stdDeviation="5" result="blur" />
-                                <feComposite in="SourceGraphic" in2="blur" operator="over" />
-                            </filter>
-                        </defs>
-
-                        <!-- Background Tech Grid -->
-                        <path d="M50 250 H550" stroke="var(--border)" stroke-width="1" opacity="0.2" />
-                        <path d="M50 50 V250" stroke="var(--border)" stroke-width="1" opacity="0.2" />
-
-                        <!-- Step 1: Code/Manual Setup (Left) -->
-                        <g transform="translate(50, 80)">
-                            <rect x="0" y="0" width="100" height="80" rx="8" fill="rgba(255, 184, 0, 0.05)" stroke="var(--amber)" stroke-width="2" />
-                            <!-- Brackets Icon -->
-                            <text x="50" y="50" fill="var(--amber)" font-family="var(--font-mono)" font-size="24" text-anchor="middle" font-weight="bold" filter="url(#hyperGlow4)">&lt;/&gt;</text>
-                            <text x="50" y="110" fill="var(--muted)" font-family="var(--font-mono)" font-size="10" text-anchor="middle">UNCONFIGURED</text>
-                        </g>
-
-                        <!-- The Deployment Pipeline (Middle) -->
-                        <path d="M150 120 H450" stroke="var(--border)" stroke-width="2" stroke-dasharray="8 8" />
-                        
-                        <!-- Moving Data Bits -->
-                        <rect x="200" y="115" width="10" height="10" fill="var(--cyan)">
-                            <animate attributeName="x" from="150" to="450" dur="2s" repeatCount="indefinite" />
-                        </rect>
-                        <rect x="300" y="115" width="10" height="10" fill="var(--cyan)">
-                            <animate attributeName="x" from="150" to="450" dur="2s" begin="1s" repeatCount="indefinite" />
-                        </rect>
-
-                        <!-- Central Deployment Hub -->
-                        <g transform="translate(300, 120)">
-                            <circle cx="0" cy="0" r="40" fill="var(--bg)" stroke="var(--cyan)" stroke-width="2" filter="url(#hyperGlow4)" />
-                            <!-- Spinning Gear -->
-                            <text x="0" y="8" fill="var(--cyan)" font-family="var(--font-mono)" font-size="20" text-anchor="middle">⚙️
-                                <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="5s" repeatCount="indefinite" />
-                            </text>
-                            <text x="0" y="55" fill="var(--cyan)" font-family="var(--font-mono)" font-size="9" text-anchor="middle" font-weight="bold">AUTO-DEPLOY</text>
-                        </g>
-
-                        <!-- Step 2: Live Server (Right) -->
-                        <g transform="translate(450, 80)">
-                            <rect x="0" y="0" width="100" height="80" rx="8" fill="rgba(0, 255, 136, 0.05)" stroke="var(--green)" stroke-width="2" filter="url(#hyperGlow4)" />
-                            <!-- Server Rack Icon -->
-                            <rect x="30" y="25" width="40" height="10" rx="2" stroke="var(--green)" stroke-width="2" fill="none" />
-                            <rect x="30" y="40" width="40" height="10" rx="2" stroke="var(--green)" stroke-width="2" fill="none" />
-                            <rect x="30" y="55" width="40" height="10" rx="2" stroke="var(--green)" stroke-width="2" fill="none" />
-                            <circle cx="35" cy="30" r="1" fill="var(--green)" />
-                            <circle cx="35" cy="45" r="1" fill="var(--green)" />
-                            <circle cx="35" cy="60" r="1" fill="var(--green)" />
-                            <text x="50" y="110" fill="var(--green)" font-family="var(--font-mono)" font-size="10" text-anchor="middle" font-weight="bold">LIVE & HARDENED</text>
-                        </g>
-
-                        <!-- Descriptive Summary -->
-                        <g transform="translate(300, 240)">
-                            <text x="0" y="0" fill="var(--white)" font-family="var(--font-body)" font-size="14" text-anchor="middle" font-weight="600">Enterprise Infrastructure for Your Web App</text>
-                            <text x="0" y="25" fill="var(--muted)" font-family="var(--font-mono)" font-size="11" text-anchor="middle">Secure Provisioning • SSL Setup • 24/7 Monitoring • Hardened OS</text>
-                        </g>
-                    </svg>
+                    <svg viewBox="0 0 500 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="500" height="260" fill="var(--surface)"/>
+  <!-- Pipeline steps -->
+  <!-- Step 1: Code -->
+  <rect x="18" y="80" width="90" height="68" rx="6" fill="var(--card)" stroke="var(--cyan)" stroke-width="1.5"/>
+  <text x="63" y="105" text-anchor="middle" font-family="var(--font-mono)" font-size="18">💻</text>
+  <text x="63" y="122" text-anchor="middle" font-family="var(--font-mono)" font-size="8" fill="var(--cyan)" letter-spacing="1">CODE</text>
+  <text x="63" y="133" text-anchor="middle" font-family="var(--font-mono)" font-size="7" fill="var(--muted)">Your App</text>
+  <!-- Arrow 1 -->
+  <line x1="108" y1="114" x2="128" y2="114" stroke="var(--cyan)" stroke-width="1.5"/>
+  <polygon points="125,110 133,114 125,118" fill="var(--cyan)"/>
+  <!-- Step 2: Build -->
+  <rect x="131" y="80" width="90" height="68" rx="6" fill="var(--card)" stroke="var(--cyan)" stroke-width="1.5"/>
+  <text x="176" y="105" text-anchor="middle" font-family="var(--font-mono)" font-size="18">⚙️</text>
+  <text x="176" y="122" text-anchor="middle" font-family="var(--font-mono)" font-size="8" fill="var(--cyan)" letter-spacing="1">BUILD</text>
+  <text x="176" y="133" text-anchor="middle" font-family="var(--font-mono)" font-size="7" fill="var(--muted)">Configure</text>
+  <!-- Arrow 2 -->
+  <line x1="221" y1="114" x2="241" y2="114" stroke="var(--cyan)" stroke-width="1.5"/>
+  <polygon points="238,110 246,114 238,118" fill="var(--cyan)"/>
+  <!-- Step 3: Deploy -->
+  <rect x="244" y="80" width="90" height="68" rx="6" fill="var(--card)" stroke="var(--amber)" stroke-width="1.5"/>
+  <text x="289" y="105" text-anchor="middle" font-family="var(--font-mono)" font-size="18">🚀</text>
+  <text x="289" y="122" text-anchor="middle" font-family="var(--font-mono)" font-size="8" fill="var(--amber)" letter-spacing="1">DEPLOY</text>
+  <text x="289" y="133" text-anchor="middle" font-family="var(--font-mono)" font-size="7" fill="var(--muted)">Linux + SSL</text>
+  <!-- Arrow 3 -->
+  <line x1="334" y1="114" x2="354" y2="114" stroke="var(--green)" stroke-width="1.5"/>
+  <polygon points="351,110 359,114 351,118" fill="var(--green)"/>
+  <!-- Step 4: Live -->
+  <rect x="357" y="80" width="125" height="68" rx="6" fill="var(--card)" stroke="var(--green)" stroke-width="2"/>
+  <text x="419" y="105" text-anchor="middle" font-family="var(--font-mono)" font-size="18">✅</text>
+  <text x="419" y="122" text-anchor="middle" font-family="var(--font-mono)" font-size="8" fill="var(--green)" letter-spacing="1">LIVE &amp; SECURED</text>
+  <text x="419" y="133" text-anchor="middle" font-family="var(--font-mono)" font-size="7" fill="var(--muted)">Monitored 24/7</text>
+  <!-- Feature tags below pipeline -->
+  <rect x="18" y="165" width="100" height="16" rx="3" fill="var(--bg)" stroke="var(--border)"/>
+  <text x="68" y="176" text-anchor="middle" font-family="var(--font-mono)" font-size="7" fill="var(--muted)">Nginx / Apache</text>
+  <rect x="125" y="165" width="100" height="16" rx="3" fill="var(--bg)" stroke="var(--border)"/>
+  <text x="175" y="176" text-anchor="middle" font-family="var(--font-mono)" font-size="7" fill="var(--muted)">SSL Auto-Renew</text>
+  <rect x="232" y="165" width="100" height="16" rx="3" fill="var(--bg)" stroke="var(--border)"/>
+  <text x="282" y="176" text-anchor="middle" font-family="var(--font-mono)" font-size="7" fill="var(--muted)">DNS Management</text>
+  <rect x="339" y="165" width="143" height="16" rx="3" fill="var(--bg)" stroke="var(--border)"/>
+  <text x="410" y="176" text-anchor="middle" font-family="var(--font-mono)" font-size="7" fill="var(--muted)">AWS · DigitalOcean · Hetzner</text>
+  <!-- Cost badge -->
+  <rect x="160" y="200" width="180" height="22" rx="6" fill="var(--bg)" stroke="var(--green)" stroke-width="1"/>
+  <text x="250" y="215" text-anchor="middle" font-family="var(--font-mono)" font-size="9" fill="var(--green)" letter-spacing="1">💸 COST-OPTIMISED CLOUD</text>
+  <text x="250" y="246" text-anchor="middle" font-family="var(--font-mono)" font-size="9" fill="var(--dimmed)" letter-spacing="2">SERVER SETUP &amp; WEB APP DEPLOYMENT</text>
+</svg>
                 </div>
                 <div class="tag-row">
                     <span class="tag cyan">Linux</span>
@@ -549,51 +505,38 @@
             <div class="content-block">
                 <div class="infographic-placeholder" style="min-height: 320px;">
                     <!-- Story-Driven Infographic: Network Defense Layers -->
-                    <svg width="100%" height="100%" viewBox="0 0 600 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <filter id="hyperGlow6" x="-30%" y="-30%" width="160%" height="160%">
-                                <feGaussianBlur stdDeviation="5" result="blur" />
-                                <feComposite in="SourceGraphic" in2="blur" operator="over" />
-                            </filter>
-                        </defs>
-                        <!-- Background Tech Grid -->
-                        <path d="M50 250 H550" stroke="var(--border)" stroke-width="1" opacity="0.2" />
-                        <path d="M50 50 V250" stroke="var(--border)" stroke-width="1" opacity="0.2" />
-
-                        <!-- Incoming Threats (Left) -->
-                        <g transform="translate(50, 120)">
-                            <path d="M0 0 H80" stroke="#ff4400" stroke-width="2" stroke-dasharray="4 4" opacity="0.6" />
-                            <path d="M0 30 H80" stroke="#ff4400" stroke-width="2" stroke-dasharray="4 4" opacity="0.6" />
-                            <text x="0" y="-20" fill="#ff4400" font-family="var(--font-mono)" font-size="10">UNFILTERED THREATS</text>
-                        </g>
-
-                        <!-- Layers of Defense (Middle) -->
-                        <g transform="translate(200, 50)">
-                            <!-- Layer 1: Firewall -->
-                            <rect x="0" y="0" width="20" height="200" rx="4" fill="rgba(0, 212, 255, 0.1)" stroke="var(--cyan)" stroke-width="2" filter="url(#hyperGlow6)" />
-                            <text x="-10" y="100" fill="var(--cyan)" font-family="var(--font-mono)" font-size="8" transform="rotate(-90 -10 100)" text-anchor="middle">FIREWALL</text>
-                            
-                            <!-- Layer 2: VPN -->
-                            <rect x="60" y="20" width="20" height="160" rx="4" fill="rgba(0, 255, 136, 0.1)" stroke="var(--green)" stroke-width="2" filter="url(#hyperGlow6)" />
-                            <text x="50" y="100" fill="var(--green)" font-family="var(--font-mono)" font-size="8" transform="rotate(-90 50 100)" text-anchor="middle">VPN TUNNEL</text>
-
-                            <!-- Layer 3: DNS Filter -->
-                            <rect x="120" y="40" width="20" height="120" rx="4" fill="rgba(160, 120, 255, 0.1)" stroke="var(--violet)" stroke-width="2" filter="url(#hyperGlow6)" />
-                            <text x="110" y="100" fill="var(--violet)" font-family="var(--font-mono)" font-size="8" transform="rotate(-90 110 100)" text-anchor="middle">DNS FILTER</text>
-                        </g>
-
-                        <!-- Safe User (Right) -->
-                        <g transform="translate(450, 100)">
-                            <circle cx="50" cy="50" r="40" fill="var(--bg)" stroke="var(--green)" stroke-width="2" filter="url(#hyperGlow6)" />
-                            <text x="50" y="55" fill="var(--green)" font-family="var(--font-mono)" font-size="24" text-anchor="middle">🏠</text>
-                            <text x="50" y="110" fill="var(--green)" font-family="var(--font-mono)" font-size="10" text-anchor="middle" font-weight="bold">SECURED HOME</text>
-                        </g>
-
-                        <!-- Summary -->
-                        <g transform="translate(300, 260)">
-                            <text x="0" y="0" fill="var(--white)" font-family="var(--font-body)" font-size="14" text-anchor="middle" font-weight="600">Multi-Layered Defense-in-Depth</text>
-                        </g>
-                    </svg>
+                   <svg viewBox="0 0 500 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="500" height="260" fill="var(--surface)"/>
+  <!-- Layer 1: Internet (outermost) -->
+  <rect x="20" y="15" width="460" height="230" rx="12" fill="none" stroke="var(--red)" stroke-width="1" stroke-dasharray="5 4" opacity=".5"/>
+  <text x="38" y="32" font-family="var(--font-mono)" font-size="8" fill="var(--red)" opacity=".7">INTERNET — UNTRUSTED ZONE</text>
+  <!-- Threat indicators in outer zone -->
+  <text x="35" y="55" font-family="var(--font-mono)" font-size="9" fill="var(--red)" opacity=".5">⚠ Malware</text>
+  <text x="390" y="55" font-family="var(--font-mono)" font-size="9" fill="var(--red)" opacity=".5">⚠ Tracking</text>
+  <text x="35" y="220" font-family="var(--font-mono)" font-size="9" fill="var(--red)" opacity=".5">⚠ Phishing</text>
+  <text x="380" y="220" font-family="var(--font-mono)" font-size="9" fill="var(--red)" opacity=".5">⚠ MITM</text>
+  <!-- Layer 2: VPN + Firewall -->
+  <rect x="65" y="58" width="370" height="145" rx="10" fill="none" stroke="var(--amber)" stroke-width="1.5"/>
+  <text x="83" y="75" font-family="var(--font-mono)" font-size="8" fill="var(--amber)">VPN + FIREWALL + DNS BLOCKER</text>
+  <!-- Layer 3: Devices (innermost) -->
+  <rect x="120" y="88" width="260" height="90" rx="8" fill="var(--bg)" stroke="var(--green)" stroke-width="2"/>
+  <text x="250" y="105" text-anchor="middle" font-family="var(--font-mono)" font-size="8" fill="var(--green)" letter-spacing="1">🔒 SECURE ZONE</text>
+  <!-- Device icons inside inner zone -->
+  <text x="155" y="138" text-anchor="middle" font-family="var(--font-mono)" font-size="20">💻</text>
+  <text x="250" y="138" text-anchor="middle" font-family="var(--font-mono)" font-size="20">📱</text>
+  <text x="345" y="138" text-anchor="middle" font-family="var(--font-mono)" font-size="20">🖥️</text>
+  <text x="155" y="153" text-anchor="middle" font-family="var(--font-mono)" font-size="7" fill="var(--muted)">Laptop</text>
+  <text x="250" y="153" text-anchor="middle" font-family="var(--font-mono)" font-size="7" fill="var(--muted)">Phone</text>
+  <text x="345" y="153" text-anchor="middle" font-family="var(--font-mono)" font-size="7" fill="var(--muted)">Desktop</text>
+  <!-- Legend dots -->
+  <circle cx="30" cy="246" r="4" fill="var(--red)" opacity=".6"/>
+  <text x="40" y="250" font-family="var(--font-mono)" font-size="7" fill="var(--muted)">Threats</text>
+  <circle cx="100" cy="246" r="4" fill="var(--amber)"/>
+  <text x="110" y="250" font-family="var(--font-mono)" font-size="7" fill="var(--muted)">Protection Layer</text>
+  <circle cx="220" cy="246" r="4" fill="var(--green)"/>
+  <text x="230" y="250" font-family="var(--font-mono)" font-size="7" fill="var(--muted)">Secure Devices</text>
+  <text x="420" y="250" text-anchor="middle" font-family="var(--font-mono)" font-size="7" fill="var(--cyan)">Monthly Monitoring</text>
+</svg>
                 </div>
                 <div class="tag-row">
                     <span class="tag green">VPN</span>
@@ -633,43 +576,54 @@
             <div class="content-block">
                 <div class="infographic-placeholder" style="min-height: 320px;">
                     <!-- Story-Driven Infographic: Emergency Incident Recovery -->
-                    <svg width="100%" height="100%" viewBox="0 0 600 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <filter id="hyperGlow7" x="-30%" y="-30%" width="160%" height="160%">
-                                <feGaussianBlur stdDeviation="5" result="blur" />
-                                <feComposite in="SourceGraphic" in2="blur" operator="over" />
-                            </filter>
-                        </defs>
-                        <!-- Recovery Timeline Line -->
-                        <path d="M100 150 H500" stroke="var(--border)" stroke-width="2" stroke-dasharray="10 5" />
-                        
-                        <!-- Step 1: Compromise -->
-                        <g transform="translate(100, 150)">
-                            <circle cx="0" cy="0" r="12" fill="#ff4400" filter="url(#hyperGlow7)" />
-                            <text x="0" y="40" fill="#ff4400" font-family="var(--font-mono)" font-size="10" text-anchor="middle">INCIDENT</text>
-                        </g>
-
-                        <!-- Step 2: My Response -->
-                        <g transform="translate(300, 150)">
-                            <circle cx="0" cy="0" r="20" fill="var(--bg)" stroke="var(--cyan)" stroke-width="3" filter="url(#hyperGlow7)">
-                                <animate attributeName="stroke-opacity" values="1;0.2;1" dur="1.5s" repeatCount="indefinite" />
-                            </circle>
-                            <text x="0" y="8" fill="var(--cyan)" font-family="var(--font-mono)" font-size="18" text-anchor="middle">🛡️</text>
-                            <text x="0" y="45" fill="var(--cyan)" font-family="var(--font-mono)" font-size="10" text-anchor="middle" font-weight="bold">MY RECOVERY</text>
-                        </g>
-
-                        <!-- Step 3: Restoration -->
-                        <g transform="translate(500, 150)">
-                            <circle cx="0" cy="0" r="12" fill="var(--green)" filter="url(#hyperGlow7)" />
-                            <text x="0" y="40" fill="var(--green)" font-family="var(--font-mono)" font-size="10" text-anchor="middle">RESTORED</text>
-                        </g>
-
-                        <!-- Descriptive Summary -->
-                        <g transform="translate(300, 240)">
-                            <text x="0" y="0" fill="var(--white)" font-family="var(--font-body)" font-size="14" text-anchor="middle" font-weight="600">Post-Incident Response & Support</text>
-                            <text x="0" y="25" fill="var(--muted)" font-family="var(--font-mono)" font-size="11" text-anchor="middle">Assessment • Lockdown • Recovery • Future Prevention</text>
-                        </g>
-                    </svg>
+                <svg viewBox="0 0 500 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="500" height="260" fill="var(--surface)"/>
+  <!-- Timeline connector line -->
+  <line x1="60" y1="130" x2="440" y2="130" stroke="var(--border)" stroke-width="1.5"/>
+  <!-- Phase 1: Alert -->
+  <circle cx="80" cy="130" r="22" fill="var(--bg)" stroke="var(--red)" stroke-width="2"/>
+  <text x="80" y="136" text-anchor="middle" font-family="var(--font-mono)" font-size="16">🚨</text>
+  <rect x="40" y="63" width="80" height="45" rx="5" fill="var(--card)" stroke="var(--red)" stroke-width="1"/>
+  <text x="80" y="80" text-anchor="middle" font-family="var(--font-mono)" font-size="8" fill="var(--red)" letter-spacing="1">PHASE 1</text>
+  <text x="80" y="93" text-anchor="middle" font-family="var(--font-mono)" font-size="9" fill="var(--white)">DETECT</text>
+  <text x="80" y="104" text-anchor="middle" font-family="var(--font-mono)" font-size="7" fill="var(--muted)">Fraud Identified</text>
+  <line x1="80" y1="108" x2="80" y2="108" stroke="var(--red)" stroke-width="1"/>
+  <line x1="80" y1="108" x2="80" y2="120" stroke="var(--red)" stroke-width="1"/>
+  <text x="80" y="175" text-anchor="middle" font-family="var(--font-mono)" font-size="7" fill="var(--muted)">Account</text>
+  <text x="80" y="186" text-anchor="middle" font-family="var(--font-mono)" font-size="7" fill="var(--muted)">Compromise</text>
+  <!-- Phase 2: Lockdown -->
+  <circle cx="200" cy="130" r="22" fill="var(--bg)" stroke="var(--amber)" stroke-width="2"/>
+  <text x="200" y="136" text-anchor="middle" font-family="var(--font-mono)" font-size="16">🔐</text>
+  <rect x="160" y="63" width="80" height="45" rx="5" fill="var(--card)" stroke="var(--amber)" stroke-width="1"/>
+  <text x="200" y="80" text-anchor="middle" font-family="var(--font-mono)" font-size="8" fill="var(--amber)" letter-spacing="1">PHASE 2</text>
+  <text x="200" y="93" text-anchor="middle" font-family="var(--font-mono)" font-size="9" fill="var(--white)">LOCKDOWN</text>
+  <text x="200" y="104" text-anchor="middle" font-family="var(--font-mono)" font-size="7" fill="var(--muted)">Accounts Secured</text>
+  <line x1="200" y1="108" x2="200" y2="120" stroke="var(--amber)" stroke-width="1"/>
+  <text x="200" y="175" text-anchor="middle" font-family="var(--font-mono)" font-size="7" fill="var(--muted)">Password Reset</text>
+  <text x="200" y="186" text-anchor="middle" font-family="var(--font-mono)" font-size="7" fill="var(--muted)">MFA Enabled</text>
+  <!-- Phase 3: Recover -->
+  <circle cx="320" cy="130" r="22" fill="var(--bg)" stroke="var(--cyan)" stroke-width="2"/>
+  <text x="320" y="136" text-anchor="middle" font-family="var(--font-mono)" font-size="16">📋</text>
+  <rect x="280" y="63" width="80" height="45" rx="5" fill="var(--card)" stroke="var(--cyan)" stroke-width="1"/>
+  <text x="320" y="80" text-anchor="middle" font-family="var(--font-mono)" font-size="8" fill="var(--cyan)" letter-spacing="1">PHASE 3</text>
+  <text x="320" y="93" text-anchor="middle" font-family="var(--font-mono)" font-size="9" fill="var(--white)">RECOVER</text>
+  <text x="320" y="104" text-anchor="middle" font-family="var(--font-mono)" font-size="7" fill="var(--muted)">Report &amp; Restore</text>
+  <line x1="320" y1="108" x2="320" y2="120" stroke="var(--cyan)" stroke-width="1"/>
+  <text x="320" y="175" text-anchor="middle" font-family="var(--font-mono)" font-size="7" fill="var(--muted)">Report to CERT</text>
+  <text x="320" y="186" text-anchor="middle" font-family="var(--font-mono)" font-size="7" fill="var(--muted)">Data Recovery</text>
+  <!-- Phase 4: Harden -->
+  <circle cx="440" cy="130" r="22" fill="var(--bg)" stroke="var(--green)" stroke-width="2.5"/>
+  <text x="440" y="136" text-anchor="middle" font-family="var(--font-mono)" font-size="16">🛡️</text>
+  <rect x="400" y="63" width="80" height="45" rx="5" fill="var(--card)" stroke="var(--green)" stroke-width="1.5"/>
+  <text x="440" y="80" text-anchor="middle" font-family="var(--font-mono)" font-size="8" fill="var(--green)" letter-spacing="1">PHASE 4</text>
+  <text x="440" y="93" text-anchor="middle" font-family="var(--font-mono)" font-size="9" fill="var(--white)">HARDEN</text>
+  <text x="440" y="104" text-anchor="middle" font-family="var(--font-mono)" font-size="7" fill="var(--muted)">Future-Proof</text>
+  <line x1="440" y1="108" x2="440" y2="120" stroke="var(--green)" stroke-width="1"/>
+  <text x="440" y="175" text-anchor="middle" font-family="var(--font-mono)" font-size="7" fill="var(--muted)">Post-Incident</text>
+  <text x="440" y="186" text-anchor="middle" font-family="var(--font-mono)" font-size="7" fill="var(--muted)">Hardening</text>
+  <text x="250" y="215" text-anchor="middle" font-family="var(--font-mono)" font-size="8" fill="var(--muted)">No Jargon · Step-by-Step Guidance · Plain English</text>
+  <text x="250" y="247" text-anchor="middle" font-family="var(--font-mono)" font-size="9" fill="var(--dimmed)" letter-spacing="2">INCIDENT RESPONSE &amp; RECOVERY PIPELINE</text>
+</svg>
                 </div>
                 <div class="tag-row">
                     <span class="tag amber">Incident Response</span>
@@ -707,40 +661,53 @@
             <div class="content-block">
                 <div class="infographic-placeholder" style="min-height: 320px;">
                     <!-- Story-Driven Infographic: Security Awareness -->
-                    <svg width="100%" height="100%" viewBox="0 0 600 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <filter id="hyperGlow8" x="-30%" y="-30%" width="160%" height="160%">
-                                <feGaussianBlur stdDeviation="5" result="blur" />
-                                <feComposite in="SourceGraphic" in2="blur" operator="over" />
-                            </filter>
-                        </defs>
-                        <!-- Incoming Attack Vectors -->
-                        <g transform="translate(100, 100)">
-                            <path d="M0 0 H150" stroke="#ff4400" stroke-width="2" stroke-dasharray="5 5">
-                                <animate attributeName="stroke-dashoffset" from="0" to="50" dur="2s" repeatCount="indefinite" />
-                            </path>
-                            <text x="0" y="-15" fill="#ff4400" font-family="var(--font-mono)" font-size="9">PHISHING ATTACK</text>
-                        </g>
-
-                        <!-- User Knowledge Shield -->
-                        <g transform="translate(300, 100)">
-                            <circle cx="0" cy="0" r="50" fill="var(--bg)" stroke="var(--cyan)" stroke-width="3" filter="url(#hyperGlow8)" />
-                            <text x="0" y="10" fill="var(--cyan)" font-family="var(--font-mono)" font-size="32" text-anchor="middle">🧠</text>
-                            <text x="0" y="70" fill="var(--cyan)" font-family="var(--font-mono)" font-size="10" text-anchor="middle" font-weight="bold">YOUR KNOWLEDGE</text>
-                        </g>
-
-                        <!-- Blocked Vector -->
-                        <path d="M350 100 L450 50" stroke="var(--green)" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow)">
-                            <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite" />
-                        </path>
-                        <text x="460" y="45" fill="var(--green)" font-family="var(--font-mono)" font-size="10">THREAT DEFLECTED</text>
-
-                        <!-- Summary -->
-                        <g transform="translate(300, 240)">
-                            <text x="0" y="0" fill="var(--white)" font-family="var(--font-body)" font-size="14" text-anchor="middle" font-weight="600">The Human Firewall Training</text>
-                            <text x="0" y="25" fill="var(--muted)" font-family="var(--font-mono)" font-size="11" text-anchor="middle">Habit Building • Threat Identification • Secure Communication</text>
-                        </g>
-                    </svg>
+                    <svg viewBox="0 0 500 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="500" height="260" fill="var(--surface)"/>
+  <!-- 4 module cards -->
+  <!-- Module 1: Phishing -->
+  <rect x="20" y="25" width="215" height="90" rx="7" fill="var(--card)" stroke="var(--red)" stroke-width="1.2"/>
+  <text x="40" y="52" font-family="var(--font-mono)" font-size="18">🎣</text>
+  <text x="70" y="47" font-family="var(--font-mono)" font-size="9" fill="var(--white)" font-weight="500">Phishing &amp; Smishing</text>
+  <text x="70" y="60" font-family="var(--font-mono)" font-size="7" fill="var(--muted)">Email · SMS · WhatsApp</text>
+  <rect x="40" y="68" width="175" height="5" rx="2" fill="var(--border)"/>
+  <rect x="40" y="68" width="152" height="5" rx="2" fill="var(--red)" opacity=".7"/>
+  <text x="40" y="84" font-family="var(--font-mono)" font-size="7" fill="var(--muted)">Recognize fake messages &amp; links</text>
+  <rect x="40" y="92" width="52" height="14" rx="3" fill="var(--bg)" stroke="var(--red)" stroke-width=".7"/>
+  <text x="66" y="103" text-anchor="middle" font-family="var(--font-mono)" font-size="7" fill="var(--red)">MODULE 1</text>
+  <!-- Module 2: Passwords -->
+  <rect x="265" y="25" width="215" height="90" rx="7" fill="var(--card)" stroke="var(--amber)" stroke-width="1.2"/>
+  <text x="285" y="52" font-family="var(--font-mono)" font-size="18">🔑</text>
+  <text x="315" y="47" font-family="var(--font-mono)" font-size="9" fill="var(--white)" font-weight="500">Password Safety</text>
+  <text x="315" y="60" font-family="var(--font-mono)" font-size="7" fill="var(--muted)">Create · Store · Manage</text>
+  <rect x="285" y="68" width="175" height="5" rx="2" fill="var(--border)"/>
+  <rect x="285" y="68" width="140" height="5" rx="2" fill="var(--amber)" opacity=".7"/>
+  <text x="285" y="84" font-family="var(--font-mono)" font-size="7" fill="var(--muted)">Password managers + strong credentials</text>
+  <rect x="285" y="92" width="52" height="14" rx="3" fill="var(--bg)" stroke="var(--amber)" stroke-width=".7"/>
+  <text x="311" y="103" text-anchor="middle" font-family="var(--font-mono)" font-size="7" fill="var(--amber)">MODULE 2</text>
+  <!-- Module 3: Wi-Fi -->
+  <rect x="20" y="135" width="215" height="90" rx="7" fill="var(--card)" stroke="var(--cyan)" stroke-width="1.2"/>
+  <text x="40" y="162" font-family="var(--font-mono)" font-size="18">📶</text>
+  <text x="70" y="157" font-family="var(--font-mono)" font-size="9" fill="var(--white)" font-weight="500">Wi-Fi &amp; Network Safety</text>
+  <text x="70" y="170" font-family="var(--font-mono)" font-size="7" fill="var(--muted)">Public · Home · VPN</text>
+  <rect x="40" y="178" width="175" height="5" rx="2" fill="var(--border)"/>
+  <rect x="40" y="178" width="165" height="5" rx="2" fill="var(--cyan)" opacity=".6"/>
+  <text x="40" y="194" font-family="var(--font-mono)" font-size="7" fill="var(--muted)">Avoid MITM attacks on public Wi-Fi</text>
+  <rect x="40" y="202" width="52" height="14" rx="3" fill="var(--bg)" stroke="var(--cyan)" stroke-width=".7"/>
+  <text x="66" y="213" text-anchor="middle" font-family="var(--font-mono)" font-size="7" fill="var(--cyan)">MODULE 3</text>
+  <!-- Module 4: Social Media / Privacy -->
+  <rect x="265" y="135" width="215" height="90" rx="7" fill="var(--card)" stroke="var(--green)" stroke-width="1.2"/>
+  <text x="285" y="162" font-family="var(--font-mono)" font-size="18">🔏</text>
+  <text x="315" y="157" font-family="var(--font-mono)" font-size="9" fill="var(--white)" font-weight="500">Privacy &amp; Social Media</text>
+  <text x="315" y="170" font-family="var(--font-mono)" font-size="7" fill="var(--muted)">Oversharing · Settings · Safety</text>
+  <rect x="285" y="178" width="175" height="5" rx="2" fill="var(--border)"/>
+  <rect x="285" y="178" width="175" height="5" rx="2" fill="var(--green)" opacity=".6"/>
+  <text x="285" y="194" font-family="var(--font-mono)" font-size="7" fill="var(--muted)">Secure profiles &amp; reduce footprint</text>
+  <rect x="285" y="202" width="52" height="14" rx="3" fill="var(--bg)" stroke="var(--green)" stroke-width=".7"/>
+  <text x="311" y="213" text-anchor="middle" font-family="var(--font-mono)" font-size="7" fill="var(--green)">MODULE 4</text>
+  <!-- Certificate badge -->
+  <rect x="165" y="238" width="170" height="16" rx="4" fill="var(--bg)" stroke="var(--amber)" stroke-width="1"/>
+  <text x="250" y="250" text-anchor="middle" font-family="var(--font-mono)" font-size="8" fill="var(--amber)" letter-spacing="1">🏅 CERTIFICATE ON COMPLETION</text>
+</svg>
                 </div>
                 <div class="tag-row">
                     <span class="tag green">Live Sessions</span>
