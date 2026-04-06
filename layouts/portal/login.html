@@ -1,0 +1,100 @@
+{{ define "main" }}
+
+<div class="page-hero stagger-in">
+    <div class="hero-badge"><span class="dot" style="background: var(--cyan);"></span> Client-Only Access</div>
+    <h1 class="hero-title">Secure <span>Portal</span></h1>
+    <p class="lead">
+        Enter your registered email address to receive a <strong>Passwordless Magic Link</strong>. No password needed — just secure, direct access to your tickets and reports.
+    </p>
+</div>
+
+<div class="stagger-in delay-1" style="max-width: 500px; margin: 40px auto 100px;">
+    <div id="loginFormContainer" style="background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 40px;">
+        <div style="text-align: center; margin-bottom: 30px;">
+            <div style="font-size: 3rem; margin-bottom: 10px;">🔐</div>
+            <div class="mono-label" style="color: var(--cyan);">Identity Verification</div>
+        </div>
+
+        <form id="loginForm">
+            <div class="form-group" style="margin-bottom: 24px;">
+                <label class="form-label">Client Email Address</label>
+                <input type="email" id="email" class="form-input" placeholder="email@example.com" required style="width: 100%; padding: 14px 18px; background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 8px; color: var(--white); font-family: var(--font-body);">
+            </div>
+
+            <button type="submit" id="loginBtn" class="btn btn-primary" style="width: 100%; padding: 18px; font-weight: 700;">Send Magic Link</button>
+        </form>
+
+        <div id="loginFeedback" style="margin-top: 25px; padding: 15px; border-radius: var(--radius); display: none; text-align: center;"></div>
+        
+        <p style="margin-top: 25px; font-size: 0.85rem; color: var(--muted); text-align: center; font-style: italic;">
+            "If you are not yet a client but would like to discuss a project, please use the <a href='/contact' style='color: var(--cyan); text-decoration: none;'>Contact Form</a> instead."
+        </p>
+    </div>
+</div>
+
+<!-- Supabase SDK -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+    // Initialize Supabase (Use your actual project details)
+    const SUPABASE_URL = 'https://qfkdrluonrhmubqyeyex.supabase.co';
+    const SUPABASE_ANON_KEY = 'sb_publishable_z8N9ojgrMO0IYkVMlTQ4eQ_u6cWE4k0';
+    const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+    document.getElementById('loginForm').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        const email = document.getElementById('email').value;
+        const loginBtn = document.getElementById('loginBtn');
+        const feedback = document.getElementById('loginFeedback');
+
+        // UI Reset
+        loginBtn.disabled = true;
+        loginBtn.innerText = 'Verifying Identity...';
+        feedback.style.display = 'none';
+
+        try {
+            // 1. Request Magic Link
+            const { error } = await supabase.auth.signInWithOtp({
+                email: email,
+                options: {
+                    emailRedirectTo: window.location.origin + '/portal/dashboard',
+                }
+            });
+
+            if (error) throw error;
+
+            // 2. Success UI
+            feedback.style.display = 'block';
+            feedback.style.backgroundColor = 'rgba(0, 212, 255, 0.1)';
+            feedback.style.border = '1px solid rgba(0, 212, 255, 0.3)';
+            feedback.style.color = 'var(--cyan)';
+            feedback.innerHTML = '✨ <strong>Identity Verified!</strong><br>Check your inbox for a Magic Link. It will expire in 20 minutes.';
+            
+            // Clear input
+            document.getElementById('email').value = '';
+
+        } catch (error) {
+            // 3. Error UI
+            feedback.style.display = 'block';
+            feedback.style.backgroundColor = 'rgba(255, 68, 68, 0.1)';
+            feedback.style.border = '1px solid rgba(255, 68, 68, 0.3)';
+            feedback.style.color = '#ff4444';
+            feedback.innerHTML = `❌ <strong>Error:</strong> ${error.message}`;
+        } finally {
+            loginBtn.disabled = false;
+            loginBtn.innerText = 'Send Magic Link';
+        }
+    });
+
+    // Check if user is already logged in
+    async function checkSession() {
+        const { data: { session } } = await supabase.auth.getSession();
+        if (session) {
+            window.location.href = '/portal/dashboard';
+        }
+    }
+    checkSession();
+</script>
+
+{{ end }}
