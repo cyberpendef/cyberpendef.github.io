@@ -86,7 +86,10 @@
         @media(max-width: 600px) { .form-row { grid-template-columns: 1fr; } }
     </style>
 
-    <form class="contact-form" action="https://formspree.io/f/xgolnrar" method="POST">
+    <!-- Cloudflare Turnstile Script -->
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+    
+    <form id="inquiryForm" class="contact-form">
         <div class="form-row">
             <div class="form-group">
                 <label class="form-label">Your Name *</label>
@@ -140,12 +143,88 @@
         </div>
 
         <div style="text-align: center; margin-top: 40px;">
-            <button type="submit" class="btn btn-primary" style="padding: 18px 60px;">Send Message</button>
+            <!-- Cloudflare Turnstile Widget -->
+            <div class="cf-turnstile" data-sitekey="0x4AAAAAAC1OBXLHWUcaUlZ0" data-theme="dark" style="margin-bottom: 20px; display: flex; justify-content: center;"></div>
+            
+            <button type="submit" id="submitBtn" class="btn btn-primary" style="padding: 18px 60px;">Send Message</button>
+            <div id="formFeedback" style="margin-top: 20px; font-weight: 600; display: none; padding: 15px; border-radius: var(--radius);"></div>
+
             <p style="font-size: 1.0rem; color: var(--text); margin-top: 20px; font-style: italic;">
                 "I typically respond within 1 business day. Please refer the bottom of this page or by <a href="/contact#business-hours" style="color: var(--cyan); text-decoration: none;">Clicking Here</a> to know about business hours, location, and mode of delivery of the services. Looking forward to connecting with you!"
             </p>
         </div>
     </form>
+
+    <script>
+        document.getElementById('inquiryForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const feedback = document.getElementById('formFeedback');
+            const formData = new FormData(e.target);
+            const data = Object.fromEntries(formData.entries());
+
+            // Handle Checkbox
+            data.claim_free_consultation = data.claim_free_consultation === 'Yes';
+
+            // UI Reset
+            submitBtn.disabled = true;
+            submitBtn.innerText = 'Sending Request...';
+            feedback.style.display = 'none';
+
+            // 1. Check if Turnstile token exists
+            if (!data['cf-turnstile-response']) {
+                feedback.style.display = 'block';
+                feedback.style.backgroundColor = 'rgba(255, 184, 0, 0.1)';
+                feedback.style.border = '1px solid rgba(255, 184, 0, 0.3)';
+                feedback.style.color = 'var(--amber)';
+                feedback.innerText = '⚠️ Please complete the security check to prove you are human.';
+                submitBtn.disabled = false;
+                submitBtn.innerText = 'Send Message';
+                return;
+            }
+
+            try {
+                // 2. Fetch the Supabase Edge Function
+                // IMPORTANT: Replace this URL with your actual Supabase Edge Function URL
+                const edgeFunctionUrl = 'https://qfkdrluonrhmubqyeyex.supabase.co/functions/v1/submit-inquiry';
+                
+                const response = await fetch(edgeFunctionUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data),
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    // Success UI
+                    feedback.style.display = 'block';
+                    feedback.style.backgroundColor = 'rgba(0, 255, 136, 0.1)';
+                    feedback.style.border = '1px solid rgba(0, 255, 136, 0.3)';
+                    feedback.style.color = 'var(--green)';
+                    feedback.innerHTML = '✅ <strong>Message Sent Successfully!</strong><br>I will review your inquiry and get back to you within 1 business day.';
+                    
+                    // Reset form and CAPTCHA
+                    e.target.reset();
+                    turnstile.reset();
+                } else {
+                    throw new Error(result.error || 'Failed to submit inquiry.');
+                }
+            } catch (error) {
+                // Error UI
+                feedback.style.display = 'block';
+                feedback.style.backgroundColor = 'rgba(255, 68, 68, 0.1)'; // red tint
+                feedback.style.border = '1px solid rgba(255, 68, 68, 0.3)';
+                feedback.style.color = '#ff4444';
+                feedback.innerHTML = `❌ <strong>Error:</strong> ${error.message}`;
+                turnstile.reset(); // Reset on error so they can try again
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerText = 'Send Message';
+            }
+        });
+    </script>
 </div>
 
 <!-- CONTACT SECTION -->
