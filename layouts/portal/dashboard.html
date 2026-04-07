@@ -4,14 +4,14 @@
 <script>
     const SUPABASE_URL = 'https://qfkdrluonrhmubqyeyex.supabase.co';
     const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFma2RybHVvbnJobXVicXlleWV4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU0NDk4MjcsImV4cCI6MjA5MTAyNTgyN30.YKXk70kUibQJNhG-AIwyGLChl_mta-lqm-Sm27N41os';
-    const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
     // Hide HTML document to prevent UI flashing before check completes
     document.documentElement.style.display = 'none';
 
     // Synchronous-like check to prevent unauthenticated access
     async function enforceProtection() {
-        const { data: { session }, error } = await supabase.auth.getSession();
+        const { data: { session }, error } = await supabaseClient.auth.getSession();
         if (!session || error) {
             // Kick them out to the login page immediately
             window.location.replace('/portal'); 
@@ -44,7 +44,7 @@
 
 <script>
     async function logout() {
-        await supabase.auth.signOut();
+        await supabaseClient.auth.signOut();
         window.location.replace('/portal');
     }
 </script>

@@ -47,7 +47,7 @@
 <script>
     const SUPABASE_URL = 'https://qfkdrluonrhmubqyeyex.supabase.co';
     const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFma2RybHVvbnJobXVicXlleWV4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU0NDk4MjcsImV4cCI6MjA5MTAyNTgyN30.YKXk70kUibQJNhG-AIwyGLChl_mta-lqm-Sm27N41os';
-    const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
     let isLoginMode = true;
     const tabLogin = document.getElementById('tabLogin');
@@ -102,14 +102,14 @@
             let result;
             if (isLoginMode) {
                 // Log In
-                result = await supabase.auth.signInWithPassword({
+                result = await supabaseClient.auth.signInWithPassword({
                     email: email,
                     password: password,
                     options: { captchaToken: turnstileResponse.value } 
                 });
             } else {
                 // Sign Up
-                result = await supabase.auth.signUp({
+                result = await supabaseClient.auth.signUp({
                     email: email,
                     password: password,
                     options: { 
@@ -150,14 +150,14 @@
 
     // Automatically check if user is already logged in
     async function checkSession() {
-        const { data: { session } } = await supabase.auth.getSession();
+        const { data: { session } } = await supabaseClient.auth.getSession();
         if (session) {
             window.location.href = '/portal/dashboard';
         }
     }
     
     // Listen for Auth State Changes (important for when user clicks email confirmation link)
-    supabase.auth.onAuthStateChange((event, session) => {
+    supabaseClient.auth.onAuthStateChange((event, session) => {
         if (event === 'SIGNED_IN' && session) {
             window.location.href = '/portal/dashboard';
         }
