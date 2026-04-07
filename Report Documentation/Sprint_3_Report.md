@@ -11,21 +11,30 @@
 ### Next Steps
 The next step is **Phase 3.2: Portal Login UI Development**. We will create a new Hugo layout (`layouts/portal/index.html`) to provide a sleek, cyberpunk-themed login interface for your clients.
 
-## Phase 3.2: Portal Login UI Development
+## Phase 3.2: Portal Login UI Development (Updated with Registration & Turnstile)
 
 ### Code Logic and Purpose Implemented
 - **Files Created:**
   - `content/portal/_index.md`: Registers the `/portal` route in Hugo.
-  - `layouts/portal/login.html`: The specialized layout for the identity verification page.
+  - `layouts/portal/login.html`: The specialized layout for Identity Verification (Sign Up / Log In).
+- **Logic Refinements:**
+  - **Sign Up / Log In Toggle:** Replaced the Magic Link system with a robust tabbed UI allowing users to either "Sign Up" or "Log In" using an Email/Password combination.
+  - **Mandatory Email Confirmation:** Configured the `signUp` logic. When a user registers, Supabase automatically sends an Email Confirmation link. This acts as initial verification. Users cannot log in until they click this email link.
+  - **Turnstile Human Verification:** Integrated the Cloudflare Turnstile widget directly into both the Registration and Login flows. The CAPTCHA token is validated by Supabase Auth before processing the login request, thwarting automated credential stuffing and fake signups.
+  - **Instant Redirection:** Resolved the redirect behavior. Because Email/Password login resolves synchronously (unlike Magic Links which require email checking), the user is instantly redirected to `/portal/dashboard` upon successful login.
+
+## Phase 3.3: Client Dashboard & Route Protection
+
+### Code Logic and Purpose Implemented
+- **Files Created:**
+  - `content/portal/dashboard.md`: Registers the dashboard route.
+  - `layouts/portal/dashboard.html`: The authenticated client view.
 - **Logic:**
-  - **Sleek, Cyberpunk UI:** Used existing CSS variables (`--card`, `--cyan`, `--border`) to ensure the login page feels native to the CyberPenDef site.
-  - **Supabase JS Integration:** Embedded the Supabase Client SDK via CDN.
-  - **Magic Link Logic:** Implemented `supabase.auth.signInWithOtp` which triggers a secure login email to the user. This is a passwordless approach that ensures only the owner of the email account can enter the portal.
-  - **Auto-Redirect:** Added logic to check for an existing session (`supabase.auth.getSession`) and automatically redirect already logged-in clients to the dashboard.
-  - **Feedback UI:** Implemented dynamic status messages (e.g., "Verifying Identity...", "✨ Identity Verified!") to provide clear user feedback during the login process.
+  - **Strict Route Protection:** Implemented aggressive JavaScript execution at the very top of `dashboard.html`. It hides the `document.documentElement` initially, checks `supabase.auth.getSession()`, and if no valid cryptographic session exists, it executes `window.location.replace('/portal')` to instantly kick the user out. This guarantees zero unauthorized access.
+  - **Secure Logout:** Implemented `supabase.auth.signOut()` to gracefully destroy the JWT token and return the user to the public portal.
 
 ### Next Steps
-The next step is **Phase 3.3: Client Dashboard Implementation**. We will create the actual dashboard where clients can view their private service tickets and security reports.
+With the secure foundation, login, registration, and route protection completely functional, the final step for Sprint 3 is to implement the data fetching logic inside the Dashboard so clients can view their `service_tickets`.
 
 ## Phase 3.3: Client Dashboard Implementation
 

@@ -1,153 +1,51 @@
 {{ define "main" }}
-
-<div class="page-hero stagger-in" style="padding-bottom: 20px;">
-    <div class="hero-badge"><span class="dot" style="background: var(--green);"></span> Authenticated Session</div>
-    <h1 class="hero-title">Client <span>Dashboard</span></h1>
-    <p id="userWelcome" class="lead">Loading your secure session...</p>
-    
-    <button id="logoutBtn" class="btn" style="background: rgba(255, 68, 68, 0.1); border: 1px solid rgba(255, 68, 68, 0.3); color: #ff4444; padding: 10px 20px; font-size: 0.85rem; margin-top: 20px;">Secure Logout</button>
-</div>
-
-<!-- DASHBOARD CONTENT -->
-<div id="dashboardContent" class="stagger-in delay-1" style="display: none; margin-top: 40px; margin-bottom: 100px;">
-    
-    <div class="section-header" style="margin-bottom: 30px;">
-        <div class="section-label">
-            <div class="section-icon green">🎫</div>
-            <div>
-                <div class="section-title" style="color: var(--green);">Service Tickets</div>
-                <div class="section-subtitle">Active & Historical Tasks</div>
-            </div>
-        </div>
-        <div class="section-line"></div>
-    </div>
-
-    <!-- TICKETS GRID -->
-    <div id="ticketsGrid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px;">
-        <!-- Tickets will be injected here -->
-    </div>
-
-    <!-- EMPTY STATE -->
-    <div id="emptyState" style="display: none; text-align: center; padding: 60px; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);">
-        <div style="font-size: 3rem; margin-bottom: 20px;">📝</div>
-        <h3 style="color: var(--white); margin-bottom: 10px;">No Active Tickets Found</h3>
-        <p style="color: var(--muted); max-width: 400px; margin: 0 auto;">You don't have any active service tickets or security reports yet. Contact Shaik Hidayatullah to start a new project.</p>
-    </div>
-</div>
-
-<style>
-    .ticket-card {
-        background: var(--card);
-        border: 1px solid var(--border);
-        border-radius: var(--radius);
-        padding: 24px;
-        transition: var(--transition);
-        position: relative;
-        overflow: hidden;
-    }
-    .ticket-card:hover { border-color: var(--cyan); transform: translateY(-5px); }
-    .status-badge {
-        display: inline-block;
-        padding: 4px 10px;
-        border-radius: 4px;
-        font-family: var(--font-mono);
-        font-size: 0.7rem;
-        text-transform: uppercase;
-        margin-bottom: 15px;
-    }
-    .status-pending { background: rgba(255, 184, 0, 0.1); color: var(--amber); border: 1px solid rgba(255, 184, 0, 0.2); }
-    .status-inprogress { background: rgba(0, 212, 255, 0.1); color: var(--cyan); border: 1px solid rgba(0, 212, 255, 0.2); }
-    .status-completed { background: rgba(0, 255, 136, 0.1); color: var(--green); border: 1px solid rgba(0, 255, 136, 0.2); }
-    
-    .ticket-title { font-size: 1.25rem; color: var(--white); margin-bottom: 12px; }
-    .ticket-desc { font-size: 0.95rem; color: var(--text); margin-bottom: 20px; line-height: 1.5; }
-    .ticket-footer { border-top: 1px solid var(--border); padding-top: 15px; display: flex; justify-content: space-between; align-items: center; }
-    .ticket-date { font-family: var(--font-mono); font-size: 0.75rem; color: var(--muted); }
-    .report-btn { font-family: var(--font-mono); font-size: 0.75rem; color: var(--cyan); text-decoration: none; display: flex; align-items: center; gap: 5px; }
-</style>
-
-<!-- Supabase SDK -->
+<!-- STRICT ROUTE PROTECTION: Execute immediately before rendering -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
 <script>
-    // Initialize Supabase
     const SUPABASE_URL = 'https://qfkdrluonrhmubqyeyex.supabase.co';
-    const SUPABASE_ANON_KEY = 'sb_publishable_z8N9ojgrMO0IYkVMlTQ4eQ_u6cWE4k0';
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFma2RybHVvbnJobXVicXlleWV4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU0NDk4MjcsImV4cCI6MjA5MTAyNTgyN30.YKXk70kUibQJNhG-AIwyGLChl_mta-lqm-Sm27N41os';
     const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-    const userWelcome = document.getElementById('userWelcome');
-    const dashboardContent = document.getElementById('dashboardContent');
-    const ticketsGrid = document.getElementById('ticketsGrid');
-    const emptyState = document.getElementById('emptyState');
-    const logoutBtn = document.getElementById('logoutBtn');
+    // Hide HTML document to prevent UI flashing before check completes
+    document.documentElement.style.display = 'none';
 
-    // 1. Protection Logic: Ensure User is Logged In
-    async function initDashboard() {
+    // Synchronous-like check to prevent unauthenticated access
+    async function enforceProtection() {
         const { data: { session }, error } = await supabase.auth.getSession();
-
-        if (error || !session) {
-            // No session found, redirect back to login
-            window.location.href = '/portal';
-            return;
-        }
-
-        const user = session.user;
-        userWelcome.innerHTML = `Welcome back, <strong>${user.email}</strong>. View your current project status below.`;
-        dashboardContent.style.display = 'block';
-
-        // 2. Fetch Tickets (RLS handles the filtering automatically!)
-        fetchTickets();
-    }
-
-    async function fetchTickets() {
-        try {
-            const { data: tickets, error } = await supabase
-                .from('service_tickets')
-                .select('*')
-                .order('created_at', { ascending: false });
-
-            if (error) throw error;
-
-            if (!tickets || tickets.length === 0) {
-                emptyState.style.display = 'block';
-                return;
-            }
-
-            // 3. Render Tickets
-            ticketsGrid.innerHTML = tickets.map(ticket => `
-                <div class="ticket-card">
-                    <span class="status-badge status-${ticket.status.replace(/\s+/g, '').toLowerCase()}">${ticket.status}</span>
-                    <h3 class="ticket-title">${ticket.title}</h3>
-                    <p class="ticket-desc">${ticket.description || 'No description provided.'}</p>
-                    <div class="ticket-footer">
-                        <span class="ticket-date">Updated: ${new Date(ticket.updated_at).toLocaleDateString()}</span>
-                        ${ticket.report_url ? `
-                            <a href="${ticket.report_url}" target="_blank" class="report-btn">
-                                <span>📄 View Report</span>
-                            </a>
-                        ` : '<span style="font-size: 0.75rem; color: var(--muted);">Report Pending</span>'}
-                    </div>
-                </div>
-            `).join('');
-
-        } catch (error) {
-            console.error('Error fetching tickets:', error.message);
-            userWelcome.innerHTML = `<span style="color:#ff4444;">❌ Error loading tickets: ${error.message}</span>`;
-        }
-    }
-
-    // Logout logic
-    logoutBtn.addEventListener('click', async () => {
-        const { error } = await supabase.auth.signOut();
-        if (error) {
-            alert('Logout Error: ' + error.message);
+        if (!session || error) {
+            // Kick them out to the login page immediately
+            window.location.replace('/portal'); 
         } else {
-            window.location.href = '/portal';
+            // Show page
+            document.documentElement.style.display = 'block'; 
+            // Wait for DOM to be ready
+            document.addEventListener('DOMContentLoaded', () => {
+                document.getElementById('userEmail').innerText = session.user.email;
+            });
         }
-    });
-
-    // Start
-    initDashboard();
+    }
+    
+    enforceProtection();
 </script>
 
+<div class="page-hero stagger-in" style="padding-bottom: 40px;">
+    <div class="hero-badge"><span class="dot" style="background: var(--green);"></span> Authenticated Session</div>
+    <h1 class="hero-title">Client <span>Dashboard</span></h1>
+    <p class="lead">Welcome back, <strong id="userEmail" style="color: var(--cyan);">Loading...</strong></p>
+    <button onclick="logout()" class="btn" style="border: 1px solid #ff4444; color: #ff4444; background: transparent; padding: 10px 20px; margin-top: 20px; cursor: pointer; border-radius: 8px;">Secure Logout</button>
+</div>
+
+<div class="container stagger-in delay-1" style="max-width: 900px; margin-bottom: 100px;">
+    <div style="background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 40px; text-align: center;">
+        <h2 style="color: var(--white); margin-bottom: 20px;">Your Active Tickets</h2>
+        <p style="color: var(--muted);">Data fetching logic will be implemented here...</p>
+    </div>
+</div>
+
+<script>
+    async function logout() {
+        await supabase.auth.signOut();
+        window.location.replace('/portal');
+    }
+</script>
 {{ end }}

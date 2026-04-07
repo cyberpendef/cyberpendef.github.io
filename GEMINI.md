@@ -20,3 +20,5 @@ To ensure a high-quality, error-free development process, you MUST adhere to the
 11. **Handle errors gracefully:** - if you encounter issues, document them and propose solutions
 12. **Follow Best Practices:** Follow Security Best Practices and Web Development Best practices. And follow best practices for improving efficiency and performance if only possible.
 13. **Test incrementally** - ensure each feature works before adding complexity
+14. **Resume the project from where you left off** When a user starts a new chat session, First analyze the sprint files that are saved in a folder named "Report Documentation" where everything that is implemented and done in each sprint is recorded. Then also analyze the entire project codebase to infer where was the previous work or state left off.
+

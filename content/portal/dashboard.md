@@ -1,6 +1,6 @@
 ---
 title: "Client Dashboard"
-description: "View your security tickets, reports, and project status."
+description: "Your secure dashboard."
 type: portal
 layout: dashboard
 ---
