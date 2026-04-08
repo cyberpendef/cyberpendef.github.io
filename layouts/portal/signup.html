@@ -1,24 +1,38 @@
 {{ define "main" }}
 
 <div class="page-hero stagger-in">
-    <div class="hero-badge"><span class="dot" style="background: var(--cyan);"></span> Client-Only Access</div>
-    <h1 class="hero-title">Secure <span>Portal</span></h1>
+    <div class="hero-badge"><span class="dot" style="background: var(--cyan);"></span> New Client Registration</div>
+    <h1 class="hero-title">Create <span>Account</span></h1>
     <p class="lead">
-        Log in or create an account to securely access your service tickets and reports.
+        Register to access your secure dashboard, track service tickets, and download security reports.
     </p>
 </div>
 
 <div class="stagger-in delay-1" style="max-width: 500px; margin: 40px auto 100px;">
     <div id="authContainer" style="background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 40px;">
         
-        <h2 style="font-family: var(--font-mono); font-size: 1.5rem; color: var(--cyan); margin-bottom: 30px; text-align: center; text-transform: uppercase; letter-spacing: 2px;">Identity Verification</h2>
+        <h2 style="font-family: var(--font-mono); font-size: 1.5rem; color: var(--cyan); margin-bottom: 30px; text-align: center; text-transform: uppercase; letter-spacing: 2px;">Client Registration</h2>
 
         <form id="authForm">
+            <!-- Full Name -->
+            <div class="form-group" style="margin-bottom: 20px;">
+                <label class="form-label" style="display: block; font-family: var(--font-mono); font-size: 0.75rem; color: var(--cyan); margin-bottom: 8px; text-transform: uppercase;">Full Name</label>
+                <input type="text" id="fullname" class="form-input" placeholder="John Doe" required style="width: 100%; padding: 14px 18px; background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 8px; color: var(--white); font-family: var(--font-body);">
+            </div>
+
+            <!-- Username -->
+            <div class="form-group" style="margin-bottom: 20px;">
+                <label class="form-label" style="display: block; font-family: var(--font-mono); font-size: 0.75rem; color: var(--cyan); margin-bottom: 8px; text-transform: uppercase;">Username</label>
+                <input type="text" id="username" class="form-input" placeholder="johndoe_cyber" required style="width: 100%; padding: 14px 18px; background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 8px; color: var(--white); font-family: var(--font-body);">
+            </div>
+
+            <!-- Email Address -->
             <div class="form-group" style="margin-bottom: 20px;">
                 <label class="form-label" style="display: block; font-family: var(--font-mono); font-size: 0.75rem; color: var(--cyan); margin-bottom: 8px; text-transform: uppercase;">Email Address</label>
                 <input type="email" id="email" class="form-input" placeholder="client@example.com" required style="width: 100%; padding: 14px 18px; background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 8px; color: var(--white); font-family: var(--font-body);">
             </div>
             
+            <!-- Password -->
             <div class="form-group" style="margin-bottom: 24px;">
                 <label class="form-label" style="display: block; font-family: var(--font-mono); font-size: 0.75rem; color: var(--cyan); margin-bottom: 8px; text-transform: uppercase;">Password</label>
                 <input type="password" id="password" class="form-input" placeholder="••••••••" required style="width: 100%; padding: 14px 18px; background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 8px; color: var(--white); font-family: var(--font-body);">
@@ -27,12 +41,12 @@
             <!-- Cloudflare Turnstile Widget -->
             <div class="cf-turnstile" data-sitekey="0x4AAAAAAC1OBXLHWUcaUlZ0" data-theme="dark" style="margin-bottom: 20px; display: flex; justify-content: center;"></div>
 
-            <button type="submit" id="authBtn" class="btn btn-primary" style="width: 100%; padding: 18px; font-weight: 700;">Log In</button>
+            <button type="submit" id="authBtn" class="btn btn-primary" style="width: 100%; padding: 18px; font-weight: 700;">Sign Up & Verify Email</button>
         </form>
 
         <div style="margin-top: 25px; text-align: center; font-family: var(--font-mono); font-size: 0.85rem;">
-            <span style="color: var(--muted);">New client?</span> 
-            <a href="/portal/signup" style="color: var(--cyan); text-decoration: none; border-bottom: 1px dashed var(--cyan); margin-left: 5px;">Create an account here</a>
+            <span style="color: var(--muted);">Already have an account?</span> 
+            <a href="/portal" style="color: var(--cyan); text-decoration: none; border-bottom: 1px dashed var(--cyan); margin-left: 5px;">Log in here</a>
         </div>
 
         <div id="authFeedback" style="margin-top: 25px; padding: 15px; border-radius: var(--radius); display: none; text-align: center;"></div>
@@ -59,6 +73,8 @@
         
         const email = document.getElementById('email').value;
         const password = document.getElementById('password').value;
+        const fullNameValue = document.getElementById('fullname').value;
+        const usernameValue = document.getElementById('username').value;
         
         // Frontend Turnstile Check
         const turnstileResponse = document.querySelector('[name="cf-turnstile-response"]');
@@ -72,21 +88,36 @@
         }
 
         authBtn.disabled = true;
-        authBtn.innerText = 'Verifying...';
+        authBtn.innerText = 'Processing...';
         feedback.style.display = 'none';
 
         try {
-            // Log In
-            const { data, error } = await supabaseClient.auth.signInWithPassword({
+            // Sign Up
+            const { data, error } = await supabaseClient.auth.signUp({
                 email: email,
                 password: password,
-                options: { captchaToken: turnstileResponse.value } 
+                options: { 
+                    data: { 
+                        full_name: fullNameValue,
+                        username: usernameValue
+                    },
+                    captchaToken: turnstileResponse.value,
+                    emailRedirectTo: window.location.origin + '/portal/dashboard'
+                }
             });
 
             if (error) throw error;
 
-            // Successful Login -> Redirect to Dashboard instantly
-            window.location.href = '/portal/dashboard';
+            // Successful Signup -> Prompt for Email Verification
+            feedback.style.display = 'block';
+            feedback.style.backgroundColor = 'rgba(0, 212, 255, 0.1)';
+            feedback.style.border = '1px solid rgba(0, 212, 255, 0.3)';
+            feedback.style.color = 'var(--cyan)';
+            feedback.innerHTML = '✨ <strong>Registration Successful!</strong><br>A confirmation link has been sent to your email. Please verify your email before logging in.';
+            authForm.reset();
+            if (typeof turnstile !== 'undefined') {
+                turnstile.reset();
+            }
 
         } catch (error) {
             console.error("Auth Error: ", error);
@@ -100,7 +131,7 @@
             }
         } finally {
             authBtn.disabled = false;
-            authBtn.innerText = 'Log In';
+            authBtn.innerText = 'Sign Up & Verify Email';
         }
     });
 
@@ -112,13 +143,6 @@
         }
     }
     
-    // Listen for Auth State Changes (important for when user clicks email confirmation link)
-    supabaseClient.auth.onAuthStateChange((event, session) => {
-        if (event === 'SIGNED_IN' && session) {
-            window.location.href = '/portal/dashboard';
-        }
-    });
-
     checkSession();
 </script>
 

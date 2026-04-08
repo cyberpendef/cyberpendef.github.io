@@ -11,17 +11,22 @@
 ### Next Steps
 The next step is **Phase 3.2: Portal Login UI Development**. We will create a new Hugo layout (`layouts/portal/index.html`) to provide a sleek, cyberpunk-themed login interface for your clients.
 
-## Phase 3.2: Portal Login UI Development (Updated with Registration & Turnstile)
+## Phase 3.2: Portal Login & Sign Up UI Separation
 
 ### Code Logic and Purpose Implemented
-- **Files Created:**
-  - `content/portal/_index.md`: Registers the `/portal` route in Hugo.
-  - `layouts/portal/login.html`: The specialized layout for Identity Verification (Sign Up / Log In).
+- **Files Created/Modified:**
+  - `content/portal/signup.md`: Registers the new `/portal/signup` route.
+  - `layouts/portal/signup.html`: Dedicated registration layout with fields for **Full Name**, **Username**, Email, and Password.
+  - `layouts/portal/login.html`: Simplified login-only layout with a link to the registration page.
 - **Logic Refinements:**
-  - **Sign Up / Log In Toggle:** Replaced the Magic Link system with a robust tabbed UI allowing users to either "Sign Up" or "Log In" using an Email/Password combination.
-  - **Mandatory Email Confirmation:** Configured the `signUp` logic. When a user registers, Supabase automatically sends an Email Confirmation link. This acts as initial verification. Users cannot log in until they click this email link.
-  - **Turnstile Human Verification:** Integrated the Cloudflare Turnstile widget directly into both the Registration and Login flows. The CAPTCHA token is validated by Supabase Auth before processing the login request, thwarting automated credential stuffing and fake signups.
-  - **Instant Redirection:** Resolved the redirect behavior. Because Email/Password login resolves synchronously (unlike Magic Links which require email checking), the user is instantly redirected to `/portal/dashboard` upon successful login.
+  - **Structural Separation:** Decoupled the registration flow from the login page. This provides a cleaner User Experience (UX) and allows for more detailed data collection during registration.
+  - **Metadata Enrichment:** The Sign Up logic now captures `full_name` and `username` as Supabase Auth user metadata. This allows for personalized dashboard experiences and easier client management in the Supabase dashboard.
+  - **Mandatory Email Confirmation:** Maintained the `signUp` logic where users must verify their email before they can access the secure dashboard.
+  - **Persistent Turnstile Protection:** Both the individual Login and Sign Up forms are independently protected by Cloudflare Turnstile to prevent automated attacks.
+  - **Session Awareness:** Both pages include logic to automatically redirect already-logged-in users directly to their dashboard.
+
+### Next Steps
+The next step is **Phase 3.3: Client Dashboard Implementation**. We will now focus on populating the dashboard with real-time data from the Supabase database.
 
 ## Phase 3.3: Client Dashboard & Route Protection
 
@@ -34,7 +39,7 @@ The next step is **Phase 3.2: Portal Login UI Development**. We will create a ne
   - **Secure Logout:** Implemented `supabase.auth.signOut()` to gracefully destroy the JWT token and return the user to the public portal.
 
 ### Next Steps
-With the secure foundation, login, registration, and route protection completely functional, the final step for Sprint 3 is to implement the data fetching logic inside the Dashboard so clients can view their `service_tickets`.
+The next step is **Phase 3.3: Client Dashboard Implementation**. We will implement the secure data fetching logic to display real-time service tickets for each client.
 
 ## Phase 3.3: Client Dashboard Implementation
 
@@ -45,9 +50,9 @@ With the secure foundation, login, registration, and route protection completely
 - **Logic:**
   - **Route Protection:** Implemented a JavaScript "gatekeeper" (`supabase.auth.getSession`) that immediately redirects unauthenticated users back to the login page if they try to access the dashboard URL directly.
   - **Dynamic Welcome:** Personalizes the dashboard by displaying the logged-in client's email address.
-  - **Secure Data Fetching:** Uses the `supabase-js` library to query the `service_tickets` table. Crucially, the frontend doesn't need to filter by `client_id` manually—the **PostgreSQL Row Level Security (RLS)** policy we created in Phase 3.1 automatically filters the results at the database level based on the client's JWT.
-  - **Status-Aware Rendering:** Implemented a dynamic grid that renders tickets with color-coded status badges (Pending, In Progress, Completed) and provides direct links to security reports if they are available.
+  - **Secure Data Fetching:** (Planned) Uses the `supabase-js` library to query the `service_tickets` table. Crucially, the frontend doesn't need to filter by `client_id` manually—the **PostgreSQL Row Level Security (RLS)** policy we created in Phase 3.1 automatically filters the results at the database level based on the client's JWT.
+  - **Status-Aware Rendering:** (Planned) Implemented a dynamic grid that renders tickets with color-coded status badges (Pending, In Progress, Completed) and provides direct links to security reports if they are available.
   - **Secure Logout:** Implemented `supabase.auth.signOut()` logic that clears the local session and returns the user to the public portal login.
 
 ### Next Steps
-Sprint 3 is complete. The next step is **Sprint 4: AI Chatbot Integration**. we will build a secure, serverless AI assistant using Groq and Supabase Edge Functions.
+Sprint 3 will be complete once the dynamic data fetching logic is finalized in the Dashboard. The next sprint will be **Sprint 4: AI Chatbot Integration**.

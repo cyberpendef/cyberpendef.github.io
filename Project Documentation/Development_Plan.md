@@ -43,15 +43,15 @@ This development plan outlines the iterative approach to upgrading the CyberPenD
 **Goal:** Build a secure, authenticated dashboard for clients.
 
 *   **Phase 3.1: Supabase Auth & Strict RLS**
-    *   Configure Supabase Authentication (Magic Links/OTP).
+    *   Configure Supabase Authentication (Email/Password).
     *   Refine RLS policies on `service_tickets` so clients (`auth.uid()`) can only `SELECT` their own records.
-*   **Phase 3.2: Portal Login UI Development**
-    *   Create a new Hugo layout: `layouts/portal/index.html`.
-    *   Implement the login interface matching the Cyberpunk aesthetic.
-    *   Add JS for requesting the Magic Link.
+*   **Phase 3.2: Portal Login & Sign Up UI Separation**
+    *   **Login Page (`/portal`):** Clean up `layouts/portal/login.html` to remove the Sign Up toggle. Add a "Create Account" link that redirects to the new Sign Up page.
+    *   **Sign Up Page (`/portal/signup`):** Create `content/portal/signup.md` and `layouts/portal/signup.html`.
+    *   **Sign Up Logic:** Implement account creation with Email, Password, and **Username** (stored in Supabase user metadata). Integrate Cloudflare Turnstile for human verification.
 *   **Phase 3.3: Client Dashboard Implementation**
-    *   Create `layouts/portal/dashboard.html`.
-    *   Implement JS to verify the active JWT session.
+    *   Create `layouts/portal/dashboard.html` and `content/portal/dashboard.md`.
+    *   Implement Strict Route Protection to redirect unauthenticated users to `/portal`.
     *   Fetch and render client-specific data from Supabase.
 
 ---
