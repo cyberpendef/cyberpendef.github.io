@@ -9,6 +9,7 @@ publishDir = "public"
 unsafe = true
 
 [params]
+turnstile_site_key = "0x4AAAAAAC1OBXLHWUcaUlZ0"
 author = "Shaik Hidayatullah"
 email = "cyberpendef@gmail.com"
 phone = "+91-7672017241"

@@ -15,7 +15,7 @@ To adhere strictly to the constraints (Zero Cost, keep the `github.io` domain) w
 - **Action:** Injected a strict `<meta http-equiv="Content-Security-Policy">` tag.
 - **Logic:** 
   - `default-src 'self'`: Only allow resources from the current origin by default.
-  - `script-src`: Allowed `self`, `unsafe-inline` (for Hugo template scripts), and `challenges.cloudflare.com` (for Turnstile).
+  - `script-src`: Allowed `self`, `unsafe-inline` (for Hugo template scripts), `challenges.cloudflare.com` (for Turnstile), `cdn.jsdelivr.net` (for Supabase SDK), and `*.supabase.co` (for Supabase APIs).
   - `style-src`: Allowed `self`, `unsafe-inline`, and Google Fonts.
   - `font-src`: Allowed Google Fonts.
   - `connect-src`: Allowed Formspree (temporarily) and wildcard Supabase endpoints (`https://*.supabase.co`) for our upcoming backend integrations.

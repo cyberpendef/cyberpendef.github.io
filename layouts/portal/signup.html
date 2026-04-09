@@ -39,7 +39,7 @@
             </div>
 
             <!-- Cloudflare Turnstile Widget -->
-            <div class="cf-turnstile" data-sitekey="0x4AAAAAAC1OBXLHWUcaUlZ0" data-theme="dark" style="margin-bottom: 20px; display: flex; justify-content: center;"></div>
+            <div class="cf-turnstile" data-sitekey="{{ .Site.Params.turnstile_site_key }}" data-theme="dark" style="margin-bottom: 20px; display: flex; justify-content: center;"></div>
 
             <button type="submit" id="authBtn" class="btn btn-primary" style="width: 100%; padding: 18px; font-weight: 700;">Sign Up & Verify Email</button>
         </form>
@@ -69,6 +69,7 @@
     const feedback = document.getElementById('authFeedback');
 
     authForm.addEventListener('submit', async (e) => {
+        console.log("Signup form submitted");
         e.preventDefault(); 
         
         const email = document.getElementById('email').value;
@@ -76,9 +77,12 @@
         const fullNameValue = document.getElementById('fullname').value;
         const usernameValue = document.getElementById('username').value;
         
+        console.log("Attempting signup for:", email);
+
         // Frontend Turnstile Check
         const turnstileResponse = document.querySelector('[name="cf-turnstile-response"]');
         if (!turnstileResponse || !turnstileResponse.value) {
+            console.warn("Turnstile check failed or not completed.");
             feedback.style.display = 'block';
             feedback.style.backgroundColor = 'rgba(255, 184, 0, 0.1)';
             feedback.style.border = '1px solid rgba(255, 184, 0, 0.3)';
@@ -92,6 +96,7 @@
         feedback.style.display = 'none';
 
         try {
+            console.log("Calling supabaseClient.auth.signUp...");
             // Sign Up
             const { data, error } = await supabaseClient.auth.signUp({
                 email: email,
@@ -106,7 +111,12 @@
                 }
             });
 
-            if (error) throw error;
+            if (error) {
+                console.error("Supabase signUp error:", error);
+                throw error;
+            }
+
+            console.log("Signup successful, data:", data);
 
             // Successful Signup -> Prompt for Email Verification
             feedback.style.display = 'block';
@@ -120,7 +130,7 @@
             }
 
         } catch (error) {
-            console.error("Auth Error: ", error);
+            console.error("Caught Auth Error: ", error);
             feedback.style.display = 'block';
             feedback.style.backgroundColor = 'rgba(255, 68, 68, 0.1)';
             feedback.style.border = '1px solid rgba(255, 68, 68, 0.3)';
