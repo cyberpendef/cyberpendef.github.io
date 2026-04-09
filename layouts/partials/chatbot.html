@@ -48,6 +48,9 @@
     </div>
 </div>
 
+<!-- Load Turnstile explicitly for the chatbot because this sitewide partial cannot depend on page-specific scripts. -->
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" async defer></script>
+
 <style>
     :root {
         --chat-bg: #0a0f18;
@@ -194,6 +197,11 @@
         line-height: 1.5;
     }
 
+    .message-content {
+        white-space: pre-wrap;
+        word-break: break-word;
+    }
+
     .bot-message {
         align-self: flex-start;
         background: var(--chat-bot-msg);
@@ -290,17 +298,23 @@
         const chatInput = document.getElementById('chat-input');
         const chatMessages = document.getElementById('chat-messages');
         const turnstileContainer = document.getElementById('chat-turnstile-container');
+        const turnstileMount = turnstileContainer.querySelector('.cf-turnstile');
 
-        const SUPABASE_FUNC_URL = 'https://qfkdrluonrhmubqyeyex.supabase.co/functions/v1/ai-assistant';
-        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFma2RybHVvbnJobXVicXlleWV4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU0NDk4MjcsImV4cCI6MjA5MTAyNTgyN30.YKXk70kUibQJNhG-AIwyGLChl_mta-lqm-Sm27N41os';
+        // Keep environment-specific settings in Hugo config so they are consistent across the site.
+        const SUPABASE_URL = {{ printf "%q" .Site.Params.supabase_url | safeJS }};
+        const SUPABASE_ANON_KEY = {{ printf "%q" .Site.Params.supabase_anon_key | safeJS }};
+        const SUPABASE_FUNC_URL = SUPABASE_URL ? `${SUPABASE_URL}/functions/v1/ai-assistant` : '';
+        let turnstileWidgetId = null;
 
         // Toggle Chat
         chatToggle.addEventListener('click', () => {
             chatWindow.classList.toggle('chat-window-hidden');
             if (!chatWindow.classList.contains('chat-window-hidden')) {
                 chatInput.focus();
-                // Reset turnstile if visible
-                if (typeof turnstile !== 'undefined') turnstile.reset();
+                // Reset the widget when reopening so an old token is never reused accidentally.
+                if (typeof turnstile !== 'undefined' && turnstileWidgetId !== null) {
+                    turnstile.reset(turnstileWidgetId);
+                }
             }
         });
 
@@ -309,20 +323,106 @@
         });
 
         // Add Message to UI
-        function addMessage(content, isBot = false) {
+        function addMessage(content, isBot = false, options = {}) {
             const msgDiv = document.createElement('div');
             msgDiv.className = `message ${isBot ? 'bot-message' : 'user-message'}`;
+            const contentDiv = document.createElement('div');
+            contentDiv.className = 'message-content';
             
             const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-            
-            msgDiv.innerHTML = `
-                <div class="message-content">${content}</div>
-                <div class="message-time">${isBot ? 'System' : 'Client'} · ${time}</div>
-            `;
+
+            // Only locally-generated UI fragments are allowed as HTML; user/AI text is rendered safely.
+            if (options.allowHtml) {
+                contentDiv.innerHTML = content;
+            } else {
+                contentDiv.textContent = content;
+            }
+
+            const timeDiv = document.createElement('div');
+            timeDiv.className = 'message-time';
+            timeDiv.textContent = `${isBot ? 'System' : 'Client'} · ${time}`;
+
+            msgDiv.appendChild(contentDiv);
+            msgDiv.appendChild(timeDiv);
             
             chatMessages.appendChild(msgDiv);
             chatMessages.scrollTop = chatMessages.scrollHeight;
             return msgDiv;
+        }
+
+        function updateMessageContent(messageNode, content, options = {}) {
+            const contentNode = messageNode.querySelector('.message-content');
+            if (!contentNode) return;
+
+            if (options.allowHtml) {
+                contentNode.innerHTML = content;
+            } else {
+                contentNode.textContent = content;
+            }
+        }
+
+        function appendMessageContent(messageNode, content) {
+            const contentNode = messageNode.querySelector('.message-content');
+            if (!contentNode) return;
+
+            contentNode.textContent = `${contentNode.textContent || ''}${content}`;
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function getTurnstileToken() {
+            const turnstileResponse = document.querySelector('#chat-turnstile-container [name="cf-turnstile-response"]');
+            return turnstileResponse ? turnstileResponse.value : '';
+        }
+
+        function waitForTurnstile(maxAttempts = 30) {
+            return new Promise((resolve, reject) => {
+                let attempts = 0;
+
+                const intervalId = window.setInterval(() => {
+                    attempts += 1;
+
+                    if (typeof window.turnstile !== 'undefined') {
+                        window.clearInterval(intervalId);
+                        resolve(window.turnstile);
+                        return;
+                    }
+
+                    if (attempts >= maxAttempts) {
+                        window.clearInterval(intervalId);
+                        reject(new Error('Security verification failed to load. Please refresh the page and try again.'));
+                    }
+                }, 250);
+            });
+        }
+
+        async function showTurnstileChallenge() {
+            turnstileContainer.style.display = 'block';
+
+            const turnstileApi = await waitForTurnstile();
+
+            // Render lazily because the widget stays hidden until the backend asks for verification.
+            if (turnstileWidgetId === null) {
+                turnstileMount.innerHTML = '';
+                turnstileWidgetId = turnstileApi.render(turnstileMount, {
+                    sitekey: {{ printf "%q" .Site.Params.turnstile_site_key | safeJS }},
+                    theme: 'dark',
+                    size: 'compact'
+                });
+            } else {
+                turnstileApi.reset(turnstileWidgetId);
+            }
+        }
+
+        async function readErrorResponse(response) {
+            const rawBody = await response.text();
+
+            try {
+                const parsed = rawBody ? JSON.parse(rawBody) : {};
+                return parsed.error || `Assistant service returned an error (${response.status}).`;
+            } catch (error) {
+                const statusLabel = response.status ? ` (${response.status})` : '';
+                return rawBody || `Assistant service returned an unreadable response${statusLabel}.`;
+            }
         }
 
         // Handle Form
@@ -331,50 +431,84 @@
             const query = chatInput.value.trim();
             if (!query) return;
 
+            if (!SUPABASE_FUNC_URL || !SUPABASE_ANON_KEY) {
+                addMessage('Assistant configuration is incomplete. Please set the Supabase URL and anon key in the site configuration.', true);
+                return;
+            }
+
             // Add User Message
             addMessage(query, false);
             chatInput.value = '';
             chatInput.disabled = true;
 
             // Show Loading State
-            const loadingMsg = addMessage('<span class="typing-dots">Analyzing query...</span>', true);
-            
-            // Turnstile Check (Backend requires it if configured)
-            const turnstileResponse = document.querySelector('#chat-turnstile-container [name="cf-turnstile-response"]');
+            const loadingMsg = addMessage('<span class="typing-dots">Analyzing query...</span>', true, { allowHtml: true });
+            const turnstileToken = getTurnstileToken();
             
             try {
                 const response = await fetch(SUPABASE_FUNC_URL, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
+                        'apikey': SUPABASE_ANON_KEY,
                         'Authorization': `Bearer ${SUPABASE_ANON_KEY}`
                     },
                     body: JSON.stringify({
                         message: query,
-                        'cf-turnstile-response': turnstileResponse ? turnstileResponse.value : null
+                        'cf-turnstile-response': turnstileToken || null
                     })
                 });
 
-                const data = await response.json();
-
                 if (!response.ok) {
-                    if (data.error && data.error.includes('verification')) {
-                        turnstileContainer.style.display = 'block';
+                    const errorMessage = await readErrorResponse(response);
+
+                    if (errorMessage.includes('verification')) {
+                        await showTurnstileChallenge();
                         throw new Error("Security verification required. Please complete the CAPTCHA above.");
                     }
-                    throw new Error(data.error || "System connection interrupted.");
+                    throw new Error(errorMessage || "System connection interrupted.");
                 }
 
-                // Remove loading dots and add bot response
-                loadingMsg.remove();
-                addMessage(data.response, true);
+                if (!response.body) {
+                    throw new Error('Assistant stream is unavailable.');
+                }
+
+                updateMessageContent(loadingMsg, '');
+
+                const reader = response.body.getReader();
+                const decoder = new TextDecoder();
+                let streamedText = '';
+
+                while (true) {
+                    const { value, done } = await reader.read();
+
+                    if (done) {
+                        break;
+                    }
+
+                    const chunk = decoder.decode(value, { stream: true });
+                    if (!chunk) continue;
+
+                    streamedText += chunk;
+                    appendMessageContent(loadingMsg, chunk);
+                }
+
+                if (!streamedText.trim()) {
+                    updateMessageContent(loadingMsg, 'No response received from the assistant.');
+                }
 
             } catch (error) {
-                loadingMsg.innerHTML = `<div style="color: #ff4444;">⚠️ ${error.message}</div>`;
+                updateMessageContent(loadingMsg, `⚠️ ${error.message}`);
+                const contentNode = loadingMsg.querySelector('.message-content');
+                if (contentNode) {
+                    contentNode.style.color = '#ff4444';
+                }
             } finally {
                 chatInput.disabled = false;
                 chatInput.focus();
-                if (typeof turnstile !== 'undefined') turnstile.reset();
+                if (typeof turnstile !== 'undefined' && turnstileWidgetId !== null && getTurnstileToken()) {
+                    turnstile.reset(turnstileWidgetId);
+                }
             }
         });
     });

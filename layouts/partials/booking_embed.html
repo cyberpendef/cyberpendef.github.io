@@ -1,0 +1,40 @@
+{{ $bookingURL := .Site.Params.cal_booking_url }}
+
+<div class="section-header" style="margin-bottom: 20px;">
+    <div class="section-label">
+        <div class="section-icon cyan">📅</div>
+        <div>
+            <div class="section-title">{{ .Site.Params.cal_booking_title }}</div>
+            <div class="section-subtitle">Schedule Directly</div>
+        </div>
+    </div>
+    <div class="section-line"></div>
+</div>
+
+<div style="background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 32px;">
+    <p style="margin: 0 0 24px 0; color: var(--text); font-size: 1.02rem;">
+        {{ .Site.Params.cal_booking_description }}
+    </p>
+
+    {{ if $bookingURL }}
+    <div style="border: 1px solid var(--border); border-radius: 14px; overflow: hidden; background: rgba(255,255,255,0.02);">
+        <!-- Inline Cal.com booking iframe. The source is configurable from Hugo params so scheduling can be updated without touching the layout. -->
+        <iframe
+            src="{{ $bookingURL | safeURL }}"
+            title="CyberPenDef Consultation Booking"
+            loading="lazy"
+            style="width: 100%; min-height: 780px; border: 0; background: transparent;"
+            referrerpolicy="strict-origin-when-cross-origin">
+        </iframe>
+    </div>
+    <p style="margin: 16px 0 0 0; color: var(--muted); font-size: 0.9rem;">
+        If the calendar does not load in your browser, <a href="{{ $bookingURL | safeURL }}" target="_blank" rel="noopener" style="color: var(--cyan); text-decoration: none;">open the booking page directly</a>.
+    </p>
+    {{ else }}
+    <div style="padding: 24px; border-radius: 12px; background: rgba(255, 184, 0, 0.08); border: 1px solid rgba(255, 184, 0, 0.25);">
+        <p style="margin: 0; color: var(--amber);">
+            Cal.com is not configured yet. Set `params.cal_booking_url` in `config.toml` to enable inline booking on this page.
+        </p>
+    </div>
+    {{ end }}
+</div>

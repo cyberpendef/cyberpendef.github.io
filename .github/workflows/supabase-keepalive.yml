@@ -1,0 +1,32 @@
+name: Supabase Keep Alive
+
+on:
+  schedule:
+    # Ping the public REST endpoint every 3 days to reduce free-tier cold-pausing.
+    - cron: "0 3 */3 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  keepalive:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping public testimonials REST endpoint
+        env:
+          SUPABASE_PROJECT_URL: https://qfkdrluonrhmubqyeyex.supabase.co
+          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY != '' && secrets.SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFma2RybHVvbnJobXVicXlleWV4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU0NDk4MjcsImV4cCI6MjA5MTAyNTgyN30.YKXk70kUibQJNhG-AIwyGLChl_mta-lqm-Sm27N41os' }}
+        run: |
+          set -eu
+
+          # This endpoint is read-only for anonymous users due to the testimonials RLS policy.
+          STATUS_CODE="$(curl -sS -o response.json -w '%{http_code}' \
+            "${SUPABASE_PROJECT_URL}/rest/v1/testimonials?select=id&approved=eq.true&limit=1" \
+            -H "apikey: ${SUPABASE_ANON_KEY}" \
+            -H "Authorization: Bearer ${SUPABASE_ANON_KEY}")"
+
+          echo "HTTP status: ${STATUS_CODE}"
+          cat response.json
+
+          test "${STATUS_CODE}" = "200"

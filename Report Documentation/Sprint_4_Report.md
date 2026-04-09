@@ -16,7 +16,7 @@
 - **Logic:**
   - **Global Integration:** Injected the chatbot partial into the base layout for sitewide availability.
   - **State Management:** Wrote Vanilla JS to handle opening/closing transitions and focus management.
-  - **Asynchronous Communication:** Implemented `fetch` logic to send user queries to the Supabase Edge Function with proper error handling and "Typing..." indicators.
+  - **Asynchronous Communication:** Implemented browser-to-edge chat requests with progressive streamed rendering of assistant responses.
   - **Anti-Spam Trigger:** Integrated logic to automatically show the Turnstile CAPTCHA if the backend requires security verification.
 
 ### Next Steps

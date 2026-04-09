@@ -1,0 +1,110 @@
+# Decap CMS configuration for the CyberPenDef Hugo site.
+# GitHub OAuth still needs to be completed outside the repository so authenticated editing can work in production.
+
+backend:
+  name: github
+  repo: cyberpendef/cyberpendef.github.io
+  branch: main
+
+local_backend: true
+site_url: https://cyberpendef.github.io
+display_url: https://cyberpendef.github.io
+logo_url: /logo.png
+
+media_folder: static/uploads
+public_folder: /uploads
+
+slug:
+  encoding: ascii
+  clean_accents: true
+
+collections:
+  - name: site_pages
+    label: Site Pages
+    delete: false
+    editor:
+      preview: false
+    files:
+      - name: home
+        label: Home Page
+        file: content/_index.md
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Description, name: description, widget: text }
+          - { label: Type, name: type, widget: hidden, default: home }
+          - { label: Body, name: body, widget: markdown, required: false }
+      - name: about
+        label: About Page
+        file: content/about/_index.md
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Description, name: description, widget: text }
+          - { label: Show Page Header, name: show_page_header, widget: boolean, default: true }
+          - { label: Draft, name: draft, widget: boolean, default: false }
+          - { label: Body, name: body, widget: markdown, required: false }
+      - name: services
+        label: Services Page
+        file: content/services/_index.md
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Description, name: description, widget: text }
+          - { label: Type, name: type, widget: hidden, default: services }
+          - { label: Body, name: body, widget: markdown, required: false }
+      - name: contact
+        label: Contact Page
+        file: content/contact/_index.md
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Description, name: description, widget: text }
+          - { label: Type, name: type, widget: hidden, default: contact }
+          - { label: Layout, name: layout, widget: hidden, default: list }
+          - { label: Show Page Header, name: show_page_header, widget: boolean, default: true }
+          - { label: Draft, name: draft, widget: boolean, default: false }
+          - { label: Body, name: body, widget: markdown, required: false }
+
+  - name: blog
+    label: Blog
+    label_singular: Blog Post
+    folder: content/blog
+    create: true
+    delete: true
+    path: "{{slug}}"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    summary: "{{title}}"
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Publish Date, name: date, widget: datetime }
+      - { label: Description, name: description, widget: text }
+      - { label: Draft, name: draft, widget: boolean, default: false }
+      - { label: Featured Image, name: featured_image, widget: image, required: false }
+      - { label: Body, name: body, widget: markdown }
+
+  - name: portfolio
+    label: Portfolio
+    label_singular: Portfolio Entry
+    folder: content/portfolio
+    create: true
+    delete: true
+    path: "{{slug}}"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    summary: "{{title}}"
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Publish Date, name: date, widget: datetime }
+      - { label: Summary, name: description, widget: text }
+      - { label: Client Name, name: client_name, widget: string, required: false }
+      - label: Service Category
+        name: service_category
+        widget: select
+        options:
+          - IT Support
+          - Cybersecurity
+          - Cloud Security
+          - Vulnerability Assessment
+          - Penetration Testing
+          - Infrastructure
+          - Other
+      - { label: Outcome, name: outcome, widget: string, required: false }
+      - { label: Featured Image, name: featured_image, widget: image, required: false }
+      - { label: Draft, name: draft, widget: boolean, default: false }
+      - { label: Body, name: body, widget: markdown }

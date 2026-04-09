@@ -91,6 +91,7 @@ serve(async (req) => {
           { role: "system", content: systemPrompt },
           { role: "user", content: message }
         ],
+        stream: true,
         temperature: 0.7,
         max_tokens: 500
       })
@@ -102,11 +103,89 @@ serve(async (req) => {
       throw new Error('Failed to connect to the AI brain.')
     }
 
-    const aiData = await groqResponse.json()
-    const aiMessage = aiData.choices[0].message.content
+    if (!groqResponse.body) {
+      throw new Error('AI stream body is unavailable')
+    }
 
-    return new Response(JSON.stringify({ response: aiMessage }), {
-      headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+    const encoder = new TextEncoder()
+    const decoder = new TextDecoder()
+
+    // Convert Groq's SSE stream into a plain text stream that the browser can append directly.
+    const stream = new ReadableStream({
+      async start(controller) {
+        const reader = groqResponse.body!.getReader()
+        let buffer = ''
+
+        try {
+          while (true) {
+            const { value, done } = await reader.read()
+
+            if (done) {
+              break
+            }
+
+            buffer += decoder.decode(value, { stream: true })
+            const lines = buffer.split('\n')
+            buffer = lines.pop() ?? ''
+
+            for (const rawLine of lines) {
+              const line = rawLine.trim()
+
+              if (!line || !line.startsWith('data:')) {
+                continue
+              }
+
+              const payload = line.replace(/^data:\s*/, '')
+
+              if (payload === '[DONE]') {
+                controller.close()
+                return
+              }
+
+              try {
+                const parsed = JSON.parse(payload)
+                const chunk = parsed.choices?.[0]?.delta?.content ?? ''
+
+                if (chunk) {
+                  controller.enqueue(encoder.encode(chunk))
+                }
+              } catch (parseError) {
+                console.error('Stream Parse Error:', parseError)
+              }
+            }
+          }
+
+          if (buffer.trim().startsWith('data:')) {
+            const payload = buffer.trim().replace(/^data:\s*/, '')
+            if (payload && payload !== '[DONE]') {
+              try {
+                const parsed = JSON.parse(payload)
+                const chunk = parsed.choices?.[0]?.delta?.content ?? ''
+                if (chunk) {
+                  controller.enqueue(encoder.encode(chunk))
+                }
+              } catch (parseError) {
+                console.error('Final Stream Parse Error:', parseError)
+              }
+            }
+          }
+
+          controller.close()
+        } catch (streamError) {
+          console.error('Stream Forwarding Error:', streamError)
+          controller.error(streamError)
+        } finally {
+          reader.releaseLock()
+        }
+      }
+    })
+
+    return new Response(stream, {
+      headers: {
+        ...corsHeaders,
+        'Content-Type': 'text/plain; charset=utf-8',
+        'Cache-Control': 'no-cache',
+      },
       status: 200,
     })
 

@@ -10,6 +10,11 @@ unsafe = true
 
 [params]
 turnstile_site_key = "0x4AAAAAAC1OBXLHWUcaUlZ0"
+supabase_url = "https://qfkdrluonrhmubqyeyex.supabase.co"
+supabase_anon_key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFma2RybHVvbnJobXVicXlleWV4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU0NDk4MjcsImV4cCI6MjA5MTAyNTgyN30.YKXk70kUibQJNhG-AIwyGLChl_mta-lqm-Sm27N41os"
+cal_booking_url = "https://cal.com/cyberpendef/15min"
+cal_booking_title = "Book a Consultation"
+cal_booking_description = "Prefer a scheduled call instead of back-and-forth messages? Use the booking calendar below to reserve a consultation slot."
 author = "Shaik Hidayatullah"
 email = "cyberpendef@gmail.com"
 phone = "+91-7672017241"

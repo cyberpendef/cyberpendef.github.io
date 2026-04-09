@@ -20,6 +20,6 @@ To ensure a high-quality, error-free development process, you MUST adhere to the
 11. If there is a need to modify or change or update the code logic written in the previous sprints, then take actions on it carefully by not tampering the overall functionality of the existing state.
 12. **Document a Report of your work:** Prepare a detailed documentation and report of whatever code that you have written that explains the code logic and purpose clearly and comprehensively in detail. And make sure to write all this into a new folder named 'Report Documentation' and organize it into several Obsidian-compatible markdown files.
 13. **Handle errors gracefully:** - if you encounter issues, document them and propose solutions
-14. **Follow Best Practices:** Follow Security Best Practices and Web Development Best practices. And follow best practices for improving efficiency and performance if only possible.
+14. **Follow Best Practices:** Prioritize Security as Frist concern when writing and developing code and web application. Follow Security Best Practices and Web Development Best practices. And follow best practices for improving efficiency and performance if only possible.
 15. **Test incrementally** - ensure each feature works before adding complexity
 

@@ -2,12 +2,27 @@
 <!-- STRICT ROUTE PROTECTION: Execute immediately before rendering -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
-    const SUPABASE_URL = 'https://qfkdrluonrhmubqyeyex.supabase.co';
-    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFma2RybHVvbnJobXVicXlleWV4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU0NDk4MjcsImV4cCI6MjA5MTAyNTgyN30.YKXk70kUibQJNhG-AIwyGLChl_mta-lqm-Sm27N41os';
+    // Keep deployment-specific Supabase values in Hugo config so every portal page stays aligned.
+    const SUPABASE_URL = {{ printf "%q" .Site.Params.supabase_url | safeJS }};
+    const SUPABASE_ANON_KEY = {{ printf "%q" .Site.Params.supabase_anon_key | safeJS }};
     const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
     // Hide HTML document to prevent UI flashing before check completes
     document.documentElement.style.display = 'none';
+
+    // Run the dashboard setup immediately if the DOM is already parsed, otherwise wait once.
+    function initializeDashboard(session) {
+        const renderDashboard = () => {
+            document.getElementById('userEmail').innerText = session.user.email;
+            fetchTickets();
+        };
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', renderDashboard, { once: true });
+        } else {
+            renderDashboard();
+        }
+    }
 
     // Synchronous-like check to prevent unauthenticated access
     async function enforceProtection() {
@@ -18,11 +33,7 @@
         } else {
             // Show page
             document.documentElement.style.display = 'block'; 
-            // Wait for DOM to be ready
-            document.addEventListener('DOMContentLoaded', () => {
-                document.getElementById('userEmail').innerText = session.user.email;
-                fetchTickets();
-            });
+            initializeDashboard(session);
         }
     }
     
@@ -153,6 +164,7 @@
 
         } catch (error) {
             console.error("Fetch Error:", error);
+            loadingState.style.display = 'none';
             grid.innerHTML = `
                 <div style="padding: 30px; background: rgba(255, 68, 68, 0.1); border: 1px solid rgba(255, 68, 68, 0.3); color: #ff4444; border-radius: 8px; text-align: center;">
                     <strong>Encryption Error:</strong> Failed to retrieve secure ticket data. Please try again later.

@@ -18,8 +18,9 @@
     <link rel="icon" type="image/png" href="/logo.png">
     <link rel="apple-touch-icon" href="/logo.png">
     
+    {{/* Use a relative asset URL so local Hugo previews keep the stylesheet on the same origin and pass CSP. */}}
     {{ $style := resources.Get "css/main.css" | minify | fingerprint }}
-    <link rel="stylesheet" href="{{ $style.Permalink }}">
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}">
     
     {{ block "extra-css" . }}{{ end }}
 </head>
