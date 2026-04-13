@@ -1,0 +1,12 @@
+name = "cyberpendef-decap-oauth"
+main = "cloudflare/decap-oauth-worker.js"
+compatibility_date = "2026-04-12"
+workers_dev = true
+
+[observability]
+[observability.logs]
+enabled = true
+invocation_logs = true
+
+[observability.traces]
+

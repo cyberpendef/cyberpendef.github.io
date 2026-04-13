@@ -5,12 +5,59 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex,nofollow">
   <title>CyberPenDef Content Admin</title>
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="stylesheet" href="/admin/style.css">
 </head>
 <body>
-  <!--
-    Decap CMS entrypoint.
-    This loads the CMS application from the CDN and uses /admin/config.yml for repository settings.
-  -->
-  <script src="https://unpkg.com/decap-cms@^3.5.0/dist/decap-cms.js"></script>
+  <noscript>
+    CyberPenDef Content Admin requires JavaScript to authenticate and load Decap CMS.
+  </noscript>
+
+  <div class="admin-shell" aria-hidden="true">
+    <div class="admin-grid"></div>
+    <div class="admin-card">
+      <div class="admin-kicker">CyberPenDef CMS</div>
+      <h1>Secure Content Console</h1>
+      <p>Loading the GitHub-backed editorial interface...</p>
+      <div class="admin-loader">
+        <span></span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      function hideAdminShellIfCmsMounted() {
+        var shell = document.querySelector('.admin-shell');
+        var cmsRoot = document.getElementById('nc-root');
+
+        if (!shell || !cmsRoot || cmsRoot.childElementCount === 0) {
+          return false;
+        }
+
+        document.body.classList.add('cms-loaded');
+        shell.setAttribute('hidden', '');
+        return true;
+      }
+
+      document.addEventListener('DOMContentLoaded', function () {
+        var observer = new MutationObserver(function () {
+          if (hideAdminShellIfCmsMounted()) {
+            observer.disconnect();
+          }
+        });
+
+        observer.observe(document.body, { childList: true, subtree: true });
+        hideAdminShellIfCmsMounted();
+      });
+
+      window.addEventListener('load', function () {
+        window.setTimeout(hideAdminShellIfCmsMounted, 500);
+      });
+    })();
+  </script>
+
+  <!-- Pinned Decap CMS release for predictable admin behavior. -->
+  <script src="https://unpkg.com/decap-cms@3.8.3/dist/decap-cms.js"></script>
 </body>
 </html>

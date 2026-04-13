@@ -1,0 +1,64 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - link "CyberPenDef Logo CYBER PEN DEF IT & Cybersecurity Solutions" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - img "CyberPenDef Logo" [ref=e5]
+        - generic [ref=e6]:
+          - generic [ref=e7]:
+            - generic [ref=e8]: CYBER
+            - generic [ref=e9]: PEN
+            - generic [ref=e10]: DEF
+          - generic [ref=e11]: IT & Cybersecurity Solutions
+      - generic [ref=e12]:
+        - link "Home" [ref=e13] [cursor=pointer]:
+          - /url: /
+        - link "Services" [ref=e14] [cursor=pointer]:
+          - /url: /services/
+        - link "About" [ref=e15] [cursor=pointer]:
+          - /url: /about/
+        - link "Blog" [ref=e16] [cursor=pointer]:
+          - /url: /blog/
+        - link "Contact" [ref=e17] [cursor=pointer]:
+          - /url: /contact/
+  - generic [ref=e18]:
+    - generic [ref=e19]:
+      - generic [ref=e21]: Threat Notes · Practical Defense
+      - heading "CyberPenDef Field Notes" [level=1] [ref=e23]:
+        - text: CyberPenDef
+        - generic [ref=e24]: Field Notes
+      - paragraph [ref=e25]: Articles, security insights, and practical IT guidance from CyberPenDef.
+    - region "No blog posts yet" [ref=e30]:
+      - paragraph [ref=e32]: Knowledge Base Initializing
+      - heading "No published field notes yet" [level=2] [ref=e33]
+      - paragraph [ref=e34]: The blog is wired to Decap CMS and ready for publishing. New security guides will appear here after they are created and published from the admin panel.
+      - generic [ref=e35]:
+        - link "Explore Services" [ref=e36] [cursor=pointer]:
+          - /url: /services/
+        - link "Request Guidance" [ref=e37] [cursor=pointer]:
+          - /url: /contact/
+  - contentinfo [ref=e38]:
+    - generic [ref=e39]:
+      - paragraph [ref=e40]: Prepared for CyberPenDef · Shaik Hidayatullah · India & Gulf Region
+      - paragraph [ref=e41]: © 2026 CyberPenDef. All rights reserved.
+  - generic [ref=e42]:
+    - button "Open Security Assistant" [ref=e43] [cursor=pointer]:
+      - img [ref=e45]
+      - generic [ref=e47]: Security AI
+    - generic:
+      - generic:
+        - generic:
+          - generic:
+            - generic: Cybernet Assistant
+            - generic: Secure Connection Active
+        - button "Close Chat": ×
+      - generic:
+        - generic:
+          - generic: Greetings. I am the CyberPenDef AI Assistant. How can I assist with your security posture today?
+          - generic: System Initialized
+      - generic:
+        - generic:
+          - textbox "Query the system..."
+          - button:
+            - img
+        - generic: AI powered by Llama 3.3 · Secure Channel

@@ -1,14 +1,17 @@
 # Decap CMS configuration for the CyberPenDef Hugo site.
-# GitHub OAuth still needs to be completed outside the repository so authenticated editing can work in production.
+# Production GitHub authentication is proxied through the Cloudflare Worker OAuth service.
 
 backend:
   name: github
   repo: cyberpendef/cyberpendef.github.io
   branch: main
+  base_url: https://cyberpendef-decap-oauth.cyberpendef.workers.dev
+  auth_endpoint: auth
 
 local_backend: true
 site_url: https://cyberpendef.github.io
 display_url: https://cyberpendef.github.io
+site_domain: cyberpendef.github.io
 logo_url: /logo.png
 
 media_folder: static/uploads
@@ -75,6 +78,29 @@ collections:
       - { label: Title, name: title, widget: string }
       - { label: Publish Date, name: date, widget: datetime }
       - { label: Description, name: description, widget: text }
+      - label: Category
+        name: category
+        widget: select
+        default: Security Guidance
+        options:
+          - Security Guidance
+          - IT Support
+          - Threat Awareness
+          - Cloud Security
+          - Privacy
+          - Business Security
+          - AI Security
+      - label: Tags
+        name: tags
+        widget: list
+        required: false
+        hint: "Add short topic labels such as phishing, backups, endpoint security, or cloud."
+        field: { label: Tag, name: tag, widget: string }
+      - { label: Reading Time, name: reading_time, widget: string, required: false, hint: "Example: 4 min read" }
+      - { label: Accent Color, name: accent_color, widget: color, default: "#00d4ff", required: false }
+      - { label: Featured Post, name: featured, widget: boolean, default: false }
+      - { label: SEO Title, name: seo_title, widget: string, required: false }
+      - { label: SEO Description, name: seo_description, widget: text, required: false }
       - { label: Draft, name: draft, widget: boolean, default: false }
       - { label: Featured Image, name: featured_image, widget: image, required: false }
       - { label: Body, name: body, widget: markdown }

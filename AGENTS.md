@@ -1,6 +1,6 @@
 ## ⚠️ Core Directives & Workflow Rules (CRITICAL)
 To ensure a high-quality, error-free development process, you MUST adhere to the following workflow:
-1. **Read the Project Development Plan:** When a user start a new chat session, first read the project development plan saved in 'Project Documentation/Development_plan.md' file. And also read other system design and architecture files that are located in 'Project Documentation' folder
+1. **Read the Project Development Plan:** When a user start a new chat session, first read the project development plan saved in 'Project Documentation/Development_plan.md' file. And also read system design, architecture files and other development plan files if they exist that are located in 'Project Documentation' folder
 2. **Resume the project from where it was left off** When a user starts a new chat session, First analyze the sprint files that are saved in a folder named "Report Documentation" where everything that is implemented and done in each sprint is recorded. Then also analyze the entire project codebase to infer where was the previous work or state left off.
 3. **No Hallucinations:** Base all your code on the actual codebase structure. If you are unsure about a
       file's location or content, read the file first before attempting to modify it. Do not invent APIs or use
@@ -22,4 +22,5 @@ To ensure a high-quality, error-free development process, you MUST adhere to the
 13. **Handle errors gracefully:** - if you encounter issues, document them and propose solutions
 14. **Follow Best Practices:** Prioritize Security as Frist concern when writing and developing code and web application. Follow Security Best Practices and Web Development Best practices. And follow best practices for improving efficiency and performance if only possible.
 15. **Test incrementally** - ensure each feature works before adding complexity
+16. **User Browser MCP tools:** - Use the Plawright and Chrome Dev Tools MCP tools to troubleshoot, inspect, and analyze the implement code in the project development plan.
 

@@ -1,0 +1,6 @@
+[      54ms] [LOG] decap-cms-app 3.8.3 @ https://unpkg.com/decap-cms@3.8.3/dist/decap-cms.js:490
+[      59ms] [LOG] decap-cms-core 3.8.1 @ https://unpkg.com/decap-cms@3.8.3/dist/decap-cms.js:53
+[      60ms] [LOG] decap-cms 3.8.3 @ https://unpkg.com/decap-cms@3.8.3/dist/decap-cms.js:490
+[     205ms] [LOG] Looking for Decap CMS Proxy Server at 'http://localhost:8081/api/v1' @ https://unpkg.com/decap-cms@3.8.3/dist/decap-cms.js:16
+[     208ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:8081/api/v1:0
+[     208ms] [LOG] Decap CMS Proxy Server not detected at 'http://localhost:8081/api/v1' @ https://unpkg.com/decap-cms@3.8.3/dist/decap-cms.js:16
