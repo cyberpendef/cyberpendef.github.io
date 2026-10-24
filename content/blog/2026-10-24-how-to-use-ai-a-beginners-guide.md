@@ -3,7 +3,12 @@ title: How To Use AI - A Beginner's Guide
 date: 2026-10-24T15:11:00.000+05:30
 description: "This blog post covers what is AI and how to use it in your daily
   life beginners.  "
-category: Security Guidance
+category: AI Security
+tags:
+  - AI
+  - Prompting
+  - LLM
+  - Beginner
 accent_color: "#00d4ff"
 featured: true
 draft: false
