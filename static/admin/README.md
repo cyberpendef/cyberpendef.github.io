@@ -59,8 +59,15 @@ npx wrangler deploy
 6. The Worker sends the token back to the Decap CMS popup flow.
 7. Decap CMS loads the configured site page, blog, and portfolio collections.
 
+## Local Development
+- The shared `config.yml` intentionally does not enable `local_backend`; the deployed admin must use its configured GitHub backend and OAuth Worker.
+- Use `https://cyberpendef.github.io/admin/` to test the complete GitHub OAuth and publishing flow.
+- A local Hugo preview can verify admin styling and configuration loading, but local OAuth is not configured: the Worker posts successful authorization only to the production site origin.
+- If you specifically need to edit a local repository with Decap Proxy, enable `local_backend: true` only in a local, uncommitted copy of `config.yml` and run `npx decap-server` from the repository root. This local proxy mode is not the production GitHub workflow and does not support the configured editorial workflow.
+- Do not commit the local-only `local_backend` setting. It makes browsers try to contact a proxy on each visitor's own computer instead of using the hosted GitHub repository.
+
 ## Troubleshooting
 - If the browser opens `api.netlify.com/auth...` and shows `Not Found`, the deployed `/admin/config.yml` is stale or missing the Worker `base_url`.
 - If the Worker returns an origin-like hash in `Access-Control-Allow-Origin`, reset `ALLOWED_ORIGIN` to exactly `https://cyberpendef.github.io` and redeploy.
 - If GitHub says the callback URL is invalid, verify the GitHub OAuth App callback exactly matches the Worker callback URL.
-- If Decap loads locally but not in production, verify `local_backend: true` is not being mistaken for production auth; production requires the Worker.
+- If Decap remains on the login screen or collections fail to load, confirm the deployed `/admin/config.yml` does not set `local_backend: true`; production must use the GitHub backend and Worker.

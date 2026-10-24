@@ -1,0 +1,62 @@
+{{ define "main" }}
+{{/* Phase 7.3: Blog single layout for CMS-managed articles. */}}
+{{ $accent := "#00d4ff" }}
+{{ with .Params.accent_color }}{{ if findRE "^#[0-9A-Fa-f]{6}$" . }}{{ $accent = . }}{{ end }}{{ end }}
+
+<article class="blog-post stagger-in" style="--article-accent: {{ $accent }};">
+    <header class="blog-post__header">
+        <div class="blog-meta">
+            <a href="/blog/" class="blog-back-link">← Back to Field Notes</a>
+            <span class="meta-separator">|</span>
+            <span>{{ default "Security Guidance" .Params.category }}</span>
+            <span class="meta-separator">·</span>
+            <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+            {{ with .Params.reading_time }}
+            <span class="meta-separator">·</span>
+            <span>{{ . }}</span>
+            {{ end }}
+        </div>
+        
+        <h1 data-cms-bind="#title">{{ .Title }}</h1>
+        
+        {{ with .Description }}
+        <p class="blog-post__description lead">{{ . }}</p>
+        {{ end }}
+
+        {{ with .Params.featured_image }}
+        <div class="blog-post__featured-image">
+            <img src="{{ . | relURL }}" alt="{{ $.Title }}">
+        </div>
+        {{ end }}
+    </header>
+
+    <div class="blog-post__content" data-cms-bind="#body">
+        {{ .Content }}
+    </div>
+
+    <footer class="blog-post__footer">
+        {{ with .Params.tags }}
+        <div class="blog-post__tags">
+            <p class="mono-label">Tagged Intelligence</p>
+            <div class="blog-tags">
+                {{ range . }}<span>{{ . }}</span>{{ end }}
+            </div>
+        </div>
+        {{ end }}
+
+        <div class="blog-post__cta">
+            <div class="cta-card">
+                <div class="cta-card__icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <h3>Secure your infrastructure today</h3>
+                <p>Need practical assistance implementing these security measures? CyberPenDef provides tailored IT and cybersecurity support for small businesses and individuals.</p>
+                <div class="btn-group">
+                    <a href="/contact/" class="btn btn-primary">Request Support</a>
+                    <a href="/services/" class="btn btn-outline">View Services</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</article>
+{{ end }}

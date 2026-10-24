@@ -15,12 +15,12 @@ To ensure a high-quality, error-free development process, you MUST adhere to the
 7. **Do not wipe or delete the existing website content:** Do not try to delete, wipe, or modify the existing website content, style, colors, pages, text and other things. Rather, develop or improve the existing website to integrate more advanced features 
 8. **Proactive Clarification:** Ask any questions to the user for any other requirements or ambiguous
       details or if there is a need to perform a critical and sensitive task that are not specified by the user before making structural assumptions.
-9. **Add Comments:** Add comments to every code snippet and logic to describe and explain what is that code and why is that code written and a brief summary of the code logic
+9. **Add Comments:** Add line by line comments to the code that explains the code logic in such a way that even a beginner who only knows the code syntax should be able to understand the code logic and make modifications to the code.
 10. **Verify functionality** of each component before moving to the next sprint
 11. If there is a need to modify or change or update the code logic written in the previous sprints, then take actions on it carefully by not tampering the overall functionality of the existing state.
 12. **Document a Report of your work:** Prepare a detailed documentation and report of whatever code that you have written that explains the code logic and purpose clearly and comprehensively in detail. And make sure to write all this into a new folder named 'Report Documentation' and organize it into several Obsidian-compatible markdown files.
 13. **Handle errors gracefully:** - if you encounter issues, document them and propose solutions
 14. **Follow Best Practices:** Prioritize Security as Frist concern when writing and developing code and web application. Follow Security Best Practices and Web Development Best practices. And follow best practices for improving efficiency and performance if only possible.
-15. **Test incrementally** - ensure each feature works before adding complexity
+15. **Test incrementally** - ensure each feature works before adding complexity.
 16. **User Browser MCP tools:** - Use the Plawright and Chrome Dev Tools MCP tools to troubleshoot, inspect, and analyze the implement code in the project development plan.
-
+17. **Modular Code**: Make the code modular so that it would be easy to make customizations in the future without touching or tampering irrelevant code logic.

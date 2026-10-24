@@ -1,0 +1,111 @@
+hero:
+  badge: Open for Business
+  title_prefix: "Let's"
+  title_highlight: Talk
+  description: Whether you have a specific project in mind, a problem you're not sure how to solve, or just want to ask whether I can help — my inbox is always open.
+offer:
+  icon: 🎁
+  title: Free Consultation Offer
+  description: I'm currently offering free initial consultations to my first 5–7 clients. If you're reading this, there's a good chance you can still claim one — just reach out and mention the offer.
+form:
+  title: Inquiry Form
+  subtitle: Send Me a Message
+  name_label: Your Name *
+  name_placeholder: Full Name
+  email_label: Email Address *
+  email_placeholder: email@example.com
+  phone_label: WhatsApp / Phone (Optional)
+  phone_placeholder: +91-0000000000
+  audience_label: I Am A... *
+  audience_placeholder: Select Category
+  audiences:
+    - Individual
+    - Freelancer
+    - Small Business
+    - Startup
+  service_label: Service I'm Interested In (Optional)
+  service_placeholder: Select Service Category
+  services:
+    - value: "Individuals: IT Support"
+      label: "Individuals: IT Support Services"
+    - value: "Individuals: Cybersecurity"
+      label: "Individuals: Cybersecurity Services"
+    - value: "Business: Infrastructure"
+      label: "Business: Infrastructure & IT Services"
+    - value: "Business: Managed Cybersecurity"
+      label: "Business: Managed Cybersecurity"
+    - value: Other
+      label: Other / Custom Inquiry
+  message_label: Tell Me About Your Situation *
+  message_placeholder: Describe your challenge or what you'd like help with. Don't worry about technical language — just tell me what's going on and we will figure it out together.
+  consultation_label: I'd like to claim the
+  consultation_emphasis: free initial consultation
+  submit_label: Send Message
+  sending_label: Sending Request...
+  turnstile_error: "⚠️ Please complete the security check to prove you are human."
+  success_title: "✅ Message Sent Successfully!"
+  success_message: I will review your inquiry and get back to you within 1 business day.
+  fallback_error: Failed to submit inquiry.
+  response_note: I typically respond within 1 business day. Please refer the bottom of this page or by
+  response_link_label: Clicking Here
+  response_note_suffix: to know about business hours, location, and mode of delivery of the services. Looking forward to connecting with you!
+channels:
+  title: Contact Channels
+  subtitle: How To Reach Me
+  items:
+    - icon: 📧
+      label: Email
+      value_source: email
+      value: ""
+      note: Best for detailed project inquiries. Response within 1 business day.
+    - icon: 💬
+      label: WhatsApp / Phone
+      value_source: phone
+      value: ""
+      note: Fastest response channel. Available during business hours.
+    - icon: 🔗
+      label: LinkedIn
+      value: Shaik Hidayatullah
+      note: ""
+      link_provider: linkedin
+      link_label: "View Profile →"
+    - icon: 💼
+      label: Fiverr
+      value: CyberPenDef
+      note: ""
+      link_provider: fiverr
+      link_label: "Browse Packages →"
+hours:
+  title: Business Hours
+  subtitle: When I'm Available
+  timezone_label: IST
+  days:
+    - day: Monday
+      hours: 8:00 AM – 5:00 PM
+      status: Open
+    - day: Tuesday
+      hours: 8:00 AM – 5:00 PM
+      status: Open
+    - day: Wednesday
+      hours: 8:00 AM – 5:00 PM
+      status: Open
+    - day: Thursday
+      hours: 8:00 AM – 5:00 PM
+      status: Open
+    - day: Friday
+      hours: 9:00 AM – 5:00 PM
+      status: Limited
+    - day: Saturday
+      hours: 8:00 AM – 5:00 PM
+      status: Open
+    - day: Sunday
+      hours: 8:00 AM – 5:00 PM
+      status: Open
+  timezone_note: All times are in **IST (UTC+5:30)**. If you're contacting me from the **Gulf region**, that is IST minus 1.5 to 2 hours.
+delivery:
+  title: Location & Delivery
+  subtitle: Remote First
+  paragraphs:
+    - "**CyberPenDef is a fully remote practice** based in India, Andhra Pradesh, Kurnool, serving clients across India and the Middle East & Gulf region (UAE, Saudi Arabia, Qatar, Kuwait, Bahrain, and Oman). But you can also physically meet me offline at my home location for some specific services that require on-site presence. You have to Opt for Offline mode in the inquiry form to reach me out. Details of my home address will be provided once you contact me via enquiry form or phone call accordingly. Just ask when you reach out."
+    - All services are delivered in both offline mode and online mode. For online mode, all services are delivered remotely via secure screen-sharing, email, and cloud collaboration tools — no on-site visit required.
+    - Remote delivery means faster response times, lower costs passed on to you, and the ability to work with clients regardless of location — without ever compromising on the quality or depth of service.

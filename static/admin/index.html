@@ -4,6 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex,nofollow">
+  <!-- 
+    Security Hardening: CSP for the Admin Console.
+    Limits scripts and connections to the CMS engine, GitHub API, and OAuth worker.
+  -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com; style-src 'self' 'unsafe-inline' https://unpkg.com; connect-src 'self' https://api.github.com https://cyberpendef-decap-oauth.cyberpendef.workers.dev; img-src 'self' data: https:; frame-src 'self' https://github.com;">
   <title>CyberPenDef Content Admin</title>
   <link rel="preconnect" href="https://unpkg.com">
   <link rel="stylesheet" href="/admin/style.css">

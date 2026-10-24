@@ -23,3 +23,14 @@ To ensure a high-quality, error-free development process, you MUST adhere to the
 14. **Follow Best Practices:** Prioritize Security as Frist concern when writing and developing code and web application. Follow Security Best Practices and Web Development Best practices. And follow best practices for improving efficiency and performance if only possible.
 15. **Test incrementally** - ensure each feature works before adding complexity
 16. **User Browser MCP tools:** - Use the Plawright and Chrome Dev Tools MCP tools to troubleshoot, inspect, and analyze the implement code in the project development plan.
+19. **Implement modern design and style:** - While designing the website, using modern aesthetics, modern CSS styles, modern Design, and modern look with graphics that match the current website theme.
+
+## graphify
+
+This project has a graphify knowledge graph at graphify-out/.
+
+Rules:
+- Before answering architecture or codebase questions, read graphify-out/GRAPH_REPORT.md for god nodes and community structure
+- If graphify-out/wiki/index.md exists, navigate it instead of reading raw files
+- For cross-module "how does X relate to Y" questions, prefer `graphify query "<question>"`, `graphify path "<A>" "<B>"`, or `graphify explain "<concept>"` over grep — these traverse the graph's EXTRACTED + INFERRED edges instead of scanning files
+- After modifying code files in this session, run `graphify update .` to keep the graph current (AST-only, no API cost)

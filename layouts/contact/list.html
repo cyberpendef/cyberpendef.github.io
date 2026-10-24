@@ -1,15 +1,15 @@
 {{ define "main" }}
+{{ $contact := site.Data.contact }}
+{{ $form := $contact.form }}
 
 <div class="page-hero stagger-in">
-    <div class="hero-badge"><span class="dot" style="background: var(--amber);"></span> Open for Business</div>
-    <h1 data-cms-bind="#title" class="hero-title">Let's <span>Talk</span></h1>
-    <p data-cms-bind="#description" class="lead">
-        Whether you have a specific project in mind, a problem you're not sure how to solve, or just want to ask whether I can help — my inbox is always open.
-    </p>
+    <div class="hero-badge"><span class="dot" style="background: var(--amber);"></span> {{ $contact.hero.badge }}</div>
+    <h1 data-cms-bind="#title" class="hero-title">{{ $contact.hero.title_prefix }} <span>{{ $contact.hero.title_highlight }}</span></h1>
+    <p data-cms-bind="#description" class="lead">{{ $contact.hero.description }}</p>
     
     <div class="callout green" style="max-width: 600px; margin: 30px auto 0;">
-        <span class="callout-icon">🎁</span>
-        <p class="callout-text"><strong>Free Consultation Offer:</strong> I'm currently offering free initial consultations to my first 5–7 clients. If you're reading this, there's a good chance you can still claim one — just reach out and mention the offer.</p>
+        <span class="callout-icon">{{ $contact.offer.icon }}</span>
+        <p class="callout-text"><strong>{{ $contact.offer.title }}:</strong> {{ $contact.offer.description }}</p>
     </div>
 </div>
 
@@ -19,9 +19,9 @@
         <div class="section-label">
             <div class="section-icon green">📝</div>
             <div>
-            <section id ="inquiry-form">
-                <div class="section-title" style="color: var(--green);">Inquiry Form</div>
-                <div class="section-subtitle">Send Me a Message</div>
+            <section id="inquiry-form">
+                <div class="section-title" style="color: var(--green);">{{ $form.title }}</div>
+                <div class="section-subtitle">{{ $form.subtitle }}</div>
             </section>
             </div>
         </div>
@@ -89,56 +89,59 @@
     <!-- Cloudflare Turnstile Script -->
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
     
-    <form id="inquiryForm" class="contact-form">
+    <form id="inquiryForm" class="contact-form"
+        data-submit-label="{{ $form.submit_label }}"
+        data-sending-label="{{ $form.sending_label }}"
+        data-turnstile-error="{{ $form.turnstile_error }}"
+        data-success-title="{{ $form.success_title }}"
+        data-success-message="{{ $form.success_message }}"
+        data-fallback-error="{{ $form.fallback_error }}">
         <div class="form-row">
             <div class="form-group">
-                <label class="form-label">Your Name *</label>
-                <input type="text" name="name" class="form-input" placeholder="Full Name" required>
+                <label class="form-label">{{ $form.name_label }}</label>
+                <input type="text" name="name" class="form-input" placeholder="{{ $form.name_placeholder }}" required>
             </div>
             <div class="form-group">
-                <label class="form-label">Email Address *</label>
-                <input type="email" name="email" class="form-input" placeholder="email@example.com" required>
+                <label class="form-label">{{ $form.email_label }}</label>
+                <input type="email" name="email" class="form-input" placeholder="{{ $form.email_placeholder }}" required>
             </div>
         </div>
         
         <div class="form-row">
             <div class="form-group">
-                <label class="form-label">WhatsApp / Phone (Optional)</label>
-                <input type="tel" name="phone" class="form-input" placeholder="+91-0000000000">
+                <label class="form-label">{{ $form.phone_label }}</label>
+                <input type="tel" name="phone" class="form-input" placeholder="{{ $form.phone_placeholder }}">
             </div>
             <div class="form-group">
-                <label class="form-label">I Am A... *</label>
+                <label class="form-label">{{ $form.audience_label }}</label>
                 <select name="audience_category" class="form-select" required>
-                    <option value="" disabled selected>Select Category</option>
-                    <option value="Individual">Individual</option>
-                    <option value="Freelancer">Freelancer</option>
-                    <option value="Small Business">Small Business</option>
-                    <option value="Startup">Startup</option>
+                    <option value="" disabled selected>{{ $form.audience_placeholder }}</option>
+                    {{ range $form.audiences }}
+                    <option value="{{ . }}">{{ . }}</option>
+                    {{ end }}
                 </select>
             </div>
         </div>
 
         <div class="form-group">
-            <label class="form-label">Service I'm Interested In (Optional)</label>
+            <label class="form-label">{{ $form.service_label }}</label>
             <select name="service_category" class="form-select">
-                <option value="" disabled selected>Select Service Category</option>
-                <option value="Individuals: IT Support">Individuals: IT Support Services</option>
-                <option value="Individuals: Cybersecurity">Individuals: Cybersecurity Services</option>
-                <option value="Business: Infrastructure">Business: Infrastructure & IT Services</option>
-                <option value="Business: Managed Cybersecurity">Business: Managed Cybersecurity</option>
-                <option value="Other">Other / Custom Inquiry</option>
+                <option value="" disabled selected>{{ $form.service_placeholder }}</option>
+                {{ range $form.services }}
+                <option value="{{ .value }}">{{ .label }}</option>
+                {{ end }}
             </select>
         </div>
 
         <div class="form-group">
-            <label class="form-label">Tell Me About Your Situation *</label>
-            <textarea name="message" class="form-textarea" rows="5" placeholder="Describe your challenge or what you'd like help with. Don't worry about technical language — just tell me what's going on and we will figure it out together." required></textarea>
+            <label class="form-label">{{ $form.message_label }}</label>
+            <textarea name="message" class="form-textarea" rows="5" placeholder="{{ $form.message_placeholder }}" required></textarea>
         </div>
 
         <div class="form-group">
             <div class="form-checkbox-group">
                 <input type="checkbox" name="claim_free_consultation" id="consultation" value="Yes">
-                <label for="consultation">I'd like to claim the <strong>free initial consultation</strong> offer</label>
+                <label for="consultation">{{ $form.consultation_label }} <strong>{{ $form.consultation_emphasis }}</strong> offer</label>
             </div>
         </div>
 
@@ -146,11 +149,11 @@
             <!-- Cloudflare Turnstile Widget -->
             <div class="cf-turnstile" data-sitekey="0x4AAAAAAC1OBXLHWUcaUlZ0" data-theme="dark" style="margin-bottom: 20px; display: flex; justify-content: center;"></div>
             
-            <button type="submit" id="submitBtn" class="btn btn-primary" style="padding: 18px 60px;">Send Message</button>
+            <button type="submit" id="submitBtn" class="btn btn-primary" style="padding: 18px 60px;">{{ $form.submit_label }}</button>
             <div id="formFeedback" style="margin-top: 20px; font-weight: 600; display: none; padding: 15px; border-radius: var(--radius);"></div>
 
             <p style="font-size: 1.0rem; color: var(--text); margin-top: 20px; font-style: italic;">
-                "I typically respond within 1 business day. Please refer the bottom of this page or by <a href="/contact#business-hours" style="color: var(--cyan); text-decoration: none;">Clicking Here</a> to know about business hours, location, and mode of delivery of the services. Looking forward to connecting with you!"
+                {{ $form.response_note }} <a href="/contact/#business-hours" style="color: var(--cyan); text-decoration: none;">{{ $form.response_link_label }}</a> {{ $form.response_note_suffix }}
             </p>
         </div>
     </form>
@@ -161,6 +164,7 @@
             
             const submitBtn = document.getElementById('submitBtn');
             const feedback = document.getElementById('formFeedback');
+            const messages = e.currentTarget.dataset;
             const formData = new FormData(e.target);
             const data = Object.fromEntries(formData.entries());
 
@@ -169,7 +173,7 @@
 
             // UI Reset
             submitBtn.disabled = true;
-            submitBtn.innerText = 'Sending Request...';
+            submitBtn.innerText = messages.sendingLabel;
             feedback.style.display = 'none';
 
             // 1. Check if Turnstile token exists
@@ -178,9 +182,9 @@
                 feedback.style.backgroundColor = 'rgba(255, 184, 0, 0.1)';
                 feedback.style.border = '1px solid rgba(255, 184, 0, 0.3)';
                 feedback.style.color = 'var(--amber)';
-                feedback.innerText = '⚠️ Please complete the security check to prove you are human.';
+                feedback.innerText = messages.turnstileError;
                 submitBtn.disabled = false;
-                submitBtn.innerText = 'Send Message';
+                submitBtn.innerText = messages.submitLabel;
                 return;
             }
 
@@ -203,13 +207,15 @@
                     feedback.style.backgroundColor = 'rgba(0, 255, 136, 0.1)';
                     feedback.style.border = '1px solid rgba(0, 255, 136, 0.3)';
                     feedback.style.color = 'var(--green)';
-                    feedback.innerHTML = '✅ <strong>Message Sent Successfully!</strong><br>I will review your inquiry and get back to you within 1 business day.';
+                    const successTitle = document.createElement('strong');
+                    successTitle.textContent = messages.successTitle;
+                    feedback.replaceChildren(successTitle, document.createElement('br'), document.createTextNode(messages.successMessage));
                     
                     // Reset form and CAPTCHA
                     e.target.reset();
                     turnstile.reset();
                 } else {
-                    throw new Error(result.error || 'Failed to submit inquiry.');
+                    throw new Error(result.error || messages.fallbackError);
                 }
             } catch (error) {
                 // Error UI
@@ -217,11 +223,11 @@
                 feedback.style.backgroundColor = 'rgba(255, 68, 68, 0.1)'; // red tint
                 feedback.style.border = '1px solid rgba(255, 68, 68, 0.3)';
                 feedback.style.color = '#ff4444';
-                feedback.innerHTML = `❌ <strong>Error:</strong> ${error.message}`;
+                feedback.textContent = `❌ Error: ${error.message}`;
                 turnstile.reset(); // Reset on error so they can try again
             } finally {
                 submitBtn.disabled = false;
-                submitBtn.innerText = 'Send Message';
+                submitBtn.innerText = messages.submitLabel;
             }
         });
     </script>
@@ -230,110 +236,65 @@
 <!-- CONTACT SECTION -->
 
 <div class="stagger-in delay-1" style="margin-top: 60px;">
-    <div class="section-header" style="margin-bottom: 20px;">
-        <div class="section-label">
-            <div class="section-icon cyan">📬</div>
-            <div>
-                <div class="section-title">Contact Channels</div>
-                <div class="section-subtitle">How To Reach Me</div>
-            </div>
-        </div>
-        <div class="section-line"></div>
-    </div>
+    {{ partial "section_header.html" (dict "title" $contact.channels.title "subtitle" $contact.channels.subtitle "theme" "blue" "icon" "📬") }}
     
     <div class="contact-grid">
+        {{ range $contact.channels.items }}
+        {{ $channel := . }}
+        {{ $value := .value }}
+        {{ $valueSource := .value_source | default "none" }}
+        {{ if ne $valueSource "none" }}{{ $value = index $.Site.Params $valueSource }}{{ end }}
+        {{ $profileURL := "" }}
+        {{ if eq .link_provider "linkedin" }}{{ $profileURL = $.Site.Params.linkedin }}{{ end }}
+        {{ if eq .link_provider "fiverr" }}{{ $profileURL = $.Site.Params.fiverr }}{{ end }}
         <div class="contact-card">
-            <div class="cc-icon">📧</div>
-            <div class="cc-label">Email</div>
-            <div class="cc-val">{{ .Site.Params.email }}</div>
-            <div class="cc-note">Best for detailed project inquiries. Response within 1 business day.</div>
-        </div>
-        <div class="contact-card">
-            <div class="cc-icon">💬</div>
-            <div class="cc-label">WhatsApp / Phone</div>
-            <div class="cc-val">{{ .Site.Params.phone }}</div>
-            <div class="cc-note">Fastest response channel. Available during business hours.</div>
-        </div>
-        <div class="contact-card">
-            <div class="cc-icon">🔗</div>
-            <div class="cc-label">LinkedIn</div>
-            <div class="cc-val">Shaik Hidayatullah</div>
+            <div class="cc-icon">{{ .icon }}</div>
+            <div class="cc-label">{{ .label }}</div>
+            <div class="cc-val">{{ $value }}</div>
             <div class="cc-note">
-                <a href="{{ .Site.Params.linkedin }}" target="_blank" style="color: var(--cyan); text-decoration: none;">View Profile &rarr;</a>
+                {{ with .note }}{{ . }}{{ end }}
+                {{ with $profileURL }}<a href="{{ . }}" target="_blank" rel="noopener noreferrer" style="color: var(--cyan); text-decoration: none;">{{ $channel.link_label }}</a>{{ end }}
             </div>
         </div>
-        <div class="contact-card">
-            <div class="cc-icon">💼</div>
-            <div class="cc-label">Fiverr</div>
-            <div class="cc-val">CyberPenDef</div>
-            <div class="cc-note">
-                <a href="{{ .Site.Params.fiverr }}" target="_blank" style="color: var(--cyan); text-decoration: none;">Browse Packages &rarr;</a>
-            </div>
-        </div>
+        {{ end }}
     </div>
 </div>
 
 
 <div class="grid-2 stagger-in delay-3" style="margin-top: 100px;">
     <div>
-        <div class="section-header" style="margin: 0 0 20px 0;">
-            <div class="section-label">
-                <div class="section-icon" style="background: rgba(255,184,0,0.1); border-color: rgba(255,184,0,0.3); color: var(--amber);">⏱️</div>
-                <div>
-                    <section id="business-hours">
-                    <div class="section-title" style="color: var(--amber);">Business Hours</div>
-                    <div class="section-subtitle">When I'm Available</div>
-                    </section>
-                </div>
-            </div>
+        <div id="business-hours">
+            {{ partial "section_header.html" (dict "title" $contact.hours.title "subtitle" $contact.hours.subtitle "theme" "amber" "icon" "⏱️" "margin" "0 0 20px") }}
         </div>
         
         <table class="hours-table">
             <thead>
                 <tr>
                     <th>Day</th>
-                    <th>Hours (IST)</th>
+                    <th>Hours ({{ $contact.hours.timezone_label }})</th>
                     <th>Status</th>
                 </tr>
             </thead>
             <tbody>
-                <tr><td>Monday</td><td>8:00 AM – 5:00 PM</td><td><span class="badge-open">Open</span></td></tr>
-                <tr><td>Tuesday</td><td>8:00 AM – 5:00 PM</td><td><span class="badge-open">Open</span></td></tr>
-                <tr><td>Wednesday</td><td>8:00 AM – 5:00 PM</td><td><span class="badge-open">Open</span></td></tr>
-                <tr><td>Thursday</td><td>8:00 AM – 5:00 PM</td><td><span class="badge-open">Open</span></td></tr>
-                <tr><td>Friday</td><td>9:00 AM – 5:00 PM</td><td><span class="badge-open">Limited</span></td></tr>
-                <tr><td>Saturday</td><td>8:00 AM – 5:00 PM</td><td><span class="badge-open">Open</span></td></tr>
-                <tr><td>Sunday</td><td>8:00 AM – 5:00 PM</td><td><span class="badge-open">Open</span></td></tr>
+                {{ range $contact.hours.days }}
+                <tr><td>{{ .day }}</td><td>{{ .hours }}</td><td><span class="badge-open">{{ .status }}</span></td></tr>
+                {{ end }}
             </tbody>
         </table>
         
         <div class="callout cyan" style="margin: 20px 0 0 0;">
             <span class="callout-icon">🌍</span>
-            <p class="callout-text" style="font-size: 0.9rem;">All times are in <strong>IST (UTC+5:30)</strong>. If you're contacting me from the <strong>Gulf region</strong>, that is IST minus 1.5 to 2 hours.</p>
+            <div class="callout-text" style="font-size: 0.9rem;">{{ $contact.hours.timezone_note | markdownify }}</div>
         </div>
     </div>
     
     <div>
-        <div class="section-header" style="margin: 0 0 20px 0;">
-            <div class="section-label">
-                <div class="section-icon" style="background: rgba(0,255,136,0.1); border-color: rgba(0,255,136,0.3); color: var(--green);">📍</div>
-                <div>
-                    <div class="section-title" style="color: var(--green);">Location & Delivery</div>
-                    <div class="section-subtitle">Remote First</div>
-                </div>
-            </div>
-        </div>
+        {{ partial "section_header.html" (dict "title" $contact.delivery.title "subtitle" $contact.delivery.subtitle "theme" "green" "icon" "📍" "margin" "0 0 20px") }}
         
-        <div style="background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 40px; height: calc(100% - 70px);">
-            <p style="font-size: 1.1rem; color: var(--white); margin-bottom: 20px;">
-                <strong>CyberPenDef is a fully remote practice</strong> based in India, Andhra Pradesh, Kurnool, serving clients across India and the Middle East &amp; Gulf region (UAE, Saudi Arabia, Qatar, Kuwait, Bahrain, and Oman). But you can also physically meet me offline at my home location for some specific services that require on-site presence. You have to Opt for Offline mode in the inquiry form to reach me out. Details of my home address will be provided once you contact me via enquiry form or phone call accordingly. Just ask when you reach out.
-            </p>
-            <p>
-                All services are delivered in both offline mode and online mode. For online mode, all services are delivered remotely via secure screen-sharing, email, and cloud collaboration tools — no on-site visit required.
-            </p>
-            <p style="margin-top: 20px;">
-                Remote delivery means faster response times, lower costs passed on to you, and the ability to work with clients regardless of location — without ever compromising on the quality or depth of service.
-            </p>
+        <div class="contact-delivery-copy" style="background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 40px; height: calc(100% - 70px);">
+            {{ range $contact.delivery.paragraphs }}
+            <p>{{ . | markdownify }}</p>
+            {{ end }}
         </div>
     </div>
 </div>

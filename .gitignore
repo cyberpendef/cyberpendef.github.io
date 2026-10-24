@@ -17,3 +17,12 @@ Thumbs.db
 node_modules/
 package-lock.json
 yarn.lock
+
+# Hugo Build Locks & Cloudflare Tooling
+.hugo_build.lock
+.wrangler/
+
+# AI Agent & Test Execution Artifacts
+.playwright-mcp/
+venv/
+graphify-out/

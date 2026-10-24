@@ -194,7 +194,7 @@ nav .nav-inner {
   font-style: normal;
 }
 
-.hero p.lead, .page-hero p.lead { 
+.hero p.lead, .page-hero p.lead {
   max-width: 800px; 
   margin: 30px auto 40px; /* Increased top margin from 0 to 30px */
   font-size: 1.15rem; 
@@ -210,7 +210,12 @@ nav .nav-inner {
 }
 .section-icon.blue  { background: rgba(0,212,255,0.12); border: 1px solid rgba(0,212,255,0.3); }
 .section-icon.green { background: rgba(0,255,136,0.12); border: 1px solid rgba(0,255,136,0.3); }
+.section-icon.amber { background: rgba(255,184,0,0.1); border: 1px solid rgba(255,184,0,0.3); color: var(--amber); }
+.section-icon.violet { background: rgba(160,120,255,0.1); border: 1px solid rgba(160,120,255,0.3); color: var(--violet); }
 .section-title { font-family: var(--font-head); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--cyan); }
+.section-title.green { color: var(--green); }
+.section-title.amber { color: var(--amber); }
+.section-title.violet { color: var(--violet); }
 .section-subtitle { font-family: var(--font-body); font-size: 1.5rem; font-weight: 700; color: var(--white); margin-top: 4px; }
 
 /* ─── BUTTONS ─────────────────────────────────── */
@@ -643,6 +648,532 @@ nav .nav-inner {
   50% { opacity: 1; transform: scaleX(1); }
 }
 
+/* ─── BLOG SINGLE ─────────────────────────────── */
+/* Phase 7.3: Blog single layout styles for in-depth security briefings. */
+.blog-post {
+  max-width: 900px;
+  margin: 60px auto 100px;
+}
+
+.blog-post__header {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.blog-post .blog-meta {
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.meta-separator {
+  color: var(--muted);
+  font-size: 0.8rem;
+  opacity: 0.5;
+  margin: 0 4px;
+}
+
+.blog-back-link {
+  color: var(--cyan);
+  text-decoration: none;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: transform var(--transition);
+}
+
+.blog-back-link:hover {
+  transform: translateX(-4px);
+  color: var(--white);
+}
+
+.blog-post h1 {
+  font-size: clamp(2.2rem, 6vw, 4.2rem);
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
+
+.blog-post__description {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.25rem;
+  color: var(--text);
+  opacity: 0.9;
+}
+
+.blog-post__featured-image {
+  margin: 50px 0;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: 0 30px 100px rgba(0,0,0,0.5);
+}
+
+.blog-post__featured-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.blog-post__content {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: var(--text);
+}
+
+.blog-post__content h2 { font-size: 2rem; margin: 60px 0 24px; color: var(--white); }
+.blog-post__content h3 { font-size: 1.6rem; margin: 40px 0 20px; color: var(--white); }
+.blog-post__content p { margin-bottom: 24px; }
+.blog-post__content ul, .blog-post__content ol { margin-bottom: 30px; padding-left: 24px; }
+.blog-post__content li { margin-bottom: 12px; }
+.blog-post__content blockquote {
+  margin: 40px 0;
+  padding: 30px;
+  border-left: 4px solid var(--article-accent);
+  background: rgba(255,255,255,0.03);
+  border-radius: 0 16px 16px 0;
+  font-style: italic;
+  font-size: 1.3rem;
+}
+
+.blog-post__content pre {
+  background: #0d1117;
+  padding: 24px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  margin: 30px 0;
+  overflow-x: auto;
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+}
+
+.blog-post__footer {
+  margin-top: 80px;
+  padding-top: 60px;
+  border-top: 1px solid var(--border);
+}
+
+.blog-post__tags {
+  margin-bottom: 60px;
+}
+
+.blog-post__tags .mono-label {
+  margin-bottom: 16px;
+}
+
+.blog-post__cta {
+  margin-top: 40px;
+}
+
+.cta-card {
+  background: linear-gradient(135deg, var(--card), rgba(8,11,16,0.8));
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 50px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top right, rgba(0,212,255,0.1), transparent 50%);
+  pointer-events: none;
+}
+
+.cta-card__icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,212,255,0.1);
+  border: 1px solid rgba(0,212,255,0.3);
+  border-radius: 16px;
+  color: var(--cyan);
+}
+
+.cta-card__icon svg {
+  width: 32px;
+  height: 32px;
+}
+
+.cta-card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 16px;
+}
+
+.cta-card p {
+  max-width: 600px;
+  margin: 0 auto 32px;
+  color: var(--muted);
+}
+
+/* ─── PORTFOLIO LIST ──────────────────────────── */
+/* Phase 8.2: Portfolio listing styles for high-impact case studies. */
+.portfolio-filters {
+  margin: 0 auto 40px;
+  text-align: center;
+}
+
+.filter-strip {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.filter-chip {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 24px;
+  margin-bottom: 80px;
+}
+
+.portfolio-card {
+  position: relative;
+  min-height: 480px;
+  display: flex;
+  flex-direction: column;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  overflow: hidden;
+  transition: all var(--transition);
+}
+
+.portfolio-card__border {
+  position: absolute;
+  inset: 0;
+  border: 1px solid color-mix(in srgb, var(--project-accent, var(--cyan)) 40%, transparent);
+  border-radius: 24px;
+  pointer-events: none;
+  opacity: 0.4;
+  transition: opacity var(--transition), border-color var(--transition);
+}
+
+.portfolio-card:hover {
+  transform: translateY(-8px);
+  border-color: color-mix(in srgb, var(--project-accent, var(--cyan)) 30%, var(--border));
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 40px color-mix(in srgb, var(--project-accent, var(--cyan)) 12%, transparent);
+}
+
+.portfolio-card:hover .portfolio-card__border {
+  opacity: 1;
+  border-color: var(--project-accent, var(--cyan));
+}
+
+.portfolio-card__link {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+}
+
+.portfolio-card__body {
+  padding: 32px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.portfolio-meta {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.portfolio-meta span {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  padding: 4px 10px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.service-category {
+  background: color-mix(in srgb, var(--project-accent, var(--cyan)) 15%, transparent);
+  border: 1px solid color-mix(in srgb, var(--project-accent, var(--cyan)) 35%, transparent);
+  color: var(--white);
+}
+
+.client-type {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: var(--muted);
+}
+
+.portfolio-card__title {
+  font-size: 1.5rem;
+  margin-bottom: 24px;
+  line-height: 1.3;
+}
+
+.portfolio-card__client {
+  margin-bottom: 20px;
+  padding: 12px 16px;
+  background: rgba(0,0,0,0.2);
+  border-radius: 12px;
+  border: 1px dashed rgba(255,255,255,0.08);
+}
+
+.portfolio-card__client .mono-label {
+  margin-bottom: 4px;
+  font-size: 0.6rem;
+  opacity: 0.7;
+}
+
+.portfolio-card__client p:last-child {
+  margin-bottom: 0;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.anonymized {
+  font-style: italic;
+  opacity: 0.5;
+  font-weight: 400 !important;
+}
+
+.portfolio-card__summary {
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.portfolio-card__outcome {
+  margin-top: auto;
+}
+
+.outcome-badge {
+  display: inline-block;
+  padding: 8px 14px;
+  background: rgba(0,255,136,0.08);
+  border: 1px solid rgba(0,255,136,0.25);
+  color: var(--green);
+  border-radius: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.portfolio-card__footer {
+  padding: 20px 32px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-head);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  transition: color var(--transition);
+}
+
+.portfolio-card:hover .portfolio-card__footer {
+  color: var(--white);
+  background: rgba(255,255,255,0.02);
+}
+
+.portfolio-card__footer svg {
+  width: 18px;
+  height: 18px;
+  transition: transform var(--transition);
+}
+
+.portfolio-card:hover .portfolio-card__footer svg {
+  transform: translateX(6px);
+  color: var(--project-accent, var(--cyan));
+}
+
+.portfolio-empty {
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 80px 40px;
+  text-align: center;
+  border: 1px dashed var(--border);
+  border-radius: 32px;
+  background: radial-gradient(circle at center, rgba(0,212,255,0.04), transparent);
+}
+
+/* ─── PORTFOLIO SINGLE ────────────────────────── */
+/* Phase 8.3: Portfolio single layout styles for technical case studies. */
+.project-brief {
+  max-width: 1000px;
+  margin: 60px auto 100px;
+}
+
+.project-brief__header {
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.project-brief h1 {
+  font-size: clamp(2.4rem, 6vw, 4.8rem);
+  line-height: 1.1;
+  margin-bottom: 40px;
+  margin-top: 24px;
+}
+
+.project-brief__client-info {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  margin-bottom: 50px;
+}
+
+.info-item .mono-label {
+  margin-bottom: 8px;
+  opacity: 0.6;
+}
+
+.info-item p {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 0;
+}
+
+.outcome-text {
+  color: var(--green) !important;
+}
+
+.project-brief__featured-image {
+  margin: 50px 0;
+  border-radius: 32px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: 0 40px 120px rgba(0,0,0,0.6);
+}
+
+.project-brief__overview {
+  margin-bottom: 80px;
+}
+
+.overview-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.overview-card {
+  padding: 40px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.overview-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 4px;
+}
+
+.overview-card.challenge::before { background: var(--amber); }
+.overview-card.solution::before { background: var(--green); }
+
+.overview-card__icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 24px;
+  color: var(--white);
+  opacity: 0.4;
+}
+
+.overview-card__icon svg { width: 100%; height: 100%; }
+
+.overview-card h3 {
+  margin-bottom: 16px;
+  font-size: 1.4rem;
+}
+
+.overview-card p {
+  color: var(--text);
+  margin-bottom: 0;
+  line-height: 1.6;
+}
+
+.project-brief__content {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 60px;
+  align-items: start;
+}
+
+.project-brief__body {
+  font-size: 1.15rem;
+  line-height: 1.8;
+}
+
+.project-brief__body h2 { font-size: 1.8rem; margin: 50px 0 20px; }
+.project-brief__body h3 { font-size: 1.4rem; margin: 30px 0 15px; }
+
+.project-brief__sidebar {
+  position: sticky;
+  top: 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.sidebar-block {
+  padding: 24px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+}
+
+.sidebar-block .mono-label {
+  margin-bottom: 16px;
+}
+
+.metrics-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.metric-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.metric-value {
+  font-family: var(--font-head);
+  font-size: 1.8rem;
+  color: var(--project-accent, var(--cyan));
+  line-height: 1;
+}
+
+.metric-label {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
 /* ─── SERVICES ACCORDIONS ─────────────────────── */
 .services-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
 .card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; transition: border-color var(--transition), box-shadow var(--transition); cursor: pointer; }
@@ -698,6 +1229,8 @@ nav .nav-inner {
 .contact-card .cc-label { font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
 .contact-card .cc-val { font-size: 1.1rem; color: var(--white); font-weight: 700; word-break: break-word;}
 .contact-card .cc-note { font-size: 0.9rem; color: var(--muted); margin-top: 8px; line-height: 1.4; }
+.contact-delivery-copy p:first-child { font-size: 1.1rem; color: var(--white); margin-bottom: 20px; }
+.contact-delivery-copy p:last-child { margin-top: 20px; }
 
 .hours-table { width: 100%; border-collapse: collapse; font-size: 1rem; background: var(--card); border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border);}
 .hours-table th { font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--cyan); padding: 16px 24px; text-align: left; background: rgba(255,255,255,0.02); border-bottom: 1px solid var(--border); }
@@ -779,4 +1312,22 @@ nav .nav-inner {
   .blog-featured__media img { min-height: 260px; }
   .blog-grid { grid-template-columns: 1fr; }
   .blog-card { min-height: auto; }
+
+  /* Blog Post Mobile */
+  .blog-post { margin-top: 30px; }
+  .blog-post__header { margin-bottom: 36px; }
+  .blog-post__featured-image { margin: 30px 0; border-radius: 16px; }
+  .blog-post__content { font-size: 1.1rem; }
+  .cta-card { padding: 36px 24px; }
+
+  /* Portfolio Mobile */
+  .portfolio-grid { grid-template-columns: 1fr; }
+  .portfolio-card { min-height: auto; }
+
+  /* Portfolio Single Mobile */
+  .project-brief { margin-top: 30px; }
+  .project-brief__client-info { flex-direction: column; gap: 30px; text-align: center; }
+  .overview-grid { grid-template-columns: 1fr; }
+  .project-brief__content { grid-template-columns: 1fr; }
+  .project-brief__sidebar { position: static; }
 }

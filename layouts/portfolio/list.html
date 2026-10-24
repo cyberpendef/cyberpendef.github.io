@@ -1,0 +1,83 @@
+{{ define "main" }}
+{{/* Phase 8.2: Portfolio listing page for case studies. */}}
+{{ $projects := where .RegularPages.ByDate.Reverse "Draft" "!=" true }}
+{{ $categories := slice }}
+{{ range $projects }}
+    {{ with .Params.service_category }}
+        {{ $categories = $categories | append . }}
+    {{ end }}
+{{ end }}
+{{ $categories = uniq $categories }}
+
+<section class="page-hero stagger-in">
+    <div class="hero-badge"><span class="dot"></span> Case Studies · Proven Impact</div>
+    <h1 data-cms-bind="#title">Defense <span>In Action</span></h1>
+    <p data-cms-bind="#description" class="lead">
+        {{ with .Description }}{{ . }}{{ else }}Practical demonstrations of security improvements, IT infrastructure deployments, and technical support outcomes.{{ end }}
+    </p>
+</section>
+
+{{ if gt (len $projects) 0 }}
+<div class="container">
+    {{ if gt (len $categories) 0 }}
+    <div class="portfolio-filters stagger-in delay-1" aria-label="Portfolio categories">
+        <span class="mono-label">Filter by capability:</span>
+        <div class="filter-strip">
+            {{ range $categories }}
+            <span class="filter-chip">{{ . }}</span>
+            {{ end }}
+        </div>
+    </div>
+    {{ end }}
+
+    <section class="portfolio-grid stagger-in delay-2" aria-label="Our case studies">
+        {{ range $projects }}
+        {{ $accent := "#00d4ff" }}
+        {{ with .Params.accent_color }}{{ if findRE "^#[0-9A-Fa-f]{6}$" . }}{{ $accent = . }}{{ end }}{{ end }}
+        
+        <article class="portfolio-card" style="--project-accent: {{ $accent }};">
+            <a class="portfolio-card__link" href="{{ .RelPermalink }}" aria-label="View case study: {{ .Title }}"></a>
+            
+            <div class="portfolio-card__border" aria-hidden="true"></div>
+            
+            <div class="portfolio-card__body">
+                <div class="portfolio-meta">
+                    <span class="service-category">{{ default "Cybersecurity" .Params.service_category }}</span>
+                    {{ with .Params.client_type }}<span class="client-type">{{ . }}</span>{{ end }}
+                </div>
+                
+                <h2 class="portfolio-card__title">{{ .Title }}</h2>
+                
+                <div class="portfolio-card__client">
+                    <p class="mono-label">Client</p>
+                    <p>{{ with .Params.client_name }}{{ . }}{{ else }}<span class="anonymized">Anonymized Client</span>{{ end }}</p>
+                </div>
+                
+                <p class="portfolio-card__summary">{{ with .Description }}{{ . }}{{ else }}{{ .Summary | plainify | truncate 120 }}{{ end }}</p>
+                
+                {{ with .Params.outcome }}
+                <div class="portfolio-card__outcome">
+                    <span class="outcome-badge">Outcome: {{ . }}</span>
+                </div>
+                {{ end }}
+            </div>
+            
+            <div class="portfolio-card__footer">
+                <span>View Briefing</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+        </article>
+        {{ end }}
+    </section>
+</div>
+{{ else }}
+<section class="portfolio-empty stagger-in delay-1">
+    <div class="empty-status">
+        <span class="mono-label">Archive Offline</span>
+        <h2>Case studies are being prepared</h2>
+        <p>Real-world examples of our security and IT engagements are currently being anonymized and documented. Check back soon for detailed technical briefings.</p>
+        <a href="/services/" class="btn btn-primary">Explore Our Services</a>
+    </div>
+</section>
+{{ end }}
+{{ end }}

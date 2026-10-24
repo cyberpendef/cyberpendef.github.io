@@ -1,0 +1,32 @@
+<div class="infographic-placeholder" style="min-height: 320px;">
+<svg width="100%" height="100%" viewBox="0 0 600 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <filter id="hyperGlow14" x="-30%" y="-30%" width="160%" height="160%">
+                                <feGaussianBlur stdDeviation="5" result="blur" />
+                                <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                            </filter>
+                        </defs>
+                        <!-- Browser Frame -->
+                        <g transform="translate(150, 60)">
+                            <rect x="0" y="0" width="300" height="160" rx="8" fill="var(--surface)" stroke="var(--border)" stroke-width="2" />
+                            <rect x="0" y="0" width="300" height="25" rx="8" fill="var(--card)" />
+                            <circle cx="15" cy="12" r="3" fill="#ff4400" />
+                            <circle cx="30" cy="12" r="3" fill="#ffb800" />
+                            <circle cx="45" cy="12" r="3" fill="#00ff88" />
+                            
+                            <!-- Radar Scan Effect -->
+                            <circle cx="150" cy="90" r="60" fill="none" stroke="var(--cyan)" stroke-width="1" opacity="0.3" />
+                            <path d="M150 90 L210 90" stroke="var(--cyan)" stroke-width="2" filter="url(#hyperGlow14)">
+                                <animateTransform attributeName="transform" type="rotate" from="0 150 90" to="360 150 90" dur="4s" repeatCount="indefinite" />
+                            </path>
+                            <!-- Vulnerability Hits -->
+                            <circle cx="120" cy="70" r="4" fill="#ff4400" filter="url(#hyperGlow14)">
+                                <animate attributeName="opacity" values="0;1;0" dur="1s" repeatCount="indefinite" />
+                            </circle>
+                            <circle cx="180" cy="110" r="4" fill="#ff4400" filter="url(#hyperGlow14)">
+                                <animate attributeName="opacity" values="0;1;0" dur="1.2s" begin="0.5s" repeatCount="indefinite" />
+                            </circle>
+                        </g>
+                        <text x="300" y="260" fill="var(--white)" font-family="var(--font-body)" font-size="14" text-anchor="middle" font-weight="600">Full OWASP & Infrastructure Auditing</text>
+                    </svg>
+</div>

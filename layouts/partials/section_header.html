@@ -1,0 +1,10 @@
+<div class="section-header"{{ with .margin }} style="margin: {{ . }};"{{ else }} style="margin-bottom: 20px;"{{ end }}>
+    <div class="section-label">
+        <div class="section-icon {{ .theme }}{{ with .icon_style }} {{ . }}{{ end }}">{{ .icon }}</div>
+        <div>
+            <div class="section-title {{ .theme }}">{{ .title }}</div>
+            <div class="section-subtitle">{{ .subtitle }}</div>
+        </div>
+    </div>
+    <div class="section-line"></div>
+</div>

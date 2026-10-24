@@ -1,0 +1,58 @@
+login:
+  hero_badge: Client-Only Access
+  title_prefix: Secure
+  title_highlight: Portal
+  description: Log in or create an account to securely access your service tickets and reports.
+  form_title: Identity Verification
+  email_label: Email Address
+  email_placeholder: client@example.com
+  password_label: Password
+  password_placeholder: ••••••••
+  submit_label: Log In
+  verifying_label: Verifying...
+  signup_prompt: New client?
+  signup_link_label: Create an account here
+  turnstile_error: "⚠️ Please complete the security check."
+  error_prefix: "❌ Error:"
+  generic_error: An unexpected error occurred.
+signup:
+  hero_badge: New Client Registration
+  title_prefix: Create
+  title_highlight: Account
+  description: Register to access your secure dashboard, track service tickets, and download security reports.
+  form_title: Client Registration
+  full_name_label: Full Name
+  full_name_placeholder: John Doe
+  username_label: Username
+  username_placeholder: johndoe_cyber
+  email_label: Email Address
+  email_placeholder: client@example.com
+  password_label: Password
+  password_placeholder: ••••••••
+  submit_label: Sign Up & Verify Email
+  processing_label: Processing...
+  login_prompt: Already have an account?
+  login_link_label: Log in here
+  turnstile_error: "⚠️ Please complete the security check."
+  success_title: "✨ Registration Successful!"
+  success_message: A confirmation link has been sent to your email. Please verify your email before logging in.
+  error_prefix: "❌ Error:"
+  generic_error: An unexpected error occurred.
+dashboard:
+  hero_badge: Authenticated Session
+  title_prefix: Client
+  title_highlight: Dashboard
+  welcome_prefix: Welcome back,
+  loading_email: Loading...
+  logout_label: Secure Logout
+  tickets_title: Active Service Tickets
+  zero_ticket_count: 0 Tickets
+  ticket_count_singular: Ticket
+  ticket_count_plural: Tickets
+  loading_label: Establishing secure connection...
+  empty_icon: 📂
+  empty_title: No Active Tickets Found
+  empty_description: You don't have any active service tickets or security assessments at this time.
+  request_service_label: Request New Service
+  ticket_error_title: "Encryption Error:"
+  ticket_error_message: Failed to retrieve secure ticket data. Please try again later.

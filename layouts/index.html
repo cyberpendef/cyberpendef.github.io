@@ -1,142 +1,80 @@
 {{ define "main" }}
+{{ $home := site.Data.home }}
 
-<!-- HERO SECTION -->
 <div class="hero stagger-in">
-    <div class="hero-badge"><span class="dot"></span> CEH Certified · AI-Powered Services</div>
-    <h1>Your Trusted IT &amp;<br><em>Cybersecurity Partner</em></h1>
-    <p data-cms-bind="#description" class="lead">
-        Hi, I'm <strong>Shaik Hidayatullah</strong> — a CEH-certified cybersecurity professional and IT specialist with over <strong>3 years of professional experience</strong> and 8+ years of hands-on computer and IT troubleshooting expertise. Through <strong>CyberPenDef</strong>, I provide affordable, AI-accelerated IT support and cybersecurity services to individuals, freelancers, and small businesses across India and the Gulf region — helping you stay secure, productive, and worry-free online.
-    </p>
+    <div class="hero-badge"><span class="dot"></span> {{ $home.hero.badge }}</div>
+    <h1>{{ $home.hero.title_prefix }}<br><em>{{ $home.hero.title_highlight }}</em></h1>
+    <p data-cms-bind="#description" class="lead">{{ $home.hero.description | markdownify }}</p>
     <div class="btn-group">
-        <a href="/contact/" class="btn btn-primary">Get a Free Consultation</a>
-        <a href="/services/" class="btn btn-outline">Explore My Services</a>
+        {{ range $home.hero.buttons }}
+        <a href="{{ .url }}" class="btn {{ if eq .kind "primary" }}btn-primary{{ else }}btn-outline{{ end }}">{{ .label }}</a>
+        {{ end }}
     </div>
-    
+
     <div class="callout amber stagger-in delay-2">
         <span class="callout-icon">🎁</span>
-        <p class="callout-text"><strong>Limited Offer — First 5 to 7 Clients:</strong> "I'm currently accepting my first clients and offering a completely free initial consultation — no strings attached. Let's talk about your IT or security challenge and figure out the best path forward together."</p>
+        <p class="callout-text"><strong>{{ $home.promotion.title }}</strong> "{{ $home.promotion.text }}"</p>
     </div>
 </div>
 
-<!-- WHY CHOOSE CYBERPENDEF -->
 <div style="margin-top: 60px;" class="stagger-in">
-    <div class="section-header" style="margin-bottom: 20px;">
-        <div class="section-label">
-            <div class="section-icon green">⚡</div>
-            <div>
-                <div class="section-title">The CyberPenDef Edge</div>
-                <div class="section-subtitle">What Sets Us Apart</div>
-            </div>
-        </div>
-        <div class="section-line"></div>
-    </div>
-
+    {{ partial "section_header.html" (dict "title" $home.edge.title "subtitle" $home.edge.subtitle "theme" $home.edge.theme "icon" $home.edge.icon) }}
     <div class="value-grid">
+        {{ range $home.edge.items }}
         <div class="value-card">
-            <div class="v-icon">⚡</div>
-            <div class="v-title">AI-Powered Speed</div>
-            <div class="v-desc">Every service I deliver is augmented with AI tooling — cutting turnaround times dramatically so you get results faster without paying enterprise rates.</div>
+            <div class="v-icon">{{ .icon }}</div>
+            <div class="v-title">{{ .title }}</div>
+            <div class="v-desc">{{ .description }}</div>
         </div>
-        <div class="value-card">
-            <div class="v-icon">💸</div>
-            <div class="v-title">Affordable Fixed Pricing</div>
-            <div class="v-desc">No hourly surprises. Every project comes with a transparent, agreed-upon price upfront — so you always know exactly what you're paying before work begins.</div>
-        </div>
-        <div class="value-card">
-            <div class="v-icon">🔏</div>
-            <div class="v-title">Privacy-First Approach</div>
-            <div class="v-desc">Your data stays yours. I never share, sell, or retain client data beyond what's strictly required to deliver your service. Full stop.</div>
-        </div>
-        <div class="value-card">
-            <div class="v-icon">📊</div>
-            <div class="v-title">Transparent Reporting</div>
-            <div class="v-desc">Every engagement ends with a clear, plain-language report — no jargon, no confusion. You'll always know exactly what was done, what was found, and what to do next.</div>
-        </div>
+        {{ end }}
     </div>
 </div>
 
-<!-- SERVICES TEASER -->
 <div style="margin-top: 100px;" class="stagger-in delay-1">
-    <div class="section-header" style="margin-bottom: 20px;">
-        <div class="section-label">
-            <div class="section-icon blue">🛡️</div>
-            <div>
-                <div class="section-title">Overview</div>
-                <div class="section-subtitle">What I Can Do For You</div>
-            </div>
-        </div>
-        <div class="section-line"></div>
-    </div>
+    {{ partial "section_header.html" (dict "title" $home.overview.title "subtitle" $home.overview.subtitle "theme" $home.overview.theme "icon" $home.overview.icon) }}
     <div style="background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 40px; margin-bottom: 40px;">
-        <p style="font-size: 1.1rem; margin-bottom: 20px;">Whether you're an individual who needs their computer sorted, a non-technical freelancer managing sensitive client data, or a small business that wants to stop worrying about cyberattacks — I have a service built for your exact situation. All services are delivered remotely and completed with clear timelines and pricing agreed in advance.</p>
-        <p style="font-size: 1.1rem; margin-bottom: 30px;">I work across <strong>four core areas:</strong> personal IT support, personal cybersecurity, business IT infrastructure, and business cybersecurity — covering everything from parental controls and device health checks to secure code audits and full Security-as-a-Service packages.</p>
+        <div class="home-overview-copy">
+            {{ range $index, $paragraph := $home.overview.paragraphs }}
+            <p style="font-size: 1.1rem; margin-bottom: {{ if eq $index 0 }}20px{{ else }}30px{{ end }};">{{ $paragraph | markdownify }}</p>
+            {{ end }}
+        </div>
         <a href="/services/" class="btn btn-outline" style="font-size: 0.85rem; padding: 12px 24px;">View All Services &rarr;</a>
     </div>
 </div>
 
-<!-- WHO I SERVE -->
 <div style="margin-top: 100px;" class="stagger-in delay-2">
-    <div class="section-header" style="margin-bottom: 20px;">
-        <div class="section-label">
-            <div class="section-icon" style="background: rgba(255,184,0,0.1); border-color: rgba(255,184,0,0.3); color: var(--amber);">👥</div>
-            <div>
-                <div class="section-title" style="color: var(--amber);">Audience</div>
-                <div class="section-subtitle">Who CyberPenDef Is Built For</div>
-            </div>
-        </div>
-        <div class="section-line"></div>
-    </div>
-    
+    {{ partial "section_header.html" (dict "title" $home.audience.title "subtitle" $home.audience.subtitle "theme" $home.audience.theme "icon" $home.audience.icon) }}
     <div class="spec-box">
+        {{ range $home.audience.items }}
         <div class="spec-row">
-            <span class="spec-key">Individuals</span>
-            <span class="spec-val"><strong>"You use the internet every day — but is it safe?"</strong><br><br>From setting up your home Wi-Fi securely to recovering a hacked account, I help everyday users protect their digital life without needing a tech background. If something feels off with your device or online accounts, I'm one message away.</span>
+            <span class="spec-key">{{ .label }}</span>
+            <span class="spec-val"><strong>"{{ .quote }}"</strong><br><br>{{ .description }}</span>
         </div>
-        <div class="spec-row">
-            <span class="spec-key">Freelancers</span>
-            <span class="spec-val"><strong>"Your business runs on your laptop — let's protect it."</strong><br><br>As a non-technical freelancer, your income depends on your tools working and your client data staying private. I handle your IT backbone — backups, secure communications, system maintenance — so you never lose a client deadline to a tech failure.</span>
-        </div>
-        <div class="spec-row">
-            <span class="spec-key">Small Businesses</span>
-            <span class="spec-val"><strong>"Enterprise-grade security. Small business budget."</strong><br><br>You don't need a full-time IT team to stay secure and operational. I provide ongoing remote support, cloud migration assistance, automated backups, and cybersecurity management — customized to the size and budget of your business.</span>
-        </div>
+        {{ end }}
     </div>
 </div>
 
-<!-- TRUST STRIP -->
 <div style="margin-top: 100px;" class="stagger-in delay-3">
-    <div class="section-header" style="margin-bottom: 20px;">
-        <div class="section-label">
-            <div class="section-icon" style="background: rgba(160,120,255,0.1); border-color: rgba(160,120,255,0.3); color: var(--violet);">🎖️</div>
-            <div>
-                <div class="section-title" style="color: var(--violet);">Credentials</div>
-                <div class="section-subtitle">Trust & Social Proof</div>
-            </div>
-        </div>
-        <div class="section-line"></div>
-    </div>
-    
+    {{ partial "section_header.html" (dict "title" $home.credentials.title "subtitle" $home.credentials.subtitle "theme" $home.credentials.theme "icon" $home.credentials.icon "icon_style" $home.credentials.icon_style) }}
     <div class="spec-box">
         <ul class="item-list" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
-            <li><div>🎓 <strong>CEH Certified</strong><br><span style="font-size: 0.9rem; color: var(--muted);">EC-Council — Certified Ethical Hacker</span></div></li>
-            <li><div>🕐 <strong>3+ Years Professional</strong><br><span style="font-size: 0.9rem; color: var(--muted);">IT &amp; Cybersecurity Experience</span></div></li>
-            <li><div>💻 <strong>8+ Years Practical</strong><br><span style="font-size: 0.9rem; color: var(--muted);">Computer &amp; IT Troubleshooting Experience</span></div></li>
-            <li><div>🤖 <strong>AI-Augmented</strong><br><span style="font-size: 0.9rem; color: var(--muted);">Service Delivery — Faster, Smarter Results</span></div></li>
-            <li><div>📍 <strong>Global Reach</strong><br><span style="font-size: 0.9rem; color: var(--muted);">Serving India &amp; the Gulf Region</span></div></li>
-            <li><div>🔒 <strong>Privacy-First</strong><br><span style="font-size: 0.9rem; color: var(--muted);">Your data is never shared or retained</span></div></li>
+            {{ range $home.credentials.items }}
+            <li><div>{{ .icon }} <strong>{{ .title }}</strong><br><span style="font-size: 0.9rem; color: var(--muted);">{{ .description }}</span></div></li>
+            {{ end }}
         </ul>
     </div>
 </div>
 
-<!-- FINAL HOME CTA -->
 <div class="cta-strip stagger-in delay-4">
-    <h2>Ready to take your digital security seriously? Let's talk.</h2>
-    <p>I offer a free initial consultation to my first clients — no obligations, no pressure. Tell me about your situation and I'll give you an honest assessment of what you need and what it will cost. Reach out via WhatsApp, email, or through my Fiverr profile.</p>
+    <h2>{{ $home.cta.title }}</h2>
+    <p>{{ $home.cta.description }}</p>
     <div class="cta-buttons">
-        <a href="/contact#inquiry-form" class="btn btn-primary">Contact Me</a>
-        <a href="{{ .Site.Params.fiverr }}" target="_blank" class="btn btn-outline">View on Fiverr</a>
-        <a href="{{ .Site.Params.linkedin }}" target="_blank" class="btn btn-outline">LinkedIn Profile</a>
+        {{ range $home.cta.buttons }}
+        {{ $url := .url }}
+        {{ if eq .provider "fiverr" }}{{ $url = site.Params.fiverr }}{{ end }}
+        {{ if eq .provider "linkedin" }}{{ $url = site.Params.linkedin }}{{ end }}
+        <a href="{{ $url }}" class="btn {{ if eq .kind "primary" }}btn-primary{{ else }}btn-outline{{ end }}"{{ with .provider }} target="_blank" rel="noopener noreferrer"{{ end }}>{{ .label }}</a>
+        {{ end }}
     </div>
 </div>
-
 {{ end }}

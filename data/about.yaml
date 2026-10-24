@@ -1,0 +1,111 @@
+introduction:
+  title: Personal Introduction
+  subtitle: Hi, I'm Hidayatullah — and I genuinely enjoy solving tech problems.
+  theme: violet
+  icon: 👤
+  paragraphs:
+  - I've been the person friends and family call when something goes wrong with their computer since I was a teenager.
+    What started as a natural curiosity for how systems work grew into a professional career in IT and cybersecurity
+    — and eventually into **CyberPenDef**, my own practice for delivering affordable, expert-level digital services
+    to people who deserve better than confusing, overpriced tech support.
+  - I hold a **CEH (Certified Ethical Hacker)** certification from EC-Council and bring **3 years of professional
+    IT and cybersecurity experience** alongside **8+ years of hands-on personal computer and IT troubleshooting
+    experience**. I've worked on real-world system administration, participated in cybersecurity labs and Capture
+    the Flag (CTF) challenges, and built automation tools using Python, C, and other programming languages. I stay
+    sharp by continuously learning and practicing in environments that mirror real attacker techniques.
+  - I started CyberPenDef because I believe cybersecurity and reliable IT support shouldn't be the exclusive privilege
+    of large enterprises with big budgets. Individuals, freelancers, and small business owners deserve the same
+    protection and quality of service — delivered in plain language, at a fair price, with complete transparency.
+approach:
+  title: My Approach
+  subtitle: How I Work With Clients
+  theme: cyan
+  icon: 🎯
+  steps:
+  - label: Step 1 — Listen First
+    description: Every engagement starts with a free discovery conversation. I take time to understand your specific
+      situation, goals, and budget before recommending anything.
+  - label: Step 2 — Clear Proposal
+    description: You receive a plain-language proposal with a fixed price and defined scope. No hidden fees, no
+      scope creep surprises.
+  - label: Step 3 — AI-Assisted
+    description: I use the latest AI tools to accelerate diagnostics, report generation, and routine tasks — so
+      you get faster results without cutting corners on quality.
+  - label: Step 4 — Transparency
+    description: At project completion you receive a detailed, jargon-free report of exactly what was done, what
+      was found, and what you should do next.
+  - label: Step 5 — Continued Support
+    description: I'm reachable after delivery for follow-up questions. For ongoing clients, I offer maintenance
+      subscriptions that keep your systems healthy month after month.
+credentials:
+  title: Credentials
+  subtitle: Certifications & Technical Background
+  theme: amber
+  icon: 🎖️
+  items:
+  - label: Certification
+    note: One of the world's most recognized cybersecurity certifications, validating knowledge of ethical hacking
+      methodologies, penetration testing, and network security.
+    segments:
+    - text: CEH — Certified Ethical Hacker
+      bold: true
+    - text: · EC-Council
+      bold: false
+  - label: Experience
+    note: ''
+    segments:
+    - text: 3 Years
+      bold: true
+    - text: professional IT & cybersecurity practice ·
+      bold: false
+    - text: 8+ Years
+      bold: true
+    - text: personal computing, troubleshooting & systems experience.
+      bold: false
+  - label: Cybersecurity Skills
+    note: ''
+    segments:
+    - text: Ethical hacking, penetration testing, vulnerability assessment, network security, incident response,
+        security auditing, OSINT, Solving Cybersecurity CTF challenges.
+      bold: false
+  - label: IT Skills
+    note: ''
+    segments:
+    - text: Remote system administration (Windows & Linux), Computer Troubleshooting (Both Hardware and Software
+        problems), cloud platforms (AWS, DigitalOcean), Linux & Windows server management, network troubleshooting
+        and configuration, backup & DR planning.
+      bold: false
+  - label: Development
+    note: ''
+    segments:
+    - text: Python, C, C++, C#, Java — scripting, automation, and custom security tool development.
+      bold: false
+  - label: AI & Tooling
+    note: ''
+    segments:
+    - text: AI-augmented workflows for diagnostics, reporting, automation scripting, and service delivery acceleration.
+      bold: false
+values:
+  title: Brand Values
+  subtitle: What CyberPenDef Stands For
+  theme: green
+  icon: 🌱
+  items:
+  - icon: ⚡
+    title: Speed Without Compromise
+    description: AI tools accelerate every stage of delivery — from diagnosis to reporting — so clients get results
+      faster, without sacrificing depth or accuracy.
+  - icon: 💸
+    title: Accessible Pricing
+    description: Professional cybersecurity and IT services shouldn't be out of reach for individuals and small
+      businesses. Fair, transparent pricing is a core commitment.
+  - icon: 🔏
+    title: Your Data, Your Privacy
+    description: Client data is handled with strict confidentiality. It is never shared with third parties, never
+      retained beyond the engagement, and always treated with the utmost respect.
+  - icon: 📊
+    title: Radical Transparency
+    description: No black boxes. Every project concludes with a clear, written report — what was done, what was
+      discovered, and exactly what steps to take next.
+cta_quote: If you're looking for a cybersecurity and IT professional who communicates clearly, delivers honestly,
+  and genuinely cares about your outcome — I'd love to work with you.

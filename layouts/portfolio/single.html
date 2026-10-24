@@ -1,0 +1,108 @@
+{{ define "main" }}
+{{/* Phase 8.3: Portfolio single layout for case studies. */}}
+{{ $accent := "#00d4ff" }}
+{{ with .Params.accent_color }}{{ if findRE "^#[0-9A-Fa-f]{6}$" . }}{{ $accent = . }}{{ end }}{{ end }}
+
+<article class="project-brief stagger-in" style="--project-accent: {{ $accent }};">
+    <header class="project-brief__header">
+        <div class="portfolio-meta">
+            <a href="/portfolio/" class="portfolio-back-link">← All Case Studies</a>
+            <span class="meta-separator">|</span>
+            <span class="service-category">{{ default "Cybersecurity" .Params.service_category }}</span>
+            {{ with .Params.client_type }}<span class="client-type">{{ . }}</span>{{ end }}
+        </div>
+        
+        <h1 data-cms-bind="#title">{{ .Title }}</h1>
+        
+        <div class="project-brief__client-info">
+            <div class="info-item">
+                <span class="mono-label">Client</span>
+                <p>{{ with .Params.client_name }}{{ . }}{{ else }}<span class="anonymized">Anonymized for Privacy</span>{{ end }}</p>
+            </div>
+            {{ with .Params.outcome }}
+            <div class="info-item">
+                <span class="mono-label">Success Metric</span>
+                <p class="outcome-text">{{ . }}</p>
+            </div>
+            {{ end }}
+        </div>
+
+        {{ with .Params.featured_image }}
+        <div class="project-brief__featured-image">
+            <img src="{{ . | relURL }}" alt="{{ $.Title }}">
+        </div>
+        {{ end }}
+    </header>
+
+    <div class="project-brief__overview">
+        <div class="overview-grid">
+            {{ with .Params.challenge }}
+            <div class="overview-card challenge">
+                <div class="overview-card__icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0zM12 9v4M12 17h.01"/></svg>
+                </div>
+                <h3>The Challenge</h3>
+                <p>{{ . }}</p>
+            </div>
+            {{ end }}
+
+            {{ with .Params.solution }}
+            <div class="overview-card solution">
+                <div class="overview-card__icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+                </div>
+                <h3>The Solution</h3>
+                <p>{{ . }}</p>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+
+    <div class="project-brief__content">
+        <div class="project-brief__body" data-cms-bind="#body">
+            {{ .Content }}
+        </div>
+
+        <aside class="project-brief__sidebar">
+            {{ with .Params.tools_used }}
+            <div class="sidebar-block">
+                <p class="mono-label">Technical Stack</p>
+                <div class="tag-row">
+                    {{ range . }}<span class="tag cyan">{{ . }}</span>{{ end }}
+                </div>
+            </div>
+            {{ end }}
+
+            {{ with .Params.metrics }}
+            <div class="sidebar-block">
+                <p class="mono-label">Performance Metrics</p>
+                <div class="metrics-list">
+                    {{ range . }}
+                    <div class="metric-item">
+                        <span class="metric-value">{{ .value }}</span>
+                        <span class="metric-label">{{ .label }}</span>
+                    </div>
+                    {{ end }}
+                </div>
+            </div>
+            {{ end }}
+        </aside>
+    </div>
+
+    <footer class="project-brief__footer">
+        <div class="blog-post__cta">
+            <div class="cta-card">
+                <div class="cta-card__icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M20 8v6M23 11h-6"/></svg>
+                </div>
+                <h3>Achieve similar results</h3>
+                <p>Do you have a similar technical challenge or security requirement? Let's discuss how CyberPenDef can help you achieve your goals.</p>
+                <div class="btn-group">
+                    <a href="/contact/" class="btn btn-primary">Start Consultation</a>
+                    <a href="/portfolio/" class="btn btn-outline">Back to Portfolio</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</article>
+{{ end }}

@@ -1,0 +1,116 @@
+hero:
+  badge: CEH Certified · AI-Powered Services
+  title_prefix: Your Trusted IT &
+  title_highlight: Cybersecurity Partner
+  description: Hi, I'm **Shaik Hidayatullah** — a CEH-certified cybersecurity professional and IT specialist with
+    over **3 years of professional experience** and 8+ years of hands-on computer and IT troubleshooting expertise.
+    Through **CyberPenDef**, I provide affordable, AI-accelerated IT support and cybersecurity services to individuals,
+    freelancers, and small businesses across India and the Gulf region — helping you stay secure, productive, and
+    worry-free online.
+  buttons:
+  - label: Get a Free Consultation
+    url: /contact/
+    kind: primary
+  - label: Explore My Services
+    url: /services/
+    kind: outline
+promotion:
+  title: 'Limited Offer — First 5 to 7 Clients:'
+  text: I'm currently accepting my first clients and offering a completely free initial consultation — no strings
+    attached. Let's talk about your IT or security challenge and figure out the best path forward together.
+edge:
+  title: The CyberPenDef Edge
+  subtitle: What Sets Us Apart
+  theme: green
+  icon: ⚡
+  items:
+  - icon: ⚡
+    title: AI-Powered Speed
+    description: Every service I deliver is augmented with AI tooling — cutting turnaround times dramatically so
+      you get results faster without paying enterprise rates.
+  - icon: 💸
+    title: Affordable Fixed Pricing
+    description: No hourly surprises. Every project comes with a transparent, agreed-upon price upfront — so you
+      always know exactly what you're paying before work begins.
+  - icon: 🔏
+    title: Privacy-First Approach
+    description: Your data stays yours. I never share, sell, or retain client data beyond what's strictly required
+      to deliver your service. Full stop.
+  - icon: 📊
+    title: Transparent Reporting
+    description: Every engagement ends with a clear, plain-language report — no jargon, no confusion. You'll always
+      know exactly what was done, what was found, and what to do next.
+overview:
+  title: Overview
+  subtitle: What I Can Do For You
+  theme: blue
+  icon: 🛡️
+  paragraphs:
+  - Whether you're an individual who needs their computer sorted, a non-technical freelancer managing sensitive
+    client data, or a small business that wants to stop worrying about cyberattacks — I have a service built for
+    your exact situation. All services are delivered remotely and completed with clear timelines and pricing agreed
+    in advance.
+  - I work across **four core areas:** personal IT support, personal cybersecurity, business IT infrastructure,
+    and business cybersecurity — covering everything from parental controls and device health checks to secure code
+    audits and full Security-as-a-Service packages.
+audience:
+  title: Audience
+  subtitle: Who CyberPenDef Is Built For
+  theme: amber
+  icon: 👥
+  items:
+  - label: Individuals
+    quote: You use the internet every day — but is it safe?
+    description: From setting up your home Wi-Fi securely to recovering a hacked account, I help everyday users
+      protect their digital life without needing a tech background. If something feels off with your device or online
+      accounts, I'm one message away.
+  - label: Freelancers
+    quote: Your business runs on your laptop — let's protect it.
+    description: As a non-technical freelancer, your income depends on your tools working and your client data staying
+      private. I handle your IT backbone — backups, secure communications, system maintenance — so you never lose
+      a client deadline to a tech failure.
+  - label: Small Businesses
+    quote: Enterprise-grade security. Small business budget.
+    description: You don't need a full-time IT team to stay secure and operational. I provide ongoing remote support,
+      cloud migration assistance, automated backups, and cybersecurity management — customized to the size and budget
+      of your business.
+credentials:
+  title: Credentials
+  subtitle: Trust & Social Proof
+  theme: violet
+  icon_style: violet
+  icon: 🎖️
+  items:
+  - icon: 🎓
+    title: CEH Certified
+    description: EC-Council — Certified Ethical Hacker
+  - icon: 🕐
+    title: 3+ Years Professional
+    description: IT & Cybersecurity Experience
+  - icon: 💻
+    title: 8+ Years Practical
+    description: Computer & IT Troubleshooting Experience
+  - icon: 🤖
+    title: AI-Augmented
+    description: Service Delivery — Faster, Smarter Results
+  - icon: 📍
+    title: Global Reach
+    description: Serving India & the Gulf Region
+  - icon: 🔒
+    title: Privacy-First
+    description: Your data is never shared or retained
+cta:
+  title: Ready to take your digital security seriously? Let's talk.
+  description: I offer a free initial consultation to my first clients — no obligations, no pressure. Tell me about
+    your situation and I'll give you an honest assessment of what you need and what it will cost. Reach out via
+    WhatsApp, email, or through my Fiverr profile.
+  buttons:
+  - label: Contact Me
+    url: /contact#inquiry-form
+    kind: primary
+  - label: View on Fiverr
+    provider: fiverr
+    kind: outline
+  - label: LinkedIn Profile
+    provider: linkedin
+    kind: outline

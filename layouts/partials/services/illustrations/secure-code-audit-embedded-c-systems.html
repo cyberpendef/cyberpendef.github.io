@@ -1,0 +1,28 @@
+<div class="infographic-placeholder" style="min-height: 320px;">
+<svg width="100%" height="100%" viewBox="0 0 600 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <filter id="hyperGlow17" x="-30%" y="-30%" width="160%" height="160%">
+                                <feGaussianBlur stdDeviation="5" result="blur" />
+                                <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                            </filter>
+                        </defs>
+                        <!-- Code Visual -->
+                        <g transform="translate(100, 60)">
+                            <rect x="0" y="0" width="150" height="180" rx="4" fill="var(--bg)" stroke="var(--border)" stroke-width="1" />
+                            <rect x="20" y="30" width="110" height="8" fill="var(--muted)" opacity="0.3" />
+                            <rect x="20" y="50" width="80" height="8" fill="var(--muted)" opacity="0.3" />
+                            <!-- Vulnerable Line -->
+                            <rect x="20" y="70" width="110" height="8" fill="#ff4400" filter="url(#hyperGlow17)" opacity="0.6">
+                                <animate attributeName="opacity" values="0.6;1;0.6" dur="1s" repeatCount="indefinite" />
+                            </rect>
+                            <rect x="20" y="90" width="90" height="8" fill="var(--muted)" opacity="0.3" />
+                            <text x="10" y="15" fill="var(--muted)" font-family="var(--font-mono)" font-size="8">secure_app.c</text>
+                        </g>
+                        <!-- Logic Scanner -->
+                        <g transform="translate(300, 130)">
+                            <circle cx="0" cy="0" r="40" fill="var(--bg)" stroke="var(--cyan)" stroke-width="2" filter="url(#hyperGlow17)" />
+                            <text x="0" y="10" fill="var(--cyan)" font-family="var(--font-mono)" font-size="24" text-anchor="middle">🔍</text>
+                        </g>
+                        <text x="450" y="135" fill="var(--green)" font-family="var(--font-mono)" font-size="12" font-weight="bold" filter="url(#hyperGlow17)">BUG DETECTED</text>
+                    </svg>
+</div>

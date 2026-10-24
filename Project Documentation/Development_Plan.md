@@ -87,4 +87,22 @@ This development plan outlines the iterative approach to upgrading the CyberPenD
 
 ---
 
+## Sprint 11: Modular Site Content
+**Goal:** Make existing page content easier to maintain through structured Hugo data and Decap CMS while preserving the current website design and integrations.
+
+*   **Phase 11.1: Service Catalog Modularization — Complete**
+    *   Move the existing service catalog into structured data and render it through reusable Hugo partials.
+    *   Expose service content and categories through Decap CMS.
+*   **Phase 11.2: Homepage and About Content — Complete**
+    *   Move homepage and About profile copy into structured data and connect it to the existing layouts.
+    *   Add Decap CMS editing for homepage sections.
+*   **Phase 11.3: Contact Page Content — Complete**
+    *   Move Contact copy, form labels/options, contact channels, business hours, and delivery details into structured data.
+    *   Expose editable Contact content in Decap CMS without changing inquiry, Turnstile, Supabase, or booking integrations.
+*   **Phase 11.4: Client Portal Copy — Complete**
+    *   Move login, signup, and dashboard labels and messages into structured data.
+    *   Expose portal copy in Decap CMS while keeping authentication, route protection, and ticket retrieval code-managed.
+
+---
+
 **Note:** At the end of each Phase, explicit user consent will be requested before proceeding to the next Phase, per `GEMINI.md` directives.

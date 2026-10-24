@@ -7,9 +7,10 @@
     <!-- 
       Security First: Content-Security-Policy
       Prevents XSS, limits external scripts, and locks down the frontend to trusted domains only.
-      Allows Formspree (temporarily), Cloudflare Turnstile, Supabase APIs, and Google Fonts.
+      Allows Cloudflare Turnstile, Supabase, Google Fonts, Cal.com, GitHub API, and Decap CMS dependencies.
+      Note: Removed deprecated third-party form handler (formspree.io) in favor of our own Supabase Edge Functions.
     -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://challenges.cloudflare.com https://cdn.jsdelivr.net https://*.supabase.co; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://*.supabase.co https://formspree.io https://cdn.jsdelivr.net; img-src 'self' data: https:; frame-src 'self' https://challenges.cloudflare.com https://cal.com https://*.supabase.co;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://challenges.cloudflare.com https://cdn.jsdelivr.net https://*.supabase.co https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://*.supabase.co https://cdn.jsdelivr.net https://api.github.com https://cyberpendef-decap-oauth.cyberpendef.workers.dev; img-src 'self' data: https:; frame-src 'self' https://challenges.cloudflare.com https://cal.com https://*.supabase.co https://github.com;">
     <title>{{ if not .IsHome }}{{ .Title }} — {{ end }}CyberPenDef</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">

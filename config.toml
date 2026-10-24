@@ -1,8 +1,12 @@
+# Base URL of the live hosted website
 baseURL = "https://cyberpendef.github.io/"
+# Language configuration
 languageCode = "en-us"
+# Main site title displayed across pages
 title = "CyberPenDef - IT & Cybersecurity Services"
-theme = "cyberpendef"
+# Note: No external theme specified; Hugo resolves layouts directly from the root layouts/ directory
 paginate = 10
+# Output build directory for static artifact compilation
 publishDir = "public"
 
 [markup.goldmark.renderer]

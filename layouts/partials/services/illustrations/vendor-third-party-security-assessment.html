@@ -1,0 +1,27 @@
+<div class="infographic-placeholder" style="min-height: 320px;">
+<svg width="100%" height="100%" viewBox="0 0 600 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <filter id="hyperGlow19" x="-30%" y="-30%" width="160%" height="160%">
+                                <feGaussianBlur stdDeviation="5" result="blur" />
+                                <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                            </filter>
+                        </defs>
+                        <!-- Vendor Registry -->
+                        <g transform="translate(150, 60)">
+                            <rect x="0" y="0" width="300" height="160" rx="8" fill="var(--surface)" stroke="var(--border)" stroke-width="1" />
+                            <text x="20" y="30" fill="var(--muted)" font-family="var(--font-mono)" font-size="10">SUPPLY CHAIN VERIFICATION</text>
+                            
+                            <g transform="translate(20, 50)">
+                                <text x="0" y="10" fill="var(--white)" font-family="var(--font-mono)" font-size="12">Partner A (SaaS)</text>
+                                <circle cx="200" cy="5" r="8" fill="#ff4400" filter="url(#hyperGlow19)" />
+                                <text x="220" y="10" fill="#ff4400" font-family="var(--font-mono)" font-size="10">HIGH RISK</text>
+                            </g>
+                            
+                            <g transform="translate(20, 100)">
+                                <text x="0" y="10" fill="var(--white)" font-family="var(--font-mono)" font-size="12">Partner B (Cloud)</text>
+                                <circle cx="200" cy="5" r="8" fill="var(--green)" filter="url(#hyperGlow19)" />
+                                <text x="220" y="10" fill="var(--green)" font-family="var(--font-mono)" font-size="10">VERIFIED</text>
+                            </g>
+                        </g>
+                    </svg>
+</div>

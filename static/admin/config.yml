@@ -8,7 +8,7 @@ backend:
   base_url: https://cyberpendef-decap-oauth.cyberpendef.workers.dev
   auth_endpoint: auth
 
-local_backend: true
+publish_mode: editorial_workflow
 site_url: https://cyberpendef.github.io
 display_url: https://cyberpendef.github.io
 site_domain: cyberpendef.github.io
@@ -42,6 +42,8 @@ collections:
         fields:
           - { label: Title, name: title, widget: string }
           - { label: Description, name: description, widget: text }
+          - { label: Hero Title Prefix, name: hero_prefix, widget: string, default: About }
+          - { label: Hero Title Highlight, name: hero_highlight, widget: string, default: CyberPenDef }
           - { label: Show Page Header, name: show_page_header, widget: boolean, default: true }
           - { label: Draft, name: draft, widget: boolean, default: false }
           - { label: Body, name: body, widget: markdown, required: false }
@@ -51,6 +53,8 @@ collections:
         fields:
           - { label: Title, name: title, widget: string }
           - { label: Description, name: description, widget: text }
+          - { label: Hero Title Prefix, name: hero_prefix, widget: string, default: My }
+          - { label: Hero Title Highlight, name: hero_highlight, widget: string, default: Services }
           - { label: Type, name: type, widget: hidden, default: services }
           - { label: Body, name: body, widget: markdown, required: false }
       - name: contact
@@ -64,6 +68,467 @@ collections:
           - { label: Show Page Header, name: show_page_header, widget: boolean, default: true }
           - { label: Draft, name: draft, widget: boolean, default: false }
           - { label: Body, name: body, widget: markdown, required: false }
+
+  - name: service_catalog
+    label: Service Catalog
+    files:
+      - name: service_catalog
+        label: Services and Categories
+        file: data/services.yaml
+        fields:
+          - label: Categories
+            name: categories
+            widget: list
+            fields:
+              - { label: Category ID, name: id, widget: string }
+              - { label: Icon, name: icon, widget: string }
+              - label: Theme
+                name: theme
+                widget: select
+                options: [blue, green, amber]
+              - { label: Category Title, name: title, widget: string }
+              - { label: Subtitle, name: subtitle, widget: string }
+              - label: Services
+                name: services
+                widget: list
+                fields:
+                  - { label: Service ID, name: id, widget: string }
+                  - { label: Icon, name: icon, widget: string }
+                  - label: Icon Color
+                    name: icon_color
+                    widget: select
+                    options: [cyan, amber, green]
+                  - { label: Category Tag, name: category, widget: string }
+                  - { label: Service Title, name: title, widget: string }
+                  - { label: Summary, name: summary, widget: text }
+                  - { label: Details Heading, name: details_heading, widget: string }
+                  - { label: Details Introduction, name: details_intro, widget: text }
+                  - label: Features
+                    name: features
+                    widget: list
+                    field: { label: Feature, name: feature, widget: string }
+                  - label: Tags
+                    name: tags
+                    widget: list
+                    fields:
+                      - { label: Tag, name: label, widget: string }
+                      - label: Tag Color
+                        name: theme
+                        widget: select
+                        options: [cyan, amber, green]
+                  - label: Illustration
+                    name: illustration
+                    widget: select
+                    default: generic
+                    options:
+                      - { label: Generic, value: generic }
+                      - { label: Remote Help Desk & Troubleshooting, value: remote-help-desk-troubleshooting }
+                      - { label: Tech Support for Freelancers, value: tech-support-for-non-technical-freelancers }
+                      - { label: Parental Control Solutions, value: parental-control-solutions }
+                      - { label: Server Setup & Deployment, value: server-setup-web-app-deployment }
+                      - { label: Personal Device Security Checkup, value: personal-device-security-health-checkup }
+                      - { label: Device & Network Security Setup, value: device-network-security-setup }
+                      - { label: Cyber Fraud & Crime Support, value: cyber-fraud-crime-support }
+                      - { label: Cybersecurity Awareness Training, value: cybersecurity-awareness-training }
+                      - { label: Personal Information Security Audit, value: personal-information-security-compliance-audit }
+                      - { label: On-Premise to Cloud Migration, value: on-premise-to-cloud-migration }
+                      - { label: Backup & Disaster Recovery, value: backup-disaster-recovery-continuity }
+                      - { label: Business Process Automation, value: business-process-automation-no-code }
+                      - { label: Legacy Modernization, value: legacy-software-hardware-modernization }
+                      - { label: Website Security Assessment, value: website-security-assessment }
+                      - { label: Security as a Service, value: security-as-a-service-secaas }
+                      - { label: Password & Access Management, value: password-access-management }
+                      - { label: Embedded C Code Audit, value: secure-code-audit-embedded-c-systems }
+                      - { label: Custom Security Tools, value: custom-security-tools-scripts }
+                      - { label: Vendor Security Assessment, value: vendor-third-party-security-assessment }
+                      - { label: Legacy System Hardening, value: security-hardening-for-legacy-systems }
+
+  - name: about_profile
+    label: About Profile
+    files:
+      - name: profile
+        label: About Profile Content
+        file: data/about.yaml
+        fields:
+          - label: Introduction
+            name: introduction
+            widget: object
+            fields:
+              - { label: Section Title, name: title, widget: string }
+              - { label: Subtitle, name: subtitle, widget: string }
+              - { label: Icon, name: icon, widget: string }
+              - label: Theme
+                name: theme
+                widget: select
+                options: [violet, cyan, amber, green]
+              - label: Paragraphs
+                name: paragraphs
+                widget: list
+                field: { label: Paragraph, name: paragraph, widget: markdown }
+          - label: Approach
+            name: approach
+            widget: object
+            fields:
+              - { label: Section Title, name: title, widget: string }
+              - { label: Subtitle, name: subtitle, widget: string }
+              - { label: Icon, name: icon, widget: string }
+              - label: Theme
+                name: theme
+                widget: select
+                options: [violet, cyan, amber, green]
+              - label: Steps
+                name: steps
+                widget: list
+                fields:
+                  - { label: Step Label, name: label, widget: string }
+                  - { label: Description, name: description, widget: text }
+          - label: Credentials
+            name: credentials
+            widget: object
+            fields:
+              - { label: Section Title, name: title, widget: string }
+              - { label: Subtitle, name: subtitle, widget: string }
+              - { label: Icon, name: icon, widget: string }
+              - label: Theme
+                name: theme
+                widget: select
+                options: [violet, cyan, amber, green]
+              - label: Credential Rows
+                name: items
+                widget: list
+                fields:
+                  - { label: Row Label, name: label, widget: string }
+                  - label: Value Segments
+                    name: segments
+                    widget: list
+                    fields:
+                      - { label: Text, name: text, widget: string }
+                      - { label: Emphasize Text, name: bold, widget: boolean, default: false }
+                  - { label: Note, name: note, widget: text, required: false }
+          - label: Brand Values
+            name: values
+            widget: object
+            fields:
+              - { label: Section Title, name: title, widget: string }
+              - { label: Subtitle, name: subtitle, widget: string }
+              - { label: Icon, name: icon, widget: string }
+              - label: Theme
+                name: theme
+                widget: select
+                options: [violet, cyan, amber, green]
+              - label: Values
+                name: items
+                widget: list
+                fields:
+                  - { label: Icon, name: icon, widget: string }
+                  - { label: Title, name: title, widget: string }
+                  - { label: Description, name: description, widget: text }
+          - { label: Call to Action Quote, name: cta_quote, widget: text }
+
+  - name: home_content
+    label: Home Page Content
+    files:
+      - name: home_content
+        label: Homepage Sections
+        file: data/home.yaml
+        fields:
+          - label: Hero
+            name: hero
+            widget: object
+            fields:
+              - { label: Badge, name: badge, widget: string }
+              - { label: Title Prefix, name: title_prefix, widget: string }
+              - { label: Title Highlight, name: title_highlight, widget: string }
+              - { label: Description, name: description, widget: markdown }
+              - label: Buttons
+                name: buttons
+                widget: list
+                fields:
+                  - { label: Button Label, name: label, widget: string }
+                  - { label: Link, name: url, widget: string }
+                  - label: Style
+                    name: kind
+                    widget: select
+                    options: [primary, outline]
+          - label: Promotion
+            name: promotion
+            widget: object
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Text, name: text, widget: text }
+          - label: CyberPenDef Edge
+            name: edge
+            widget: object
+            fields:
+              - { label: Section Title, name: title, widget: string }
+              - { label: Subtitle, name: subtitle, widget: string }
+              - { label: Icon, name: icon, widget: string }
+              - { label: Theme, name: theme, widget: hidden, default: green }
+              - label: Cards
+                name: items
+                widget: list
+                fields:
+                  - { label: Icon, name: icon, widget: string }
+                  - { label: Title, name: title, widget: string }
+                  - { label: Description, name: description, widget: text }
+          - label: Overview
+            name: overview
+            widget: object
+            fields:
+              - { label: Section Title, name: title, widget: string }
+              - { label: Subtitle, name: subtitle, widget: string }
+              - { label: Icon, name: icon, widget: string }
+              - { label: Theme, name: theme, widget: hidden, default: blue }
+              - label: Paragraphs
+                name: paragraphs
+                widget: list
+                field: { label: Paragraph, name: paragraph, widget: markdown }
+          - label: Audience
+            name: audience
+            widget: object
+            fields:
+              - { label: Section Title, name: title, widget: string }
+              - { label: Subtitle, name: subtitle, widget: string }
+              - { label: Icon, name: icon, widget: string }
+              - { label: Theme, name: theme, widget: hidden, default: amber }
+              - label: Audience Groups
+                name: items
+                widget: list
+                fields:
+                  - { label: Group Name, name: label, widget: string }
+                  - { label: Quote, name: quote, widget: string }
+                  - { label: Description, name: description, widget: text }
+          - label: Credentials
+            name: credentials
+            widget: object
+            fields:
+              - { label: Section Title, name: title, widget: string }
+              - { label: Subtitle, name: subtitle, widget: string }
+              - { label: Icon, name: icon, widget: string }
+              - { label: Theme, name: theme, widget: hidden, default: violet }
+              - { label: Icon Style, name: icon_style, widget: hidden, default: violet }
+              - label: Credential Items
+                name: items
+                widget: list
+                fields:
+                  - { label: Icon, name: icon, widget: string }
+                  - { label: Title, name: title, widget: string }
+                  - { label: Description, name: description, widget: text }
+          - label: Call to Action
+            name: cta
+            widget: object
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Description, name: description, widget: text }
+              - label: Buttons
+                name: buttons
+                widget: list
+                fields:
+                  - { label: Button Label, name: label, widget: string }
+                  - { label: Link, name: url, widget: string, required: false }
+                  - label: External Profile
+                    name: provider
+                    widget: select
+                    required: false
+                    options:
+                      - { label: No external profile, value: "" }
+                      - { label: Fiverr, value: fiverr }
+                      - { label: LinkedIn, value: linkedin }
+                  - label: Style
+                    name: kind
+                    widget: select
+                    options: [primary, outline]
+
+  - name: contact_content
+    label: Contact Page Content
+    files:
+      - name: contact_content
+        label: Contact Page Sections
+        file: data/contact.yaml
+        fields:
+          - label: Hero
+            name: hero
+            widget: object
+            fields:
+              - { label: Badge, name: badge, widget: string }
+              - { label: Title Prefix, name: title_prefix, widget: string }
+              - { label: Title Highlight, name: title_highlight, widget: string }
+              - { label: Description, name: description, widget: text }
+          - label: Consultation Offer
+            name: offer
+            widget: object
+            fields:
+              - { label: Icon, name: icon, widget: string }
+              - { label: Title, name: title, widget: string }
+              - { label: Description, name: description, widget: text }
+          - label: Inquiry Form
+            name: form
+            widget: object
+            fields:
+              - { label: Section Title, name: title, widget: string }
+              - { label: Section Subtitle, name: subtitle, widget: string }
+              - { label: Name Label, name: name_label, widget: string }
+              - { label: Name Placeholder, name: name_placeholder, widget: string }
+              - { label: Email Label, name: email_label, widget: string }
+              - { label: Email Placeholder, name: email_placeholder, widget: string }
+              - { label: Phone Label, name: phone_label, widget: string }
+              - { label: Phone Placeholder, name: phone_placeholder, widget: string }
+              - { label: Audience Label, name: audience_label, widget: string }
+              - { label: Audience Placeholder, name: audience_placeholder, widget: string }
+              - label: Audience Options
+                name: audiences
+                widget: list
+                field: { label: Audience, name: audience, widget: string }
+              - { label: Service Label, name: service_label, widget: string }
+              - { label: Service Placeholder, name: service_placeholder, widget: string }
+              - label: Service Options
+                name: services
+                widget: list
+                fields:
+                  - { label: Form Value, name: value, widget: string }
+                  - { label: Display Label, name: label, widget: string }
+              - { label: Message Label, name: message_label, widget: string }
+              - { label: Message Placeholder, name: message_placeholder, widget: text }
+              - { label: Consultation Label, name: consultation_label, widget: string }
+              - { label: Emphasized Offer Text, name: consultation_emphasis, widget: string }
+              - { label: Submit Button, name: submit_label, widget: string }
+              - { label: Submitting Button, name: sending_label, widget: string }
+              - { label: Turnstile Error, name: turnstile_error, widget: string }
+              - { label: Success Title, name: success_title, widget: string }
+              - { label: Success Message, name: success_message, widget: string }
+              - { label: Fallback Error, name: fallback_error, widget: string }
+              - { label: Response Note, name: response_note, widget: string }
+              - { label: Response Link Label, name: response_link_label, widget: string }
+              - { label: Response Note Ending, name: response_note_suffix, widget: string }
+          - label: Contact Channels
+            name: channels
+            widget: object
+            fields:
+              - { label: Section Title, name: title, widget: string }
+              - { label: Section Subtitle, name: subtitle, widget: string }
+              - label: Channels
+                name: items
+                widget: list
+                fields:
+                  - { label: Icon, name: icon, widget: string }
+                  - { label: Channel Name, name: label, widget: string }
+                  - label: Value Source
+                    name: value_source
+                    widget: select
+                    options:
+                      - { label: Custom Text, value: none }
+                      - { label: Site Email, value: email }
+                      - { label: Site Phone, value: phone }
+                  - { label: Custom Display Value, name: value, widget: string, required: false }
+                  - { label: Supporting Note, name: note, widget: text, required: false }
+                  - label: External Profile
+                    name: link_provider
+                    widget: select
+                    options:
+                      - { label: No Profile Link, value: none }
+                      - { label: LinkedIn, value: linkedin }
+                      - { label: Fiverr, value: fiverr }
+                  - { label: Profile Link Text, name: link_label, widget: string, required: false }
+          - label: Business Hours
+            name: hours
+            widget: object
+            fields:
+              - { label: Section Title, name: title, widget: string }
+              - { label: Section Subtitle, name: subtitle, widget: string }
+              - { label: Time Zone Label, name: timezone_label, widget: string }
+              - label: Days and Hours
+                name: days
+                widget: list
+                fields:
+                  - { label: Day, name: day, widget: string }
+                  - { label: Opening Hours, name: hours, widget: string }
+                  - { label: Status, name: status, widget: string }
+              - { label: Time Zone Note, name: timezone_note, widget: markdown }
+          - label: Location and Delivery
+            name: delivery
+            widget: object
+            fields:
+              - { label: Section Title, name: title, widget: string }
+              - { label: Section Subtitle, name: subtitle, widget: string }
+              - label: Delivery Paragraphs
+                name: paragraphs
+                widget: list
+                field: { label: Paragraph, name: paragraph, widget: markdown }
+
+  - name: portal_content
+    label: Client Portal Content
+    files:
+      - name: portal_copy
+        label: Portal Pages Copy
+        file: data/portal.yaml
+        fields:
+          - label: Login Page
+            name: login
+            widget: object
+            fields:
+              - { label: Hero Badge, name: hero_badge, widget: string }
+              - { label: Title Prefix, name: title_prefix, widget: string }
+              - { label: Title Highlight, name: title_highlight, widget: string }
+              - { label: Description, name: description, widget: text }
+              - { label: Form Heading, name: form_title, widget: string }
+              - { label: Email Label, name: email_label, widget: string }
+              - { label: Email Placeholder, name: email_placeholder, widget: string }
+              - { label: Password Label, name: password_label, widget: string }
+              - { label: Password Placeholder, name: password_placeholder, widget: string }
+              - { label: Submit Button, name: submit_label, widget: string }
+              - { label: Verifying Button, name: verifying_label, widget: string }
+              - { label: Signup Prompt, name: signup_prompt, widget: string }
+              - { label: Signup Link Label, name: signup_link_label, widget: string }
+              - { label: Turnstile Error, name: turnstile_error, widget: string }
+              - { label: Error Prefix, name: error_prefix, widget: string }
+              - { label: Generic Error, name: generic_error, widget: string }
+          - label: Signup Page
+            name: signup
+            widget: object
+            fields:
+              - { label: Hero Badge, name: hero_badge, widget: string }
+              - { label: Title Prefix, name: title_prefix, widget: string }
+              - { label: Title Highlight, name: title_highlight, widget: string }
+              - { label: Description, name: description, widget: text }
+              - { label: Form Heading, name: form_title, widget: string }
+              - { label: Full Name Label, name: full_name_label, widget: string }
+              - { label: Full Name Placeholder, name: full_name_placeholder, widget: string }
+              - { label: Username Label, name: username_label, widget: string }
+              - { label: Username Placeholder, name: username_placeholder, widget: string }
+              - { label: Email Label, name: email_label, widget: string }
+              - { label: Email Placeholder, name: email_placeholder, widget: string }
+              - { label: Password Label, name: password_label, widget: string }
+              - { label: Password Placeholder, name: password_placeholder, widget: string }
+              - { label: Submit Button, name: submit_label, widget: string }
+              - { label: Processing Button, name: processing_label, widget: string }
+              - { label: Login Prompt, name: login_prompt, widget: string }
+              - { label: Login Link Label, name: login_link_label, widget: string }
+              - { label: Turnstile Error, name: turnstile_error, widget: string }
+              - { label: Success Title, name: success_title, widget: string }
+              - { label: Success Message, name: success_message, widget: text }
+              - { label: Error Prefix, name: error_prefix, widget: string }
+              - { label: Generic Error, name: generic_error, widget: string }
+          - label: Dashboard
+            name: dashboard
+            widget: object
+            fields:
+              - { label: Hero Badge, name: hero_badge, widget: string }
+              - { label: Title Prefix, name: title_prefix, widget: string }
+              - { label: Title Highlight, name: title_highlight, widget: string }
+              - { label: Welcome Text, name: welcome_prefix, widget: string }
+              - { label: Loading Email Text, name: loading_email, widget: string }
+              - { label: Logout Button, name: logout_label, widget: string }
+              - { label: Ticket Section Heading, name: tickets_title, widget: string }
+              - { label: Zero Ticket Count, name: zero_ticket_count, widget: string }
+              - { label: Singular Ticket Label, name: ticket_count_singular, widget: string }
+              - { label: Plural Ticket Label, name: ticket_count_plural, widget: string }
+              - { label: Loading Message, name: loading_label, widget: string }
+              - { label: Empty State Icon, name: empty_icon, widget: string }
+              - { label: Empty State Heading, name: empty_title, widget: string }
+              - { label: Empty State Description, name: empty_description, widget: text }
+              - { label: Request Service Button, name: request_service_label, widget: string }
+              - { label: Ticket Error Heading, name: ticket_error_title, widget: string }
+              - { label: Ticket Error Message, name: ticket_error_message, widget: text }
 
   - name: blog
     label: Blog
@@ -118,7 +583,17 @@ collections:
       - { label: Title, name: title, widget: string }
       - { label: Publish Date, name: date, widget: datetime }
       - { label: Summary, name: description, widget: text }
-      - { label: Client Name, name: client_name, widget: string, required: false }
+      - { label: Client Name, name: client_name, widget: string, required: false, hint: "Keep empty for anonymized case studies." }
+      - label: Client Type
+        name: client_type
+        widget: select
+        required: false
+        options:
+          - Individual
+          - Freelancer
+          - Small Business
+          - Startup
+          - Corporate
       - label: Service Category
         name: service_category
         widget: select
@@ -130,7 +605,23 @@ collections:
           - Penetration Testing
           - Infrastructure
           - Other
+      - { label: Challenge, name: challenge, widget: text, required: false }
+      - { label: Solution, name: solution, widget: text, required: false }
       - { label: Outcome, name: outcome, widget: string, required: false }
-      - { label: Featured Image, name: featured_image, widget: image, required: false }
+      - label: Tools Used
+        name: tools_used
+        widget: list
+        required: false
+        field: { label: Tool, name: tool, widget: string }
+      - label: Metrics
+        name: metrics
+        widget: list
+        required: false
+        fields:
+          - { label: Label, name: label, widget: string, hint: "e.g. Threat Reduction" }
+          - { label: Value, name: value, widget: string, hint: "e.g. 98%" }
+      - { label: Accent Color, name: accent_color, widget: color, default: "#00d4ff", required: false }
+      - { label: Featured Project, name: featured, widget: boolean, default: false }
       - { label: Draft, name: draft, widget: boolean, default: false }
-      - { label: Body, name: body, widget: markdown }
+      - { label: Featured Image, name: featured_image, widget: image, required: false }
+      - { label: Body, name: body, widget: markdown, hint: "Detailed case study description and technical breakdown." }
