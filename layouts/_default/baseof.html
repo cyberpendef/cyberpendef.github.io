@@ -87,7 +87,7 @@
                         entry.target.classList.add('visible');
                     }
                 });
-            }, { threshold: 0.1 });
+            }, { threshold: 0 });
             
             document.querySelectorAll('.stagger-in').forEach(el => observer.observe(el));
         });
