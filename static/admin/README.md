@@ -8,27 +8,30 @@ The `/admin/` route loads Decap CMS and authenticates to GitHub through the Clou
 - OAuth Worker: `https://cyberpendef-decap-oauth.cyberpendef.workers.dev`
 - OAuth callback: `https://cyberpendef-decap-oauth.cyberpendef.workers.dev/callback`
 
-## GitHub OAuth App Settings
-Create or update a GitHub OAuth App at:
+## GitHub App Settings
+The deployed Worker is configured with a GitHub App client ID. Configure or update that GitHub App under:
 
 ```text
-https://github.com/settings/developers
+https://github.com/settings/apps
 ```
 
-Use:
+Set the app's user authorization callback URL to:
 
 ```text
-Application name:
-CyberPenDef Decap CMS
-
-Homepage URL:
-https://cyberpendef.github.io
-
-Authorization callback URL:
 https://cyberpendef-decap-oauth.cyberpendef.workers.dev/callback
 ```
 
-Do not enable Device Flow unless a future CMS auth flow explicitly requires it.
+Grant only the repository permissions required by the CMS:
+
+| Permission | Access | Purpose |
+| --- | --- | --- |
+| Contents | Read and write | Read and save Hugo content through Git blobs, trees, and commits |
+| Pull requests | Read and write | Required by the configured `editorial_workflow` to create and update review pull requests |
+| Metadata | Read-only | Required repository metadata; GitHub grants this automatically |
+
+Install the app on the `cyberpendef` account and ensure its repository access includes `cyberpendef.github.io`. If GitHub prompts the app owner to approve updated permissions, approve them. The user authorizing the CMS must also have write access to the repository.
+
+The Worker does not send an OAuth `scope` parameter because GitHub App API access is controlled by the app's configured permissions and installation access, not classic OAuth App scopes.
 
 ## Cloudflare Worker Secrets
 Set these values in Cloudflare for the Worker:
@@ -56,8 +59,9 @@ npx wrangler deploy
 3. Decap opens the Worker `/auth` route.
 4. The Worker redirects to GitHub OAuth.
 5. GitHub redirects to the Worker `/callback` route.
-6. The Worker sends the token back to the Decap CMS popup flow.
-7. Decap CMS loads the configured site page, blog, and portfolio collections.
+6. The Worker completes Decap CMS's `authorizing:github` popup handshake.
+7. The Worker sends the authentication result to Decap after the handshake.
+8. Decap CMS loads the configured site page, blog, and portfolio collections.
 
 ## Local Development
 - The shared `config.yml` intentionally does not enable `local_backend`; the deployed admin must use its configured GitHub backend and OAuth Worker.
@@ -69,5 +73,7 @@ npx wrangler deploy
 ## Troubleshooting
 - If the browser opens `api.netlify.com/auth...` and shows `Not Found`, the deployed `/admin/config.yml` is stale or missing the Worker `base_url`.
 - If the Worker returns an origin-like hash in `Access-Control-Allow-Origin`, reset `ALLOWED_ORIGIN` to exactly `https://cyberpendef.github.io` and redeploy.
-- If GitHub says the callback URL is invalid, verify the GitHub OAuth App callback exactly matches the Worker callback URL.
+- If GitHub says the callback URL is invalid, verify the GitHub App's user authorization callback exactly matches the Worker callback URL.
+- If GitHub login returns to `/admin/` but leaves Decap on the login screen, verify the deployed Worker performs the `authorizing:github` handshake before sending its authorization result.
 - If Decap remains on the login screen or collections fail to load, confirm the deployed `/admin/config.yml` does not set `local_backend: true`; production must use the GitHub backend and Worker.
+- If saving fails with `POST /git/blobs` returning `403 Resource not accessible by integration`, check the GitHub App's `Contents: Read and write` permission, repository installation access, owner approval of updated permissions, and the signing-in user's repository write access. After updating access, sign out of Decap and sign in again to obtain a fresh authorization.

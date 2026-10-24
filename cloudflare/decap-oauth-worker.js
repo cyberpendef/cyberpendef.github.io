@@ -6,8 +6,8 @@
  * - This Worker owns the OAuth code exchange and returns the GitHub access token to the Decap popup flow.
  *
  * Required Worker environment variables / secrets:
- * - GITHUB_CLIENT_ID: GitHub OAuth App client ID.
- * - GITHUB_CLIENT_SECRET: GitHub OAuth App client secret. Store as a Worker secret.
+ * - GITHUB_CLIENT_ID: GitHub App client ID.
+ * - GITHUB_CLIENT_SECRET: GitHub App client secret. Store as a Worker secret.
  * - OAUTH_STATE_SECRET: random secret used to sign state payloads. Store as a Worker secret.
  * - ALLOWED_ORIGIN: production site origin, expected to be https://cyberpendef.github.io.
  */
@@ -15,7 +15,6 @@
 const GITHUB_AUTHORIZE_URL = "https://github.com/login/oauth/authorize";
 const GITHUB_TOKEN_URL = "https://github.com/login/oauth/access_token";
 const DEFAULT_ALLOWED_ORIGIN = "https://cyberpendef.github.io";
-const TOKEN_SCOPE = "repo,user";
 
 export default {
   async fetch(request, env) {
@@ -58,7 +57,6 @@ async function beginGitHubAuth(request, env) {
 
   authorizeUrl.searchParams.set("client_id", env.GITHUB_CLIENT_ID);
   authorizeUrl.searchParams.set("redirect_uri", redirectUri);
-  authorizeUrl.searchParams.set("scope", TOKEN_SCOPE);
   authorizeUrl.searchParams.set("state", state);
 
   return Response.redirect(authorizeUrl.toString(), 302);
@@ -128,12 +126,29 @@ function renderAuthResult(status, payload, targetOrigin) {
     (function () {
       var message = ${JSON.stringify(message)};
       var targetOrigin = ${JSON.stringify(targetOrigin)};
+      var opener = window.opener;
 
-      if (window.opener) {
-        window.opener.postMessage(message, targetOrigin);
+      if (!opener) {
+        document.body.textContent = "No CMS sign-in window was found. Close this tab and start authentication from the admin page.";
+        return;
       }
 
-      window.close();
+      function handleHandshake(event) {
+        if (
+          event.origin !== targetOrigin ||
+          event.source !== opener ||
+          event.data !== "authorizing:github"
+        ) {
+          return;
+        }
+
+        window.removeEventListener("message", handleHandshake);
+        opener.postMessage(message, targetOrigin);
+        window.close();
+      }
+
+      window.addEventListener("message", handleHandshake);
+      opener.postMessage("authorizing:github", targetOrigin);
     })();
   </script>
 </body>
