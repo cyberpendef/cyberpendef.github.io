@@ -10,7 +10,7 @@ tags:
   - LLM
   - Beginner
 accent_color: "#00d4ff"
-featured: true
+featured: false
 draft: false
 ---
 ## What is AI and how does it work?
