@@ -13,8 +13,8 @@
   --text:      #c9d8e8;
   --muted:     #55697a;
   --white:     #f0f6ff;
-  --font-head: 'Orbitron', monospace;
-  --font-body: 'Syne', sans-serif;
+  --font-head: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
   --radius:    10px;
   --transition: 0.38s cubic-bezier(0.4, 0, 0.2, 1);
